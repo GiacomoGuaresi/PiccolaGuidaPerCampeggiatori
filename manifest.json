@@ -34,5 +34,11 @@
     "title": "Bivacco e campeggio libero in Trentino-Alto Adige",
     "category": "Normativa",
     "file": "content/normativa/bivacco-trentino-alto-adige.html"
+  },
+  {
+    "id": "bivacco-ticino",
+    "title": "Bivacco nel canton Ticino",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-ticino.html"
   }
 ]
