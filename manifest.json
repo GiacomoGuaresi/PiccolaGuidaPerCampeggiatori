@@ -28,5 +28,11 @@
     "title": "Bivacco e campeggio libero in Valle d'Aosta",
     "category": "Normativa",
     "file": "content/normativa/bivacco-valle-aosta.html"
+  },
+  {
+    "id": "bivacco-trentino-alto-adige",
+    "title": "Bivacco e campeggio libero in Trentino-Alto Adige",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-trentino-alto-adige.html"
   }
 ]
