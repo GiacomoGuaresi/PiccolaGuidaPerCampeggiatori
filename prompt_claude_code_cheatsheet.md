@@ -2,7 +2,6 @@
 
 ## Normativa/regole per regione
 
-8. Cerca online e spiega la differenza legale tra bivacco, campeggio libero e campeggio organizzato secondo le normative italiane e svizzere, e crea la pagina differenza-bivacco-campeggio
 9. Cerca online le regole specifiche per bivacco/campeggio nel Parco Nazionale dello Stelvio e crea la pagina parco-stelvio
 10. Cerca online le regole specifiche per bivacco/campeggio nel Parco Adamello Brenta (o Parco dell'Adamello lato lombardo) e crea la pagina parco-adamello
 11. Cerca online le regole su fuochi liberi in montagna per regione italiana e cantone svizzero, incluse le restrizioni stagionali per rischio incendi, e crea la pagina fuochi-liberi

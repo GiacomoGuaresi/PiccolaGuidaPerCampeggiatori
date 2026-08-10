@@ -52,5 +52,11 @@
     "title": "Bivacco nel canton Vallese",
     "category": "Normativa",
     "file": "content/normativa/bivacco-vallese.html"
+  },
+  {
+    "id": "differenza-bivacco-campeggio",
+    "title": "Bivacco, campeggio libero, campeggio organizzato: le differenze",
+    "category": "Normativa",
+    "file": "content/normativa/differenza-bivacco-campeggio.html"
   }
 ]
