@@ -84,12 +84,19 @@ dal sito" nel pannello di stampa.
 
 ## Palette
 
-| Colore          | Hex       | Uso                              |
-|------------------|-----------|-----------------------------------|
-| Nero             | `#1c1b18` | testo principale                  |
-| Verde scuro      | `#33432c` | titoli, header, bottoni           |
-| Verde scuro 2    | `#263320` | hover bottoni, sottotitoli scheda |
-| Tan              | `#c9a876` | bordi, tag, accenti               |
-| Tan chiaro       | `#e7d9bd` | sfondo sidebar/hover, tag         |
-| Crema            | `#f6f1e6` | sfondo sidebar/footer             |
-| Bianco carta     | `#fffdf8` | sfondo scheda                     |
+Tema "wild" (bosco/terra/pietra). Font: [Oswald](https://fonts.google.com/specimen/Oswald)
+per titoli (condensato, maiuscolo), [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+per tag e fonti, sans di sistema per il corpo del testo.
+
+| Colore          | Hex       | Uso                                  |
+|------------------|-----------|---------------------------------------|
+| Inchiostro       | `#1b1a15` | testo principale                      |
+| Bosco            | `#2e3b22` | titoli, bottoni                       |
+| Bosco scuro      | `#1c2614` | header/footer app, hover bottoni      |
+| Muschio          | `#5a6e42` | intestazioni categoria (sidebar)      |
+| Terra (bark)     | `#5b4530` | bordi, tag, righe tratteggiate        |
+| Ruggine (clay)   | `#b2502e` | accenti, evidenze, dettagli grafici   |
+| Pietra           | `#837f6d` | testo secondario, fonti               |
+| Pergamena        | `#ece3cf` | sfondo sidebar/footer                 |
+| Pergamena scura  | `#dbcda3` | hover sidebar                         |
+| Bianco carta     | `#ffffff` | sfondo scheda (stampa)                |
