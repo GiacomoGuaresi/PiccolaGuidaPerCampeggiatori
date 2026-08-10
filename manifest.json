@@ -46,5 +46,11 @@
     "title": "Bivacco nel canton Grigioni",
     "category": "Normativa",
     "file": "content/normativa/bivacco-grigioni.html"
+  },
+  {
+    "id": "bivacco-vallese",
+    "title": "Bivacco nel canton Vallese",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-vallese.html"
   }
 ]

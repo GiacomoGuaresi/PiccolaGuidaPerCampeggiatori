@@ -2,7 +2,6 @@
 
 ## Normativa/regole per regione
 
-7. Cerca online le regole cantonali attuali su bivacco nel canton Vallese e crea la pagina bivacco-vallese
 8. Cerca online e spiega la differenza legale tra bivacco, campeggio libero e campeggio organizzato secondo le normative italiane e svizzere, e crea la pagina differenza-bivacco-campeggio
 9. Cerca online le regole specifiche per bivacco/campeggio nel Parco Nazionale dello Stelvio e crea la pagina parco-stelvio
 10. Cerca online le regole specifiche per bivacco/campeggio nel Parco Adamello Brenta (o Parco dell'Adamello lato lombardo) e crea la pagina parco-adamello
