@@ -1,0 +1,11 @@
+Quando ti chiedo di creare una "pagina" per il cheatsheet:
+- Cerca online informazioni aggiornate e verificate (fonti ufficiali quando possibile: enti cantonali/regionali, CAI, SAC, MeteoSvizzera, Arpa, parchi naturali).
+- Crea un file markdown in cheatsheet/<categoria>/<slug-argomento>.md
+- Ogni pagina deve avere questa struttura fissa:
+  - Frontmatter YAML: titolo, categoria, ultimo aggiornamento, fonti principali
+  - Sintesi in 2-3 righe (il "TL;DR")
+  - Punti chiave in bullet, pratici e concreti (numeri, soglie, contatti, non teoria generica)
+  - Sezione "Attenzione/Errori comuni" se rilevante
+  - Sezione "Fonti" con link
+- Stile: telegrafico, orientato all'uso sul campo, niente fuffa.
+- Se trovi informazioni contrastanti tra fonti, segnalalo esplicitamente nella pagina invece di scegliere arbitrariamente.
