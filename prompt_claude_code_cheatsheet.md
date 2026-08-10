@@ -2,7 +2,6 @@
 
 ## Normativa/regole per regione
 
-2. Cerca online le regole attuali su bivacco e campeggio libero in Piemonte e crea la pagina bivacco-piemonte
 3. Cerca online le regole attuali su bivacco e campeggio libero in Valle d'Aosta e crea la pagina bivacco-valle-aosta
 4. Cerca online le regole attuali su bivacco e campeggio libero in Trentino-Alto Adige (attenzione alle differenze tra provincia di Trento e Bolzano) e crea la pagina bivacco-trentino-alto-adige
 5. Cerca online le regole cantonali attuali su bivacco nel canton Ticino (limite del bosco, aree protette, eventuali divieti locali) e crea la pagina bivacco-ticino

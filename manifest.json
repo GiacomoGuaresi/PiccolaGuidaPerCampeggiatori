@@ -4,5 +4,11 @@
     "title": "Bivacco e campeggio libero in Lombardia",
     "category": "Normativa",
     "file": "content/normativa/bivacco-lombardia.html"
+  },
+  {
+    "id": "bivacco-piemonte",
+    "title": "Bivacco e campeggio libero in Piemonte",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-piemonte.html"
   }
 ]
