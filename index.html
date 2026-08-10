@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piccola Guida per Campeggiatori</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>Piccola Guida per Campeggiatori</h1>
+      <p class="subtitle">Cheatsheet tascabili su montagna, trekking e vita all'aperto</p>
+    </header>
+
+    <div class="app-body">
+      <nav id="sidebar" class="sidebar" aria-label="Elenco schede"></nav>
+
+      <main class="content">
+        <p id="empty-state" class="empty-state">
+          Seleziona una scheda dal menu a sinistra per visualizzarla qui.
+        </p>
+
+        <div id="card-preview" class="card-preview" hidden>
+          <div id="a6-single" class="a6-page"></div>
+          <div class="toolbar">
+            <button id="btn-export-single">Esporta questa scheda (PDF)</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+      <button id="btn-export-all" class="secondary">Esporta tutte le schede (PDF)</button>
+    </footer>
+  </div>
+
+  <div id="print-area"></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

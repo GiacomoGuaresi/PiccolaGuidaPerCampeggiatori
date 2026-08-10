@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Piccola Guida per Campeggiatori — palette e layout base
+   ========================================================================== */
+
+:root {
+  --color-black: #1c1b18;
+  --color-dark-green: #33432c;
+  --color-dark-green-2: #263320;
+  --color-tan: #c9a876;
+  --color-tan-light: #e7d9bd;
+  --color-cream: #f6f1e6;
+  --color-white: #fffdf8;
+
+  --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --a6-width: 105mm;
+  --a6-height: 148mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-tan-light);
+  color: var(--color-black);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark-green);
+  margin: 0 0 0.4em;
+}
+
+button {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid var(--color-dark-green);
+  background: var(--color-dark-green);
+  color: var(--color-white);
+  border-radius: 4px;
+  padding: 0.55em 1.1em;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+button:hover {
+  background: var(--color-dark-green-2);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--color-dark-green);
+}
+
+button.secondary:hover {
+  background: var(--color-tan-light);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------- App shell ---------------------------------- */
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 1.2rem 1.5rem;
+  border-bottom: 4px solid var(--color-tan);
+}
+
+.app-header h1 {
+  color: var(--color-white);
+  font-size: 1.4rem;
+}
+
+.app-header .subtitle {
+  margin: 0.2em 0 0;
+  color: var(--color-tan-light);
+  font-size: 0.9rem;
+}
+
+.app-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* ---------------------------------- Sidebar ---------------------------------- */
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--color-cream);
+  border-right: 1px solid var(--color-tan);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.sidebar .category {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar .category h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-dark-green);
+  border-bottom: 1px solid var(--color-tan);
+  padding-bottom: 0.3em;
+}
+
+.sidebar .card-list {
+  list-style: none;
+  margin: 0.5em 0 0;
+  padding: 0;
+}
+
+.sidebar .card-list li a {
+  display: block;
+  padding: 0.4em 0.5em;
+  border-radius: 4px;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.sidebar .card-list li a:hover,
+.sidebar .card-list li a.active {
+  background: var(--color-tan);
+  color: var(--color-black);
+}
+
+.sidebar .empty-manifest {
+  font-size: 0.85rem;
+  color: var(--color-dark-green);
+  opacity: 0.8;
+}
+
+/* ---------------------------------- Content ---------------------------------- */
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-state {
+  margin: auto;
+  color: var(--color-dark-green);
+  opacity: 0.7;
+  text-align: center;
+}
+
+.card-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-preview[hidden] {
+  display: none;
+}
+
+.card-preview .toolbar {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ---------------------------------- Scheda A6 ---------------------------------- */
+
+.a6-page {
+  width: var(--a6-width);
+  height: var(--a6-height);
+  padding: 6mm;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-tan);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+.a6-page h2 {
+  font-size: 12pt;
+  color: var(--color-dark-green);
+  border-bottom: 1.5pt solid var(--color-tan);
+  padding-bottom: 0.2em;
+}
+
+.a6-page h3 {
+  font-size: 10pt;
+  color: var(--color-dark-green-2);
+}
+
+.a6-page .tag {
+  display: inline-block;
+  background: var(--color-tan-light);
+  color: var(--color-dark-green);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  font-size: 7.5pt;
+  margin: 0 0.3em 0.3em 0;
+}
+
+/* ---------------------------------- Footer ---------------------------------- */
+
+.app-footer {
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-tan);
+  padding: 0.8rem 1.5rem;
+  text-align: right;
+}
+
+/* ---------------------------------- Stampa / export PDF ---------------------------------- */
+
+#print-area {
+  display: none;
+}
+
+@page {
+  size: 105mm 148mm;
+  margin: 0;
+}
+
+@media print {
+  #app {
+    display: none;
+  }
+
+  #print-area {
+    display: block;
+  }
+
+  #print-area .a6-page {
+    box-shadow: none;
+    border: none;
+    page-break-after: always;
+    width: var(--a6-width);
+    height: var(--a6-height);
+  }
+
+  #print-area .a6-page:last-child {
+    page-break-after: auto;
+  }
+}
