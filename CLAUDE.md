@@ -13,3 +13,5 @@ Quando ti chiedo di creare una "pagina" per il cheatsheet, questo è un sito sta
   - Sezione "Fonti" (`<p class="sources">`) con 2-4 link essenziali per esteso, non l'elenco completo delle ricerche
 - Stile: telegrafico, orientato all'uso sul campo, niente fuffa.
 - Se trovi informazioni contrastanti tra fonti, segnalalo esplicitamente in una riga breve invece di scegliere arbitrariamente.
+- Dopo aver aggiunto la scheda al manifest, aggiorna anche `content/indice.html`: aggiungi il titolo nella sezione `.index-category` della categoria giusta (creane una nuova, stesso markup, se la categoria non esiste ancora). L'indice è mantenuto a mano, non generato automaticamente.
+- `content/copertina.html` e `content/indice.html` sono schede speciali (categoria "Guida", sempre prime nel manifest così restano in testa nell'export completo): non seguono la struttura standard h2/Sintesi/Fonti, usano i wrapper `.cover` e `.index-list` già stilizzati in `style.css`.

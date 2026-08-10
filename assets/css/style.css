@@ -357,6 +357,109 @@ button:disabled {
   text-decoration: none;
 }
 
+/* ---------------------------------- Scheda speciale: copertina ---------------------------------- */
+
+.a5-page .cover {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  text-align: center;
+}
+
+.a5-page .cover .cover-main {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.a5-page .cover .cover-tag {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 9pt;
+  color: var(--color-clay);
+  margin: 0 0 0.8em;
+}
+
+.a5-page .cover .cover-peaks {
+  width: 65%;
+  height: 16mm;
+  margin-bottom: 0.8em;
+  background: var(--color-forest);
+  opacity: 0.9;
+  clip-path: polygon(
+    0% 100%, 0% 68%, 9% 40%, 19% 64%, 31% 18%, 44% 54%,
+    54% 28%, 67% 60%, 77% 12%, 89% 48%, 100% 68%, 100% 100%
+  );
+}
+
+.a5-page .cover .cover-title {
+  font-size: 26pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--color-forest);
+  margin: 0 0 0.6em;
+}
+
+.a5-page .cover .cover-rule {
+  width: 55%;
+  height: 4pt;
+  margin-bottom: 0.6em;
+  background-image:
+    linear-gradient(135deg, var(--color-clay) 25%, transparent 25.5%),
+    linear-gradient(225deg, var(--color-clay) 25%, transparent 25.5%);
+  background-size: 10pt 8pt;
+}
+
+.a5-page .cover .cover-subtitle {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  letter-spacing: 0.02em;
+  color: var(--color-forest-dark);
+  margin: 0;
+}
+
+.a5-page .cover .cover-footer {
+  align-self: end;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  font-style: italic;
+  color: var(--color-stone);
+  padding-top: 1em;
+  margin: 0;
+}
+
+/* ---------------------------------- Scheda speciale: indice ---------------------------------- */
+
+.a5-page .index-list {
+  column-count: 2;
+  column-gap: 7mm;
+  margin-top: 0.6em;
+  font-size: 8.5pt;
+}
+
+.a5-page .index-list .index-category {
+  break-inside: avoid;
+  margin-bottom: 0.8em;
+}
+
+.a5-page .index-list h3 {
+  font-size: 9pt;
+  margin: 0 0 0.25em;
+}
+
+.a5-page .index-list ul {
+  margin: 0;
+}
+
+.a5-page .index-list ul li {
+  margin-bottom: 0.15em;
+}
+
 /* ---------------------------------- Footer ---------------------------------- */
 
 .app-footer {

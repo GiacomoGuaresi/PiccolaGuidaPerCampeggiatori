@@ -86,3 +86,38 @@
 58. Cerca online le linee guida generali "leave no trace" per la gestione dei rifiuti durante trekking e bivacco, e crea la pagina cheatsheet/etica/gestione-rifiuti-leave-no-trace
 59. Cerca online le buone pratiche di rispetto verso pascoli e bestiame al pascolo durante escursioni e bivacco, e crea la pagina cheatsheet/etica/rispetto-pascoli-bestiame
 60. Cerca online la distanza minima consigliata da corsi d'acqua per bivacco e per attività igieniche (lavarsi, deiezioni), e crea la pagina cheatsheet/etica/distanza-corsi-acqua
+
+## Sito tenda / dove montarla
+ 
+7. Cerca online i criteri per scegliere un buon sito dove montare la tenda in bivacco (drenaggio, esposizione al vento, distanza da corsi d'acqua, pendenza), e crea la pagina cheatsheet/tenda/criteri-scelta-sito.md
+8. Cerca online come valutare i rischi di caduta massi, frane o valanghe residue nella scelta del sito tenda in ambiente alpino, e crea la pagina cheatsheet/tenda/rischio-caduta-massi-sito.md
+9. Cerca online come orientare correttamente la tenda rispetto al vento dominante e al sole per bivacco in quota, e crea la pagina cheatsheet/tenda/orientamento-vento-sole.md
+10. Cerca online come evitare zone di accumulo di aria fredda (conche, fondovalle) quando si scegli dove montare la tenda per la notte, e crea la pagina cheatsheet/tenda/evitare-conche-aria-fredda.md
+11. Cerca online buone pratiche per montare la tenda su terreno roccioso o su neve/nevaio residuo, incluse tecniche di ancoraggio alternative ai picchetti classici, e crea la pagina cheatsheet/tenda/ancoraggio-terreno-roccioso-neve.md
+12. Cerca online quali distanze minime di rispetto tenere da sentieri, rifugi e altre persone quando si bivacca, secondo le convenzioni non scritte e le eventuali regole locali, e crea la pagina cheatsheet/tenda/distanze-rispetto-bivacco.md
+
+## Montaggio e uso
+ 
+13. Cerca online la sequenza corretta di montaggio di una tenda con vento forte per evitare danni al telo o alla struttura, e crea la pagina cheatsheet/tenda/montaggio-vento-forte.md
+14. Cerca online tecniche corrette di piantaggio dei picchetti su terreni diversi (terra soffice, roccia, neve) e quali picchetti usare per ciascun caso, e crea la pagina cheatsheet/tenda/tecniche-piantaggio-picchetti.md
+15. Cerca online come gestire condensa interna nella tenda durante notti fredde o umide e come ridurla con ventilazione corretta, e crea la pagina cheatsheet/tenda/gestione-condensa.md
+
+## Manutenzione tenda
+ 
+16. Cerca online come pulire e asciugare correttamente una tenda dopo l'uso prima di riporla, per evitare muffa e degrado del telo, e crea la pagina cheatsheet/tenda/pulizia-asciugatura-post-uso.md
+17. Cerca online come ri-impermeabilizzare il telo esterno di una tenda quando la colonna d'acqua si degrada nel tempo, e crea la pagina cheatsheet/tenda/riimpermeabilizzazione-telo.md
+18. Cerca online come sigillare o riparare le cuciture (seam sealing) di una tenda e quando è necessario farlo, e crea la pagina cheatsheet/tenda/sigillatura-cuciture.md
+19. Cerca online come riparare uno strappo nel telo di una tenda sul campo con materiali portatili (tape, kit riparazione), e crea la pagina cheatsheet/tenda/riparazione-strappi-campo.md
+20. Cerca online come conservare correttamente una tenda durante i mesi di non utilizzo (sfusa vs compressa, umidità, luce), e crea la pagina cheatsheet/tenda/conservazione-lungo-termine.md
+21. Cerca online come mantenere in buono stato i bastoni (pali) di una tenda in alluminio o fibra di carbonio, incluse tecniche di riparazione con manicotto in caso di rottura sul campo, e crea la pagina cheatsheet/tenda/manutenzione-riparazione-bastoni.md
+
+## Sacchi a pelo
+ 
+22. Cerca online come lavare correttamente un sacco a pelo in piuma senza comprometterne il potere isolante, e crea la pagina cheatsheet/sacchi-a-pelo/lavaggio-piuma.md
+23. Cerca online come lavare correttamente un sacco a pelo sintetico e le differenze rispetto al lavaggio della piuma, e crea la pagina cheatsheet/sacchi-a-pelo/lavaggio-sintetico.md
+24. Cerca online come conservare correttamente un sacco a pelo tra un utilizzo e l'altro per non comprometterne l'isolamento (sfuso vs compresso), e crea la pagina cheatsheet/sacchi-a-pelo/conservazione-corretta.md
+25. Cerca online come valutare e mantenere il fill power di un sacco a pelo in piuma nel tempo, e crea la pagina cheatsheet/sacchi-a-pelo/fill-power-mantenimento.md
+26. Cerca online come gestire un sacco a pelo bagnato o umido durante un bivacco di più giorni (asciugatura sul campo, tecniche pratiche), e crea la pagina cheatsheet/sacchi-a-pelo/gestione-umidita-campo.md
+27. Cerca online quali accessori aiutano a estendere la vita e le prestazioni di un sacco a pelo (liner, sacco compressione, trattamenti idrorepellenti per la piuma), e crea la pagina cheatsheet/sacchi-a-pelo/accessori-utili.md
+28. Cerca online come scegliere la taglia corretta di un sacco a pelo in base all'altezza e alla corporatura, e l'effetto della taglia sull'isolamento reale, e crea la pagina cheatsheet/sacchi-a-pelo/scelta-taglia-corretta.md
+29. Cerca online come abbinare correttamente sacco a pelo e materassino per massimizzare l'isolamento dal freddo da terra, e crea la pagina cheatsheet/sacchi-a-pelo/abbinamento-materassino.md

@@ -1,5 +1,17 @@
 [
   {
+    "id": "copertina",
+    "title": "Copertina",
+    "category": "Guida",
+    "file": "content/copertina.html"
+  },
+  {
+    "id": "indice",
+    "title": "Indice",
+    "category": "Guida",
+    "file": "content/indice.html"
+  },
+  {
     "id": "bivacco-lombardia",
     "title": "Bivacco e campeggio libero in Lombardia",
     "category": "Normativa",
