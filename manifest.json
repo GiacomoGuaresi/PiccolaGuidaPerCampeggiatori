@@ -40,5 +40,11 @@
     "title": "Bivacco nel canton Ticino",
     "category": "Normativa",
     "file": "content/normativa/bivacco-ticino.html"
+  },
+  {
+    "id": "bivacco-grigioni",
+    "title": "Bivacco nel canton Grigioni",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-grigioni.html"
   }
 ]
