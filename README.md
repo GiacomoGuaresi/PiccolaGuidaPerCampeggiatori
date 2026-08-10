@@ -2,8 +2,10 @@
 
 Piccola webapp statica per raccogliere cheatsheet tascabili (montagna,
 trekking, sopravvivenza, meteo, ...). Ogni scheda è pensata per stare su
-un cartoncino formato **A6** (105 × 148 mm), consultabile online e
-esportabile in PDF — sia singolarmente sia tutte insieme.
+un cartoncino formato **A5** (148 × 210 mm), consultabile online e
+esportabile in PDF — sia singolarmente sia tutte insieme. Le schede sono
+pensate per essere stampate: i link vanno scritti per esteso (URL come
+testo), non solo come testo cliccabile.
 
 Nessun framework, nessuna build: solo HTML/CSS/JS statico, adatto a
 GitHub Pages.
@@ -13,7 +15,7 @@ GitHub Pages.
 ```
 index.html              shell dell'app (sidebar + area scheda)
 manifest.json           elenco delle schede pubblicate
-assets/css/style.css    palette e layout, incluse le regole di stampa A6
+assets/css/style.css    palette e layout, incluse le regole di stampa A5
 assets/js/app.js        carica il manifest, mostra le schede, gestisce l'export
 content/                un file .html per ogni scheda (solo frammento, no <html>/<body>)
 content/_template.html  traccia di partenza per una nuova scheda (non va in manifest.json)
@@ -24,8 +26,9 @@ content/_template.html  traccia di partenza per una nuova scheda (non va in mani
 1. Copia `content/_template.html` in `content/<categoria>/<slug>.html`
    (o direttamente in `content/`, i sottocartelle sono solo per ordine).
 2. Scrivi il contenuto: è un frammento HTML, verrà iniettato dentro un
-   contenitore già dimensionato A6 (`.a6-page`). Ci sono classi pronte
-   per titoli (`h2`, `h3`) e tag (`<span class="tag">...</span>`).
+   contenitore già dimensionato A5 (`.a5-page`). Ci sono classi pronte
+   per titoli (`h2`, `h3`), tag (`<span class="tag">...</span>`) e fonti
+   (`<p class="sources">...</p>`, link scritti per esteso per la stampa).
 3. Aggiungi una riga in `manifest.json`:
 
    ```json
@@ -66,8 +69,8 @@ Poi apri `http://localhost:8000`.
 - **Tutte le schede**: premi "Esporta tutte le schede (PDF)" nel footer;
   ogni scheda finisce su una pagina separata.
 
-Le regole `@page { size: 105mm 148mm; }` in `style.css` impostano già il
-formato A6. Chrome/Edge rispettano la dimensione custom automaticamente;
+Le regole `@page { size: 148mm 210mm; }` in `style.css` impostano già il
+formato A5. Chrome/Edge rispettano la dimensione custom automaticamente;
 Firefox potrebbe richiedere di selezionare "Dimensioni carta gestite
 dal sito" nel pannello di stampa.
 

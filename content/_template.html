@@ -2,12 +2,18 @@
   Template di riferimento per una nuova scheda.
   Questo file NON va inserito in manifest.json: copialo, rinominalo
   e usalo come punto di partenza per una scheda vera.
-  Il frammento viene iniettato dentro un contenitore .a6-page (105x148mm),
+  Il frammento viene iniettato dentro un contenitore .a5-page (148x210mm),
   quindi qui dentro basta il contenuto: niente <html>/<head>/<body>.
+  Le schede sono pensate per essere stampate: i link vanno scritti per
+  esteso (testo = URL), non solo come testo cliccabile, altrimenti su
+  carta sono inutilizzabili.
 -->
 <h2>Titolo scheda</h2>
 <span class="tag">categoria</span>
-<span class="tag">tag</span>
+<span class="tag">agg. AAAA-MM-GG</span>
 
-<h3>Sottotitolo</h3>
+<h3>Sintesi</h3>
 <p>Testo della scheda...</p>
+
+<h3>Fonti</h3>
+<p class="sources"><a href="https://esempio.it/pagina">https://esempio.it/pagina</a></p>

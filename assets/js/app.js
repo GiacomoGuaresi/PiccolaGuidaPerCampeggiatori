@@ -11,7 +11,7 @@ const els = {
   sidebar: document.getElementById("sidebar"),
   emptyState: document.getElementById("empty-state"),
   cardPreview: document.getElementById("card-preview"),
-  a6Single: document.getElementById("a6-single"),
+  a5Single: document.getElementById("a5-single"),
   btnExportSingle: document.getElementById("btn-export-single"),
   btnExportAll: document.getElementById("btn-export-all"),
   printArea: document.getElementById("print-area"),
@@ -112,7 +112,7 @@ async function selectCard(entry, linkEl) {
     .forEach((a) => a.classList.remove("active"));
   linkEl.classList.add("active");
 
-  els.a6Single.innerHTML = html;
+  els.a5Single.innerHTML = html;
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
 }
@@ -130,7 +130,7 @@ async function fetchFragment(path) {
 
 function exportCurrentCard() {
   if (!state.current) return;
-  els.printArea.innerHTML = `<div class="a6-page">${els.a6Single.innerHTML}</div>`;
+  els.printArea.innerHTML = `<div class="a5-page">${els.a5Single.innerHTML}</div>`;
   window.print();
 }
 
@@ -143,7 +143,7 @@ async function exportAllCards() {
 
   els.printArea.innerHTML = fragments
     .filter((html) => html !== null)
-    .map((html) => `<div class="a6-page">${html}</div>`)
+    .map((html) => `<div class="a5-page">${html}</div>`)
     .join("");
 
   window.print();

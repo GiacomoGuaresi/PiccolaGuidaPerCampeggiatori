@@ -14,8 +14,8 @@
   --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  --a6-width: 105mm;
-  --a6-height: 148mm;
+  --a5-width: 148mm;
+  --a5-height: 210mm;
 }
 
 * {
@@ -187,41 +187,51 @@ button:disabled {
   gap: 0.6rem;
 }
 
-/* ---------------------------------- Scheda A6 ---------------------------------- */
+/* ---------------------------------- Scheda A5 ---------------------------------- */
 
-.a6-page {
-  width: var(--a6-width);
-  height: var(--a6-height);
-  padding: 6mm;
+.a5-page {
+  width: var(--a5-width);
+  height: var(--a5-height);
+  padding: 8mm;
   background: var(--color-white);
   color: var(--color-black);
   border: 1px solid var(--color-tan);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   overflow: hidden;
-  font-size: 9pt;
-  line-height: 1.35;
+  font-size: 10pt;
+  line-height: 1.4;
 }
 
-.a6-page h2 {
-  font-size: 12pt;
+.a5-page h2 {
+  font-size: 14pt;
   color: var(--color-dark-green);
   border-bottom: 1.5pt solid var(--color-tan);
   padding-bottom: 0.2em;
 }
 
-.a6-page h3 {
-  font-size: 10pt;
+.a5-page h3 {
+  font-size: 11pt;
   color: var(--color-dark-green-2);
 }
 
-.a6-page .tag {
+.a5-page .tag {
   display: inline-block;
   background: var(--color-tan-light);
   color: var(--color-dark-green);
   border-radius: 3px;
   padding: 0.1em 0.5em;
-  font-size: 7.5pt;
+  font-size: 8pt;
   margin: 0 0.3em 0.3em 0;
+}
+
+.a5-page .sources {
+  font-size: 8pt;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.a5-page .sources a {
+  color: var(--color-dark-green-2);
 }
 
 /* ---------------------------------- Footer ---------------------------------- */
@@ -240,7 +250,7 @@ button:disabled {
 }
 
 @page {
-  size: 105mm 148mm;
+  size: 148mm 210mm;
   margin: 0;
 }
 
@@ -253,15 +263,15 @@ button:disabled {
     display: block;
   }
 
-  #print-area .a6-page {
+  #print-area .a5-page {
     box-shadow: none;
     border: none;
     page-break-after: always;
-    width: var(--a6-width);
-    height: var(--a6-height);
+    width: var(--a5-width);
+    height: var(--a5-height);
   }
 
-  #print-area .a6-page:last-child {
+  #print-area .a5-page:last-child {
     page-break-after: auto;
   }
 }
