@@ -10,5 +10,11 @@
     "title": "Bivacco e campeggio libero in Piemonte",
     "category": "Normativa",
     "file": "content/normativa/bivacco-piemonte.html"
+  },
+  {
+    "id": "bivacco-valle-aosta",
+    "title": "Bivacco e campeggio libero in Valle d'Aosta",
+    "category": "Normativa",
+    "file": "content/normativa/bivacco-valle-aosta.html"
   }
 ]
