@@ -142,5 +142,17 @@
     "title": "Evitare conche e accumuli di aria fredda per la tenda",
     "category": "Tenda",
     "file": "content/tenda/evitare-conche-aria-fredda.html"
+  },
+  {
+    "id": "ancoraggio-terreno-roccioso-neve",
+    "title": "Montare la tenda su roccia o neve: ancoraggi alternativi",
+    "category": "Tenda",
+    "file": "content/tenda/ancoraggio-terreno-roccioso-neve.html"
+  },
+  {
+    "id": "distanze-rispetto-bivacco",
+    "title": "Distanze di rispetto in bivacco: sentieri, rifugi, altre persone",
+    "category": "Tenda",
+    "file": "content/tenda/distanze-rispetto-bivacco.html"
   }
 ]

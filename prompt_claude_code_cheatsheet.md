@@ -2,8 +2,6 @@
 
 ## Tenda
  
-- Cerca online buone pratiche per montare la tenda su terreno roccioso o su neve/nevaio residuo, incluse tecniche di ancoraggio alternative ai picchetti classici, e crea la pagina ancoraggio-terreno-roccioso-neve
-- Cerca online quali distanze minime di rispetto tenere da sentieri, rifugi e altre persone quando si bivacca, secondo le convenzioni non scritte e le eventuali regole locali, e crea la pagina distanze-rispetto-bivacco
 - Cerca online la sequenza corretta di montaggio di una tenda con vento forte per evitare danni al telo o alla struttura, e crea la pagina montaggio-vento-forte
 - Cerca online tecniche corrette di piantaggio dei picchetti su terreni diversi (terra soffice, roccia, neve) e quali picchetti usare per ciascun caso, e crea la pagina tecniche-piantaggio-picchetti
 - Cerca online come gestire condensa interna nella tenda durante notti fredde o umide e come ridurla con ventilazione corretta, e crea la pagina gestione-condensa
