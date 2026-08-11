@@ -30,6 +30,7 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   background: var(--color-parchment);
@@ -86,7 +87,7 @@ button:disabled {
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .app-header {
@@ -146,10 +147,14 @@ button:disabled {
 }
 
 .sidebar .category {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.sidebar .category h2 {
+.sidebar .category summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -157,6 +162,21 @@ button:disabled {
   color: var(--color-moss);
   border-bottom: 1px dashed var(--color-bark);
   padding-bottom: 0.35em;
+  list-style: none;
+}
+
+.sidebar .category summary::-webkit-details-marker {
+  display: none;
+}
+
+.sidebar .category summary::after {
+  content: "\25BE";
+  color: var(--color-bark);
+  transition: transform 0.15s ease;
+}
+
+.sidebar .category:not([open]) summary::after {
+  transform: rotate(-90deg);
 }
 
 .sidebar .card-list {

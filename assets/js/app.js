@@ -54,12 +54,16 @@ function renderSidebar(manifest) {
   const byCategory = groupByCategory(manifest);
 
   for (const category of sortCategories(Object.keys(byCategory))) {
-    const section = document.createElement("div");
+    const section = document.createElement("details");
     section.className = "category";
+    section.open = !isCategoryCollapsed(category);
+    section.addEventListener("toggle", () => {
+      setCategoryCollapsed(category, !section.open);
+    });
 
-    const h2 = document.createElement("h2");
-    h2.textContent = category;
-    section.appendChild(h2);
+    const summary = document.createElement("summary");
+    summary.textContent = category;
+    section.appendChild(summary);
 
     const list = document.createElement("ul");
     list.className = "card-list";
@@ -81,6 +85,30 @@ function renderSidebar(manifest) {
     section.appendChild(list);
     els.sidebar.appendChild(section);
   }
+}
+
+const COLLAPSED_CATEGORIES_KEY = "collapsedCategories";
+
+function getCollapsedCategories() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(COLLAPSED_CATEGORIES_KEY)) || []);
+  } catch {
+    return new Set();
+  }
+}
+
+function isCategoryCollapsed(category) {
+  return getCollapsedCategories().has(category);
+}
+
+function setCategoryCollapsed(category, collapsed) {
+  const collapsedSet = getCollapsedCategories();
+  if (collapsed) {
+    collapsedSet.add(category);
+  } else {
+    collapsedSet.delete(category);
+  }
+  localStorage.setItem(COLLAPSED_CATEGORIES_KEY, JSON.stringify([...collapsedSet]));
 }
 
 function groupByCategory(manifest) {
