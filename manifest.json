@@ -328,5 +328,17 @@
     "title": "Metodi di trattamento dell'acqua in montagna: confronto",
     "category": "Acqua",
     "file": "content/acqua/metodi-trattamento-acqua.html"
+  },
+  {
+    "id": "quando-trattare-acqua-quota",
+    "title": "Quando trattare davvero l'acqua raccolta in quota",
+    "category": "Acqua",
+    "file": "content/acqua/quando-trattare-acqua-quota.html"
+  },
+  {
+    "id": "tipi-fornelli-confronto",
+    "title": "Fornelli da trekking: gas, multifuel o alcool",
+    "category": "Cibo e fornelli",
+    "file": "content/cibo-fornelli/tipi-fornelli-confronto.html"
   }
 ]

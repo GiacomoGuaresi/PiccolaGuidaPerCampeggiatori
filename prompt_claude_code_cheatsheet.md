@@ -1,12 +1,7 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Acqua
-
-- Cerca online quando è realmente necessario trattare l'acqua raccolta in alta quota e quando si può bere direttamente da una fonte, e crea la pagina quando-trattare-acqua-quota
-
 ## Cibo e fornelli
 
-- Cerca online il confronto tra fornelli da trekking a gas, multifuel e ad alcool, con pro e contro per uso in quota, e crea la pagina tipi-fornelli-confronto
 - Cerca online come si comportano i fornelli a gas a basse temperature e come mitigare il problema (es. gas invernale, tecniche di preriscaldo), e crea la pagina fornelli-gas-basse-temperature
 - Cerca online il confronto tra cibo liofilizzato e cibo autoprodotto/disidratato in casa per il trekking, con pro e contro, e crea la pagina liofilizzato-vs-autoprodotto
 - Cerca online le buone pratiche per la gestione dei rifiuti alimentari durante un bivacco, e crea la pagina gestione-rifiuti-alimentari

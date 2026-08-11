@@ -23,6 +23,7 @@
 
   --a5-width: 148mm;
   --a5-height: 210mm;
+  --a5-binder-margin: 16mm;
 }
 
 * {
@@ -274,7 +275,7 @@ button:disabled {
   position: relative;
   width: var(--a5-width);
   height: var(--a5-height);
-  padding: 9mm 8mm;
+  padding: 9mm 8mm 9mm var(--a5-binder-margin);
   background: var(--color-paper);
   color: var(--color-ink);
   border: 1.5px solid var(--color-bark);
@@ -285,7 +286,6 @@ button:disabled {
   font-family: var(--font-body);
 }
 
-.a5-page::before,
 .a5-page::after {
   content: "";
   position: absolute;
@@ -294,15 +294,6 @@ button:disabled {
   border-color: var(--color-clay);
   border-style: solid;
   opacity: 0.85;
-}
-
-.a5-page::before {
-  top: 3mm;
-  left: 3mm;
-  border-width: 1.5pt 0 0 1.5pt;
-}
-
-.a5-page::after {
   bottom: 3mm;
   right: 3mm;
   border-width: 0 1.5pt 1.5pt 0;
