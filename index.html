@@ -39,8 +39,32 @@
     </div>
 
     <footer class="app-footer">
+      <button id="btn-open-update" class="secondary">Aggiornamento stampa</button>
       <button id="btn-export-all" class="secondary">Esporta tutte le schede (PDF)</button>
     </footer>
+  </div>
+
+  <div id="update-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button id="btn-close-update" class="modal-close" aria-label="Chiudi">&times;</button>
+      <h2>Aggiornamento stampa</h2>
+      <p class="modal-hint">
+        Inserisci la data dell'ultima versione che hai stampato (la trovi
+        sulla pagina "Versione stampata" inclusa nel tuo ultimo
+        aggiornamento). Il sito controlla quali schede sono nuove o
+        cambiate da allora.
+      </p>
+      <label for="last-printed-date">Ultima versione stampata</label>
+      <input type="date" id="last-printed-date" />
+      <button id="btn-check-updates">Verifica aggiornamenti</button>
+
+      <div id="update-results" class="update-results" hidden>
+        <p id="update-summary"></p>
+        <div id="update-list"></div>
+        <button id="btn-export-update" class="secondary">Esporta aggiornamento (PDF)</button>
+      </div>
+    </div>
   </div>
 
   <div id="print-area"></div>

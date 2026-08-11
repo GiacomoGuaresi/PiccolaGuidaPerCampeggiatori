@@ -400,5 +400,17 @@
     "title": "Riconoscere colpo di calore e disidratazione in quota",
     "category": "Sicurezza e primo soccorso",
     "file": "content/sicurezza/colpo-di-calore-disidratazione.html"
+  },
+  {
+    "id": "comportamento-vipere",
+    "title": "Incontro con vipere: comportamento e primo soccorso",
+    "category": "Fauna",
+    "file": "content/fauna/comportamento-vipere.html"
+  },
+  {
+    "id": "comportamento-cinghiali",
+    "title": "Incontro con cinghiali: come comportarsi",
+    "category": "Fauna",
+    "file": "content/fauna/comportamento-cinghiali.html"
   }
 ]

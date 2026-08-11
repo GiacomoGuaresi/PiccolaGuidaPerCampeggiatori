@@ -514,6 +514,132 @@ button:disabled {
   text-align: right;
 }
 
+/* ---------------------------------- Modal: aggiornamento stampa ---------------------------------- */
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 26, 21, 0.55);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 92vw);
+  max-height: 86vh;
+  overflow-y: auto;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-bark);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  padding: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  background: transparent;
+  border: none;
+  color: var(--color-stone);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.2em 0.4em;
+}
+
+.modal-close:hover {
+  color: var(--color-clay);
+  background: transparent;
+}
+
+.modal-dialog h2 {
+  margin-bottom: 0.3em;
+}
+
+.modal-hint {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  margin: 0 0 1em;
+}
+
+.modal-dialog label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-moss);
+  margin-bottom: 0.3em;
+}
+
+.modal-dialog input[type="date"] {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.4em 0.6em;
+  border: 1.5px solid var(--color-bark);
+  border-radius: 2px;
+  margin-right: 0.6em;
+  margin-bottom: 0.8em;
+}
+
+.update-results {
+  margin-top: 1.2rem;
+  border-top: 1px dashed var(--color-bark);
+  padding-top: 1rem;
+}
+
+.update-results[hidden] {
+  display: none;
+}
+
+#update-summary {
+  font-weight: 600;
+  margin: 0 0 0.6em;
+}
+
+#update-list h3 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-moss);
+  margin: 0.8em 0 0.2em;
+}
+
+#update-list ul {
+  margin: 0 0 0.4em;
+  padding-left: 1.1em;
+  font-size: 0.88rem;
+}
+
+#update-list li {
+  margin-bottom: 0.2em;
+}
+
+#btn-export-update {
+  margin-top: 1rem;
+}
+
+.a5-page .update-date {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  color: var(--color-stone);
+}
+
 /* ---------------------------------- Stampa / export PDF ---------------------------------- */
 
 #print-area {
@@ -533,6 +659,10 @@ button:disabled {
 
   #app {
     display: none;
+  }
+
+  .modal {
+    display: none !important;
   }
 
   #print-area {
