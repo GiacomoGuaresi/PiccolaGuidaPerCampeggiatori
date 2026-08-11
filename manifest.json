@@ -352,5 +352,17 @@
     "title": "Cibo liofilizzato vs disidratato autoprodotto",
     "category": "Cibo e fornelli",
     "file": "content/cibo-fornelli/liofilizzato-vs-autoprodotto.html"
+  },
+  {
+    "id": "gestione-rifiuti-alimentari",
+    "title": "Gestione dei rifiuti alimentari in bivacco",
+    "category": "Cibo e fornelli",
+    "file": "content/cibo-fornelli/gestione-rifiuti-alimentari.html"
+  },
+  {
+    "id": "kit-primo-soccorso-minimo",
+    "title": "Kit di primo soccorso minimo per trekking/bivacco",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/kit-primo-soccorso-minimo.html"
   }
 ]

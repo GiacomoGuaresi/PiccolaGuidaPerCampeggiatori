@@ -1,12 +1,7 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Cibo e fornelli
-
-- Cerca online le buone pratiche per la gestione dei rifiuti alimentari durante un bivacco, e crea la pagina gestione-rifiuti-alimentari
-
 ## Sicurezza e primo soccorso
 
-- Cerca online la composizione di un kit di primo soccorso minimo adatto al trekking e bivacco, e crea la pagina kit-primo-soccorso-minimo
 - Cerca online quando è consigliato portare un PLB o un localizzatore satellitare in montagna e come funzionano, e crea la pagina plb-localizzatori-satellitari
 - Cerca online i numeri di emergenza corretti da usare in montagna in Italia e in Svizzera e le differenze tra loro, e crea la pagina numeri-emergenza-italia-svizzera
 - Cerca online le tecniche base di autosoccorso in caso di infortunio lieve durante un'escursione o bivacco, e crea la pagina autosoccorso-base
