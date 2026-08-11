@@ -2,8 +2,6 @@
 
 ## Etica / Leave No Trace
 
-- Cerca online le buone pratiche per la gestione delle deiezioni umane in alta quota durante bivacco/trekking, e crea la pagina gestione-deiezioni-quota
-- Cerca online le linee guida generali "leave no trace" per la gestione dei rifiuti durante trekking e bivacco, e crea la pagina gestione-rifiuti-leave-no-trace
 - Cerca online le buone pratiche di rispetto verso pascoli e bestiame al pascolo durante escursioni e bivacco, e crea la pagina rispetto-pascoli-bestiame
 - Cerca online la distanza minima consigliata da corsi d'acqua per bivacco e per attività igieniche (lavarsi, deiezioni), e crea la pagina distanza-corsi-acqua
 

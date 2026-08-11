@@ -94,5 +94,17 @@
     "title": "Bollettino nivometeorologico: cos'è e quando serve",
     "category": "Meteo",
     "file": "content/meteo/bollettino-nivometeorologico.html"
+  },
+  {
+    "id": "gestione-deiezioni-quota",
+    "title": "Gestione delle deiezioni umane in alta quota",
+    "category": "Etica",
+    "file": "content/etica/gestione-deiezioni-quota.html"
+  },
+  {
+    "id": "gestione-rifiuti-leave-no-trace",
+    "title": "Leave No Trace: gestione rifiuti in trekking e bivacco",
+    "category": "Etica",
+    "file": "content/etica/gestione-rifiuti-leave-no-trace.html"
   }
 ]
