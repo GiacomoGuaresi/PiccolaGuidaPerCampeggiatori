@@ -1,10 +1,5 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Etica / Leave No Trace
-
-- Cerca online le buone pratiche di rispetto verso pascoli e bestiame al pascolo durante escursioni e bivacco, e crea la pagina rispetto-pascoli-bestiame
-- Cerca online la distanza minima consigliata da corsi d'acqua per bivacco e per attività igieniche (lavarsi, deiezioni), e crea la pagina distanza-corsi-acqua
-
 ## Tenda
  
 - Cerca online i criteri per scegliere un buon sito dove montare la tenda in bivacco (drenaggio, esposizione al vento, distanza da corsi d'acqua, pendenza), e crea la pagina criteri-scelta-sito

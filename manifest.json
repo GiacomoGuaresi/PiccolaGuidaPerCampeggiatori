@@ -106,5 +106,17 @@
     "title": "Leave No Trace: gestione rifiuti in trekking e bivacco",
     "category": "Etica",
     "file": "content/etica/gestione-rifiuti-leave-no-trace.html"
+  },
+  {
+    "id": "rispetto-pascoli-bestiame",
+    "title": "Rispetto verso pascoli e bestiame al pascolo",
+    "category": "Etica",
+    "file": "content/etica/rispetto-pascoli-bestiame.html"
+  },
+  {
+    "id": "distanza-corsi-acqua",
+    "title": "Distanza minima da corsi d'acqua per bivacco e igiene",
+    "category": "Etica",
+    "file": "content/etica/distanza-corsi-acqua.html"
   }
 ]
