@@ -178,5 +178,17 @@
     "title": "Pulire e asciugare la tenda dopo l'uso",
     "category": "Tenda",
     "file": "content/tenda/pulizia-asciugatura-post-uso.html"
+  },
+  {
+    "id": "riimpermeabilizzazione-telo",
+    "title": "Ri-impermeabilizzare il telo esterno della tenda",
+    "category": "Tenda",
+    "file": "content/tenda/riimpermeabilizzazione-telo.html"
+  },
+  {
+    "id": "sigillatura-cuciture",
+    "title": "Sigillare e riparare le cuciture della tenda (seam sealing)",
+    "category": "Tenda",
+    "file": "content/tenda/sigillatura-cuciture.html"
   }
 ]

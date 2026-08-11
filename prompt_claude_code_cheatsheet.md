@@ -2,8 +2,6 @@
 
 ## Tenda
  
-- Cerca online come ri-impermeabilizzare il telo esterno di una tenda quando la colonna d'acqua si degrada nel tempo, e crea la pagina riimpermeabilizzazione-telo
-- Cerca online come sigillare o riparare le cuciture (seam sealing) di una tenda e quando è necessario farlo, e crea la pagina sigillatura-cuciture
 - Cerca online come riparare uno strappo nel telo di una tenda sul campo con materiali portatili (tape, kit riparazione), e crea la pagina riparazione-strappi-campo
 - Cerca online come conservare correttamente una tenda durante i mesi di non utilizzo (sfusa vs compressa, umidità, luce), e crea la pagina conservazione-lungo-termine
 - Cerca online come mantenere in buono stato i bastoni (pali) di una tenda in alluminio o fibra di carbonio, incluse tecniche di riparazione con manicotto in caso di rottura sul campo, e crea la pagina manutenzione-riparazione-bastoni
