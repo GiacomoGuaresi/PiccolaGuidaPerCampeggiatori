@@ -6,14 +6,26 @@ const state = {
   manifest: [],
   current: null,
   pendingUpdate: null,
+  zoom: 1,
 };
 
+const searchIndex = new Map();
+
 const els = {
-  sidebar: document.getElementById("sidebar"),
+  appRoot: document.getElementById("app"),
+  sidebarToggle: document.getElementById("btn-toggle-sidebar"),
+  sidebarBackdrop: document.getElementById("sidebar-backdrop"),
+  sidebarList: document.getElementById("sidebar-list"),
+  searchInput: document.getElementById("search-input"),
   emptyState: document.getElementById("empty-state"),
+  content: document.querySelector(".content"),
   cardPreview: document.getElementById("card-preview"),
+  cardToolbar: document.getElementById("card-toolbar"),
   a5Single: document.getElementById("a5-single"),
   sourcesPanel: document.getElementById("sources-panel"),
+  btnZoomOut: document.getElementById("btn-zoom-out"),
+  btnZoomIn: document.getElementById("btn-zoom-in"),
+  btnZoomReset: document.getElementById("btn-zoom-reset"),
   btnExportSingle: document.getElementById("btn-export-single"),
   btnExportAll: document.getElementById("btn-export-all"),
   printArea: document.getElementById("print-area"),
@@ -38,11 +50,73 @@ async function init() {
   els.btnExportSingle.addEventListener("click", exportCurrentCard);
   els.btnExportAll.addEventListener("click", exportAllCards);
 
+  els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
+  els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
+  els.btnZoomReset.addEventListener("click", () => setZoom(1));
+  setZoom(loadZoom());
+
+  els.sidebarToggle.addEventListener("click", toggleSidebar);
+  els.sidebarBackdrop.addEventListener("click", closeSidebar);
+  MOBILE_QUERY.addEventListener("change", (e) => {
+    if (!e.matches) closeSidebar();
+  });
+
   els.btnOpenUpdate.addEventListener("click", openUpdateModal);
   els.btnCloseUpdate.addEventListener("click", closeUpdateModal);
   els.updateModal.querySelector(".modal-backdrop").addEventListener("click", closeUpdateModal);
   els.btnCheckUpdates.addEventListener("click", checkUpdates);
   els.btnExportUpdate.addEventListener("click", exportUpdate);
+
+  els.searchInput.addEventListener("input", () => {
+    renderSidebar(state.manifest, els.searchInput.value);
+  });
+  buildSearchIndex(state.manifest).then(() => {
+    els.searchInput.disabled = false;
+    els.searchInput.placeholder = "Cerca scheda...";
+  });
+
+  await selectDefaultCard();
+}
+
+async function buildSearchIndex(manifest) {
+  await Promise.all(
+    manifest.map(async (entry) => {
+      const html = await fetchFragment(entry.file);
+      if (html === null) return;
+      const text = htmlToText(html);
+      searchIndex.set(entry.id, normalizeSearchText(`${entry.title} ${entry.category} ${text}`));
+    })
+  );
+}
+
+function htmlToText(html) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || "";
+}
+
+function normalizeSearchText(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function filterManifest(manifest, query) {
+  const q = normalizeSearchText(query.trim());
+  if (!q) return manifest;
+  return manifest.filter((entry) => {
+    const indexed = searchIndex.get(entry.id);
+    const text = indexed || normalizeSearchText(`${entry.title} ${entry.category}`);
+    return text.includes(q);
+  });
+}
+
+async function selectDefaultCard() {
+  const entry = state.manifest.find((e) => e.id === "copertina");
+  const linkEl = entry && els.sidebarList.querySelector(`a[data-id="${entry.id}"]`);
+  if (!entry || !linkEl) return;
+  await selectCard(entry, linkEl);
 }
 
 async function loadManifest() {
@@ -56,26 +130,48 @@ async function loadManifest() {
   }
 }
 
-function renderSidebar(manifest) {
-  els.sidebar.innerHTML = "";
+function renderSidebar(manifest, query = "") {
+  els.sidebarList.innerHTML = "";
 
   if (manifest.length === 0) {
     const p = document.createElement("p");
     p.className = "empty-manifest";
     p.textContent = "Nessuna scheda ancora presente. Aggiungile in manifest.json.";
-    els.sidebar.appendChild(p);
+    els.sidebarList.appendChild(p);
     return;
   }
 
-  const byCategory = groupByCategory(manifest);
+  const searching = query.trim() !== "";
+  const filtered = filterManifest(manifest, query);
+
+  if (filtered.length === 0) {
+    const p = document.createElement("p");
+    p.className = "empty-manifest";
+    p.textContent = "Nessuna scheda trovata.";
+    els.sidebarList.appendChild(p);
+    return;
+  }
+
+  const byCategory = groupByCategory(filtered);
+  const openCategory = getOpenCategory();
+  const sections = [];
 
   for (const category of sortCategories(Object.keys(byCategory))) {
     const section = document.createElement("details");
     section.className = "category";
-    section.open = !isCategoryCollapsed(category);
-    section.addEventListener("toggle", () => {
-      setCategoryCollapsed(category, !section.open);
-    });
+    section.open = searching ? true : category === openCategory;
+    if (!searching) {
+      section.addEventListener("toggle", () => {
+        if (section.open) {
+          sections.forEach((s) => {
+            if (s !== section) s.open = false;
+          });
+          setOpenCategory(category);
+        } else if (getOpenCategory() === category) {
+          setOpenCategory(null);
+        }
+      });
+    }
 
     const summary = document.createElement("summary");
     summary.textContent = category;
@@ -90,6 +186,7 @@ function renderSidebar(manifest) {
       a.href = "#";
       a.textContent = entry.title;
       a.dataset.id = entry.id;
+      if (state.current && state.current.id === entry.id) a.classList.add("active");
       a.addEventListener("click", (e) => {
         e.preventDefault();
         selectCard(entry, a);
@@ -99,32 +196,23 @@ function renderSidebar(manifest) {
     }
 
     section.appendChild(list);
-    els.sidebar.appendChild(section);
+    els.sidebarList.appendChild(section);
+    sections.push(section);
   }
 }
 
-const COLLAPSED_CATEGORIES_KEY = "collapsedCategories";
+const OPEN_CATEGORY_KEY = "openCategory";
 
-function getCollapsedCategories() {
-  try {
-    return new Set(JSON.parse(localStorage.getItem(COLLAPSED_CATEGORIES_KEY)) || []);
-  } catch {
-    return new Set();
-  }
+function getOpenCategory() {
+  return localStorage.getItem(OPEN_CATEGORY_KEY);
 }
 
-function isCategoryCollapsed(category) {
-  return getCollapsedCategories().has(category);
-}
-
-function setCategoryCollapsed(category, collapsed) {
-  const collapsedSet = getCollapsedCategories();
-  if (collapsed) {
-    collapsedSet.add(category);
+function setOpenCategory(category) {
+  if (category) {
+    localStorage.setItem(OPEN_CATEGORY_KEY, category);
   } else {
-    collapsedSet.delete(category);
+    localStorage.removeItem(OPEN_CATEGORY_KEY);
   }
-  localStorage.setItem(COLLAPSED_CATEGORIES_KEY, JSON.stringify([...collapsedSet]));
 }
 
 function groupByCategory(manifest) {
@@ -146,6 +234,55 @@ function sortCategories(categories) {
   });
 }
 
+/* ---------------------------------- Sidebar mobile ---------------------------------- */
+
+const MOBILE_QUERY = window.matchMedia("(max-width: 780px)");
+
+function toggleSidebar() {
+  setSidebarOpen(!els.appRoot.classList.contains("sidebar-open"));
+}
+
+function setSidebarOpen(open) {
+  els.appRoot.classList.toggle("sidebar-open", open);
+  els.sidebarToggle.setAttribute("aria-expanded", String(open));
+  els.sidebarBackdrop.hidden = !open;
+}
+
+function closeSidebar() {
+  setSidebarOpen(false);
+}
+
+/* ---------------------------------- Zoom preview ---------------------------------- */
+
+const ZOOM_KEY = "previewZoom";
+const ZOOM_STEP = 0.1;
+const ZOOM_MIN = 0.5;
+const ZOOM_MAX = 2;
+
+function loadZoom() {
+  const stored = parseFloat(localStorage.getItem(ZOOM_KEY));
+  return Number.isFinite(stored) ? stored : defaultZoomForViewport();
+}
+
+function defaultZoomForViewport() {
+  const MM_TO_PX = 96 / 25.4;
+  const a5WidthPx = 148 * MM_TO_PX;
+  const style = getComputedStyle(els.content);
+  const padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+  const available = els.content.clientWidth - padding;
+  if (available <= 0) return 1;
+  return Math.min(1, Math.max(ZOOM_MIN, available / a5WidthPx));
+}
+
+function setZoom(value) {
+  state.zoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, value));
+  els.a5Single.style.zoom = state.zoom;
+  els.btnZoomReset.textContent = `${Math.round(state.zoom * 100)}%`;
+  els.btnZoomOut.disabled = state.zoom <= ZOOM_MIN;
+  els.btnZoomIn.disabled = state.zoom >= ZOOM_MAX;
+  localStorage.setItem(ZOOM_KEY, state.zoom);
+}
+
 async function selectCard(entry, linkEl) {
   const html = await fetchFragment(entry.file);
   if (html === null) return;
@@ -161,6 +298,9 @@ async function selectCard(entry, linkEl) {
   extractSources();
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
+  els.cardToolbar.hidden = false;
+
+  if (MOBILE_QUERY.matches) closeSidebar();
 }
 
 function extractSources() {

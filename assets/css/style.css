@@ -130,10 +130,33 @@ button:disabled {
   font-size: 0.82rem;
 }
 
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  z-index: 2;
+  background: transparent;
+  border: 1.5px solid var(--color-parchment-dark);
+  color: var(--color-parchment);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.35em 0.6em;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-backdrop[hidden] {
+  display: none;
+}
+
 .app-body {
   flex: 1;
   display: flex;
   min-height: 0;
+  position: relative;
 }
 
 /* ---------------------------------- Sidebar ---------------------------------- */
@@ -143,8 +166,42 @@ button:disabled {
   flex-shrink: 0;
   background: var(--color-parchment);
   border-right: 2px solid var(--color-bark);
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sidebar-search {
+  padding: 1rem 1rem 0.7rem;
+  border-bottom: 1px dashed var(--color-bark);
+}
+
+.search-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 0.45em 0.6em;
+  border: 1.5px solid var(--color-bark);
+  border-radius: 2px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-clay);
+}
+
+.search-input:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.sidebar-list {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  padding: 1rem;
 }
 
 .sidebar .category {
@@ -214,7 +271,7 @@ button:disabled {
 .content {
   flex: 1;
   padding: 1.5rem;
-  overflow-y: auto;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,13 +295,37 @@ button:disabled {
   display: none;
 }
 
-.card-preview .toolbar {
+.toolbar {
   display: flex;
+  align-items: center;
   gap: 0.6rem;
 }
 
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-right: 0.4rem;
+}
+
+.zoom-btn {
+  padding: 0.4em 0.8em;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.zoom-level {
+  min-width: 3.6em;
+  padding: 0.4em 0.6em;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: none;
+}
+
 .sources-panel {
-  width: var(--a5-width);
+  width: min(100%, var(--a5-width));
   font-family: var(--font-mono);
   font-size: 0.8rem;
   line-height: 1.6;
@@ -511,7 +592,21 @@ button:disabled {
   background: var(--color-parchment);
   border-top: 2px solid var(--color-bark);
   padding: 0.9rem 1.5rem;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.app-footer .toolbar[hidden] {
+  display: none;
+}
+
+.app-footer .footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
 }
 
 /* ---------------------------------- Modal: aggiornamento stampa ---------------------------------- */
@@ -638,6 +733,82 @@ button:disabled {
   font-family: var(--font-mono);
   font-size: 7.5pt;
   color: var(--color-stone);
+}
+
+/* ---------------------------------- Responsive / smartphone ---------------------------------- */
+
+@media (max-width: 780px) {
+  .sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .app-header {
+    padding: 1rem 3.6rem 1.5rem 1.2rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(82vw, 300px);
+    z-index: 60;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.3);
+  }
+
+  #app.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: rgba(27, 26, 21, 0.5);
+  }
+
+  .content {
+    padding: 1.1rem 0.8rem;
+  }
+
+  .app-footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .app-footer .toolbar,
+  .app-footer .footer-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .app-footer .toolbar > button,
+  .app-footer .footer-actions > button {
+    flex: 1 1 auto;
+  }
+
+  .modal-dialog {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-header .subtitle {
+    font-size: 0.74rem;
+  }
+
+  .a5-page .sources {
+    word-break: break-word;
+  }
 }
 
 /* ---------------------------------- Stampa / export PDF ---------------------------------- */

@@ -16,12 +16,34 @@
 <body>
   <div id="app">
     <header class="app-header">
+      <button
+        id="btn-toggle-sidebar"
+        class="sidebar-toggle"
+        type="button"
+        aria-label="Apri elenco schede"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >&#9776;</button>
       <h1>Piccola Guida per Campeggiatori</h1>
       <p class="subtitle">Cheatsheet tascabili su montagna, trekking e vita all'aperto</p>
     </header>
 
     <div class="app-body">
-      <nav id="sidebar" class="sidebar" aria-label="Elenco schede"></nav>
+      <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+
+      <div id="sidebar" class="sidebar">
+        <div class="sidebar-search">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Cerca scheda..."
+            aria-label="Cerca scheda"
+            disabled
+          />
+        </div>
+        <nav id="sidebar-list" class="sidebar-list" aria-label="Elenco schede"></nav>
+      </div>
 
       <main class="content">
         <p id="empty-state" class="empty-state">
@@ -30,17 +52,24 @@
 
         <div id="card-preview" class="card-preview" hidden>
           <div id="a5-single" class="a5-page"></div>
-          <div class="toolbar">
-            <button id="btn-export-single">Esporta questa scheda (PDF)</button>
-          </div>
           <div id="sources-panel" class="sources-panel" hidden></div>
         </div>
       </main>
     </div>
 
     <footer class="app-footer">
-      <button id="btn-open-update" class="secondary">Aggiornamento stampa</button>
-      <button id="btn-export-all" class="secondary">Esporta tutte le schede (PDF)</button>
+      <div id="card-toolbar" class="toolbar" hidden>
+        <div class="zoom-controls" role="group" aria-label="Zoom scheda">
+          <button id="btn-zoom-out" class="secondary zoom-btn" type="button" aria-label="Riduci zoom">&minus;</button>
+          <button id="btn-zoom-reset" class="secondary zoom-level" type="button" aria-label="Reimposta zoom">100%</button>
+          <button id="btn-zoom-in" class="secondary zoom-btn" type="button" aria-label="Aumenta zoom">&plus;</button>
+        </div>
+        <button id="btn-export-single">Esporta questa scheda (PDF)</button>
+      </div>
+      <div class="footer-actions">
+        <button id="btn-open-update" class="secondary">Aggiornamento stampa</button>
+        <button id="btn-export-all" class="secondary">Esporta tutte le schede (PDF)</button>
+      </div>
     </footer>
   </div>
 
