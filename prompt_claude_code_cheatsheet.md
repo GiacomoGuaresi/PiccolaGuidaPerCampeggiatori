@@ -7,7 +7,7 @@
 
 ## Acqua
 
-- Cerca online come trovare fonti d'acqua affidabili in zona Lombardia/Ticino/Grigioni usando mappe e segnaletica locale, e crea la pagina fonti-acqua-affidabili
+- Cerca online quanta acqua portare per persona in base a quanto tempo si resta fuori,in base a dove si deve andare, e in base alle temperature/stagioni e crea la pagina quanta-acqua-portare
 - Cerca online il confronto tra i metodi di trattamento dell'acqua in montagna (filtro, pastiglie, ebollizione) con pro e contro, e crea la pagina metodi-trattamento-acqua
 - Cerca online quando è realmente necessario trattare l'acqua raccolta in alta quota e quando si può bere direttamente da una fonte, e crea la pagina quando-trattare-acqua-quota
 
