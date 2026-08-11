@@ -2,8 +2,6 @@
 
 ## Sacchi a pelo
  
-- Cerca online come lavare correttamente un sacco a pelo sintetico e le differenze rispetto al lavaggio della piuma, e crea la pagina lavaggio-sintetico
-- Cerca online come conservare correttamente un sacco a pelo tra un utilizzo e l'altro per non comprometterne l'isolamento (sfuso vs compresso), e crea la pagina conservazione-corretta
 - Cerca online come valutare e mantenere il fill power di un sacco a pelo in piuma nel tempo, e crea la pagina fill-power-mantenimento
 - Cerca online come gestire un sacco a pelo bagnato o umido durante un bivacco di più giorni (asciugatura sul campo, tecniche pratiche), e crea la pagina gestione-umidita-campo
 - Cerca online quali accessori aiutano a estendere la vita e le prestazioni di un sacco a pelo (liner, sacco compressione, trattamenti idrorepellenti per la piuma), e crea la pagina accessori-utili

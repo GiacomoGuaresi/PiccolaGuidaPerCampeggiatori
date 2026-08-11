@@ -214,5 +214,17 @@
     "title": "Lavare un sacco a pelo in piuma",
     "category": "Sacchi a pelo",
     "file": "content/sacchi-a-pelo/lavaggio-piuma.html"
+  },
+  {
+    "id": "lavaggio-sintetico",
+    "title": "Lavare un sacco a pelo sintetico",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/lavaggio-sintetico.html"
+  },
+  {
+    "id": "conservazione-corretta",
+    "title": "Conservare il sacco a pelo tra un utilizzo e l'altro",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/conservazione-corretta.html"
   }
 ]
