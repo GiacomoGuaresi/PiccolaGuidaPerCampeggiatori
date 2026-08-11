@@ -285,7 +285,8 @@ button:disabled {
   line-height: 1.4;
   font-family: var(--font-body);
 }
-
+/*
+.a5-page::before,
 .a5-page::after {
   content: "";
   position: absolute;
@@ -294,10 +295,20 @@ button:disabled {
   border-color: var(--color-clay);
   border-style: solid;
   opacity: 0.85;
+}
+
+.a5-page::before {
+  top: 3mm;
+  left: calc(var(--a5-binder-margin) - 4mm);
+  border-width: 1.5pt 0 0 1.5pt;
+}
+
+.a5-page::after {
   bottom: 3mm;
   right: 3mm;
   border-width: 0 1.5pt 1.5pt 0;
 }
+*/
 
 .a5-page p {
   margin: 0 0 0.5em;

@@ -2,8 +2,6 @@
 
 ## Cibo e fornelli
 
-- Cerca online come si comportano i fornelli a gas a basse temperature e come mitigare il problema (es. gas invernale, tecniche di preriscaldo), e crea la pagina fornelli-gas-basse-temperature
-- Cerca online il confronto tra cibo liofilizzato e cibo autoprodotto/disidratato in casa per il trekking, con pro e contro, e crea la pagina liofilizzato-vs-autoprodotto
 - Cerca online le buone pratiche per la gestione dei rifiuti alimentari durante un bivacco, e crea la pagina gestione-rifiuti-alimentari
 
 ## Sicurezza e primo soccorso

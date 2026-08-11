@@ -340,5 +340,17 @@
     "title": "Fornelli da trekking: gas, multifuel o alcool",
     "category": "Cibo e fornelli",
     "file": "content/cibo-fornelli/tipi-fornelli-confronto.html"
+  },
+  {
+    "id": "fornelli-gas-basse-temperature",
+    "title": "Fornelli a gas a basse temperature: come gestirli",
+    "category": "Cibo e fornelli",
+    "file": "content/cibo-fornelli/fornelli-gas-basse-temperature.html"
+  },
+  {
+    "id": "liofilizzato-vs-autoprodotto",
+    "title": "Cibo liofilizzato vs disidratato autoprodotto",
+    "category": "Cibo e fornelli",
+    "file": "content/cibo-fornelli/liofilizzato-vs-autoprodotto.html"
   }
 ]
