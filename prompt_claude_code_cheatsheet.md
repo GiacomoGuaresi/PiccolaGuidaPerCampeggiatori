@@ -1,12 +1,7 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Fauna
-
-- Cerca online le buone pratiche per gestire cibo e rifiuti in bivacco per non attirare fauna selvatica, e crea la pagina gestione-cibo-rifiuti-fauna
-
 ## Rifugi e punti di appoggio
 
-- Cerca online come funziona la prenotazione di un rifugio CAI in Italia (canali, tempistiche, regole di cancellazione), e crea la pagina prenotazione-rifugio-cai
 - Cerca online come funziona la prenotazione di un rifugio SAC in Svizzera (canali, tempistiche, regole di cancellazione), e crea la pagina prenotazione-rifugio-sac
 - Cerca online le principali differenze di servizi, costi e gestione tra rifugi CAI e rifugi SAC, e crea la pagina differenze-servizi-cai-sac
 
