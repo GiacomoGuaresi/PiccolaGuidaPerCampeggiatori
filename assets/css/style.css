@@ -8,7 +8,7 @@
 :root {
   --color-ink: #1b1a15;
   --color-forest: #2e3b22;
-  --color-forest-dark: #1c2614;
+  --color-forest-dark: #345238;
   --color-moss: #5a6e42;
   --color-bark: #5b4530;
   --color-clay: #b2502e;
@@ -99,6 +99,7 @@ button:disabled {
     radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.03) 0, transparent 35%);
   color: var(--color-parchment);
   padding: 1.2rem 1.5rem 1.9rem;
+  border-bottom: 2px solid var(--color-bark);
 }
 
 .app-header::after {
@@ -107,11 +108,10 @@ button:disabled {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 8px;
-  background-image:
-    linear-gradient(135deg, var(--color-clay) 25%, transparent 25.5%),
-    linear-gradient(225deg, var(--color-clay) 25%, transparent 25.5%);
-  background-size: 16px 16px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='60' viewBox='0 0 340 60' preserveAspectRatio='none'%3E%3Cpolygon points='46.2,60 84.6,60 71.5,14.3' fill='%23b9c9a4' opacity='0.45'/%3E%3Cpolygon points='195.7,60 222.7,60 204.0,14.6' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='12.9,60 53.8,60 30.4,14.7' fill='%23dbcda3' opacity='0.55'/%3E%3Cpolygon points='346.3,60 377.6,60 357.0,15.2' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='136.5,60 182.2,60 161.4,15.2' fill='%23dbcda3' opacity='0.55'/%3E%3Cpolygon points='273.8,60 292.2,60 282.4,16.2' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='78.5,60 101.2,60 86.1,16.5' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='79.5,60 108.5,60 96.1,18.1' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='226.9,60 256.6,60 244.0,18.2' fill='%23b9c9a4' opacity='0.45'/%3E%3Cpolygon points='0.2,60 24.1,60 15.7,19.2' fill='%23dbcda3' opacity='0.55'/%3E%3Cpolygon points='34.1,60 65.4,60 45.1,19.5' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='207.4,60 239.5,60 216.3,22.1' fill='%23ffffff' opacity='0.9'/%3E%3Cpolygon points='338.2,60 364.8,60 351.8,23.6' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='125.0,60 162.1,60 150.9,24.4' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='16.9,60 40.4,60 32.2,24.4' fill='%23ffffff' opacity='0.7'/%3E%3Cpolygon points='134.5,60 156.7,60 145.3,24.7' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='49.4,60 86.7,60 67.6,25.7' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='331.4,60 352.1,60 341.8,26.8' fill='%23dbcda3' opacity='0.55'/%3E%3Cpolygon points='206.5,60 236.4,60 226.7,27.4' fill='%23dbcda3' opacity='0.75'/%3E%3Cpolygon points='248.5,60 294.3,60 271.2,30.1' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='183.9,60 211.0,60 193.7,30.2' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='344.0,60 382.9,60 358.7,30.7' fill='%23b9c9a4' opacity='0.45'/%3E%3Cpolygon points='35.0,60 78.9,60 58.1,31.5' fill='%23dbcda3' opacity='0.55'/%3E%3Cpolygon points='192.3,60 222.6,60 211.1,33.0' fill='%23ffffff' opacity='0.9'/%3E%3Cpolygon points='129.6,60 171.8,60 152.1,33.3' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='309.5,60 339.0,60 323.5,34.3' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='215.5,60 256.9,60 241.6,35.4' fill='%23dbcda3' opacity='0.75'/%3E%3Cpolygon points='211.7,60 230.7,60 221.2,35.5' fill='%23ffffff' opacity='0.7'/%3E%3Cpolygon points='81.0,60 118.6,60 91.2,36.0' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='104.5,60 136.0,60 125.5,37.5' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='291.3,60 310.8,60 299.0,37.7' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='296.6,60 331.0,60 312.2,37.8' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='166.7,60 195.2,60 186.3,38.1' fill='%23ece3cf' opacity='0.85'/%3E%3Cpolygon points='275.8,60 300.3,60 282.4,38.6' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='55.4,60 97.4,60 81.5,39.5' fill='%23ffffff' opacity='0.9'/%3E%3Cpolygon points='40.0,60 74.4,60 61.0,41.5' fill='%23b9c9a4' opacity='0.6'/%3E%3Cpolygon points='273.0,60 293.0,60 280.8,42.2' fill='%23dbcda3' opacity='0.75'/%3E%3Cpolygon points='38.1,60 58.7,60 43.5,43.0' fill='%23b9c9a4' opacity='0.45'/%3E%3Cpolygon points='236.7,60 281.4,60 261.2,45.2' fill='%23ece3cf' opacity='0.6'/%3E%3Cpolygon points='223.6,60 267.8,60 251.0,45.3' fill='%23ffffff' opacity='0.7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .app-header h1 {
