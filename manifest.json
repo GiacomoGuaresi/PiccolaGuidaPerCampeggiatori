@@ -376,5 +376,17 @@
     "title": "Numeri di emergenza in montagna: Italia e Svizzera",
     "category": "Sicurezza e primo soccorso",
     "file": "content/sicurezza/numeri-emergenza-italia-svizzera.html"
+  },
+  {
+    "id": "autosoccorso-base",
+    "title": "Autosoccorso base per infortuni lievi",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/autosoccorso-base.html"
+  },
+  {
+    "id": "segnali-allarme-internazionali",
+    "title": "Segnali di allarme internazionali in montagna",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/segnali-allarme-internazionali.html"
   }
 ]

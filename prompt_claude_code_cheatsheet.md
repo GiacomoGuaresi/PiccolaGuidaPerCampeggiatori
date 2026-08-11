@@ -2,8 +2,6 @@
 
 ## Sicurezza e primo soccorso
 
-- Cerca online le tecniche base di autosoccorso in caso di infortunio lieve durante un'escursione o bivacco, e crea la pagina autosoccorso-base
-- Cerca online i segnali di allarme internazionali usati in montagna (es. il segnale acustico/visivo a 6 ripetizioni al minuto) e come rispondere, e crea la pagina segnali-allarme-internazionali
 - Cerca online come riconoscere i sintomi dell'ipotermia e quali sono i primi interventi corretti sul campo, e crea la pagina riconoscere-ipotermia
 - Cerca online come riconoscere colpo di calore e disidratazione in quota e quali sono i primi interventi corretti, e crea la pagina colpo-di-calore-disidratazione
 
