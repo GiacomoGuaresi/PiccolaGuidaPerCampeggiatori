@@ -364,5 +364,17 @@
     "title": "Kit di primo soccorso minimo per trekking/bivacco",
     "category": "Sicurezza e primo soccorso",
     "file": "content/sicurezza/kit-primo-soccorso-minimo.html"
+  },
+  {
+    "id": "plb-localizzatori-satellitari",
+    "title": "PLB e localizzatori satellitari: quando portarli",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/plb-localizzatori-satellitari.html"
+  },
+  {
+    "id": "numeri-emergenza-italia-svizzera",
+    "title": "Numeri di emergenza in montagna: Italia e Svizzera",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/numeri-emergenza-italia-svizzera.html"
   }
 ]

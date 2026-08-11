@@ -2,8 +2,6 @@
 
 ## Sicurezza e primo soccorso
 
-- Cerca online quando è consigliato portare un PLB o un localizzatore satellitare in montagna e come funzionano, e crea la pagina plb-localizzatori-satellitari
-- Cerca online i numeri di emergenza corretti da usare in montagna in Italia e in Svizzera e le differenze tra loro, e crea la pagina numeri-emergenza-italia-svizzera
 - Cerca online le tecniche base di autosoccorso in caso di infortunio lieve durante un'escursione o bivacco, e crea la pagina autosoccorso-base
 - Cerca online i segnali di allarme internazionali usati in montagna (es. il segnale acustico/visivo a 6 ripetizioni al minuto) e come rispondere, e crea la pagina segnali-allarme-internazionali
 - Cerca online come riconoscere i sintomi dell'ipotermia e quali sono i primi interventi corretti sul campo, e crea la pagina riconoscere-ipotermia
