@@ -108,6 +108,18 @@
     "file": "content/meteo/bollettino-nivometeorologico.html"
   },
   {
+    "id": "fonti-meteo-affidabili",
+    "title": "Fonti meteo affidabili per zona alpina Lombardia/Svizzera",
+    "category": "Meteo",
+    "file": "content/meteo/fonti-meteo-affidabili.html"
+  },
+  {
+    "id": "segnali-temporale-imminente",
+    "title": "Segnali di temporale imminente: cosa osservare",
+    "category": "Meteo",
+    "file": "content/meteo/segnali-temporale-imminente.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
