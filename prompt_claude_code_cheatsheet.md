@@ -1,10 +1,5 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Sicurezza e primo soccorso
-
-- Cerca online come riconoscere i sintomi dell'ipotermia e quali sono i primi interventi corretti sul campo, e crea la pagina riconoscere-ipotermia
-- Cerca online come riconoscere colpo di calore e disidratazione in quota e quali sono i primi interventi corretti, e crea la pagina colpo-di-calore-disidratazione
-
 ## Fauna
 
 - Cerca online il comportamento corretto da adottare in caso di incontro con vipere nelle Alpi lombarde/svizzere, e crea la pagina comportamento-vipere

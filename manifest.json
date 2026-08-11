@@ -388,5 +388,17 @@
     "title": "Segnali di allarme internazionali in montagna",
     "category": "Sicurezza e primo soccorso",
     "file": "content/sicurezza/segnali-allarme-internazionali.html"
+  },
+  {
+    "id": "riconoscere-ipotermia",
+    "title": "Riconoscere e trattare l'ipotermia sul campo",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/riconoscere-ipotermia.html"
+  },
+  {
+    "id": "colpo-di-calore-disidratazione",
+    "title": "Riconoscere colpo di calore e disidratazione in quota",
+    "category": "Sicurezza e primo soccorso",
+    "file": "content/sicurezza/colpo-di-calore-disidratazione.html"
   }
 ]
