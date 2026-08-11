@@ -154,5 +154,17 @@
     "title": "Distanze di rispetto in bivacco: sentieri, rifugi, altre persone",
     "category": "Tenda",
     "file": "content/tenda/distanze-rispetto-bivacco.html"
+  },
+  {
+    "id": "montaggio-vento-forte",
+    "title": "Montare la tenda con vento forte senza danni",
+    "category": "Tenda",
+    "file": "content/tenda/montaggio-vento-forte.html"
+  },
+  {
+    "id": "tecniche-piantaggio-picchetti",
+    "title": "Tecniche di piantaggio picchetti su terreni diversi",
+    "category": "Tenda",
+    "file": "content/tenda/tecniche-piantaggio-picchetti.html"
   }
 ]

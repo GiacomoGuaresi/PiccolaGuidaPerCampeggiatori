@@ -2,8 +2,6 @@
 
 ## Tenda
  
-- Cerca online la sequenza corretta di montaggio di una tenda con vento forte per evitare danni al telo o alla struttura, e crea la pagina montaggio-vento-forte
-- Cerca online tecniche corrette di piantaggio dei picchetti su terreni diversi (terra soffice, roccia, neve) e quali picchetti usare per ciascun caso, e crea la pagina tecniche-piantaggio-picchetti
 - Cerca online come gestire condensa interna nella tenda durante notti fredde o umide e come ridurla con ventilazione corretta, e crea la pagina gestione-condensa
 - Cerca online come pulire e asciugare correttamente una tenda dopo l'uso prima di riporla, per evitare muffa e degrado del telo, e crea la pagina pulizia-asciugatura-post-uso
 - Cerca online come ri-impermeabilizzare il telo esterno di una tenda quando la colonna d'acqua si degrada nel tempo, e crea la pagina riimpermeabilizzazione-telo
