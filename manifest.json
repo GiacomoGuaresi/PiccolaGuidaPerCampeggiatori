@@ -316,5 +316,17 @@
     "title": "Gestire batterie e power bank in quota col freddo",
     "category": "Zaino e attrezzatura",
     "file": "content/zaino-attrezzatura/gestione-batterie-quota.html"
+  },
+  {
+    "id": "quanta-acqua-portare",
+    "title": "Quanta acqua portare in trekking/bivacco",
+    "category": "Acqua",
+    "file": "content/acqua/quanta-acqua-portare.html"
+  },
+  {
+    "id": "metodi-trattamento-acqua",
+    "title": "Metodi di trattamento dell'acqua in montagna: confronto",
+    "category": "Acqua",
+    "file": "content/acqua/metodi-trattamento-acqua.html"
   }
 ]
