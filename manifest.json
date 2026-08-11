@@ -166,5 +166,17 @@
     "title": "Tecniche di piantaggio picchetti su terreni diversi",
     "category": "Tenda",
     "file": "content/tenda/tecniche-piantaggio-picchetti.html"
+  },
+  {
+    "id": "gestione-condensa",
+    "title": "Gestire la condensa interna nella tenda",
+    "category": "Tenda",
+    "file": "content/tenda/gestione-condensa.html"
+  },
+  {
+    "id": "pulizia-asciugatura-post-uso",
+    "title": "Pulire e asciugare la tenda dopo l'uso",
+    "category": "Tenda",
+    "file": "content/tenda/pulizia-asciugatura-post-uso.html"
   }
 ]
