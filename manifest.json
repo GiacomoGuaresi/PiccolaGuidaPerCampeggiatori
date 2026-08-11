@@ -202,5 +202,17 @@
     "title": "Conservare la tenda durante i mesi di non utilizzo",
     "category": "Tenda",
     "file": "content/tenda/conservazione-lungo-termine.html"
+  },
+  {
+    "id": "manutenzione-riparazione-bastoni",
+    "title": "Manutenzione e riparazione dei bastoni della tenda",
+    "category": "Tenda",
+    "file": "content/tenda/manutenzione-riparazione-bastoni.html"
+  },
+  {
+    "id": "lavaggio-piuma",
+    "title": "Lavare un sacco a pelo in piuma",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/lavaggio-piuma.html"
   }
 ]

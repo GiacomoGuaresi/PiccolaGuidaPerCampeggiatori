@@ -1,12 +1,7 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Tenda
- 
-- Cerca online come mantenere in buono stato i bastoni (pali) di una tenda in alluminio o fibra di carbonio, incluse tecniche di riparazione con manicotto in caso di rottura sul campo, e crea la pagina manutenzione-riparazione-bastoni
-
 ## Sacchi a pelo
  
-- Cerca online come lavare correttamente un sacco a pelo in piuma senza comprometterne il potere isolante, e crea la pagina lavaggio-piuma
 - Cerca online come lavare correttamente un sacco a pelo sintetico e le differenze rispetto al lavaggio della piuma, e crea la pagina lavaggio-sintetico
 - Cerca online come conservare correttamente un sacco a pelo tra un utilizzo e l'altro per non comprometterne l'isolamento (sfuso vs compresso), e crea la pagina conservazione-corretta
 - Cerca online come valutare e mantenere il fill power di un sacco a pelo in piuma nel tempo, e crea la pagina fill-power-mantenimento
