@@ -2,8 +2,6 @@
 
 ## Tenda
  
-- Cerca online come orientare correttamente la tenda rispetto al vento dominante e al sole per bivacco in quota, e crea la pagina orientamento-vento-sole
-- Cerca online come evitare zone di accumulo di aria fredda (conche, fondovalle) quando si scegli dove montare la tenda per la notte, e crea la pagina evitare-conche-aria-fredda
 - Cerca online buone pratiche per montare la tenda su terreno roccioso o su neve/nevaio residuo, incluse tecniche di ancoraggio alternative ai picchetti classici, e crea la pagina ancoraggio-terreno-roccioso-neve
 - Cerca online quali distanze minime di rispetto tenere da sentieri, rifugi e altre persone quando si bivacca, secondo le convenzioni non scritte e le eventuali regole locali, e crea la pagina distanze-rispetto-bivacco
 - Cerca online la sequenza corretta di montaggio di una tenda con vento forte per evitare danni al telo o alla struttura, e crea la pagina montaggio-vento-forte

@@ -130,5 +130,17 @@
     "title": "Rischio caduta massi, frane e valanghe residue nella scelta del sito",
     "category": "Tenda",
     "file": "content/tenda/rischio-caduta-massi-sito.html"
+  },
+  {
+    "id": "orientamento-vento-sole",
+    "title": "Orientare la tenda rispetto a vento e sole",
+    "category": "Tenda",
+    "file": "content/tenda/orientamento-vento-sole.html"
+  },
+  {
+    "id": "evitare-conche-aria-fredda",
+    "title": "Evitare conche e accumuli di aria fredda per la tenda",
+    "category": "Tenda",
+    "file": "content/tenda/evitare-conche-aria-fredda.html"
   }
 ]
