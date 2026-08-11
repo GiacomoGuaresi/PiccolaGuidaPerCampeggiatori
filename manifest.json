@@ -70,5 +70,17 @@
     "title": "Bivacco e campeggio nel Parco Adamello Brenta e nel Parco dell'Adamello",
     "category": "Normativa",
     "file": "content/normativa/parco-adamello.html"
+  },
+  {
+    "id": "fuochi-liberi",
+    "title": "Fuochi liberi in montagna: regole per regione/cantone",
+    "category": "Normativa",
+    "file": "content/normativa/fuochi-liberi.html"
+  },
+  {
+    "id": "sanzioni-bivacco-abusivo",
+    "title": "Sanzioni per bivacco/campeggio abusivo: Italia e Svizzera",
+    "category": "Normativa",
+    "file": "content/normativa/sanzioni-bivacco-abusivo.html"
   }
 ]
