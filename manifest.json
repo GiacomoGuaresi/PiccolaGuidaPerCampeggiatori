@@ -292,5 +292,17 @@
     "title": "Sacco a pelo: piuma o sintetico?",
     "category": "Zaino e attrezzatura",
     "file": "content/zaino-attrezzatura/piuma-vs-sintetico.html"
+  },
+  {
+    "id": "r-value-materassino",
+    "title": "R-value del materassino sopra i 2000 metri",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/r-value-materassino.html"
+  },
+  {
+    "id": "tarp-vs-bivy-vs-tenda",
+    "title": "Tarp, bivy sack o tenda leggera: quale scegliere",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/tarp-vs-bivy-vs-tenda.html"
   }
 ]
