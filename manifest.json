@@ -18,6 +18,12 @@
     "file": "content/indice-2.html"
   },
   {
+    "id": "indice-3",
+    "title": "Indice (segue)",
+    "category": "Guida",
+    "file": "content/indice-3.html"
+  },
+  {
     "id": "bivacco-lombardia",
     "title": "Bivacco e campeggio libero in Lombardia",
     "category": "Normativa",
@@ -424,5 +430,17 @@
     "title": "Cani da guardiania (maremmano-abruzzesi): come comportarsi",
     "category": "Fauna",
     "file": "content/fauna/cani-pastore-maremmani.html"
+  },
+  {
+    "id": "gestione-cibo-rifiuti-fauna",
+    "title": "Gestire cibo e rifiuti in bivacco per non attirare fauna",
+    "category": "Fauna",
+    "file": "content/fauna/gestione-cibo-rifiuti-fauna.html"
+  },
+  {
+    "id": "prenotazione-rifugio-cai",
+    "title": "Prenotare un rifugio CAI in Italia",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/prenotazione-rifugio-cai.html"
   }
 ]
