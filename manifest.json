@@ -156,6 +156,18 @@
     "file": "content/orientamento/app-offline-navigazione.html"
   },
   {
+    "id": "fonti-tracce-gpx",
+    "title": "Fonti affidabili di tracce GPX: Lombardia/Ticino/Grigioni",
+    "category": "Orientamento",
+    "file": "content/orientamento/fonti-tracce-gpx.html"
+  },
+  {
+    "id": "backup-carta-cartacea",
+    "title": "Perché portare sempre una carta cartacea di backup",
+    "category": "Orientamento",
+    "file": "content/orientamento/backup-carta-cartacea.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
