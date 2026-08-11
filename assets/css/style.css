@@ -222,6 +222,32 @@ button:disabled {
   gap: 0.6rem;
 }
 
+.sources-panel {
+  width: var(--a5-width);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--color-stone);
+}
+
+.sources-panel h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-bark);
+  margin: 0 0 0.4em;
+}
+
+.sources-panel p {
+  margin: 0;
+  word-break: break-all;
+}
+
+.sources-panel a {
+  color: var(--color-forest-dark);
+  text-decoration: none;
+}
+
 /* ---------------------------------- Scheda A5 ---------------------------------- */
 
 .a5-page {
@@ -506,7 +532,8 @@ button:disabled {
     page-break-after: auto;
   }
 
-  .a5-page .sources {
+  .a5-page .sources,
+  .a5-page h3:has(+ .sources) {
     display: none;
   }
 }

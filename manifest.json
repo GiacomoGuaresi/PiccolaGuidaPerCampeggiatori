@@ -226,5 +226,17 @@
     "title": "Conservare il sacco a pelo tra un utilizzo e l'altro",
     "category": "Sacchi a pelo",
     "file": "content/sacchi-a-pelo/conservazione-corretta.html"
+  },
+  {
+    "id": "fill-power-mantenimento",
+    "title": "Fill power della piuma: valutarlo e mantenerlo",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/fill-power-mantenimento.html"
+  },
+  {
+    "id": "gestione-umidita-campo",
+    "title": "Gestire il sacco a pelo bagnato in bivacco di più giorni",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/gestione-umidita-campo.html"
   }
 ]

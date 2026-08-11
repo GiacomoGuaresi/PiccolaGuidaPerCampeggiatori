@@ -2,8 +2,6 @@
 
 ## Sacchi a pelo
  
-- Cerca online come valutare e mantenere il fill power di un sacco a pelo in piuma nel tempo, e crea la pagina fill-power-mantenimento
-- Cerca online come gestire un sacco a pelo bagnato o umido durante un bivacco di più giorni (asciugatura sul campo, tecniche pratiche), e crea la pagina gestione-umidita-campo
 - Cerca online quali accessori aiutano a estendere la vita e le prestazioni di un sacco a pelo (liner, sacco compressione, trattamenti idrorepellenti per la piuma), e crea la pagina accessori-utili
 - Cerca online come scegliere la taglia corretta di un sacco a pelo in base all'altezza e alla corporatura, e l'effetto della taglia sull'isolamento reale, e crea la pagina scelta-taglia-corretta
 - Cerca online come abbinare correttamente sacco a pelo e materassino per massimizzare l'isolamento dal freddo da terra, e crea la pagina abbinamento-materassino

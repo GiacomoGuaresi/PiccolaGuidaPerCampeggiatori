@@ -12,6 +12,7 @@ const els = {
   emptyState: document.getElementById("empty-state"),
   cardPreview: document.getElementById("card-preview"),
   a5Single: document.getElementById("a5-single"),
+  sourcesPanel: document.getElementById("sources-panel"),
   btnExportSingle: document.getElementById("btn-export-single"),
   btnExportAll: document.getElementById("btn-export-all"),
   printArea: document.getElementById("print-area"),
@@ -113,8 +114,25 @@ async function selectCard(entry, linkEl) {
   linkEl.classList.add("active");
 
   els.a5Single.innerHTML = html;
+  extractSources();
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
+}
+
+function extractSources() {
+  const sources = els.a5Single.querySelector(".sources");
+  const heading = sources && sources.previousElementSibling;
+
+  els.sourcesPanel.innerHTML = "";
+
+  if (!sources || !heading || heading.tagName !== "H3") {
+    els.sourcesPanel.hidden = true;
+    return;
+  }
+
+  els.sourcesPanel.appendChild(heading);
+  els.sourcesPanel.appendChild(sources);
+  els.sourcesPanel.hidden = false;
 }
 
 async function fetchFragment(path) {
