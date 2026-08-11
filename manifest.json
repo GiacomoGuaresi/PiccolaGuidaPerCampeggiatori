@@ -442,5 +442,17 @@
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",
     "file": "content/rifugi/prenotazione-rifugio-cai.html"
+  },
+  {
+    "id": "prenotazione-rifugio-sac",
+    "title": "Prenotare un rifugio (capanna) SAC in Svizzera",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/prenotazione-rifugio-sac.html"
+  },
+  {
+    "id": "differenze-servizi-cai-sac",
+    "title": "Rifugi CAI vs capanne SAC: le differenze principali",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/differenze-servizi-cai-sac.html"
   }
 ]
