@@ -2,8 +2,6 @@
 
 ## Fauna
 
-- Cerca online il comportamento corretto da adottare in caso di incontro con vipere nelle Alpi lombarde/svizzere, e crea la pagina comportamento-vipere
-- Cerca online il comportamento corretto da adottare in caso di incontro con cinghiali durante trekking o bivacco, e crea la pagina comportamento-cinghiali
 - Cerca online le zone alpine con presenza documentata di lupo e le precauzioni consigliate per chi fa bivacco in quelle aree, e crea la pagina zone-presenza-lupo
 - Cerca online come comportarsi correttamente in presenza di cani da pastore maremmani al pascolo in montagna, e crea la pagina cani-pastore-maremmani
 - Cerca online le buone pratiche per gestire cibo e rifiuti in bivacco per non attirare fauna selvatica, e crea la pagina gestione-cibo-rifiuti-fauna
