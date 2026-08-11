@@ -58,5 +58,17 @@
     "title": "Bivacco, campeggio libero, campeggio organizzato: le differenze",
     "category": "Normativa",
     "file": "content/normativa/differenza-bivacco-campeggio.html"
+  },
+  {
+    "id": "parco-stelvio",
+    "title": "Bivacco e campeggio nel Parco Nazionale dello Stelvio",
+    "category": "Normativa",
+    "file": "content/normativa/parco-stelvio.html"
+  },
+  {
+    "id": "parco-adamello",
+    "title": "Bivacco e campeggio nel Parco Adamello Brenta e nel Parco dell'Adamello",
+    "category": "Normativa",
+    "file": "content/normativa/parco-adamello.html"
   }
 ]
