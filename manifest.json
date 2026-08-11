@@ -190,5 +190,17 @@
     "title": "Sigillare e riparare le cuciture della tenda (seam sealing)",
     "category": "Tenda",
     "file": "content/tenda/sigillatura-cuciture.html"
+  },
+  {
+    "id": "riparazione-strappi-campo",
+    "title": "Riparare uno strappo nel telo della tenda sul campo",
+    "category": "Tenda",
+    "file": "content/tenda/riparazione-strappi-campo.html"
+  },
+  {
+    "id": "conservazione-lungo-termine",
+    "title": "Conservare la tenda durante i mesi di non utilizzo",
+    "category": "Tenda",
+    "file": "content/tenda/conservazione-lungo-termine.html"
   }
 ]
