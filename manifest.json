@@ -82,5 +82,17 @@
     "title": "Sanzioni per bivacco/campeggio abusivo: Italia e Svizzera",
     "category": "Normativa",
     "file": "content/normativa/sanzioni-bivacco-abusivo.html"
+  },
+  {
+    "id": "leggere-bollettino-montano",
+    "title": "Come leggere un bollettino meteo montano",
+    "category": "Meteo",
+    "file": "content/meteo/leggere-bollettino-montano.html"
+  },
+  {
+    "id": "bollettino-nivometeorologico",
+    "title": "Bollettino nivometeorologico: cos'è e quando serve",
+    "category": "Meteo",
+    "file": "content/meteo/bollettino-nivometeorologico.html"
   }
 ]
