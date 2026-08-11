@@ -238,5 +238,17 @@
     "title": "Gestire il sacco a pelo bagnato in bivacco di più giorni",
     "category": "Sacchi a pelo",
     "file": "content/sacchi-a-pelo/gestione-umidita-campo.html"
+  },
+  {
+    "id": "accessori-utili",
+    "title": "Accessori utili per prolungare la vita del sacco a pelo",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/accessori-utili.html"
+  },
+  {
+    "id": "scelta-taglia-corretta",
+    "title": "Scegliere la taglia corretta del sacco a pelo",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/scelta-taglia-corretta.html"
   }
 ]
