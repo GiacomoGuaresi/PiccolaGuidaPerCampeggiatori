@@ -250,5 +250,17 @@
     "title": "Scegliere la taglia corretta del sacco a pelo",
     "category": "Sacchi a pelo",
     "file": "content/sacchi-a-pelo/scelta-taglia-corretta.html"
+  },
+  {
+    "id": "abbinamento-materassino",
+    "title": "Abbinare sacco a pelo e materassino",
+    "category": "Sacchi a pelo",
+    "file": "content/sacchi-a-pelo/abbinamento-materassino.html"
+  },
+  {
+    "id": "checklist-bivacco-estivo",
+    "title": "Checklist zaino bivacco leggero estivo",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/checklist-bivacco-estivo.html"
   }
 ]

@@ -1,12 +1,7 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Sacchi a pelo
- 
-- Cerca online come abbinare correttamente sacco a pelo e materassino per massimizzare l'isolamento dal freddo da terra, e crea la pagina abbinamento-materassino
-
 ## Zaino e attrezzatura
 
-- Cerca online una checklist completa per zaino da bivacco leggero in stagione estiva, e crea la pagina checklist-bivacco-estivo
 - Cerca online una checklist completa per zaino da bivacco in mezza stagione (temperature più basse, condizioni variabili), e crea la pagina checklist-bivacco-mezza-stagione
 - Cerca online come impostare un sistema di layering efficace per passare la notte in bivacco, e crea la pagina layering-notte-bivacco
 - Cerca online come scegliere un sacco a pelo corretto distinguendo temperatura di comfort e temperatura limite, e crea la pagina scelta-sacco-a-pelo
