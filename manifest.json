@@ -12,6 +12,12 @@
     "file": "content/indice.html"
   },
   {
+    "id": "indice-2",
+    "title": "Indice (segue)",
+    "category": "Guida",
+    "file": "content/indice-2.html"
+  },
+  {
     "id": "bivacco-lombardia",
     "title": "Bivacco e campeggio libero in Lombardia",
     "category": "Normativa",
@@ -262,5 +268,17 @@
     "title": "Checklist zaino bivacco leggero estivo",
     "category": "Zaino e attrezzatura",
     "file": "content/zaino-attrezzatura/checklist-bivacco-estivo.html"
+  },
+  {
+    "id": "checklist-bivacco-mezza-stagione",
+    "title": "Checklist zaino per bivacco in mezza stagione",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/checklist-bivacco-mezza-stagione.html"
+  },
+  {
+    "id": "layering-notte-bivacco",
+    "title": "Layering per la notte in bivacco",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/layering-notte-bivacco.html"
   }
 ]

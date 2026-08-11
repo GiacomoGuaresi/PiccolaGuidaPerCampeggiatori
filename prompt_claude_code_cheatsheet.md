@@ -2,8 +2,6 @@
 
 ## Zaino e attrezzatura
 
-- Cerca online una checklist completa per zaino da bivacco in mezza stagione (temperature più basse, condizioni variabili), e crea la pagina checklist-bivacco-mezza-stagione
-- Cerca online come impostare un sistema di layering efficace per passare la notte in bivacco, e crea la pagina layering-notte-bivacco
 - Cerca online come scegliere un sacco a pelo corretto distinguendo temperatura di comfort e temperatura limite, e crea la pagina scelta-sacco-a-pelo
 - Cerca online quando conviene un sacco a pelo in piuma e quando uno sintetico, considerando umidità e peso, e crea la pagina piuma-vs-sintetico
 - Cerca online quale R-value del materassino serve per dormire in sicurezza sopra i 2000 metri in diverse stagioni, e crea la pagina r-value-materassino
