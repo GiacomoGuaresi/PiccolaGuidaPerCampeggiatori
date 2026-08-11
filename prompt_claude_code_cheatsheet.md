@@ -2,8 +2,6 @@
 
 ## Meteo
 
-- Cerca online il comportamento corretto da adottare in caso di fulmini in montagna (dove NON stare, distanze di sicurezza, posizione del corpo) e crea la pagina comportamento-fulmini
-- Cerca online il gradiente termico verticale medio in montagna e come stimare la temperatura in quota partendo dal valore a fondovalle, e crea la pagina gradiente-termico-quota
 - Cerca online come stimare e gestire il vento in cresta e sui crinali durante un bivacco o trekking, e crea la pagina vento-in-cresta
 
 ## Orientamento
