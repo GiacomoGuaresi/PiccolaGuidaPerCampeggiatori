@@ -118,5 +118,17 @@
     "title": "Distanza minima da corsi d'acqua per bivacco e igiene",
     "category": "Etica",
     "file": "content/etica/distanza-corsi-acqua.html"
+  },
+  {
+    "id": "criteri-scelta-sito",
+    "title": "Criteri per scegliere il sito tenda in bivacco",
+    "category": "Tenda",
+    "file": "content/tenda/criteri-scelta-sito.html"
+  },
+  {
+    "id": "rischio-caduta-massi-sito",
+    "title": "Rischio caduta massi, frane e valanghe residue nella scelta del sito",
+    "category": "Tenda",
+    "file": "content/tenda/rischio-caduta-massi-sito.html"
   }
 ]

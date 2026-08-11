@@ -2,8 +2,6 @@
 
 ## Tenda
  
-- Cerca online i criteri per scegliere un buon sito dove montare la tenda in bivacco (drenaggio, esposizione al vento, distanza da corsi d'acqua, pendenza), e crea la pagina criteri-scelta-sito
-- Cerca online come valutare i rischi di caduta massi, frane o valanghe residue nella scelta del sito tenda in ambiente alpino, e crea la pagina rischio-caduta-massi-sito
 - Cerca online come orientare correttamente la tenda rispetto al vento dominante e al sole per bivacco in quota, e crea la pagina orientamento-vento-sole
 - Cerca online come evitare zone di accumulo di aria fredda (conche, fondovalle) quando si scegli dove montare la tenda per la notte, e crea la pagina evitare-conche-aria-fredda
 - Cerca online buone pratiche per montare la tenda su terreno roccioso o su neve/nevaio residuo, incluse tecniche di ancoraggio alternative ai picchetti classici, e crea la pagina ancoraggio-terreno-roccioso-neve
