@@ -120,6 +120,18 @@
     "file": "content/meteo/segnali-temporale-imminente.html"
   },
   {
+    "id": "comportamento-fulmini",
+    "title": "Fulmini in montagna: come comportarsi",
+    "category": "Meteo",
+    "file": "content/meteo/comportamento-fulmini.html"
+  },
+  {
+    "id": "gradiente-termico-quota",
+    "title": "Gradiente termico: stimare la temperatura in quota",
+    "category": "Meteo",
+    "file": "content/meteo/gradiente-termico-quota.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
