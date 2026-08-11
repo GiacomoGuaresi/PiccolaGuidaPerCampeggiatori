@@ -505,4 +505,8 @@ button:disabled {
   #print-area .a5-page:last-child {
     page-break-after: auto;
   }
+
+  .a5-page .sources {
+    display: none;
+  }
 }
