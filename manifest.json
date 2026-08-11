@@ -144,6 +144,18 @@
     "file": "content/orientamento/simbologia-carte-igm-swisstopo.html"
   },
   {
+    "id": "uso-bussola-carta",
+    "title": "Bussola e carta: il metodo base per orientarsi",
+    "category": "Orientamento",
+    "file": "content/orientamento/uso-bussola-carta.html"
+  },
+  {
+    "id": "app-offline-navigazione",
+    "title": "App offline per navigazione escursionistica: confronto",
+    "category": "Orientamento",
+    "file": "content/orientamento/app-offline-navigazione.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
