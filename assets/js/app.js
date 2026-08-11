@@ -199,16 +199,38 @@ function exportCurrentCard() {
 async function exportAllCards() {
   if (state.manifest.length === 0) return;
 
+  const today = new Date().toISOString().slice(0, 10);
+
   const fragments = await Promise.all(
     state.manifest.map((entry) => fetchFragment(entry.file))
   );
 
-  els.printArea.innerHTML = fragments
-    .filter((html) => html !== null)
-    .map((html) => `<div class="a5-page">${html}</div>`)
-    .join("");
+  const pages = [];
+  state.manifest.forEach((entry, i) => {
+    if (fragments[i] === null) return;
+    pages.push(fragments[i]);
+    if (entry.id === "copertina") pages.push(buildVersionPage(today));
+  });
+
+  els.printArea.innerHTML = pages.map((html) => `<div class="a5-page">${html}</div>`).join("");
 
   window.print();
+
+  localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
+  els.lastPrintedDate.value = today;
+}
+
+function buildVersionPage(today) {
+  return `
+    <h2>Versione stampata</h2>
+    <span class="tag">Guida</span>
+    <span class="tag">agg. ${today}</span>
+
+    <p>Questo set contiene tutte le schede aggiornate al <strong>${today}</strong>.</p>
+
+    <h3>Per il prossimo aggiornamento</h3>
+    <p>Conserva questa pagina nel raccoglitore. Al prossimo aggiornamento inserisci la data <strong>${today}</strong> nella sezione "Aggiornamento stampa" del sito.</p>
+  `;
 }
 
 /* ---------------------------------- Aggiornamento stampa ---------------------------------- */
