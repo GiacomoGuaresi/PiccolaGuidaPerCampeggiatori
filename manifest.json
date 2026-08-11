@@ -304,5 +304,17 @@
     "title": "Tarp, bivy sack o tenda leggera: quale scegliere",
     "category": "Zaino e attrezzatura",
     "file": "content/zaino-attrezzatura/tarp-vs-bivy-vs-tenda.html"
+  },
+  {
+    "id": "frontale-lumen-autonomia",
+    "title": "Torcia frontale: lumen e autonomia per trekking/bivacco",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/frontale-lumen-autonomia.html"
+  },
+  {
+    "id": "gestione-batterie-quota",
+    "title": "Gestire batterie e power bank in quota col freddo",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/gestione-batterie-quota.html"
   }
 ]

@@ -1,10 +1,5 @@
 # Prompt per Claude Code — Cheatsheet Trekking/Bivacco/Campeggio
 
-## Zaino e attrezzatura
-
-- Cerca online quali lumen e quale autonomia minima sono consigliati per una torcia frontale da trekking/bivacco, e crea la pagina frontale-lumen-autonomia
-- Cerca online come gestire batterie e power bank in quota con basse temperature, e crea la pagina gestione-batterie-quota
-
 ## Acqua
 
 - Cerca online quanta acqua portare per persona in base a quanto tempo si resta fuori,in base a dove si deve andare, e in base alle temperature/stagioni e crea la pagina quanta-acqua-portare
