@@ -2,8 +2,6 @@
 
 ## Zaino e attrezzatura
 
-- Cerca online come scegliere un sacco a pelo corretto distinguendo temperatura di comfort e temperatura limite, e crea la pagina scelta-sacco-a-pelo
-- Cerca online quando conviene un sacco a pelo in piuma e quando uno sintetico, considerando umidità e peso, e crea la pagina piuma-vs-sintetico
 - Cerca online quale R-value del materassino serve per dormire in sicurezza sopra i 2000 metri in diverse stagioni, e crea la pagina r-value-materassino
 - Cerca online le differenze pratiche tra tarp, bivy sack e tenda leggera per bivacco, con pro e contro di ciascuno, e crea la pagina tarp-vs-bivy-vs-tenda
 - Cerca online quali lumen e quale autonomia minima sono consigliati per una torcia frontale da trekking/bivacco, e crea la pagina frontale-lumen-autonomia

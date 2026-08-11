@@ -280,5 +280,17 @@
     "title": "Layering per la notte in bivacco",
     "category": "Zaino e attrezzatura",
     "file": "content/zaino-attrezzatura/layering-notte-bivacco.html"
+  },
+  {
+    "id": "scelta-sacco-a-pelo",
+    "title": "Scegliere il sacco a pelo: comfort vs limite",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/scelta-sacco-a-pelo.html"
+  },
+  {
+    "id": "piuma-vs-sintetico",
+    "title": "Sacco a pelo: piuma o sintetico?",
+    "category": "Zaino e attrezzatura",
+    "file": "content/zaino-attrezzatura/piuma-vs-sintetico.html"
   }
 ]
