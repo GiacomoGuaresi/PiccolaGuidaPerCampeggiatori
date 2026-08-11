@@ -132,6 +132,18 @@
     "file": "content/meteo/gradiente-termico-quota.html"
   },
   {
+    "id": "vento-in-cresta",
+    "title": "Vento in cresta: stimarlo e gestirlo",
+    "category": "Meteo",
+    "file": "content/meteo/vento-in-cresta.html"
+  },
+  {
+    "id": "simbologia-carte-igm-swisstopo",
+    "title": "Carte IGM vs Swisstopo: differenze di simbologia",
+    "category": "Orientamento",
+    "file": "content/orientamento/simbologia-carte-igm-swisstopo.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
