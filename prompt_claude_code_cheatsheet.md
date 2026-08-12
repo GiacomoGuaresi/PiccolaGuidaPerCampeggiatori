@@ -80,7 +80,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       allacciatura per la discesa.
 - [x] Cura dei piedi in trekking: prevenire e trattare vesciche, calze, cambio,
       cosa mettere nel kit piedi.
-- [ ] Camminare su ghiaione, sfasciumi e sentieri esposti: tecnica, distanza dal
+- [x] Camminare su ghiaione, sfasciumi e sentieri esposti: tecnica, distanza dal
       compagno, cosa fare se si smuovono sassi.
 - [ ] Attraversare nevai residui estivi: valutazione, tecnica, quando servono
       ramponcini/piccozza, quando rinunciare.

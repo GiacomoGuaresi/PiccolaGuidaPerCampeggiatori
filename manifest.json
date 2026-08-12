@@ -551,5 +551,11 @@
     "title": "Cura dei piedi in trekking",
     "category": "Trekking",
     "file": "content/trekking/cura-piedi-trekking.html"
+  },
+  {
+    "id": "ghiaione-sfasciumi-sentieri-esposti",
+    "title": "Camminare su ghiaione, sfasciumi e sentieri esposti",
+    "category": "Trekking",
+    "file": "content/trekking/ghiaione-sfasciumi-sentieri-esposti.html"
   }
 ]
