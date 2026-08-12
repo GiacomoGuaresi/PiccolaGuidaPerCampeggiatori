@@ -169,7 +169,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       davvero.
 - [x] Aree di sosta camper e "camper stop" in Italia e Svizzera: differenza da un
       campeggio, servizi, regole.
-- [ ] Campeggio in Svizzera: specificità (costi, regole, tassa, cantoni più
+- [x] Campeggio in Svizzera: specificità (costi, regole, tassa, cantoni più
       restrittivi) rispetto all'Italia.
 - [ ] Attrezzatura da campeggio "base auto" vs trekking: cosa cambia e cosa vale
       la pena portare quando il peso non è un problema.

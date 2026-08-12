@@ -785,5 +785,11 @@
     "title": "Aree di sosta camper e \"camper stop\"",
     "category": "Camping",
     "file": "content/camping/aree-di-sosta-camper.html"
+  },
+  {
+    "id": "campeggio-in-svizzera-specificita",
+    "title": "Campeggio in Svizzera: specificità",
+    "category": "Camping",
+    "file": "content/camping/campeggio-in-svizzera-specificita.html"
   }
 ]
