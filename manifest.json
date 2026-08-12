@@ -773,5 +773,11 @@
     "title": "Elettricità in campeggio",
     "category": "Camping",
     "file": "content/camping/elettricita-in-campeggio.html"
+  },
+  {
+    "id": "tessere-sconti-tcs-acsi-camping-key",
+    "title": "Tessere e sconti (TCS, ACSI, Camping Key Europe)",
+    "category": "Camping",
+    "file": "content/camping/tessere-sconti-tcs-acsi-camping-key.html"
   }
 ]

@@ -165,7 +165,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       cani, fuochi e barbecue.
 - [x] Elettricità in campeggio: prese CEE, amperaggi tipici, adattatori, consumi
       realistici, sicurezza.
-- [ ] Tessere e sconti (TCS, ACSI, Camping Key Europe): quando convengono
+- [x] Tessere e sconti (TCS, ACSI, Camping Key Europe): quando convengono
       davvero.
 - [ ] Aree di sosta camper e "camper stop" in Italia e Svizzera: differenza da un
       campeggio, servizi, regole.
