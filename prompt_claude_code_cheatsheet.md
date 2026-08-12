@@ -220,7 +220,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Orientamento (integrazioni)
 
-- [ ] Dare la propria posizione al soccorso: coordinate WGS84 vs CH1903+/LV95,
+- [x] Dare la propria posizione al soccorso: coordinate WGS84 vs CH1903+/LV95,
       formati, come leggerle dall'app, what3words e i suoi limiti.
 - [ ] Altimetro barometrico: taratura, deriva col meteo, uso per orientarsi.
 - [ ] Orientarsi in nebbia o al buio: navigazione a bussola, conteggio passi,

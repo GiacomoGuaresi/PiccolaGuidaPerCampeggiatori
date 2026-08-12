@@ -157,6 +157,12 @@
     "file": "content/orientamento/backup-carta-cartacea.html"
   },
   {
+    "id": "dare-posizione-al-soccorso",
+    "title": "Dare la propria posizione al soccorso",
+    "category": "Orientamento",
+    "file": "content/orientamento/dare-posizione-al-soccorso.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
