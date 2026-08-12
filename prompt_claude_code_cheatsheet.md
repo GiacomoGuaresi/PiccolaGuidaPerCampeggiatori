@@ -118,7 +118,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       terra, gestione della notte senza tenda.
 - [x] Riparo di fortuna con telo/tarp/telo termico: 3 configurazioni base con
       pochi punti di ancoraggio.
-- [ ] Telo termico (metallina): come si usa davvero, lato argento/oro, errori
+- [x] Telo termico (metallina): come si usa davvero, lato argento/oro, errori
       comuni, limiti reali.
 - [ ] Cosa fare se ci si perde: procedura STOP, quando fermarsi, quando risalire,
       come farsi trovare.

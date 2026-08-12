@@ -647,5 +647,11 @@
     "title": "Riparo di fortuna con telo/tarp/telo termico",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/riparo-fortuna-telo-tarp.html"
+  },
+  {
+    "id": "telo-termico-metallina",
+    "title": "Telo termico (metallina)",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/telo-termico-metallina.html"
   }
 ]
