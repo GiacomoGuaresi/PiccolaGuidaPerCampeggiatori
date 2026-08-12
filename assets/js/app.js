@@ -5,7 +5,6 @@ const CATEGORY_ORDER = ["Guida", "Montagna", "Trekking", "Sopravvivenza", "Meteo
 const state = {
   manifest: [],
   current: null,
-  pendingUpdate: null,
   zoom: 1,
 };
 
@@ -27,17 +26,22 @@ const els = {
   btnZoomIn: document.getElementById("btn-zoom-in"),
   btnZoomReset: document.getElementById("btn-zoom-reset"),
   btnExportSingle: document.getElementById("btn-export-single"),
-  btnExportAll: document.getElementById("btn-export-all"),
   printArea: document.getElementById("print-area"),
   btnOpenUpdate: document.getElementById("btn-open-update"),
   updateModal: document.getElementById("update-modal"),
   btnCloseUpdate: document.getElementById("btn-close-update"),
   lastPrintedDate: document.getElementById("last-printed-date"),
   btnCheckUpdates: document.getElementById("btn-check-updates"),
-  updateResults: document.getElementById("update-results"),
-  updateSummary: document.getElementById("update-summary"),
-  updateList: document.getElementById("update-list"),
-  btnExportUpdate: document.getElementById("btn-export-update"),
+  updateTopicPickerList: document.getElementById("update-topic-picker-list"),
+  btnSelectAllUpdateTopics: document.getElementById("btn-select-all-update-topics"),
+  btnSelectNoneUpdateTopics: document.getElementById("btn-select-none-update-topics"),
+  btnOpenPrintBook: document.getElementById("btn-open-print-book"),
+  printBookModal: document.getElementById("print-book-modal"),
+  btnClosePrintBook: document.getElementById("btn-close-print-book"),
+  topicPickerList: document.getElementById("topic-picker-list"),
+  btnSelectAllTopics: document.getElementById("btn-select-all-topics"),
+  btnSelectNoneTopics: document.getElementById("btn-select-none-topics"),
+  btnConfirmPrintBook: document.getElementById("btn-confirm-print-book"),
 };
 
 init();
@@ -45,10 +49,16 @@ init();
 async function init() {
   state.manifest = await loadManifest();
   renderSidebar(state.manifest);
-  els.btnExportAll.disabled = state.manifest.length === 0;
+  els.btnOpenPrintBook.disabled = state.manifest.length === 0;
 
   els.btnExportSingle.addEventListener("click", exportCurrentCard);
-  els.btnExportAll.addEventListener("click", exportAllCards);
+  els.btnOpenPrintBook.addEventListener("click", openPrintBookModal);
+  els.btnClosePrintBook.addEventListener("click", closePrintBookModal);
+  els.printBookModal.querySelector(".modal-backdrop").addEventListener("click", closePrintBookModal);
+  els.btnSelectAllTopics.addEventListener("click", () => setAllCheckboxesIn(els.topicPickerList, true));
+  els.btnSelectNoneTopics.addEventListener("click", () => setAllCheckboxesIn(els.topicPickerList, false));
+  els.topicPickerList.addEventListener("change", () => persistCategorySelection(els.topicPickerList));
+  els.btnConfirmPrintBook.addEventListener("click", printBook);
 
   els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
@@ -64,8 +74,16 @@ async function init() {
   els.btnOpenUpdate.addEventListener("click", openUpdateModal);
   els.btnCloseUpdate.addEventListener("click", closeUpdateModal);
   els.updateModal.querySelector(".modal-backdrop").addEventListener("click", closeUpdateModal);
-  els.btnCheckUpdates.addEventListener("click", checkUpdates);
-  els.btnExportUpdate.addEventListener("click", exportUpdate);
+  els.btnSelectAllUpdateTopics.addEventListener("click", () =>
+    setAllCheckboxesIn(els.updateTopicPickerList, true)
+  );
+  els.btnSelectNoneUpdateTopics.addEventListener("click", () =>
+    setAllCheckboxesIn(els.updateTopicPickerList, false)
+  );
+  els.updateTopicPickerList.addEventListener("change", () =>
+    persistCategorySelection(els.updateTopicPickerList)
+  );
+  els.btnCheckUpdates.addEventListener("click", checkAndPrintUpdate);
 
   els.searchInput.addEventListener("input", () => {
     renderSidebar(state.manifest, els.searchInput.value);
@@ -336,40 +354,141 @@ function exportCurrentCard() {
   window.print();
 }
 
-async function exportAllCards() {
-  if (state.manifest.length === 0) return;
+/* ---------------------------------- Stampa libro (selezione sezioni) ---------------------------------- */
+
+const PRINTED_CATEGORIES_KEY = "lastPrintedCategories";
+
+function selectableTopics() {
+  return state.manifest.filter((entry) => entry.category !== "Guida");
+}
+
+function selectableCategories() {
+  return sortCategories(Object.keys(groupByCategory(selectableTopics())));
+}
+
+function openPrintBookModal() {
+  const defaultSelected = loadPrintedCategories() || selectableCategories();
+  renderCategoryPicker(els.topicPickerList, defaultSelected);
+  els.printBookModal.hidden = false;
+}
+
+function closePrintBookModal() {
+  els.printBookModal.hidden = true;
+}
+
+function renderCategoryPicker(container, defaultSelectedCategories) {
+  container.innerHTML = "";
+
+  const categories = selectableCategories();
+  const byCategory = groupByCategory(selectableTopics());
+  const defaultSelected = new Set(defaultSelectedCategories);
+
+  for (const category of categories) {
+    const label = document.createElement("label");
+    label.className = "topic-picker-item";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = category;
+    checkbox.checked = defaultSelected.has(category);
+
+    label.appendChild(checkbox);
+    label.appendChild(
+      document.createTextNode(`${category} (${byCategory[category].length})`)
+    );
+    container.appendChild(label);
+  }
+}
+
+function setAllCheckboxesIn(container, checked) {
+  container
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach((cb) => (cb.checked = checked));
+  persistCategorySelection(container);
+}
+
+function getSelectedCategoriesFrom(container) {
+  return Array.from(
+    container.querySelectorAll('input[type="checkbox"]:checked')
+  ).map((cb) => cb.value);
+}
+
+async function printBook() {
+  const selectedCategories = getSelectedCategoriesFrom(els.topicPickerList);
+  if (selectedCategories.length === 0) return;
 
   const today = new Date().toISOString().slice(0, 10);
+  const selectedSet = new Set(selectedCategories);
+  const entries = state.manifest.filter((entry) => selectedSet.has(entry.category));
 
-  const fragments = await Promise.all(
-    state.manifest.map((entry) => fetchFragment(entry.file))
-  );
+  const [coverHtml, ...fragments] = await Promise.all([
+    fetchFragment("content/copertina.html"),
+    ...entries.map((entry) => fetchFragment(entry.file)),
+  ]);
+
+  const htmlById = Object.fromEntries(entries.map((entry, i) => [entry.id, fragments[i]]));
+  const byCategory = groupByCategory(entries);
 
   const pages = [];
-  state.manifest.forEach((entry, i) => {
-    if (fragments[i] === null) return;
-    pages.push(fragments[i]);
-    if (entry.id === "copertina") pages.push(buildVersionPage(today));
-  });
+  if (coverHtml !== null) pages.push(coverHtml);
+  pages.push(buildVersionPage(today, sortCategories(selectedCategories)));
+  for (const category of sortCategories(Object.keys(byCategory))) {
+    for (const entry of byCategory[category]) {
+      if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
+    }
+  }
 
   els.printArea.innerHTML = pages.map((html) => `<div class="a5-page">${html}</div>`).join("");
-
   window.print();
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
   els.lastPrintedDate.value = today;
+  closePrintBookModal();
 }
 
-function buildVersionPage(today) {
+function loadPrintedCategories() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PRINTED_CATEGORIES_KEY));
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+function savePrintedCategories(categories) {
+  localStorage.setItem(PRINTED_CATEGORIES_KEY, JSON.stringify(categories));
+}
+
+function persistCategorySelection(container) {
+  savePrintedCategories(getSelectedCategoriesFrom(container));
+}
+
+function buildVersionPage(today, categories, note) {
+  const categoryList = categories
+    .map((category) => `<li>${escapeHtml(category)}</li>`)
+    .join("");
+
   return `
     <h2>Versione stampata</h2>
     <span class="tag">Guida</span>
     <span class="tag">agg. ${today}</span>
 
-    <p>Questo set contiene tutte le schede aggiornate al <strong>${today}</strong>.</p>
+    <h3>Sintesi</h3>
+    <p>Ricevuta di questa stampa: tienila davanti alle altre schede nel raccoglitore. Dice cosa hai stampato, quando, e come aggiornarlo in futuro.</p>
 
-    <h3>Per il prossimo aggiornamento</h3>
-    <p>Conserva questa pagina nel raccoglitore. Al prossimo aggiornamento inserisci la data <strong>${today}</strong> nella sezione "Aggiornamento stampa" del sito.</p>
+    ${note ? `<p>${note}</p>` : ""}
+
+    <h3>Argomenti stampati il ${today}</h3>
+    <ul>${categoryList}</ul>
+
+    <h3>Come aggiornare in futuro</h3>
+    <ul>
+      <li>Sul sito apri "Aggiornamento stampa"</li>
+      <li>Inserisci la data <strong>${today}</strong> (quella di questo foglio)</li>
+      <li>Conferma le sezioni da controllare (precompilate come sopra)</li>
+      <li>Se ci sono schede nuove/modificate si apre subito la stampa: sostituiscile nel raccoglitore</li>
+      <li>Sostituisci questo foglio con quello nuovo, con la data aggiornata</li>
+    </ul>
   `;
 }
 
@@ -380,9 +499,8 @@ const UPDATE_DATE_TAG_RE = /agg\.\s*(\d{4}-\d{2}-\d{2})/;
 
 function openUpdateModal() {
   els.lastPrintedDate.value = localStorage.getItem(LAST_PRINTED_DATE_KEY) || "";
-  els.updateResults.hidden = true;
-  els.btnExportUpdate.disabled = true;
-  state.pendingUpdate = null;
+  const defaultSelected = loadPrintedCategories() || selectableCategories();
+  renderCategoryPicker(els.updateTopicPickerList, defaultSelected);
   els.updateModal.hidden = false;
 }
 
@@ -390,15 +508,19 @@ function closeUpdateModal() {
   els.updateModal.hidden = true;
 }
 
-async function checkUpdates() {
+async function checkAndPrintUpdate() {
   const refDate = els.lastPrintedDate.value;
   if (!refDate) return;
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, refDate);
 
+  const selectedCategories = getSelectedCategoriesFrom(els.updateTopicPickerList);
+  if (selectedCategories.length === 0) return;
+
   els.btnCheckUpdates.disabled = true;
   try {
-    const entries = state.manifest.filter((entry) => entry.category !== "Guida");
+    const selectedSet = new Set(selectedCategories);
+    const entries = selectableTopics().filter((entry) => selectedSet.has(entry.category));
     const fragments = await Promise.all(entries.map((entry) => fetchFragment(entry.file)));
 
     const changed = [];
@@ -412,53 +534,24 @@ async function checkUpdates() {
       }
     });
 
-    renderUpdateResults(refDate, changed);
+    if (changed.length === 0) {
+      alert(`Nessuna scheda nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`);
+      return;
+    }
+
+    await printUpdate(refDate, changed, sortCategories(selectedCategories));
+    closeUpdateModal();
   } finally {
     els.btnCheckUpdates.disabled = false;
   }
 }
 
-function renderUpdateResults(refDate, changed) {
-  els.updateResults.hidden = false;
-  els.updateList.innerHTML = "";
-
-  if (changed.length === 0) {
-    els.updateSummary.textContent = `Nessuna scheda nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`;
-    els.btnExportUpdate.disabled = true;
-    state.pendingUpdate = null;
-    return;
-  }
-
-  els.updateSummary.textContent = `${changed.length} scheda/e nuova/e o aggiornata/e dopo il ${refDate}.`;
-
-  const dateById = Object.fromEntries(changed.map((c) => [c.entry.id, c.date]));
-  const byCategory = groupByCategory(changed.map((c) => c.entry));
-
-  for (const category of sortCategories(Object.keys(byCategory))) {
-    const h3 = document.createElement("h3");
-    h3.textContent = category;
-    els.updateList.appendChild(h3);
-
-    const ul = document.createElement("ul");
-    for (const entry of byCategory[category]) {
-      const li = document.createElement("li");
-      li.textContent = `${entry.title} (agg. ${dateById[entry.id]})`;
-      ul.appendChild(li);
-    }
-    els.updateList.appendChild(ul);
-  }
-
-  state.pendingUpdate = { refDate, changed };
-  els.btnExportUpdate.disabled = false;
-}
-
-async function exportUpdate() {
-  if (!state.pendingUpdate) return;
-  const { refDate, changed } = state.pendingUpdate;
+async function printUpdate(refDate, changed, categories) {
   const today = new Date().toISOString().slice(0, 10);
+  const note = `Aggiornamento rispetto alla versione stampata il <strong>${refDate}</strong>: ${changed.length} scheda/e nuova/e o modificata/e incluse in questo pacchetto.`;
 
   const coverHtml = await fetchFragment("content/copertina.html");
-  const summaryHtml = buildUpdateSummaryPage(refDate, today, changed);
+  const summaryHtml = buildVersionPage(today, categories, note);
 
   const htmlById = Object.fromEntries(changed.map((c) => [c.entry.id, c.html]));
   const byCategory = groupByCategory(changed.map((c) => c.entry));
@@ -477,36 +570,6 @@ async function exportUpdate() {
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
   els.lastPrintedDate.value = today;
-}
-
-function buildUpdateSummaryPage(refDate, today, changed) {
-  const byCategory = groupByCategory(changed.map((c) => c.entry));
-  const dateById = Object.fromEntries(changed.map((c) => [c.entry.id, c.date]));
-
-  const sections = sortCategories(Object.keys(byCategory))
-    .map((category) => {
-      const items = byCategory[category]
-        .map(
-          (entry) =>
-            `<li>${escapeHtml(entry.title)} <span class="update-date">(agg. ${dateById[entry.id]})</span></li>`
-        )
-        .join("");
-      return `<h3>${escapeHtml(category)}</h3><ul>${items}</ul>`;
-    })
-    .join("");
-
-  return `
-    <h2>Versione stampata</h2>
-    <span class="tag">Guida</span>
-    <span class="tag">agg. ${today}</span>
-
-    <p>Aggiornamento rispetto alla versione stampata il <strong>${refDate}</strong>: ${changed.length} scheda/e nuova/e o modificata/e incluse in questo pacchetto.</p>
-
-    ${sections}
-
-    <h3>Per il prossimo aggiornamento</h3>
-    <p>Conserva questa pagina nel raccoglitore. Al prossimo aggiornamento inserisci la data <strong>${today}</strong> nella sezione "Aggiornamento stampa" del sito.</p>
-  `;
 }
 
 function escapeHtml(str) {

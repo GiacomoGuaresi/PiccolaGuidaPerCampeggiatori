@@ -64,35 +64,53 @@
           <button id="btn-zoom-reset" class="secondary zoom-level" type="button" aria-label="Reimposta zoom">100%</button>
           <button id="btn-zoom-in" class="secondary zoom-btn" type="button" aria-label="Aumenta zoom">&plus;</button>
         </div>
-        <button id="btn-export-single">Esporta questa scheda (PDF)</button>
+        <button id="btn-export-single">Stampa pagina</button>
       </div>
       <div class="footer-actions">
         <button id="btn-open-update" class="secondary">Aggiornamento stampa</button>
-        <button id="btn-export-all" class="secondary">Esporta tutte le schede (PDF)</button>
+        <button id="btn-open-print-book" class="secondary">Stampa libro</button>
       </div>
     </footer>
   </div>
 
   <div id="update-modal" class="modal" hidden>
     <div class="modal-backdrop"></div>
-    <div class="modal-dialog">
+    <div class="modal-dialog large">
       <button id="btn-close-update" class="modal-close" aria-label="Chiudi">&times;</button>
       <h2>Aggiornamento stampa</h2>
-      <p class="modal-hint">
-        Inserisci la data dell'ultima versione che hai stampato (la trovi
-        sulla pagina "Versione stampata" inclusa nel tuo ultimo
-        aggiornamento). Il sito controlla quali schede sono nuove o
-        cambiate da allora.
-      </p>
+      <p class="modal-hint">Data ultima stampa e sezioni da controllare.</p>
       <label for="last-printed-date">Ultima versione stampata</label>
       <input type="date" id="last-printed-date" />
-      <button id="btn-check-updates">Verifica aggiornamenti</button>
 
-      <div id="update-results" class="update-results" hidden>
-        <p id="update-summary"></p>
-        <div id="update-list"></div>
-        <button id="btn-export-update" class="secondary">Esporta aggiornamento (PDF)</button>
+      <div class="topic-picker-actions">
+        <button id="btn-select-all-update-topics" class="secondary" type="button">Seleziona tutto</button>
+        <button id="btn-select-none-update-topics" class="secondary" type="button">Deseleziona tutto</button>
       </div>
+
+      <div id="update-topic-picker-list" class="topic-picker-list"></div>
+
+      <button id="btn-check-updates">Verifica e stampa aggiornamento</button>
+    </div>
+  </div>
+
+  <div id="print-book-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button id="btn-close-print-book" class="modal-close" aria-label="Chiudi">&times;</button>
+      <h2>Stampa libro</h2>
+      <p class="modal-hint">
+        Scegli quali sezioni includere nella stampa. La copertina e la
+        pagina "Versione stampata" vengono aggiunte automaticamente.
+      </p>
+
+      <div class="topic-picker-actions">
+        <button id="btn-select-all-topics" class="secondary" type="button">Seleziona tutto</button>
+        <button id="btn-select-none-topics" class="secondary" type="button">Deseleziona tutto</button>
+      </div>
+
+      <div id="topic-picker-list" class="topic-picker-list"></div>
+
+      <button id="btn-confirm-print-book">Stampa libro</button>
     </div>
   </div>
 

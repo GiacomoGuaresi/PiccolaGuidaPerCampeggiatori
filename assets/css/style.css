@@ -275,6 +275,10 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--color-parchment);
+  background-image: url("../img/bg-pattern.png");
+  background-repeat: repeat;
+  background-size: 260px 260px;
 }
 
 .empty-state {
@@ -644,6 +648,11 @@ button:disabled {
   padding: 1.5rem;
 }
 
+.modal-dialog.large {
+  width: min(720px, 92vw);
+  max-height: 92vh;
+}
+
 .modal-close {
   position: absolute;
   top: 0.7rem;
@@ -691,48 +700,48 @@ button:disabled {
   margin-bottom: 0.8em;
 }
 
-.update-results {
-  margin-top: 1.2rem;
-  border-top: 1px dashed var(--color-bark);
-  padding-top: 1rem;
-}
-
-.update-results[hidden] {
-  display: none;
-}
-
-#update-summary {
-  font-weight: 600;
-  margin: 0 0 0.6em;
-}
-
-#update-list h3 {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-moss);
-  margin: 0.8em 0 0.2em;
-}
-
-#update-list ul {
-  margin: 0 0 0.4em;
-  padding-left: 1.1em;
-  font-size: 0.88rem;
-}
-
-#update-list li {
-  margin-bottom: 0.2em;
-}
-
-#btn-export-update {
+#btn-check-updates {
   margin-top: 1rem;
 }
 
-.a5-page .update-date {
-  font-family: var(--font-mono);
-  font-size: 7.5pt;
-  color: var(--color-stone);
+/* ---------------------------------- Modal: stampa libro ---------------------------------- */
+
+.topic-picker-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.topic-picker-list {
+  max-height: 45vh;
+  overflow-y: auto;
+  border-top: 1px dashed var(--color-bark);
+  padding-top: 0.4rem;
+}
+
+.modal-dialog.large .topic-picker-list {
+  max-height: 60vh;
+}
+
+.modal-dialog .topic-picker-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-ink);
+  padding: 0.3em 0;
+  cursor: pointer;
+}
+
+.topic-picker-item input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+#btn-confirm-print-book {
+  margin-top: 1rem;
 }
 
 /* ---------------------------------- Responsive / smartphone ---------------------------------- */
