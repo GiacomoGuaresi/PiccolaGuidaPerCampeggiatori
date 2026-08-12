@@ -667,6 +667,12 @@
     "file": "content/vie-ferrate/cose-una-via-ferrata.html"
   },
   {
+    "id": "kit-da-ferrata-obbligatorio",
+    "title": "Kit da ferrata obbligatorio",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/kit-da-ferrata-obbligatorio.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
