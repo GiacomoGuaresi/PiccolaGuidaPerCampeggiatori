@@ -641,5 +641,11 @@
     "title": "Bivacco forzato d'emergenza",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/bivacco-forzato-emergenza.html"
+  },
+  {
+    "id": "riparo-fortuna-telo-tarp",
+    "title": "Riparo di fortuna con telo/tarp/telo termico",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/riparo-fortuna-telo-tarp.html"
   }
 ]

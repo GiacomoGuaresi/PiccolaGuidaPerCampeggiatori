@@ -116,7 +116,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Bivacco forzato d'emergenza: decisione, scelta del posto, isolamento da
       terra, gestione della notte senza tenda.
-- [ ] Riparo di fortuna con telo/tarp/telo termico: 3 configurazioni base con
+- [x] Riparo di fortuna con telo/tarp/telo termico: 3 configurazioni base con
       pochi punti di ancoraggio.
 - [ ] Telo termico (metallina): come si usa davvero, lato argento/oro, errori
       comuni, limiti reali.
