@@ -205,7 +205,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       adrenalina autoiniettabile.
 - [x] Bovini al pascolo e mucche con vitelli: distanze, cani, comportamento se si
       viene caricati.
-- [ ] Roditori e volpi in bivacco: proteggere cibo e attrezzatura, rischio
+- [x] Roditori e volpi in bivacco: proteggere cibo e attrezzatura, rischio
       rosicchiamenti, malattie.
 
 ### Categoria: Flora
