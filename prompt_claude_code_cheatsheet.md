@@ -142,7 +142,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       farmaci e loro limiti.
 - [x] Sole in quota: UV, ustioni, crema, occhiali (categoria 3/4), oftalmia da
       neve.
-- [ ] Alimentazione e idratazione in quota: fabbisogno calorico reale, sali,
+- [x] Alimentazione e idratazione in quota: fabbisogno calorico reale, sali,
       appetito ridotto.
 - [ ] Congelamenti e principi di congelamento: riconoscere, trattare, errori.
 

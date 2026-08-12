@@ -713,5 +713,11 @@
     "title": "Sole in quota",
     "category": "Quota e salute",
     "file": "content/quota-salute/sole-in-quota.html"
+  },
+  {
+    "id": "alimentazione-idratazione-quota",
+    "title": "Alimentazione e idratazione in quota",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/alimentazione-idratazione-quota.html"
   }
 ]
