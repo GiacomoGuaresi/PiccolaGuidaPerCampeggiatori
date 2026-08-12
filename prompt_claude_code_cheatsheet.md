@@ -203,7 +203,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       cibo in bivacco, aree e periodi più sensibili, fonti ufficiali.
 - [x] Vespe, calabroni e api: prevenzione in bivacco, reazione allergica,
       adrenalina autoiniettabile.
-- [ ] Bovini al pascolo e mucche con vitelli: distanze, cani, comportamento se si
+- [x] Bovini al pascolo e mucche con vitelli: distanze, cani, comportamento se si
       viene caricati.
 - [ ] Roditori e volpi in bivacco: proteggere cibo e attrezzatura, rischio
       rosicchiamenti, malattie.

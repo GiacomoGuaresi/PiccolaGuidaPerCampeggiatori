@@ -505,6 +505,12 @@
     "file": "content/fauna/vespe-calabroni-api.html"
   },
   {
+    "id": "bovini-pascolo-mucche-vitelli",
+    "title": "Bovini al pascolo e mucche con vitelli",
+    "category": "Fauna",
+    "file": "content/fauna/bovini-pascolo-mucche-vitelli.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",
