@@ -101,7 +101,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       punti di fuga, peso e cibo per giorno.
 - [x] Piano B e criteri di rinuncia: definire in anticipo orario limite, punti
       di uscita, condizioni che fanno tornare indietro.
-- [ ] Lasciare detto dove si va: cosa scrivere a chi resta a casa, strumenti di
+- [x] Lasciare detto dove si va: cosa scrivere a chi resta a casa, strumenti di
       condivisione posizione, cosa fare se non si rientra.
 - [ ] Ore di luce, alba e tramonto in montagna: come pianificare partenze
       notturne e evitare di finire al buio.
