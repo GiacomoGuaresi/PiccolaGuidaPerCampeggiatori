@@ -82,7 +82,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       cosa mettere nel kit piedi.
 - [x] Camminare su ghiaione, sfasciumi e sentieri esposti: tecnica, distanza dal
       compagno, cosa fare se si smuovono sassi.
-- [ ] Attraversare nevai residui estivi: valutazione, tecnica, quando servono
+- [x] Attraversare nevai residui estivi: valutazione, tecnica, quando servono
       ramponcini/piccozza, quando rinunciare.
 - [ ] Guadare un torrente in sicurezza: valutazione della portata, punto giusto,
       tecnica, orario migliore (fusione glaciale).
