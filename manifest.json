@@ -791,5 +791,11 @@
     "title": "Campeggio in Svizzera: specificità",
     "category": "Camping",
     "file": "content/camping/campeggio-in-svizzera-specificita.html"
+  },
+  {
+    "id": "attrezzatura-campeggio-auto-vs-trekking",
+    "title": "Attrezzatura da campeggio \"base auto\" vs trekking",
+    "category": "Camping",
+    "file": "content/camping/attrezzatura-campeggio-auto-vs-trekking.html"
   }
 ]

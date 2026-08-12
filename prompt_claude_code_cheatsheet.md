@@ -171,7 +171,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       campeggio, servizi, regole.
 - [x] Campeggio in Svizzera: specificità (costi, regole, tassa, cantoni più
       restrittivi) rispetto all'Italia.
-- [ ] Attrezzatura da campeggio "base auto" vs trekking: cosa cambia e cosa vale
+- [x] Attrezzatura da campeggio "base auto" vs trekking: cosa cambia e cosa vale
       la pena portare quando il peso non è un problema.
 
 ### Categoria: Informazioni utili
