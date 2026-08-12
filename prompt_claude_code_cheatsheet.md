@@ -294,7 +294,7 @@ non un sentiero, e che senza kit omologato non si entra.
 - [x] Progressione corretta su ferrata: sempre due moschettoni sul cavo, cambio
       all'ancoraggio, un solo escursionista per tratto di cavo, distanze, uso
       di staffe e scale.
-- [ ] Errori e rischi tipici in ferrata: fattore di caduta alto, caduta sassi dal
+- [x] Errori e rischi tipici in ferrata: fattore di caduta alto, caduta sassi dal
       gruppo sopra, temporali e cavo metallico, affaticamento delle braccia,
       ritirarsi a metà via.
 - [ ] Ferrata con bambini o principianti: peso minimo per il dissipatore, corda
