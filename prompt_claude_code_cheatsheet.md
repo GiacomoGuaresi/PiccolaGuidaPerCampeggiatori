@@ -184,7 +184,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       soccorso, assicurazione), come iscriversi.
 - [x] Telefono in montagna: copertura, roaming Italia–Svizzera, chiamate di
       emergenza senza campo, SMS al 112, risparmio batteria.
-- [ ] Attraversare il confine Italia–Svizzera a piedi: documenti, dogana,
+- [x] Attraversare il confine Italia–Svizzera a piedi: documenti, dogana,
       limiti su cibo e merci, franchigie.
 - [ ] Coltelli e attrezzi in zaino: cosa è legale portare in Italia e in
       Svizzera, e sui mezzi pubblici.
