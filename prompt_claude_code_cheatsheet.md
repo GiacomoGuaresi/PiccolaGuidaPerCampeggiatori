@@ -137,7 +137,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Mal acuto di montagna (AMS): sintomi, soglie di quota, regole di salita e
       quando scendere subito.
-- [ ] Edema polmonare e cerebrale d'alta quota (HAPE/HACE): riconoscerli e agire.
+- [x] Edema polmonare e cerebrale d'alta quota (HAPE/HACE): riconoscerli e agire.
 - [ ] Acclimatazione: regole pratiche per dormire in quota, ritmo di salita,
       farmaci e loro limiti.
 - [ ] Sole in quota: UV, ustioni, crema, occhiali (categoria 3/4), oftalmia da

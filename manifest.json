@@ -695,5 +695,11 @@
     "title": "Mal acuto di montagna (AMS)",
     "category": "Quota e salute",
     "file": "content/quota-salute/mal-acuto-di-montagna-ams.html"
+  },
+  {
+    "id": "hape-hace-edema-alta-quota",
+    "title": "Edema polmonare e cerebrale d'alta quota (HAPE/HACE)",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/hape-hace-edema-alta-quota.html"
   }
 ]
