@@ -709,6 +709,12 @@
     "file": "content/vie-ferrate/meteo-stagione-ferrate.html"
   },
   {
+    "id": "ciaspole",
+    "title": "Ciaspole",
+    "category": "Escursionismo invernale",
+    "file": "content/escursionismo-invernale/ciaspole.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",

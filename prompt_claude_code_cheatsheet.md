@@ -309,7 +309,7 @@ Nota: blocco a sé. Ogni scheda deve chiarire che con neve invernale il terreno
 valanghe (CAI/SAC). Coordinare con la scheda già esistente
 "Bollettino nivometeorologico: cos'è e quando serve" senza duplicarla.
 
-- [ ] Ciaspole: quando servono davvero, tipi e taglie, come si cammina (salita,
+- [x] Ciaspole: quando servono davvero, tipi e taglie, come si cammina (salita,
       discesa, traversi), uso dell'alzatacco, errori comuni.
 - [ ] Attrezzatura base per un'escursione con le ciaspole: bastoncini con
       rondelle da neve, ghette, strati, ricambi, quantità d'acqua e cibo, luce.
