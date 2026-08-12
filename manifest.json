@@ -635,5 +635,11 @@
     "title": "Preparazione fisica minima per trekking con bivacco",
     "category": "Pianificazione",
     "file": "content/pianificazione/preparazione-fisica-trekking-bivacco.html"
+  },
+  {
+    "id": "bivacco-forzato-emergenza",
+    "title": "Bivacco forzato d'emergenza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/bivacco-forzato-emergenza.html"
   }
 ]
