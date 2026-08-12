@@ -653,5 +653,11 @@
     "title": "Telo termico (metallina)",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/telo-termico-metallina.html"
+  },
+  {
+    "id": "cosa-fare-se-ci-si-perde",
+    "title": "Cosa fare se ci si perde",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/cosa-fare-se-ci-si-perde.html"
   }
 ]

@@ -120,7 +120,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       pochi punti di ancoraggio.
 - [x] Telo termico (metallina): come si usa davvero, lato argento/oro, errori
       comuni, limiti reali.
-- [ ] Cosa fare se ci si perde: procedura STOP, quando fermarsi, quando risalire,
+- [x] Cosa fare se ci si perde: procedura STOP, quando fermarsi, quando risalire,
       come farsi trovare.
 - [ ] Accendere un fuoco in montagna: dove è lecito (rimando alla scheda fuochi
       liberi), esca, legna, accensione con vento/umidità, spegnimento corretto.
