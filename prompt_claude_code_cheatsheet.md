@@ -297,7 +297,7 @@ non un sentiero, e che senza kit omologato non si entra.
 - [x] Errori e rischi tipici in ferrata: fattore di caduta alto, caduta sassi dal
       gruppo sopra, temporali e cavo metallico, affaticamento delle braccia,
       ritirarsi a metà via.
-- [ ] Ferrata con bambini o principianti: peso minimo per il dissipatore, corda
+- [x] Ferrata con bambini o principianti: peso minimo per il dissipatore, corda
       di sicurezza dall'alto, scelta dell'itinerario, quando serve una guida.
 - [ ] Meteo e stagione per le ferrate: orari, temporali pomeridiani, neve e
       ghiaccio residui sui tratti in ombra, quando la via è "in condizione".
