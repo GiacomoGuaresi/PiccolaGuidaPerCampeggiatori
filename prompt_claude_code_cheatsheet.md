@@ -151,7 +151,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 - [x] Lavarsi in bivacco senza inquinare: sapone biodegradabile, distanza
       dall'acqua, salviette, gestione dell'acqua grigia.
 - [x] Igiene delle mani e prevenzione di gastroenteriti in trekking.
-- [ ] Ciclo mestruale in trekking e bivacco: gestione pratica, smaltimento,
+- [x] Ciclo mestruale in trekking e bivacco: gestione pratica, smaltimento,
       coppetta, fauna.
 - [ ] Lavare e asciugare i vestiti durante un trekking di più giorni.
 

@@ -737,5 +737,11 @@
     "title": "Igiene delle mani e prevenzione di gastroenteriti",
     "category": "Igiene",
     "file": "content/igiene/igiene-mani-gastroenterite.html"
+  },
+  {
+    "id": "ciclo-mestruale-trekking-bivacco",
+    "title": "Ciclo mestruale in trekking e bivacco",
+    "category": "Igiene",
+    "file": "content/igiene/ciclo-mestruale-trekking-bivacco.html"
   }
 ]
