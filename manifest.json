@@ -661,6 +661,12 @@
     "file": "content/rifugi/locale-invernale-rifugio-custodito.html"
   },
   {
+    "id": "cose-una-via-ferrata",
+    "title": "Cos'è una via ferrata",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/cose-una-via-ferrata.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",

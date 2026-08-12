@@ -1,6 +1,6 @@
 // Ordine preferito delle categorie in sidebar; le categorie non elencate
 // qui vengono aggiunte in coda in ordine alfabetico.
-const CATEGORY_ORDER = ["Guida", "Montagna", "Trekking", "Pianificazione", "Sopravvivenza", "Quota e salute", "Igiene", "Camping", "Informazioni utili", "Fauna", "Flora", "Meteo", "Altro"];
+const CATEGORY_ORDER = ["Guida", "Montagna", "Trekking", "Vie ferrate", "Pianificazione", "Sopravvivenza", "Quota e salute", "Igiene", "Camping", "Informazioni utili", "Fauna", "Flora", "Meteo", "Altro"];
 
 const state = {
   manifest: [],

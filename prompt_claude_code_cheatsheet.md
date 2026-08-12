@@ -280,7 +280,7 @@ Nota: aprire questa categoria allarga lo scopo della guida oltre il trekking.
 Le schede devono ripetere in modo netto che la ferrata è alpinismo attrezzato,
 non un sentiero, e che senza kit omologato non si entra.
 
-- [ ] Cos'è una via ferrata e cosa la distingue da un sentiero attrezzato o da un
+- [x] Cos'è una via ferrata e cosa la distingue da un sentiero attrezzato o da un
       sentiero EE: quando serve il kit, quando basta l'attenzione.
 - [ ] Kit da ferrata obbligatorio: imbrago, set con dissipatore (norma EN 958 /
       UIAA 128), casco, guanti, scarpe — cosa comprare e cosa non improvvisare
