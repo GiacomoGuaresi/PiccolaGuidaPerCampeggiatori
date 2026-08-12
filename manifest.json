@@ -139,6 +139,12 @@
     "file": "content/meteo/finestra-meteo-modelli-tendenze.html"
   },
   {
+    "id": "neve-fuori-stagione-gelo-notturno",
+    "title": "Neve fuori stagione e gelo notturno",
+    "category": "Meteo",
+    "file": "content/meteo/neve-fuori-stagione-gelo-notturno.html"
+  },
+  {
     "id": "simbologia-carte-igm-swisstopo",
     "title": "Carte IGM vs Swisstopo: differenze di simbologia",
     "category": "Orientamento",
