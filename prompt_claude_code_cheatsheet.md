@@ -167,7 +167,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       realistici, sicurezza.
 - [x] Tessere e sconti (TCS, ACSI, Camping Key Europe): quando convengono
       davvero.
-- [ ] Aree di sosta camper e "camper stop" in Italia e Svizzera: differenza da un
+- [x] Aree di sosta camper e "camper stop" in Italia e Svizzera: differenza da un
       campeggio, servizi, regole.
 - [ ] Campeggio in Svizzera: specificità (costi, regole, tassa, cantoni più
       restrittivi) rispetto all'Italia.

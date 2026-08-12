@@ -779,5 +779,11 @@
     "title": "Tessere e sconti (TCS, ACSI, Camping Key Europe)",
     "category": "Camping",
     "file": "content/camping/tessere-sconti-tcs-acsi-camping-key.html"
+  },
+  {
+    "id": "aree-di-sosta-camper",
+    "title": "Aree di sosta camper e \"camper stop\"",
+    "category": "Camping",
+    "file": "content/camping/aree-di-sosta-camper.html"
   }
 ]
