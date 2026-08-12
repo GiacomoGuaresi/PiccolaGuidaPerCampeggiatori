@@ -252,7 +252,7 @@ custodita), non l'atto di dormire in tenda. Nelle schede dire esplicitamente
 questa differenza in una riga, perché nel resto della guida il termine è usato
 nell'altro senso.
 
-- [ ] Cos'è un bivacco fisso: tipologie (bivacco Apollonio/fisso di alta quota,
+- [x] Cos'è un bivacco fisso: tipologie (bivacco Apollonio/fisso di alta quota,
       locale invernale di un rifugio custodito, capanna non custodita CH),
       chi li gestisce, sempre aperti o con chiave, quota tipica.
 - [ ] Etichetta e regole d'uso di un bivacco fisso: chi ha precedenza, quante
