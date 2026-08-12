@@ -767,5 +767,11 @@
     "title": "Etichetta del campeggio",
     "category": "Camping",
     "file": "content/camping/etichetta-campeggio.html"
+  },
+  {
+    "id": "elettricita-in-campeggio",
+    "title": "Elettricità in campeggio",
+    "category": "Camping",
+    "file": "content/camping/elettricita-in-campeggio.html"
   }
 ]

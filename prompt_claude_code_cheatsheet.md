@@ -163,7 +163,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       dai bagni.
 - [x] Etichetta del campeggio: orari di silenzio, uso dei servizi comuni, ospiti,
       cani, fuochi e barbecue.
-- [ ] Elettricità in campeggio: prese CEE, amperaggi tipici, adattatori, consumi
+- [x] Elettricità in campeggio: prese CEE, amperaggi tipici, adattatori, consumi
       realistici, sicurezza.
 - [ ] Tessere e sconti (TCS, ACSI, Camping Key Europe): quando convengono
       davvero.
