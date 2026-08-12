@@ -126,7 +126,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       liberi), esca, legna, accensione con vento/umidità, spegnimento corretto.
 - [x] Nodi essenziali per bivacco e trekking: 5 nodi (bulino, prusik, teso,
       barcaiolo, otto) e a cosa servono sul campo.
-- [ ] Farsi trovare dal soccorso: dove posizionarsi, segnali visivi, luce,
+- [x] Farsi trovare dal soccorso: dove posizionarsi, segnali visivi, luce,
       colori, come guidare l'elicottero.
 - [ ] Sopravvivere a una notte imprevista al freddo: priorità (riparo, isolamento,
       calorie, idratazione), cosa NON fare (alcol, sudare, immobilità).
