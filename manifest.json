@@ -743,5 +743,11 @@
     "title": "Ciclo mestruale in trekking e bivacco",
     "category": "Igiene",
     "file": "content/igiene/ciclo-mestruale-trekking-bivacco.html"
+  },
+  {
+    "id": "lavare-asciugare-vestiti-trekking",
+    "title": "Lavare e asciugare i vestiti durante un trekking",
+    "category": "Igiene",
+    "file": "content/igiene/lavare-asciugare-vestiti-trekking.html"
   }
 ]

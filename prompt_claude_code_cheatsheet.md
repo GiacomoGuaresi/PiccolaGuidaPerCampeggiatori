@@ -153,7 +153,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 - [x] Igiene delle mani e prevenzione di gastroenteriti in trekking.
 - [x] Ciclo mestruale in trekking e bivacco: gestione pratica, smaltimento,
       coppetta, fauna.
-- [ ] Lavare e asciugare i vestiti durante un trekking di più giorni.
+- [x] Lavare e asciugare i vestiti durante un trekking di più giorni.
 
 ### Categoria: Camping
 
