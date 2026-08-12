@@ -291,7 +291,7 @@ non un sentiero, e che senza kit omologato non si entra.
 - [x] Scale di difficoltà delle ferrate: scala italiana (F/PD/D/TD/ED) e scala
       tedesca/Hüsler (A–E), corrispondenze approssimative, come scegliere la
       prima ferrata.
-- [ ] Progressione corretta su ferrata: sempre due moschettoni sul cavo, cambio
+- [x] Progressione corretta su ferrata: sempre due moschettoni sul cavo, cambio
       all'ancoraggio, un solo escursionista per tratto di cavo, distanze, uso
       di staffe e scale.
 - [ ] Errori e rischi tipici in ferrata: fattore di caduta alto, caduta sassi dal
