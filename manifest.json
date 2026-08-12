@@ -593,5 +593,11 @@
     "title": "Pianificare un'uscita in giornata",
     "category": "Pianificazione",
     "file": "content/pianificazione/pianificare-uscita-giornata.html"
+  },
+  {
+    "id": "trekking-piu-giorni-bivacco",
+    "title": "Pianificare un trekking di più giorni con bivacco",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/trekking-piu-giorni-bivacco.html"
   }
 ]

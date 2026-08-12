@@ -97,7 +97,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Pianificare un'uscita in giornata: sequenza di controlli dal meteo alla
       traccia, tempi, margine di sicurezza, ora di rientro.
-- [ ] Pianificare un trekking di più giorni con bivacco: tappe, punti acqua,
+- [x] Pianificare un trekking di più giorni con bivacco: tappe, punti acqua,
       punti di fuga, peso e cibo per giorno.
 - [ ] Piano B e criteri di rinuncia: definire in anticipo orario limite, punti
       di uscita, condizioni che fanno tornare indietro.
