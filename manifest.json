@@ -673,6 +673,12 @@
     "file": "content/vie-ferrate/kit-da-ferrata-obbligatorio.html"
   },
   {
+    "id": "scadenza-controllo-kit-ferrata",
+    "title": "Scadenza e controllo del kit da ferrata",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/scadenza-controllo-kit-ferrata.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",

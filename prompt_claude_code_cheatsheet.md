@@ -285,7 +285,7 @@ non un sentiero, e che senza kit omologato non si entra.
 - [x] Kit da ferrata obbligatorio: imbrago, set con dissipatore (norma EN 958 /
       UIAA 128), casco, guanti, scarpe — cosa comprare e cosa non improvvisare
       mai (niente cordino autocostruito).
-- [ ] Scadenza e controllo del kit da ferrata: vita utile dei materiali tessili,
+- [x] Scadenza e controllo del kit da ferrata: vita utile dei materiali tessili,
       limiti di peso del dissipatore, controlli prima di ogni uscita, quando
       buttarlo dopo una caduta.
 - [ ] Scale di difficoltà delle ferrate: scala italiana (F/PD/D/TD/ED) e scala
