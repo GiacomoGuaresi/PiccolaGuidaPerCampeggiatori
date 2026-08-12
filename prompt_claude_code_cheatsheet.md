@@ -188,7 +188,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       limiti su cibo e merci, franchigie.
 - [x] Coltelli e attrezzi in zaino: cosa è legale portare in Italia e in
       Svizzera, e sui mezzi pubblici.
-- [ ] Glossario dei termini di montagna IT/DE/FR usati su carte e segnaletica
+- [x] Glossario dei termini di montagna IT/DE/FR usati su carte e segnaletica
       svizzere (Hütte, Alp, Grat, Col, Bisse...).
 - [ ] Assicurazione e responsabilità in gruppo informale: chi risponde di cosa
       quando si va in montagna con amici.
