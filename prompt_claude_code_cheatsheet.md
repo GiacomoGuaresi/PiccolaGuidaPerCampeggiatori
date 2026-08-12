@@ -242,7 +242,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       asciugare, spostarsi.
 - [x] Bivacco su neve: piattaforma, ancoraggi, ventilazione, rischio CO con il
       fornello.
-- [ ] Monossido di carbonio in tenda e nei bivacchi chiusi: rischio reale,
+- [x] Monossido di carbonio in tenda e nei bivacchi chiusi: rischio reale,
       regole, sintomi.
 
 ### Categoria: Rifugi e punti di appoggio (integrazioni) — bivacchi fissi
