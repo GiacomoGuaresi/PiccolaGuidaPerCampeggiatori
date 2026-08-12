@@ -575,5 +575,11 @@
     "title": "Discesa in sicurezza",
     "category": "Trekking",
     "file": "content/trekking/discesa-sicurezza.html"
+  },
+  {
+    "id": "trekking-con-il-cane",
+    "title": "Trekking con il cane in montagna",
+    "category": "Trekking",
+    "file": "content/trekking/trekking-con-il-cane.html"
   }
 ]

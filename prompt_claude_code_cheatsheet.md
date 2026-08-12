@@ -88,7 +88,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       tecnica, orario migliore (fusione glaciale).
 - [x] Discesa in sicurezza: perché la maggior parte degli incidenti avviene in
       discesa, tecnica, gestione della stanchezza.
-- [ ] Trekking con il cane in montagna: normativa IT/CH, pascoli e cani da
+- [x] Trekking con il cane in montagna: normativa IT/CH, pascoli e cani da
       guardiania, acqua, zampe, rifugi.
 - [ ] Trekking con bambini: dislivelli e distanze realistici per età, gestione
       del freddo, margini di sicurezza.
