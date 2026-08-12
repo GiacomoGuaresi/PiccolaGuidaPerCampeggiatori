@@ -264,7 +264,7 @@ nell'altro senso.
 - [x] Dormire in un bivacco fisso in sicurezza: ventilazione e monossido con
       fornello/stufa, umidità, freddo, valanghe e accesso invernale, cosa fare
       se è già pieno (avere sempre un piano B).
-- [ ] Trovare i bivacchi fissi in Lombardia e Trentino: elenchi e mappe
+- [x] Trovare i bivacchi fissi in Lombardia e Trentino: elenchi e mappe
       ufficiali (CAI sezionali, SAT, portali regionali, OpenStreetMap
       `shelter_type=basic_hut`), come verificare che siano agibili prima di
       partire.
