@@ -707,5 +707,11 @@
     "title": "Acclimatazione in alta quota",
     "category": "Quota e salute",
     "file": "content/quota-salute/acclimatazione-alta-quota.html"
+  },
+  {
+    "id": "sole-in-quota",
+    "title": "Sole in quota",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/sole-in-quota.html"
   }
 ]

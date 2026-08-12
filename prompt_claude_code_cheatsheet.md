@@ -140,7 +140,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 - [x] Edema polmonare e cerebrale d'alta quota (HAPE/HACE): riconoscerli e agire.
 - [x] Acclimatazione: regole pratiche per dormire in quota, ritmo di salita,
       farmaci e loro limiti.
-- [ ] Sole in quota: UV, ustioni, crema, occhiali (categoria 3/4), oftalmia da
+- [x] Sole in quota: UV, ustioni, crema, occhiali (categoria 3/4), oftalmia da
       neve.
 - [ ] Alimentazione e idratazione in quota: fabbisogno calorico reale, sali,
       appetito ridotto.
