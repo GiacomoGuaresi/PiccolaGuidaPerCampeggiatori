@@ -755,5 +755,11 @@
     "title": "Campeggio organizzato in Italia e Svizzera",
     "category": "Camping",
     "file": "content/camping/campeggio-organizzato-italia-svizzera.html"
+  },
+  {
+    "id": "scegliere-una-piazzola",
+    "title": "Scegliere una piazzola",
+    "category": "Camping",
+    "file": "content/camping/scegliere-una-piazzola.html"
   }
 ]

@@ -159,7 +159,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Campeggio organizzato in Italia e Svizzera: come funziona, prenotazione,
       documenti, costi tipici a notte, tassa di soggiorno.
-- [ ] Scegliere una piazzola: sole/ombra, drenaggio, rumore, servizi, distanza
+- [x] Scegliere una piazzola: sole/ombra, drenaggio, rumore, servizi, distanza
       dai bagni.
 - [ ] Etichetta del campeggio: orari di silenzio, uso dei servizi comuni, ospiti,
       cani, fuochi e barbecue.
