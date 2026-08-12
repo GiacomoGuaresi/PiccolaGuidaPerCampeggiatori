@@ -107,7 +107,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       notturne e evitare di finire al buio.
 - [x] Peso dello zaino: base weight, regola del % del peso corporeo, come
       caricare e regolare lo zaino, cosa tagliare per primo.
-- [ ] Raggiungere i sentieri con i mezzi pubblici in Lombardia/Ticino/Grigioni:
+- [x] Raggiungere i sentieri con i mezzi pubblici in Lombardia/Ticino/Grigioni:
       strumenti, orari, parcheggi e ZTL alternative.
 - [ ] Preparazione fisica minima per un trekking con bivacco: cosa allenare nelle
       settimane precedenti, test realistici.

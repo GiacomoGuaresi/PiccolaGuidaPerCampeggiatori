@@ -623,5 +623,11 @@
     "title": "Peso dello zaino",
     "category": "Pianificazione",
     "file": "content/pianificazione/peso-zaino.html"
+  },
+  {
+    "id": "mezzi-pubblici-sentieri-lombardia-ticino-grigioni",
+    "title": "Raggiungere i sentieri con i mezzi pubblici",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/mezzi-pubblici-sentieri-lombardia-ticino-grigioni.html"
   }
 ]
