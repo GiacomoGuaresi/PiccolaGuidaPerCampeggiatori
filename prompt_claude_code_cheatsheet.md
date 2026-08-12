@@ -268,7 +268,7 @@ nell'altro senso.
       ufficiali (CAI sezionali, SAT, portali regionali, OpenStreetMap
       `shelter_type=basic_hut`), come verificare che siano agibili prima di
       partire.
-- [ ] Capanne non custodite e locali invernali in Svizzera (Grigioni, Ticino,
+- [x] Capanne non custodite e locali invernali in Svizzera (Grigioni, Ticino,
       Vallese): come funzionano, cassetta per il pagamento e tariffe tipiche,
       chiave/codice SAC, dove trovarne l'elenco.
 - [ ] Locale invernale di un rifugio custodito: quando è aperto, come si accede,
