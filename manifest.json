@@ -503,5 +503,11 @@
     "title": "Rifugi CAI vs capanne SAC: le differenze principali",
     "category": "Rifugi e punti di appoggio",
     "file": "content/rifugi/differenze-servizi-cai-sac.html"
+  },
+  {
+    "id": "scala-difficolta-sentieri-italia",
+    "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
+    "category": "Trekking",
+    "file": "content/trekking/scala-difficolta-sentieri-italia.html"
   }
 ]
