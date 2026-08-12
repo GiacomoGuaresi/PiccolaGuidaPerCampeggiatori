@@ -319,6 +319,12 @@
     "file": "content/tenda/gestione-tenda-pioggia-continua.html"
   },
   {
+    "id": "bivacco-su-neve",
+    "title": "Bivacco su neve",
+    "category": "Tenda",
+    "file": "content/tenda/bivacco-su-neve.html"
+  },
+  {
     "id": "lavaggio-piuma",
     "title": "Lavare un sacco a pelo in piuma",
     "category": "Sacchi a pelo",

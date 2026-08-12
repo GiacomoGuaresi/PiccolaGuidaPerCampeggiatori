@@ -240,7 +240,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       guasti che risolve.
 - [x] Gestione della tenda sotto pioggia continua: entrare/uscire, cucinare,
       asciugare, spostarsi.
-- [ ] Bivacco su neve: piattaforma, ancoraggi, ventilazione, rischio CO con il
+- [x] Bivacco su neve: piattaforma, ancoraggi, ventilazione, rischio CO con il
       fornello.
 - [ ] Monossido di carbonio in tenda e nei bivacchi chiusi: rischio reale,
       regole, sintomi.
