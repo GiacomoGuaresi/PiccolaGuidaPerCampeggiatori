@@ -128,7 +128,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       barcaiolo, otto) e a cosa servono sul campo.
 - [x] Farsi trovare dal soccorso: dove posizionarsi, segnali visivi, luce,
       colori, come guidare l'elicottero.
-- [ ] Sopravvivere a una notte imprevista al freddo: priorità (riparo, isolamento,
+- [x] Sopravvivere a una notte imprevista al freddo: priorità (riparo, isolamento,
       calorie, idratazione), cosa NON fare (alcol, sudare, immobilità).
 - [ ] Gestire il panico e la stanchezza estrema in gruppo: segnali, decisioni,
       chi comanda.

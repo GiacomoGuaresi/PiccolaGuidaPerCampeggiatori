@@ -677,5 +677,11 @@
     "title": "Farsi trovare dal soccorso",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/farsi-trovare-dal-soccorso.html"
+  },
+  {
+    "id": "notte-imprevista-freddo",
+    "title": "Sopravvivere a una notte imprevista al freddo",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/notte-imprevista-freddo.html"
   }
 ]
