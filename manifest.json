@@ -533,5 +533,11 @@
     "title": "Gestire il ritmo e le pause su lunghi dislivelli",
     "category": "Trekking",
     "file": "content/trekking/ritmo-pause-lunghi-dislivelli.html"
+  },
+  {
+    "id": "uso-bastoncini-trekking",
+    "title": "Uso corretto dei bastoncini da trekking",
+    "category": "Trekking",
+    "file": "content/trekking/uso-bastoncini-trekking.html"
   }
 ]

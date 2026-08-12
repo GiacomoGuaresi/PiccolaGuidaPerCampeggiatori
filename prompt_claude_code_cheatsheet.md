@@ -74,7 +74,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       perché i tempi delle paline sono spesso ottimistici.
 - [x] Gestire il ritmo e le pause su lunghi dislivelli: cadenza, respirazione,
       pausa ogni quanto, alimentazione e idratazione durante la marcia.
-- [ ] Uso corretto dei bastoncini da trekking: lunghezza, salita/discesa,
+- [x] Uso corretto dei bastoncini da trekking: lunghezza, salita/discesa,
       traversi, quando NON usarli.
 - [ ] Scegliere e preparare gli scarponi: tipologie (A/AB/B/C), taglia, rodaggio,
       allacciatura per la discesa.
