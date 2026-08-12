@@ -517,6 +517,12 @@
     "file": "content/fauna/roditori-volpi-in-bivacco.html"
   },
   {
+    "id": "raccolta-funghi-lombardia-svizzera",
+    "title": "Raccolta di funghi in Lombardia e nei cantoni svizzeri",
+    "category": "Flora",
+    "file": "content/flora/raccolta-funghi-lombardia-svizzera.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",

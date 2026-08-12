@@ -210,7 +210,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Flora
 
-- [ ] Raccolta di funghi in Lombardia e nei cantoni svizzeri: permessi, quantità,
+- [x] Raccolta di funghi in Lombardia e nei cantoni svizzeri: permessi, quantità,
       giorni di divieto, sanzioni.
 - [ ] Piante velenose e urticanti comuni sulle Alpi: riconoscerle ed evitarle.
 - [ ] Bacche e piante commestibili: le poche affidabili, e perché non improvvisare
