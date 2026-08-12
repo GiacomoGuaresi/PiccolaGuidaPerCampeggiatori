@@ -599,5 +599,11 @@
     "title": "Pianificare un trekking di più giorni con bivacco",
     "category": "Pianificazione",
     "file": "content/pianificazione/trekking-piu-giorni-bivacco.html"
+  },
+  {
+    "id": "piano-b-criteri-rinuncia",
+    "title": "Piano B e criteri di rinuncia",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/piano-b-criteri-rinuncia.html"
   }
 ]

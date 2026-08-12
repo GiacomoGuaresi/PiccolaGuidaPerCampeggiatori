@@ -99,7 +99,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       traccia, tempi, margine di sicurezza, ora di rientro.
 - [x] Pianificare un trekking di più giorni con bivacco: tappe, punti acqua,
       punti di fuga, peso e cibo per giorno.
-- [ ] Piano B e criteri di rinuncia: definire in anticipo orario limite, punti
+- [x] Piano B e criteri di rinuncia: definire in anticipo orario limite, punti
       di uscita, condizioni che fanno tornare indietro.
 - [ ] Lasciare detto dove si va: cosa scrivere a chi resta a casa, strumenti di
       condivisione posizione, cosa fare se non si rientra.
