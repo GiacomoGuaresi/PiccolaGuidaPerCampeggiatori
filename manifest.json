@@ -169,6 +169,12 @@
     "file": "content/orientamento/altimetro-barometrico.html"
   },
   {
+    "id": "orientarsi-nebbia-buio",
+    "title": "Orientarsi in nebbia o al buio",
+    "category": "Orientamento",
+    "file": "content/orientamento/orientarsi-nebbia-buio.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
