@@ -238,7 +238,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Kit di riparazione minimo da portare sempre: cosa contiene, peso, e i 5
       guasti che risolve.
-- [ ] Gestione della tenda sotto pioggia continua: entrare/uscire, cucinare,
+- [x] Gestione della tenda sotto pioggia continua: entrare/uscire, cucinare,
       asciugare, spostarsi.
 - [ ] Bivacco su neve: piattaforma, ancoraggi, ventilazione, rischio CO con il
       fornello.

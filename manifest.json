@@ -313,6 +313,12 @@
     "file": "content/tenda/kit-riparazione-minimo.html"
   },
   {
+    "id": "gestione-tenda-pioggia-continua",
+    "title": "Gestire la tenda sotto pioggia continua",
+    "category": "Tenda",
+    "file": "content/tenda/gestione-tenda-pioggia-continua.html"
+  },
+  {
     "id": "lavaggio-piuma",
     "title": "Lavare un sacco a pelo in piuma",
     "category": "Sacchi a pelo",
