@@ -665,5 +665,11 @@
     "title": "Accendere un fuoco in montagna",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/accendere-fuoco-montagna.html"
+  },
+  {
+    "id": "nodi-essenziali-bivacco-trekking",
+    "title": "Nodi essenziali per bivacco e trekking",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/nodi-essenziali-bivacco-trekking.html"
   }
 ]
