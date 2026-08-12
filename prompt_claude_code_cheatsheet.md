@@ -182,7 +182,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       terze — cosa coprono davvero.
 - [x] Diventare socio CAI o SAC: costi, vantaggi concreti (sconti rifugi,
       soccorso, assicurazione), come iscriversi.
-- [ ] Telefono in montagna: copertura, roaming Italia–Svizzera, chiamate di
+- [x] Telefono in montagna: copertura, roaming Italia–Svizzera, chiamate di
       emergenza senza campo, SMS al 112, risparmio batteria.
 - [ ] Attraversare il confine Italia–Svizzera a piedi: documenti, dogana,
       limiti su cibo e merci, franchigie.
