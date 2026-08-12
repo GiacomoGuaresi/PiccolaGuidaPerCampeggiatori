@@ -299,7 +299,7 @@ non un sentiero, e che senza kit omologato non si entra.
       ritirarsi a metà via.
 - [x] Ferrata con bambini o principianti: peso minimo per il dissipatore, corda
       di sicurezza dall'alto, scelta dell'itinerario, quando serve una guida.
-- [ ] Meteo e stagione per le ferrate: orari, temporali pomeridiani, neve e
+- [x] Meteo e stagione per le ferrate: orari, temporali pomeridiani, neve e
       ghiaccio residui sui tratti in ombra, quando la via è "in condizione".
 
 ### Categoria: Escursionismo invernale
