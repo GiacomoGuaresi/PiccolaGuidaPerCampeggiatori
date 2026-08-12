@@ -157,7 +157,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Camping
 
-- [ ] Campeggio organizzato in Italia e Svizzera: come funziona, prenotazione,
+- [x] Campeggio organizzato in Italia e Svizzera: come funziona, prenotazione,
       documenti, costi tipici a notte, tassa di soggiorno.
 - [ ] Scegliere una piazzola: sole/ombra, drenaggio, rumore, servizi, distanza
       dai bagni.
