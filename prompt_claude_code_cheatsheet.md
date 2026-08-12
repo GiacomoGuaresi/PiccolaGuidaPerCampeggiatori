@@ -144,7 +144,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       neve.
 - [x] Alimentazione e idratazione in quota: fabbisogno calorico reale, sali,
       appetito ridotto.
-- [ ] Congelamenti e principi di congelamento: riconoscere, trattare, errori.
+- [x] Congelamenti e principi di congelamento: riconoscere, trattare, errori.
 
 ### Categoria: Igiene
 

@@ -719,5 +719,11 @@
     "title": "Alimentazione e idratazione in quota",
     "category": "Quota e salute",
     "file": "content/quota-salute/alimentazione-idratazione-quota.html"
+  },
+  {
+    "id": "congelamento",
+    "title": "Congelamenti e principio di congelamento",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/congelamento.html"
   }
 ]
