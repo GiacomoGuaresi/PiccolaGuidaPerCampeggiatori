@@ -487,6 +487,12 @@
     "file": "content/fauna/gestione-cibo-rifiuti-fauna.html"
   },
   {
+    "id": "zecche",
+    "title": "Zecche: rischio, prevenzione, rimozione",
+    "category": "Fauna",
+    "file": "content/fauna/zecche.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",

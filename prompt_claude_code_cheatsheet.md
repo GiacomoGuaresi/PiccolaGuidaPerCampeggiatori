@@ -197,7 +197,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Fauna (integrazioni)
 
-- [ ] Zecche: zone e quote a rischio, prevenzione, rimozione corretta, sintomi di
+- [x] Zecche: zone e quote a rischio, prevenzione, rimozione corretta, sintomi di
       Lyme e TBE, vaccino TBE in Svizzera.
 - [ ] Orso bruno in Trentino: comportamento in caso di incontro, gestione del
       cibo in bivacco, aree e periodi più sensibili, fonti ufficiali.
