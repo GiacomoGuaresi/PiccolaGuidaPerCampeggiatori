@@ -617,5 +617,11 @@
     "title": "Ore di luce, alba e tramonto in montagna",
     "category": "Pianificazione",
     "file": "content/pianificazione/ore-luce-alba-tramonto.html"
+  },
+  {
+    "id": "peso-zaino",
+    "title": "Peso dello zaino",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/peso-zaino.html"
   }
 ]

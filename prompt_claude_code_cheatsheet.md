@@ -105,7 +105,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       condivisione posizione, cosa fare se non si rientra.
 - [x] Ore di luce, alba e tramonto in montagna: come pianificare partenze
       notturne e evitare di finire al buio.
-- [ ] Peso dello zaino: base weight, regola del % del peso corporeo, come
+- [x] Peso dello zaino: base weight, regola del % del peso corporeo, come
       caricare e regolare lo zaino, cosa tagliare per primo.
 - [ ] Raggiungere i sentieri con i mezzi pubblici in Lombardia/Ticino/Grigioni:
       strumenti, orari, parcheggi e ZTL alternative.
