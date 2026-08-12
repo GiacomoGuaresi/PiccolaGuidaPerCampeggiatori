@@ -523,6 +523,12 @@
     "file": "content/flora/raccolta-funghi-lombardia-svizzera.html"
   },
   {
+    "id": "piante-velenose-urticanti-alpi",
+    "title": "Piante velenose e urticanti comuni sulle Alpi",
+    "category": "Flora",
+    "file": "content/flora/piante-velenose-urticanti-alpi.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",

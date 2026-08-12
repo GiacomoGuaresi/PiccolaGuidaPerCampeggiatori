@@ -212,7 +212,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Raccolta di funghi in Lombardia e nei cantoni svizzeri: permessi, quantità,
       giorni di divieto, sanzioni.
-- [ ] Piante velenose e urticanti comuni sulle Alpi: riconoscerle ed evitarle.
+- [x] Piante velenose e urticanti comuni sulle Alpi: riconoscerle ed evitarle.
 - [ ] Bacche e piante commestibili: le poche affidabili, e perché non improvvisare
       il resto.
 - [ ] Specie protette e divieto di raccolta (stella alpina & co.): cosa non si
