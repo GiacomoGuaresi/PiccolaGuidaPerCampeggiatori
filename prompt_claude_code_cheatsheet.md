@@ -258,7 +258,7 @@ nell'altro senso.
 - [x] Etichetta e regole d'uso di un bivacco fisso: chi ha precedenza, quante
       notti, non prenotabile, lasciarlo come lo si è trovato, coperte e
       materassi, rifiuti da riportare a valle, quaderno di bivacco.
-- [ ] Cosa trovi e cosa NON trovi in un bivacco fisso: brande, coperte, stufa,
+- [x] Cosa trovi e cosa NON trovi in un bivacco fisso: brande, coperte, stufa,
       acqua, legna, luce, servizi — e cosa devi comunque portarti (sacco a pelo,
       cibo, fornello, acqua, frontale).
 - [ ] Dormire in un bivacco fisso in sicurezza: ventilazione e monossido con

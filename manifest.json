@@ -631,6 +631,12 @@
     "file": "content/rifugi/etichetta-regole-bivacco-fisso.html"
   },
   {
+    "id": "cosa-trovi-bivacco-fisso",
+    "title": "Cosa trovi e cosa NON trovi in un bivacco fisso",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/cosa-trovi-bivacco-fisso.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
