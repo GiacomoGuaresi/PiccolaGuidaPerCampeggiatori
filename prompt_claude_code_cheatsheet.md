@@ -228,7 +228,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Meteo (integrazioni)
 
-- [ ] Inversione termica e nebbia di valle: quando la quota è più calda del
+- [x] Inversione termica e nebbia di valle: quando la quota è più calda del
       fondovalle e cosa implica per il bivacco.
 - [ ] Finestra meteo: leggere modelli e tendenze a 2–5 giorni senza illudersi.
 - [ ] Neve fuori stagione e gelo notturno: soglie realistiche per mese e quota

@@ -127,6 +127,12 @@
     "file": "content/meteo/vento-in-cresta.html"
   },
   {
+    "id": "inversione-termica-nebbia-di-valle",
+    "title": "Inversione termica e nebbia di valle",
+    "category": "Meteo",
+    "file": "content/meteo/inversione-termica-nebbia-di-valle.html"
+  },
+  {
     "id": "simbologia-carte-igm-swisstopo",
     "title": "Carte IGM vs Swisstopo: differenze di simbologia",
     "category": "Orientamento",
