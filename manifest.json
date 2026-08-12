@@ -515,5 +515,11 @@
     "title": "Scala SAC svizzera (T1–T6) e segnavia CH",
     "category": "Trekking",
     "file": "content/trekking/scala-sac-svizzera-t1-t6.html"
+  },
+  {
+    "id": "segnaletica-sentieri-cai",
+    "title": "Segnaletica dei sentieri CAI",
+    "category": "Trekking",
+    "file": "content/trekking/segnaletica-sentieri-cai.html"
   }
 ]
