@@ -103,7 +103,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       di uscita, condizioni che fanno tornare indietro.
 - [x] Lasciare detto dove si va: cosa scrivere a chi resta a casa, strumenti di
       condivisione posizione, cosa fare se non si rientra.
-- [ ] Ore di luce, alba e tramonto in montagna: come pianificare partenze
+- [x] Ore di luce, alba e tramonto in montagna: come pianificare partenze
       notturne e evitare di finire al buio.
 - [ ] Peso dello zaino: base weight, regola del % del peso corporeo, come
       caricare e regolare lo zaino, cosa tagliare per primo.

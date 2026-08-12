@@ -611,5 +611,11 @@
     "title": "Lasciare detto dove si va",
     "category": "Pianificazione",
     "file": "content/pianificazione/lasciare-detto-dove-si-va.html"
+  },
+  {
+    "id": "ore-luce-alba-tramonto",
+    "title": "Ore di luce, alba e tramonto in montagna",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/ore-luce-alba-tramonto.html"
   }
 ]
