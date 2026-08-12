@@ -72,7 +72,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 - [x] Calcolare i tempi di percorrenza: regole pratiche (dislivello/ora in
       salita e discesa, formula DIN/SAC, correzioni per zaino, neve, gruppo) e
       perché i tempi delle paline sono spesso ottimistici.
-- [ ] Gestire il ritmo e le pause su lunghi dislivelli: cadenza, respirazione,
+- [x] Gestire il ritmo e le pause su lunghi dislivelli: cadenza, respirazione,
       pausa ogni quanto, alimentazione e idratazione durante la marcia.
 - [ ] Uso corretto dei bastoncini da trekking: lunghezza, salita/discesa,
       traversi, quando NON usarli.
