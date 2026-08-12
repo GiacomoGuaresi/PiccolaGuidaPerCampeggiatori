@@ -192,7 +192,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       svizzere (Hütte, Alp, Grat, Col, Bisse...).
 - [x] Assicurazione e responsabilità in gruppo informale: chi risponde di cosa
       quando si va in montagna con amici.
-- [ ] Drone in montagna: dove è vietato in Italia e Svizzera (parchi, riserve,
+- [x] Drone in montagna: dove è vietato in Italia e Svizzera (parchi, riserve,
       aree faunistiche), regole base.
 
 ### Categoria: Fauna (integrazioni)
