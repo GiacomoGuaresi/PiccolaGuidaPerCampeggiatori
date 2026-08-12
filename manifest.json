@@ -529,6 +529,12 @@
     "file": "content/flora/piante-velenose-urticanti-alpi.html"
   },
   {
+    "id": "bacche-piante-commestibili",
+    "title": "Bacche e piante commestibili",
+    "category": "Flora",
+    "file": "content/flora/bacche-piante-commestibili.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",
