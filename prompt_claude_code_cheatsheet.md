@@ -180,7 +180,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       Svizzera (costi reali, REGA), con cifre indicative.
 - [x] Assicurazioni per il soccorso alpino: tessera CAI, socio REGA, polizze
       terze — cosa coprono davvero.
-- [ ] Diventare socio CAI o SAC: costi, vantaggi concreti (sconti rifugi,
+- [x] Diventare socio CAI o SAC: costi, vantaggi concreti (sconti rifugi,
       soccorso, assicurazione), come iscriversi.
 - [ ] Telefono in montagna: copertura, roaming Italia–Svizzera, chiamate di
       emergenza senza campo, SMS al 112, risparmio batteria.
