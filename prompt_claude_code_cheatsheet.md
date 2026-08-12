@@ -148,7 +148,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Igiene
 
-- [ ] Lavarsi in bivacco senza inquinare: sapone biodegradabile, distanza
+- [x] Lavarsi in bivacco senza inquinare: sapone biodegradabile, distanza
       dall'acqua, salviette, gestione dell'acqua grigia.
 - [ ] Igiene delle mani e prevenzione di gastroenteriti in trekking.
 - [ ] Ciclo mestruale in trekking e bivacco: gestione pratica, smaltimento,

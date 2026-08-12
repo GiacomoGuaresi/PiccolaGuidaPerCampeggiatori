@@ -725,5 +725,11 @@
     "title": "Congelamenti e principio di congelamento",
     "category": "Quota e salute",
     "file": "content/quota-salute/congelamento.html"
+  },
+  {
+    "id": "lavarsi-in-bivacco-senza-inquinare",
+    "title": "Lavarsi in bivacco senza inquinare",
+    "category": "Igiene",
+    "file": "content/igiene/lavarsi-in-bivacco-senza-inquinare.html"
   }
 ]
