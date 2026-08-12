@@ -161,7 +161,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       documenti, costi tipici a notte, tassa di soggiorno.
 - [x] Scegliere una piazzola: sole/ombra, drenaggio, rumore, servizi, distanza
       dai bagni.
-- [ ] Etichetta del campeggio: orari di silenzio, uso dei servizi comuni, ospiti,
+- [x] Etichetta del campeggio: orari di silenzio, uso dei servizi comuni, ospiti,
       cani, fuochi e barbecue.
 - [ ] Elettricità in campeggio: prese CEE, amperaggi tipici, adattatori, consumi
       realistici, sicurezza.

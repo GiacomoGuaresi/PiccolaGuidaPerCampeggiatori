@@ -761,5 +761,11 @@
     "title": "Scegliere una piazzola",
     "category": "Camping",
     "file": "content/camping/scegliere-una-piazzola.html"
+  },
+  {
+    "id": "etichetta-campeggio",
+    "title": "Etichetta del campeggio",
+    "category": "Camping",
+    "file": "content/camping/etichetta-campeggio.html"
   }
 ]
