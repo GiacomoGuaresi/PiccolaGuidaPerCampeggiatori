@@ -581,5 +581,11 @@
     "title": "Trekking con il cane in montagna",
     "category": "Trekking",
     "file": "content/trekking/trekking-con-il-cane.html"
+  },
+  {
+    "id": "trekking-con-bambini",
+    "title": "Trekking con bambini",
+    "category": "Trekking",
+    "file": "content/trekking/trekking-con-bambini.html"
   }
 ]
