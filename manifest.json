@@ -701,5 +701,11 @@
     "title": "Edema polmonare e cerebrale d'alta quota (HAPE/HACE)",
     "category": "Quota e salute",
     "file": "content/quota-salute/hape-hace-edema-alta-quota.html"
+  },
+  {
+    "id": "acclimatazione-alta-quota",
+    "title": "Acclimatazione in alta quota",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/acclimatazione-alta-quota.html"
   }
 ]
