@@ -629,5 +629,11 @@
     "title": "Raggiungere i sentieri con i mezzi pubblici",
     "category": "Pianificazione",
     "file": "content/pianificazione/mezzi-pubblici-sentieri-lombardia-ticino-grigioni.html"
+  },
+  {
+    "id": "preparazione-fisica-trekking-bivacco",
+    "title": "Preparazione fisica minima per trekking con bivacco",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/preparazione-fisica-trekking-bivacco.html"
   }
 ]

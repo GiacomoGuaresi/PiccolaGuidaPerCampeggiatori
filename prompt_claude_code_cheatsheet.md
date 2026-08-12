@@ -109,7 +109,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       caricare e regolare lo zaino, cosa tagliare per primo.
 - [x] Raggiungere i sentieri con i mezzi pubblici in Lombardia/Ticino/Grigioni:
       strumenti, orari, parcheggi e ZTL alternative.
-- [ ] Preparazione fisica minima per un trekking con bivacco: cosa allenare nelle
+- [x] Preparazione fisica minima per un trekking con bivacco: cosa allenare nelle
       settimane precedenti, test realistici.
 
 ### Categoria: Sopravvivenza
