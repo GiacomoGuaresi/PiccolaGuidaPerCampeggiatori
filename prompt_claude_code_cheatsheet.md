@@ -76,7 +76,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       pausa ogni quanto, alimentazione e idratazione durante la marcia.
 - [x] Uso corretto dei bastoncini da trekking: lunghezza, salita/discesa,
       traversi, quando NON usarli.
-- [ ] Scegliere e preparare gli scarponi: tipologie (A/AB/B/C), taglia, rodaggio,
+- [x] Scegliere e preparare gli scarponi: tipologie (A/AB/B/C), taglia, rodaggio,
       allacciatura per la discesa.
 - [ ] Cura dei piedi in trekking: prevenire e trattare vesciche, calze, cambio,
       cosa mettere nel kit piedi.
