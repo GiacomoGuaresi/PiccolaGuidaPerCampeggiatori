@@ -545,5 +545,11 @@
     "title": "Scegliere e preparare gli scarponi",
     "category": "Trekking",
     "file": "content/trekking/scegliere-preparare-scarponi.html"
+  },
+  {
+    "id": "cura-piedi-trekking",
+    "title": "Cura dei piedi in trekking",
+    "category": "Trekking",
+    "file": "content/trekking/cura-piedi-trekking.html"
   }
 ]

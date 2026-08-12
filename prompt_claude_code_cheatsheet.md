@@ -78,7 +78,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       traversi, quando NON usarli.
 - [x] Scegliere e preparare gli scarponi: tipologie (A/AB/B/C), taglia, rodaggio,
       allacciatura per la discesa.
-- [ ] Cura dei piedi in trekking: prevenire e trattare vesciche, calze, cambio,
+- [x] Cura dei piedi in trekking: prevenire e trattare vesciche, calze, cambio,
       cosa mettere nel kit piedi.
 - [ ] Camminare su ghiaione, sfasciumi e sentieri esposti: tecnica, distanza dal
       compagno, cosa fare se si smuovono sassi.
