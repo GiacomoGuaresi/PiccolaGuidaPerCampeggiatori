@@ -587,5 +587,11 @@
     "title": "Trekking con bambini",
     "category": "Trekking",
     "file": "content/trekking/trekking-con-bambini.html"
+  },
+  {
+    "id": "pianificare-uscita-giornata",
+    "title": "Pianificare un'uscita in giornata",
+    "category": "Pianificazione",
+    "file": "content/pianificazione/pianificare-uscita-giornata.html"
   }
 ]

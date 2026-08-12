@@ -95,7 +95,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Pianificazione
 
-- [ ] Pianificare un'uscita in giornata: sequenza di controlli dal meteo alla
+- [x] Pianificare un'uscita in giornata: sequenza di controlli dal meteo alla
       traccia, tempi, margine di sicurezza, ora di rientro.
 - [ ] Pianificare un trekking di più giorni con bivacco: tappe, punti acqua,
       punti di fuga, peso e cibo per giorno.
