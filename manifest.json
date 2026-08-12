@@ -521,5 +521,11 @@
     "title": "Segnaletica dei sentieri CAI",
     "category": "Trekking",
     "file": "content/trekking/segnaletica-sentieri-cai.html"
+  },
+  {
+    "id": "calcolo-tempi-percorrenza",
+    "title": "Calcolare i tempi di percorrenza",
+    "category": "Trekking",
+    "file": "content/trekking/calcolo-tempi-percorrenza.html"
   }
 ]

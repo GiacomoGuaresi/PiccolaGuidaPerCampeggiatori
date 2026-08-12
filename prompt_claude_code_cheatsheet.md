@@ -69,7 +69,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       bianco-blu-bianco) e cosa implicano.
 - [x] Segnaletica dei sentieri CAI: segnavia bianco-rosso, numerazione, paline,
       ometti, bolli — come leggerli e cosa fare quando spariscono.
-- [ ] Calcolare i tempi di percorrenza: regole pratiche (dislivello/ora in
+- [x] Calcolare i tempi di percorrenza: regole pratiche (dislivello/ora in
       salita e discesa, formula DIN/SAC, correzioni per zaino, neve, gruppo) e
       perché i tempi delle paline sono spesso ottimistici.
 - [ ] Gestire il ritmo e le pause su lunghi dislivelli: cadenza, respirazione,
