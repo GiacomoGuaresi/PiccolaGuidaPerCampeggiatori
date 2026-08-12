@@ -69,6 +69,19 @@ Poi apri `http://localhost:8000`.
 - **Tutte le schede**: premi "Esporta tutte le schede (PDF)" nel footer;
   ogni scheda finisce su una pagina separata.
 
+### Modalità A4 (2 schede per foglio)
+
+Nelle finestre "Stampa libro" e "Aggiornamento stampa" c'è la checkbox
+**Modalità A4 (2 schede per foglio)**: impagina due schede A5 affiancate su
+un foglio A4 orizzontale (297 × 210 mm), con una linea grigia tratteggiata
+al centro come guida di taglio. Se le schede sono in numero dispari,
+l'ultima metà foglio resta bianca. La scelta viene ricordata (localStorage)
+e vale anche per "Stampa pagina" della singola scheda.
+
+Nella finestra di stampa del browser serve orientamento **orizzontale** e
+scala **100%** ("Dimensioni reali", non "Adatta alla pagina"), altrimenti le
+schede non escono in formato A5 esatto.
+
 Le regole `@page { size: 148mm 210mm; }` in `style.css` impostano già il
 formato A5. Chrome/Edge rispettano la dimensione custom automaticamente;
 Firefox potrebbe richiedere di selezionare "Dimensioni carta gestite

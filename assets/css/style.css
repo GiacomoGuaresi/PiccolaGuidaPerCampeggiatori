@@ -761,6 +761,32 @@ button:disabled {
   flex-shrink: 0;
 }
 
+.modal-dialog .print-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-ink);
+  border-top: 1px dashed var(--color-bark);
+  padding-top: 0.8rem;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.print-option input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 0.2em;
+}
+
+.print-option small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-stone);
+}
+
 #btn-confirm-print-book {
   margin-top: 1rem;
 }
@@ -880,6 +906,40 @@ button:disabled {
 
   #print-area .a5-page:last-child {
     page-break-after: auto;
+  }
+
+  /* Modalità A4: due A5 affiancate su un foglio A4 orizzontale (296×210mm
+     di contenuto), separate da una linea tratteggiata di taglio. */
+  #print-area.a4-mode .a5-page {
+    page-break-after: auto;
+    flex: 0 0 var(--a5-width);
+  }
+
+  #print-area.a4-mode .a4-sheet {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: var(--a5-height);
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  #print-area.a4-mode .a4-sheet:last-child {
+    page-break-after: auto;
+  }
+
+  #print-area.a4-mode .a4-sheet::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 0.3mm dashed #c4c4c4;
+  }
+
+  #print-area.a4-mode .a5-blank {
+    background: var(--color-paper);
   }
 
   .a5-page .sources,

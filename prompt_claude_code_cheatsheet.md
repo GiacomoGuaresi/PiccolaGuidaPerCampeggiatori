@@ -130,7 +130,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       colori, come guidare l'elicottero.
 - [x] Sopravvivere a una notte imprevista al freddo: priorità (riparo, isolamento,
       calorie, idratazione), cosa NON fare (alcol, sudare, immobilità).
-- [ ] Gestire il panico e la stanchezza estrema in gruppo: segnali, decisioni,
+- [x] Gestire il panico e la stanchezza estrema in gruppo: segnali, decisioni,
       chi comanda.
 
 ### Categoria: Quota e salute

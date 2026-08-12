@@ -42,6 +42,7 @@ const els = {
   btnSelectAllTopics: document.getElementById("btn-select-all-topics"),
   btnSelectNoneTopics: document.getElementById("btn-select-none-topics"),
   btnConfirmPrintBook: document.getElementById("btn-confirm-print-book"),
+  a4ModeCheckboxes: Array.from(document.querySelectorAll(".a4-mode-checkbox")),
 };
 
 init();
@@ -59,6 +60,8 @@ async function init() {
   els.btnSelectNoneTopics.addEventListener("click", () => setAllCheckboxesIn(els.topicPickerList, false));
   els.topicPickerList.addEventListener("change", () => persistCategorySelection(els.topicPickerList));
   els.btnConfirmPrintBook.addEventListener("click", printBook);
+
+  initA4ModeCheckboxes();
 
   els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
@@ -374,8 +377,63 @@ async function fetchFragment(path) {
 
 function exportCurrentCard() {
   if (!state.current) return;
-  els.printArea.innerHTML = `<div class="a5-page">${els.a5Single.innerHTML}</div>`;
+  renderPrintPages([els.a5Single.innerHTML]);
   window.print();
+}
+
+/* ---------------------------------- Modalità A4 (2 schede per foglio) ---------------------------------- */
+
+const A4_MODE_KEY = "printA4Mode";
+const PAGE_SIZE_STYLE_ID = "print-page-size";
+
+function isA4Mode() {
+  return localStorage.getItem(A4_MODE_KEY) === "1";
+}
+
+function initA4ModeCheckboxes() {
+  els.a4ModeCheckboxes.forEach((cb) => {
+    cb.checked = isA4Mode();
+    cb.addEventListener("change", () => {
+      localStorage.setItem(A4_MODE_KEY, cb.checked ? "1" : "0");
+      els.a4ModeCheckboxes.forEach((other) => (other.checked = cb.checked));
+    });
+  });
+}
+
+// @page non può essere condizionato da una classe: la regola viene riscritta
+// in un <style> dedicato prima di ogni stampa.
+function setPrintPageSize(a4) {
+  let styleEl = document.getElementById(PAGE_SIZE_STYLE_ID);
+  if (!styleEl) {
+    styleEl = document.createElement("style");
+    styleEl.id = PAGE_SIZE_STYLE_ID;
+    document.head.appendChild(styleEl);
+  }
+  const size = a4 ? "297mm 210mm" : "148mm 210mm";
+  styleEl.textContent = `@page { size: ${size}; margin: 0; }`;
+}
+
+// Riempie #print-area con le schede da stampare: una per pagina A5, oppure
+// due affiancate per foglio A4 orizzontale (l'ultima metà resta bianca se il
+// numero di schede è dispari).
+function renderPrintPages(pages) {
+  const a4 = isA4Mode();
+  setPrintPageSize(a4);
+  els.printArea.classList.toggle("a4-mode", a4);
+
+  const cards = pages.map((html) => `<div class="a5-page">${html}</div>`);
+
+  if (!a4) {
+    els.printArea.innerHTML = cards.join("");
+    return;
+  }
+
+  const blank = '<div class="a5-page a5-blank"></div>';
+  const sheets = [];
+  for (let i = 0; i < cards.length; i += 2) {
+    sheets.push(`<div class="a4-sheet">${cards[i]}${cards[i + 1] || blank}</div>`);
+  }
+  els.printArea.innerHTML = sheets.join("");
 }
 
 /* ---------------------------------- Stampa libro (selezione sezioni) ---------------------------------- */
@@ -462,7 +520,7 @@ async function printBook() {
     }
   }
 
-  els.printArea.innerHTML = pages.map((html) => `<div class="a5-page">${html}</div>`).join("");
+  renderPrintPages(pages);
   window.print();
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
@@ -589,7 +647,7 @@ async function printUpdate(refDate, changed, categories) {
     }
   }
 
-  els.printArea.innerHTML = pages.map((html) => `<div class="a5-page">${html}</div>`).join("");
+  renderPrintPages(pages);
   window.print();
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
