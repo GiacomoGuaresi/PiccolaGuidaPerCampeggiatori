@@ -176,7 +176,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Informazioni utili
 
-- [ ] Chi paga il soccorso in montagna: Italia (ticket regionali, elisoccorso) vs
+- [x] Chi paga il soccorso in montagna: Italia (ticket regionali, elisoccorso) vs
       Svizzera (costi reali, REGA), con cifre indicative.
 - [ ] Assicurazioni per il soccorso alpino: tessera CAI, socio REGA, polizze
       terze — cosa coprono davvero.

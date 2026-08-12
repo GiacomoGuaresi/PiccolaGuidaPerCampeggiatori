@@ -797,5 +797,11 @@
     "title": "Attrezzatura da campeggio \"base auto\" vs trekking",
     "category": "Camping",
     "file": "content/camping/attrezzatura-campeggio-auto-vs-trekking.html"
+  },
+  {
+    "id": "chi-paga-il-soccorso",
+    "title": "Chi paga il soccorso in montagna",
+    "category": "Informazioni utili",
+    "file": "content/informazioni-utili/chi-paga-il-soccorso.html"
   }
 ]
