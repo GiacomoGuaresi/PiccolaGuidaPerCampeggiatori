@@ -186,7 +186,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       emergenza senza campo, SMS al 112, risparmio batteria.
 - [x] Attraversare il confine Italia–Svizzera a piedi: documenti, dogana,
       limiti su cibo e merci, franchigie.
-- [ ] Coltelli e attrezzi in zaino: cosa è legale portare in Italia e in
+- [x] Coltelli e attrezzi in zaino: cosa è legale portare in Italia e in
       Svizzera, e sui mezzi pubblici.
 - [ ] Glossario dei termini di montagna IT/DE/FR usati su carte e segnaletica
       svizzere (Hütte, Alp, Grat, Col, Bisse...).
