@@ -255,7 +255,7 @@ nell'altro senso.
 - [x] Cos'è un bivacco fisso: tipologie (bivacco Apollonio/fisso di alta quota,
       locale invernale di un rifugio custodito, capanna non custodita CH),
       chi li gestisce, sempre aperti o con chiave, quota tipica.
-- [ ] Etichetta e regole d'uso di un bivacco fisso: chi ha precedenza, quante
+- [x] Etichetta e regole d'uso di un bivacco fisso: chi ha precedenza, quante
       notti, non prenotabile, lasciarlo come lo si è trovato, coperte e
       materassi, rifiuti da riportare a valle, quaderno di bivacco.
 - [ ] Cosa trovi e cosa NON trovi in un bivacco fisso: brande, coperte, stufa,
