@@ -307,6 +307,12 @@
     "file": "content/tenda/manutenzione-riparazione-bastoni.html"
   },
   {
+    "id": "kit-riparazione-minimo",
+    "title": "Kit di riparazione minimo",
+    "category": "Tenda",
+    "file": "content/tenda/kit-riparazione-minimo.html"
+  },
+  {
     "id": "lavaggio-piuma",
     "title": "Lavare un sacco a pelo in piuma",
     "category": "Sacchi a pelo",

@@ -236,7 +236,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Tenda / attrezzatura (integrazioni)
 
-- [ ] Kit di riparazione minimo da portare sempre: cosa contiene, peso, e i 5
+- [x] Kit di riparazione minimo da portare sempre: cosa contiene, peso, e i 5
       guasti che risolve.
 - [ ] Gestione della tenda sotto pioggia continua: entrare/uscire, cucinare,
       asciugare, spostarsi.
