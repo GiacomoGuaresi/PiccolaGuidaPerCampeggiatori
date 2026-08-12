@@ -84,7 +84,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       compagno, cosa fare se si smuovono sassi.
 - [x] Attraversare nevai residui estivi: valutazione, tecnica, quando servono
       ramponcini/piccozza, quando rinunciare.
-- [ ] Guadare un torrente in sicurezza: valutazione della portata, punto giusto,
+- [x] Guadare un torrente in sicurezza: valutazione della portata, punto giusto,
       tecnica, orario migliore (fusione glaciale).
 - [ ] Discesa in sicurezza: perché la maggior parte degli incidenti avviene in
       discesa, tecnica, gestione della stanchezza.
