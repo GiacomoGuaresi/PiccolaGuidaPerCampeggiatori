@@ -133,6 +133,12 @@
     "file": "content/meteo/inversione-termica-nebbia-di-valle.html"
   },
   {
+    "id": "finestra-meteo-modelli-tendenze",
+    "title": "Finestra meteo: modelli e tendenze a 2-5 giorni",
+    "category": "Meteo",
+    "file": "content/meteo/finestra-meteo-modelli-tendenze.html"
+  },
+  {
     "id": "simbologia-carte-igm-swisstopo",
     "title": "Carte IGM vs Swisstopo: differenze di simbologia",
     "category": "Orientamento",
