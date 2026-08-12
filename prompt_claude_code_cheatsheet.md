@@ -315,7 +315,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       rondelle da neve, ghette, strati, ricambi, quantità d'acqua e cibo, luce.
 - [x] Kit autosoccorso in valanga (ARTVA, pala, sonda): perché vanno insieme e
       perché senza formazione servono a poco; come si porta e dove.
-- [ ] ARTVA: check di gruppo prima di partire, modalità trasmissione/ricerca,
+- [x] ARTVA: check di gruppo prima di partire, modalità trasmissione/ricerca,
       batterie e freddo, interferenze con telefono e cavi.
 - [ ] Autosoccorso in valanga: i primi 15 minuti, sequenza ricerca di segnale →
       ricerca grossolana → fine → sondaggio → scavo a V, e chiamata al soccorso.

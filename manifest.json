@@ -727,6 +727,12 @@
     "file": "content/escursionismo-invernale/kit-autosoccorso-valanga-artva-pala-sonda.html"
   },
   {
+    "id": "artva-check-gruppo-trasmissione-ricerca",
+    "title": "ARTVA: check di gruppo, trasmissione/ricerca, batterie e interferenze",
+    "category": "Escursionismo invernale",
+    "file": "content/escursionismo-invernale/artva-check-gruppo-trasmissione-ricerca.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
