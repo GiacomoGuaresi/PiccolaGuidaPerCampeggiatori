@@ -64,7 +64,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Scala di difficoltà dei sentieri in Italia (T, E, EE, EEA): cosa richiede
       davvero ogni livello, con esempi concreti e attrezzatura minima.
-- [ ] Scala SAC svizzera dei sentieri di montagna (T1–T6) e corrispondenza con
+- [x] Scala SAC svizzera dei sentieri di montagna (T1–T6) e corrispondenza con
       la scala CAI; colori dei segnavia CH (giallo, bianco-rosso-bianco,
       bianco-blu-bianco) e cosa implicano.
 - [ ] Segnaletica dei sentieri CAI: segnavia bianco-rosso, numerazione, paline,

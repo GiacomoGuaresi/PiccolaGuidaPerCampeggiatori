@@ -509,5 +509,11 @@
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
     "file": "content/trekking/scala-difficolta-sentieri-italia.html"
+  },
+  {
+    "id": "scala-sac-svizzera-t1-t6",
+    "title": "Scala SAC svizzera (T1–T6) e segnavia CH",
+    "category": "Trekking",
+    "file": "content/trekking/scala-sac-svizzera-t1-t6.html"
   }
 ]
