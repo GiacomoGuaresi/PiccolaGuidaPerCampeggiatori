@@ -731,5 +731,11 @@
     "title": "Lavarsi in bivacco senza inquinare",
     "category": "Igiene",
     "file": "content/igiene/lavarsi-in-bivacco-senza-inquinare.html"
+  },
+  {
+    "id": "igiene-mani-gastroenterite",
+    "title": "Igiene delle mani e prevenzione di gastroenteriti",
+    "category": "Igiene",
+    "file": "content/igiene/igiene-mani-gastroenterite.html"
   }
 ]
