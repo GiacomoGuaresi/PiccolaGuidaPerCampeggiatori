@@ -163,6 +163,12 @@
     "file": "content/orientamento/dare-posizione-al-soccorso.html"
   },
   {
+    "id": "altimetro-barometrico",
+    "title": "Altimetro barometrico",
+    "category": "Orientamento",
+    "file": "content/orientamento/altimetro-barometrico.html"
+  },
+  {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
     "category": "Etica",
