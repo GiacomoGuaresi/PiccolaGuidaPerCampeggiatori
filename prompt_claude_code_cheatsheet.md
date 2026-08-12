@@ -313,7 +313,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       discesa, traversi), uso dell'alzatacco, errori comuni.
 - [x] Attrezzatura base per un'escursione con le ciaspole: bastoncini con
       rondelle da neve, ghette, strati, ricambi, quantità d'acqua e cibo, luce.
-- [ ] Kit autosoccorso in valanga (ARTVA, pala, sonda): perché vanno insieme e
+- [x] Kit autosoccorso in valanga (ARTVA, pala, sonda): perché vanno insieme e
       perché senza formazione servono a poco; come si porta e dove.
 - [ ] ARTVA: check di gruppo prima di partire, modalità trasmissione/ricerca,
       batterie e freddo, interferenze con telefono e cavi.

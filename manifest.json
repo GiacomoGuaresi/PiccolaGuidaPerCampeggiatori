@@ -721,6 +721,12 @@
     "file": "content/escursionismo-invernale/attrezzatura-base-ciaspole.html"
   },
   {
+    "id": "kit-autosoccorso-valanga-artva-pala-sonda",
+    "title": "Kit autosoccorso in valanga (ARTVA, pala, sonda)",
+    "category": "Escursionismo invernale",
+    "file": "content/escursionismo-invernale/kit-autosoccorso-valanga-artva-pala-sonda.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
