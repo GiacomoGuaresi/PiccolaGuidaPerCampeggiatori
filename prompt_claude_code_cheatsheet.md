@@ -190,7 +190,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       Svizzera, e sui mezzi pubblici.
 - [x] Glossario dei termini di montagna IT/DE/FR usati su carte e segnaletica
       svizzere (Hütte, Alp, Grat, Col, Bisse...).
-- [ ] Assicurazione e responsabilità in gruppo informale: chi risponde di cosa
+- [x] Assicurazione e responsabilità in gruppo informale: chi risponde di cosa
       quando si va in montagna con amici.
 - [ ] Drone in montagna: dove è vietato in Italia e Svizzera (parchi, riserve,
       aree faunistiche), regole base.
