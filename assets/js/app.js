@@ -317,6 +317,7 @@ async function selectCard(entry, linkEl) {
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
   els.cardToolbar.hidden = false;
+  els.btnExportSingle.hidden = entry.printable === false;
 
   if (MOBILE_QUERY.matches) closeSidebar();
 }
@@ -335,6 +336,29 @@ function extractSources() {
   els.sourcesPanel.appendChild(heading);
   els.sourcesPanel.appendChild(sources);
   els.sourcesPanel.hidden = false;
+  decorateSourceLinks(sources);
+}
+
+function decorateSourceLinks(sources) {
+  sources.querySelectorAll("a[href]").forEach((link) => {
+    let hostname;
+    try {
+      hostname = new URL(link.href).hostname.replace(/^www\./, "");
+    } catch {
+      return;
+    }
+
+    link.textContent = hostname;
+    link.title = link.href;
+
+    const favicon = document.createElement("img");
+    favicon.className = "source-favicon";
+    favicon.src = `https://www.google.com/s2/favicons?sz=32&domain=${hostname}`;
+    favicon.alt = "";
+    favicon.width = 14;
+    favicon.height = 14;
+    link.prepend(favicon);
+  });
 }
 
 async function fetchFragment(path) {
@@ -359,7 +383,7 @@ function exportCurrentCard() {
 const PRINTED_CATEGORIES_KEY = "lastPrintedCategories";
 
 function selectableTopics() {
-  return state.manifest.filter((entry) => entry.category !== "Guida");
+  return state.manifest.filter((entry) => entry.category !== "Guida" && entry.printable !== false);
 }
 
 function selectableCategories() {

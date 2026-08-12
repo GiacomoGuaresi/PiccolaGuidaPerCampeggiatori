@@ -334,6 +334,9 @@ button:disabled {
   font-size: 0.8rem;
   line-height: 1.6;
   color: var(--color-stone);
+  background-color: #ece3cf;
+  padding: 0.7em 0.9em;
+  border-radius: 4px;
 }
 
 .sources-panel h3 {
@@ -346,12 +349,38 @@ button:disabled {
 
 .sources-panel p {
   margin: 0;
-  word-break: break-all;
 }
 
 .sources-panel a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
   color: var(--color-forest-dark);
   text-decoration: none;
+  padding: 0.3em 0.6em;
+  margin: 0.2em 0.3em 0.2em 0;
+  border: 1.5px solid var(--color-bark);
+  border-radius: 2px;
+  background: transparent;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.sources-panel a:hover {
+  background: var(--color-parchment-dark);
+}
+
+.sources-panel a:active {
+  transform: translateY(1px);
+}
+
+.sources-panel .source-favicon {
+  flex-shrink: 0;
+  border-radius: 2px;
 }
 
 /* ---------------------------------- Scheda A5 ---------------------------------- */
@@ -648,11 +677,6 @@ button:disabled {
   padding: 1.5rem;
 }
 
-.modal-dialog.large {
-  width: min(720px, 92vw);
-  max-height: 92vh;
-}
-
 .modal-close {
   position: absolute;
   top: 0.7rem;
@@ -713,14 +737,11 @@ button:disabled {
 }
 
 .topic-picker-list {
-  max-height: 45vh;
+  max-height: 35vh;
   overflow-y: auto;
   border-top: 1px dashed var(--color-bark);
   padding-top: 0.4rem;
-}
-
-.modal-dialog.large .topic-picker-list {
-  max-height: 60vh;
+  margin-bottom: 1rem;
 }
 
 .modal-dialog .topic-picker-item {
