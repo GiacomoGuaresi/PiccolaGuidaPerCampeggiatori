@@ -178,7 +178,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 - [x] Chi paga il soccorso in montagna: Italia (ticket regionali, elisoccorso) vs
       Svizzera (costi reali, REGA), con cifre indicative.
-- [ ] Assicurazioni per il soccorso alpino: tessera CAI, socio REGA, polizze
+- [x] Assicurazioni per il soccorso alpino: tessera CAI, socio REGA, polizze
       terze — cosa coprono davvero.
 - [ ] Diventare socio CAI o SAC: costi, vantaggi concreti (sconti rifugi,
       soccorso, assicurazione), come iscriversi.

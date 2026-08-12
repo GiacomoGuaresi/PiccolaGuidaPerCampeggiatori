@@ -803,5 +803,11 @@
     "title": "Chi paga il soccorso in montagna",
     "category": "Informazioni utili",
     "file": "content/informazioni-utili/chi-paga-il-soccorso.html"
+  },
+  {
+    "id": "assicurazioni-soccorso-alpino",
+    "title": "Assicurazioni per il soccorso alpino",
+    "category": "Informazioni utili",
+    "file": "content/informazioni-utili/assicurazioni-soccorso-alpino.html"
   }
 ]
