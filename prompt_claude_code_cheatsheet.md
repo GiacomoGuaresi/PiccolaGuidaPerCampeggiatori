@@ -122,7 +122,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       comuni, limiti reali.
 - [x] Cosa fare se ci si perde: procedura STOP, quando fermarsi, quando risalire,
       come farsi trovare.
-- [ ] Accendere un fuoco in montagna: dove è lecito (rimando alla scheda fuochi
+- [x] Accendere un fuoco in montagna: dove è lecito (rimando alla scheda fuochi
       liberi), esca, legna, accensione con vento/umidità, spegnimento corretto.
 - [ ] Nodi essenziali per bivacco e trekking: 5 nodi (bulino, prusik, teso,
       barcaiolo, otto) e a cosa servono sul campo.

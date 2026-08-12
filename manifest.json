@@ -659,5 +659,11 @@
     "title": "Cosa fare se ci si perde",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/cosa-fare-se-ci-si-perde.html"
+  },
+  {
+    "id": "accendere-fuoco-montagna",
+    "title": "Accendere un fuoco in montagna",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/accendere-fuoco-montagna.html"
   }
 ]
