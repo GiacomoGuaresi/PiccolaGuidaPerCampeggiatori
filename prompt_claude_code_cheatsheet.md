@@ -62,7 +62,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Trekking
 
-- [x] Scala di difficoltà dei sentieri in Italia (T, E, EE, EEA): cosa richiede
+- [ ] Scala di difficoltà dei sentieri in Italia (T, E, EE, EEA): cosa richiede
       davvero ogni livello, con esempi concreti e attrezzatura minima.
 - [ ] Scala SAC svizzera dei sentieri di montagna (T1–T6) e corrispondenza con
       la scala CAI; colori dei segnavia CH (giallo, bianco-rosso-bianco,
