@@ -135,7 +135,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 
 ### Categoria: Quota e salute
 
-- [ ] Mal acuto di montagna (AMS): sintomi, soglie di quota, regole di salita e
+- [x] Mal acuto di montagna (AMS): sintomi, soglie di quota, regole di salita e
       quando scendere subito.
 - [ ] Edema polmonare e cerebrale d'alta quota (HAPE/HACE): riconoscerli e agire.
 - [ ] Acclimatazione: regole pratiche per dormire in quota, ritmo di salita,

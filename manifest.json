@@ -689,5 +689,11 @@
     "title": "Gestire il panico e la stanchezza estrema in gruppo",
     "category": "Sopravvivenza",
     "file": "content/sopravvivenza/panico-stanchezza-gruppo.html"
+  },
+  {
+    "id": "mal-acuto-di-montagna-ams",
+    "title": "Mal acuto di montagna (AMS)",
+    "category": "Quota e salute",
+    "file": "content/quota-salute/mal-acuto-di-montagna-ams.html"
   }
 ]
