@@ -655,6 +655,12 @@
     "file": "content/rifugi/capanne-non-custodite-svizzera.html"
   },
   {
+    "id": "locale-invernale-rifugio-custodito",
+    "title": "Locale invernale di un rifugio custodito",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/locale-invernale-rifugio-custodito.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",

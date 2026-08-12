@@ -271,7 +271,7 @@ nell'altro senso.
 - [x] Capanne non custodite e locali invernali in Svizzera (Grigioni, Ticino,
       Vallese): come funzionano, cassetta per il pagamento e tariffe tipiche,
       chiave/codice SAC, dove trovarne l'elenco.
-- [ ] Locale invernale di un rifugio custodito: quando è aperto, come si accede,
+- [x] Locale invernale di un rifugio custodito: quando è aperto, come si accede,
       differenze rispetto al rifugio in stagione, pagamento e registro.
 
 ### Categoria: Vie ferrate
