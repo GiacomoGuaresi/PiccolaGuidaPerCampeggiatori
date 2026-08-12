@@ -86,7 +86,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
       ramponcini/piccozza, quando rinunciare.
 - [x] Guadare un torrente in sicurezza: valutazione della portata, punto giusto,
       tecnica, orario migliore (fusione glaciale).
-- [ ] Discesa in sicurezza: perché la maggior parte degli incidenti avviene in
+- [x] Discesa in sicurezza: perché la maggior parte degli incidenti avviene in
       discesa, tecnica, gestione della stanchezza.
 - [ ] Trekking con il cane in montagna: normativa IT/CH, pascoli e cani da
       guardiania, acqua, zampe, rifugi.

@@ -569,5 +569,11 @@
     "title": "Guadare un torrente in sicurezza",
     "category": "Trekking",
     "file": "content/trekking/guadare-torrente-sicurezza.html"
+  },
+  {
+    "id": "discesa-sicurezza",
+    "title": "Discesa in sicurezza",
+    "category": "Trekking",
+    "file": "content/trekking/discesa-sicurezza.html"
   }
 ]
