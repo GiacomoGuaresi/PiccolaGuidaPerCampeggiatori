@@ -215,7 +215,7 @@ Buchi principali individuati, che il backlog qui sotto colma:
 - [x] Piante velenose e urticanti comuni sulle Alpi: riconoscerle ed evitarle.
 - [x] Bacche e piante commestibili: le poche affidabili, e perché non improvvisare
       il resto.
-- [ ] Specie protette e divieto di raccolta (stella alpina & co.): cosa non si
+- [x] Specie protette e divieto di raccolta (stella alpina & co.): cosa non si
       tocca, sanzioni.
 
 ### Categoria: Orientamento (integrazioni)

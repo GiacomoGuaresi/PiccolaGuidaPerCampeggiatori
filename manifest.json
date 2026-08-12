@@ -535,6 +535,12 @@
     "file": "content/flora/bacche-piante-commestibili.html"
   },
   {
+    "id": "specie-protette-divieto-raccolta",
+    "title": "Specie protette e divieto di raccolta",
+    "category": "Flora",
+    "file": "content/flora/specie-protette-divieto-raccolta.html"
+  },
+  {
     "id": "prenotazione-rifugio-cai",
     "title": "Prenotare un rifugio CAI in Italia",
     "category": "Rifugi e punti di appoggio",
