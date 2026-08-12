@@ -261,7 +261,7 @@ nell'altro senso.
 - [x] Cosa trovi e cosa NON trovi in un bivacco fisso: brande, coperte, stufa,
       acqua, legna, luce, servizi — e cosa devi comunque portarti (sacco a pelo,
       cibo, fornello, acqua, frontale).
-- [ ] Dormire in un bivacco fisso in sicurezza: ventilazione e monossido con
+- [x] Dormire in un bivacco fisso in sicurezza: ventilazione e monossido con
       fornello/stufa, umidità, freddo, valanghe e accesso invernale, cosa fare
       se è già pieno (avere sempre un piano B).
 - [ ] Trovare i bivacchi fissi in Lombardia e Trentino: elenchi e mappe

@@ -637,6 +637,12 @@
     "file": "content/rifugi/cosa-trovi-bivacco-fisso.html"
   },
   {
+    "id": "dormire-bivacco-fisso-sicurezza",
+    "title": "Dormire in un bivacco fisso in sicurezza",
+    "category": "Rifugi e punti di appoggio",
+    "file": "content/rifugi/dormire-bivacco-fisso-sicurezza.html"
+  },
+  {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
     "category": "Trekking",
