@@ -1109,5 +1109,11 @@
     "title": "Scegliere un itinerario invernale a basso rischio",
     "category": "Escursionismo invernale",
     "file": "content/escursionismo-invernale/scegliere-itinerario-invernale-basso-rischio.html"
+  },
+  {
+    "id": "freddo-buio-escursione-invernale",
+    "title": "Freddo e buio in escursione invernale",
+    "category": "Escursionismo invernale",
+    "file": "content/escursionismo-invernale/freddo-buio-escursione-invernale.html"
   }
 ]

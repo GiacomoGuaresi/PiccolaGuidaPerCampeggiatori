@@ -328,7 +328,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       e app, trappole del terreno, esposizione e quota.
 - [x] Scegliere un itinerario invernale a basso rischio: criteri di selezione,
       fonti di itinerari classificati, orari, quando rinunciare.
-- [ ] Freddo e buio in escursione invernale: gestione della sudorazione, pause
+- [x] Freddo e buio in escursione invernale: gestione della sudorazione, pause
       corte, borraccia che gela, batterie, giornate corte, rientro anticipato.
 - [ ] Bollettini valanghe di riferimento per Alpi centrali: AINEVA/Meteomont per
       l'Italia, SLF per la Svizzera — dove leggerli, aggiornamento, differenze
