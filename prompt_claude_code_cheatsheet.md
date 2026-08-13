@@ -324,7 +324,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
 - [x] Problemi valanghivi tipici (neve fresca, neve ventata, strato debole
       persistente, neve bagnata, slittamenti): come si riconoscono e cosa
       cambiano nella scelta dell'orario e del pendio.
-- [ ] Pendenza e terreno: perché 30° è la soglia chiave, come misurarla su carta
+- [x] Pendenza e terreno: perché 30° è la soglia chiave, come misurarla su carta
       e app, trappole del terreno, esposizione e quota.
 - [ ] Scegliere un itinerario invernale a basso rischio: criteri di selezione,
       fonti di itinerari classificati, orari, quando rinunciare.
