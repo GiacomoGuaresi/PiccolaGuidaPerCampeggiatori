@@ -333,6 +333,6 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
 - [x] Bollettini valanghe di riferimento per Alpi centrali: AINEVA/Meteomont per
       l'Italia, SLF per la Svizzera — dove leggerli, aggiornamento, differenze
       di impostazione.
-- [ ] Bivacco invernale: cosa cambia rispetto all'estate (sacco a pelo, R-value
+- [x] Bivacco invernale: cosa cambia rispetto all'estate (sacco a pelo, R-value
       sommato, fornello e gas invernale, acqua da neve fusa, disidratazione) e
       quando è meglio puntare a un bivacco fisso.
