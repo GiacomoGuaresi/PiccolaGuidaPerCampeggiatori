@@ -317,7 +317,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       perché senza formazione servono a poco; come si porta e dove.
 - [x] ARTVA: check di gruppo prima di partire, modalità trasmissione/ricerca,
       batterie e freddo, interferenze con telefono e cavi.
-- [ ] Autosoccorso in valanga: i primi 15 minuti, sequenza ricerca di segnale →
+- [x] Autosoccorso in valanga: i primi 15 minuti, sequenza ricerca di segnale →
       ricerca grossolana → fine → sondaggio → scavo a V, e chiamata al soccorso.
 - [ ] Scala europea del pericolo valanghe (1–5): cosa significa ogni grado in
       termini di scelte concrete di itinerario, non solo di colore.
