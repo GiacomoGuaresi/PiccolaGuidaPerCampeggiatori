@@ -326,7 +326,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       cambiano nella scelta dell'orario e del pendio.
 - [x] Pendenza e terreno: perché 30° è la soglia chiave, come misurarla su carta
       e app, trappole del terreno, esposizione e quota.
-- [ ] Scegliere un itinerario invernale a basso rischio: criteri di selezione,
+- [x] Scegliere un itinerario invernale a basso rischio: criteri di selezione,
       fonti di itinerari classificati, orari, quando rinunciare.
 - [ ] Freddo e buio in escursione invernale: gestione della sudorazione, pause
       corte, borraccia che gela, batterie, giornate corte, rientro anticipato.
