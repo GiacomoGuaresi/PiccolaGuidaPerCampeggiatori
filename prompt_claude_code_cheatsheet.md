@@ -321,7 +321,7 @@ valanghe (CAI/SAC). Coordinare con la scheda già esistente
       ricerca grossolana → fine → sondaggio → scavo a V, e chiamata al soccorso.
 - [x] Scala europea del pericolo valanghe (1–5): cosa significa ogni grado in
       termini di scelte concrete di itinerario, non solo di colore.
-- [ ] Problemi valanghivi tipici (neve fresca, neve ventata, strato debole
+- [x] Problemi valanghivi tipici (neve fresca, neve ventata, strato debole
       persistente, neve bagnata, slittamenti): come si riconoscono e cosa
       cambiano nella scelta dell'orario e del pendio.
 - [ ] Pendenza e terreno: perché 30° è la soglia chiave, come misurarla su carta
