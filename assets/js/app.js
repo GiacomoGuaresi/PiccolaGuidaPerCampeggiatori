@@ -712,7 +712,6 @@ function buildVersionPage(today, topicKeys, note) {
     <span class="tag">Guida</span>
     <span class="tag">agg. ${today}</span>
 
-    <h3>Sintesi</h3>
     <p>Ricevuta di questa stampa: tienila davanti alle altre schede nel raccoglitore. Dice cosa hai stampato, quando, e come aggiornarlo in futuro.</p>
 
     ${note ? `<p>${note}</p>` : ""}
