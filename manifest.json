@@ -2,12 +2,14 @@
   {
     "id": "copertina",
     "title": "Copertina",
+    "group": "Guida",
     "category": "Guida",
     "file": "content/copertina.html"
   },
   {
     "id": "guida-al-sito",
     "title": "Guida al sito",
+    "group": "Guida",
     "category": "Guida",
     "file": "content/guida-al-sito.html",
     "printable": false
@@ -15,1117 +17,1303 @@
   {
     "id": "bivacco-lombardia",
     "title": "Bivacco e campeggio libero in Lombardia",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-lombardia.html"
   },
   {
     "id": "bivacco-piemonte",
     "title": "Bivacco e campeggio libero in Piemonte",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-piemonte.html"
   },
   {
     "id": "bivacco-valle-aosta",
     "title": "Bivacco e campeggio libero in Valle d'Aosta",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-valle-aosta.html"
   },
   {
     "id": "bivacco-trentino-alto-adige",
     "title": "Bivacco e campeggio libero in Trentino-Alto Adige",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-trentino-alto-adige.html"
   },
   {
     "id": "bivacco-ticino",
     "title": "Bivacco nel canton Ticino",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-ticino.html"
   },
   {
     "id": "bivacco-grigioni",
     "title": "Bivacco nel canton Grigioni",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-grigioni.html"
   },
   {
     "id": "bivacco-vallese",
     "title": "Bivacco nel canton Vallese",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/bivacco-vallese.html"
   },
   {
     "id": "differenza-bivacco-campeggio",
     "title": "Bivacco, campeggio libero, campeggio organizzato: le differenze",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/differenza-bivacco-campeggio.html"
   },
   {
     "id": "parco-stelvio",
     "title": "Bivacco e campeggio nel Parco Nazionale dello Stelvio",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/parco-stelvio.html"
   },
   {
     "id": "parco-adamello",
     "title": "Bivacco e campeggio nel Parco Adamello Brenta e nel Parco dell'Adamello",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/parco-adamello.html"
   },
   {
     "id": "fuochi-liberi",
     "title": "Fuochi liberi in montagna: regole per regione/cantone",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/fuochi-liberi.html"
   },
   {
     "id": "sanzioni-bivacco-abusivo",
     "title": "Sanzioni per bivacco/campeggio abusivo: Italia e Svizzera",
-    "category": "Normativa",
+    "group": "Regole e ambiente",
+    "category": "Normativa bivacco",
     "file": "content/normativa/sanzioni-bivacco-abusivo.html"
-  },
-  {
-    "id": "leggere-bollettino-montano",
-    "title": "Come leggere un bollettino meteo montano",
-    "category": "Meteo",
-    "file": "content/meteo/leggere-bollettino-montano.html"
-  },
-  {
-    "id": "bollettino-nivometeorologico",
-    "title": "Bollettino nivometeorologico: cos'è e quando serve",
-    "category": "Meteo",
-    "file": "content/meteo/bollettino-nivometeorologico.html"
-  },
-  {
-    "id": "fonti-meteo-affidabili",
-    "title": "Fonti meteo affidabili per zona alpina Lombardia/Svizzera",
-    "category": "Meteo",
-    "file": "content/meteo/fonti-meteo-affidabili.html"
-  },
-  {
-    "id": "segnali-temporale-imminente",
-    "title": "Segnali di temporale imminente: cosa osservare",
-    "category": "Meteo",
-    "file": "content/meteo/segnali-temporale-imminente.html"
-  },
-  {
-    "id": "comportamento-fulmini",
-    "title": "Fulmini in montagna: come comportarsi",
-    "category": "Meteo",
-    "file": "content/meteo/comportamento-fulmini.html"
-  },
-  {
-    "id": "gradiente-termico-quota",
-    "title": "Gradiente termico: stimare la temperatura in quota",
-    "category": "Meteo",
-    "file": "content/meteo/gradiente-termico-quota.html"
-  },
-  {
-    "id": "vento-in-cresta",
-    "title": "Vento in cresta: stimarlo e gestirlo",
-    "category": "Meteo",
-    "file": "content/meteo/vento-in-cresta.html"
-  },
-  {
-    "id": "inversione-termica-nebbia-di-valle",
-    "title": "Inversione termica e nebbia di valle",
-    "category": "Meteo",
-    "file": "content/meteo/inversione-termica-nebbia-di-valle.html"
-  },
-  {
-    "id": "finestra-meteo-modelli-tendenze",
-    "title": "Finestra meteo: modelli e tendenze a 2-5 giorni",
-    "category": "Meteo",
-    "file": "content/meteo/finestra-meteo-modelli-tendenze.html"
-  },
-  {
-    "id": "neve-fuori-stagione-gelo-notturno",
-    "title": "Neve fuori stagione e gelo notturno",
-    "category": "Meteo",
-    "file": "content/meteo/neve-fuori-stagione-gelo-notturno.html"
-  },
-  {
-    "id": "simbologia-carte-igm-swisstopo",
-    "title": "Carte IGM vs Swisstopo: differenze di simbologia",
-    "category": "Orientamento",
-    "file": "content/orientamento/simbologia-carte-igm-swisstopo.html"
-  },
-  {
-    "id": "uso-bussola-carta",
-    "title": "Bussola e carta: il metodo base per orientarsi",
-    "category": "Orientamento",
-    "file": "content/orientamento/uso-bussola-carta.html"
-  },
-  {
-    "id": "app-offline-navigazione",
-    "title": "App offline per navigazione escursionistica: confronto",
-    "category": "Orientamento",
-    "file": "content/orientamento/app-offline-navigazione.html"
-  },
-  {
-    "id": "fonti-tracce-gpx",
-    "title": "Fonti affidabili di tracce GPX: Lombardia/Ticino/Grigioni",
-    "category": "Orientamento",
-    "file": "content/orientamento/fonti-tracce-gpx.html"
-  },
-  {
-    "id": "backup-carta-cartacea",
-    "title": "Perché portare sempre una carta cartacea di backup",
-    "category": "Orientamento",
-    "file": "content/orientamento/backup-carta-cartacea.html"
-  },
-  {
-    "id": "dare-posizione-al-soccorso",
-    "title": "Dare la propria posizione al soccorso",
-    "category": "Orientamento",
-    "file": "content/orientamento/dare-posizione-al-soccorso.html"
-  },
-  {
-    "id": "altimetro-barometrico",
-    "title": "Altimetro barometrico",
-    "category": "Orientamento",
-    "file": "content/orientamento/altimetro-barometrico.html"
-  },
-  {
-    "id": "orientarsi-nebbia-buio",
-    "title": "Orientarsi in nebbia o al buio",
-    "category": "Orientamento",
-    "file": "content/orientamento/orientarsi-nebbia-buio.html"
   },
   {
     "id": "gestione-deiezioni-quota",
     "title": "Gestione delle deiezioni umane in alta quota",
-    "category": "Etica",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
     "file": "content/etica/gestione-deiezioni-quota.html"
   },
   {
     "id": "gestione-rifiuti-leave-no-trace",
     "title": "Leave No Trace: gestione rifiuti in trekking e bivacco",
-    "category": "Etica",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
     "file": "content/etica/gestione-rifiuti-leave-no-trace.html"
   },
   {
     "id": "rispetto-pascoli-bestiame",
     "title": "Rispetto verso pascoli e bestiame al pascolo",
-    "category": "Etica",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
     "file": "content/etica/rispetto-pascoli-bestiame.html"
   },
   {
     "id": "distanza-corsi-acqua",
     "title": "Distanza minima da corsi d'acqua per bivacco e igiene",
-    "category": "Etica",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
     "file": "content/etica/distanza-corsi-acqua.html"
+  },
+  {
+    "id": "raccolta-funghi-lombardia-svizzera",
+    "title": "Raccolta di funghi in Lombardia e nei cantoni svizzeri",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
+    "file": "content/flora/raccolta-funghi-lombardia-svizzera.html"
+  },
+  {
+    "id": "specie-protette-divieto-raccolta",
+    "title": "Specie protette e divieto di raccolta",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
+    "file": "content/flora/specie-protette-divieto-raccolta.html"
+  },
+  {
+    "id": "drone-in-montagna",
+    "title": "Drone in montagna",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
+    "file": "content/informazioni-utili/drone-in-montagna.html"
+  },
+  {
+    "id": "confine-italia-svizzera-a-piedi",
+    "title": "Attraversare il confine Italia–Svizzera a piedi",
+    "group": "Regole e ambiente",
+    "category": "Etica e ambiente",
+    "file": "content/informazioni-utili/confine-italia-svizzera-a-piedi.html"
   },
   {
     "id": "criteri-scelta-sito",
     "title": "Criteri per scegliere il sito tenda in bivacco",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/criteri-scelta-sito.html"
   },
   {
     "id": "rischio-caduta-massi-sito",
     "title": "Rischio caduta massi, frane e valanghe residue nella scelta del sito",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/rischio-caduta-massi-sito.html"
   },
   {
     "id": "orientamento-vento-sole",
     "title": "Orientare la tenda rispetto a vento e sole",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/orientamento-vento-sole.html"
   },
   {
     "id": "evitare-conche-aria-fredda",
     "title": "Evitare conche e accumuli di aria fredda per la tenda",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/evitare-conche-aria-fredda.html"
   },
   {
     "id": "ancoraggio-terreno-roccioso-neve",
     "title": "Montare la tenda su roccia o neve: ancoraggi alternativi",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/ancoraggio-terreno-roccioso-neve.html"
   },
   {
     "id": "distanze-rispetto-bivacco",
     "title": "Distanze di rispetto in bivacco: sentieri, rifugi, altre persone",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/distanze-rispetto-bivacco.html"
   },
   {
     "id": "montaggio-vento-forte",
     "title": "Montare la tenda con vento forte senza danni",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/montaggio-vento-forte.html"
   },
   {
     "id": "tecniche-piantaggio-picchetti",
     "title": "Tecniche di piantaggio picchetti su terreni diversi",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/tecniche-piantaggio-picchetti.html"
   },
   {
     "id": "gestione-condensa",
     "title": "Gestire la condensa interna nella tenda",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/gestione-condensa.html"
   },
   {
     "id": "pulizia-asciugatura-post-uso",
     "title": "Pulire e asciugare la tenda dopo l'uso",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/pulizia-asciugatura-post-uso.html"
   },
   {
     "id": "riimpermeabilizzazione-telo",
     "title": "Ri-impermeabilizzare il telo esterno della tenda",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/riimpermeabilizzazione-telo.html"
   },
   {
     "id": "sigillatura-cuciture",
     "title": "Sigillare e riparare le cuciture della tenda (seam sealing)",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/sigillatura-cuciture.html"
   },
   {
     "id": "riparazione-strappi-campo",
     "title": "Riparare uno strappo nel telo della tenda sul campo",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/riparazione-strappi-campo.html"
   },
   {
     "id": "conservazione-lungo-termine",
     "title": "Conservare la tenda durante i mesi di non utilizzo",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/conservazione-lungo-termine.html"
   },
   {
     "id": "manutenzione-riparazione-bastoni",
     "title": "Manutenzione e riparazione dei bastoni della tenda",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/manutenzione-riparazione-bastoni.html"
   },
   {
     "id": "kit-riparazione-minimo",
     "title": "Kit di riparazione minimo",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/kit-riparazione-minimo.html"
   },
   {
     "id": "gestione-tenda-pioggia-continua",
     "title": "Gestire la tenda sotto pioggia continua",
-    "category": "Tenda",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
     "file": "content/tenda/gestione-tenda-pioggia-continua.html"
   },
   {
-    "id": "bivacco-su-neve",
-    "title": "Bivacco su neve",
-    "category": "Tenda",
-    "file": "content/tenda/bivacco-su-neve.html"
-  },
-  {
-    "id": "monossido-carbonio-tenda-bivacchi",
-    "title": "Monossido di carbonio in tenda e bivacchi chiusi",
-    "category": "Tenda",
-    "file": "content/tenda/monossido-carbonio-tenda-bivacchi.html"
+    "id": "tarp-vs-bivy-vs-tenda",
+    "title": "Tarp, bivy sack o tenda leggera: quale scegliere",
+    "group": "Attrezzatura",
+    "category": "Tenda e riparo",
+    "file": "content/zaino-attrezzatura/tarp-vs-bivy-vs-tenda.html"
   },
   {
     "id": "lavaggio-piuma",
     "title": "Lavare un sacco a pelo in piuma",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/lavaggio-piuma.html"
   },
   {
     "id": "lavaggio-sintetico",
     "title": "Lavare un sacco a pelo sintetico",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/lavaggio-sintetico.html"
   },
   {
     "id": "conservazione-corretta",
     "title": "Conservare il sacco a pelo tra un utilizzo e l'altro",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/conservazione-corretta.html"
   },
   {
     "id": "fill-power-mantenimento",
     "title": "Fill power della piuma: valutarlo e mantenerlo",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/fill-power-mantenimento.html"
   },
   {
     "id": "gestione-umidita-campo",
     "title": "Gestire il sacco a pelo bagnato in bivacco di più giorni",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/gestione-umidita-campo.html"
   },
   {
     "id": "accessori-utili",
     "title": "Accessori utili per prolungare la vita del sacco a pelo",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/accessori-utili.html"
   },
   {
     "id": "scelta-taglia-corretta",
     "title": "Scegliere la taglia corretta del sacco a pelo",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/scelta-taglia-corretta.html"
   },
   {
     "id": "abbinamento-materassino",
     "title": "Abbinare sacco a pelo e materassino",
-    "category": "Sacchi a pelo",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/sacchi-a-pelo/abbinamento-materassino.html"
-  },
-  {
-    "id": "checklist-bivacco-estivo",
-    "title": "Checklist zaino bivacco leggero estivo",
-    "category": "Zaino e attrezzatura",
-    "file": "content/zaino-attrezzatura/checklist-bivacco-estivo.html"
-  },
-  {
-    "id": "checklist-bivacco-mezza-stagione",
-    "title": "Checklist zaino per bivacco in mezza stagione",
-    "category": "Zaino e attrezzatura",
-    "file": "content/zaino-attrezzatura/checklist-bivacco-mezza-stagione.html"
-  },
-  {
-    "id": "layering-notte-bivacco",
-    "title": "Layering per la notte in bivacco",
-    "category": "Zaino e attrezzatura",
-    "file": "content/zaino-attrezzatura/layering-notte-bivacco.html"
   },
   {
     "id": "scelta-sacco-a-pelo",
     "title": "Scegliere il sacco a pelo: comfort vs limite",
-    "category": "Zaino e attrezzatura",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/zaino-attrezzatura/scelta-sacco-a-pelo.html"
   },
   {
     "id": "piuma-vs-sintetico",
     "title": "Sacco a pelo: piuma o sintetico?",
-    "category": "Zaino e attrezzatura",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/zaino-attrezzatura/piuma-vs-sintetico.html"
   },
   {
     "id": "r-value-materassino",
     "title": "R-value del materassino sopra i 2000 metri",
-    "category": "Zaino e attrezzatura",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
     "file": "content/zaino-attrezzatura/r-value-materassino.html"
   },
   {
-    "id": "tarp-vs-bivy-vs-tenda",
-    "title": "Tarp, bivy sack o tenda leggera: quale scegliere",
-    "category": "Zaino e attrezzatura",
-    "file": "content/zaino-attrezzatura/tarp-vs-bivy-vs-tenda.html"
+    "id": "layering-notte-bivacco",
+    "title": "Layering per la notte in bivacco",
+    "group": "Attrezzatura",
+    "category": "Sacco a pelo e riposo",
+    "file": "content/zaino-attrezzatura/layering-notte-bivacco.html"
+  },
+  {
+    "id": "checklist-bivacco-estivo",
+    "title": "Checklist zaino bivacco leggero estivo",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/zaino-attrezzatura/checklist-bivacco-estivo.html"
+  },
+  {
+    "id": "checklist-bivacco-mezza-stagione",
+    "title": "Checklist zaino per bivacco in mezza stagione",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/zaino-attrezzatura/checklist-bivacco-mezza-stagione.html"
   },
   {
     "id": "frontale-lumen-autonomia",
     "title": "Torcia frontale: lumen e autonomia per trekking/bivacco",
-    "category": "Zaino e attrezzatura",
+    "group": "Attrezzatura",
+    "category": "Trekking",
     "file": "content/zaino-attrezzatura/frontale-lumen-autonomia.html"
   },
   {
     "id": "gestione-batterie-quota",
     "title": "Gestire batterie e power bank in quota col freddo",
-    "category": "Zaino e attrezzatura",
+    "group": "Attrezzatura",
+    "category": "Trekking",
     "file": "content/zaino-attrezzatura/gestione-batterie-quota.html"
   },
   {
-    "id": "quanta-acqua-portare",
-    "title": "Quanta acqua portare in trekking/bivacco",
-    "category": "Acqua",
-    "file": "content/acqua/quanta-acqua-portare.html"
+    "id": "peso-zaino",
+    "title": "Peso dello zaino",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/pianificazione/peso-zaino.html"
   },
   {
-    "id": "metodi-trattamento-acqua",
-    "title": "Metodi di trattamento dell'acqua in montagna: confronto",
-    "category": "Acqua",
-    "file": "content/acqua/metodi-trattamento-acqua.html"
+    "id": "scegliere-preparare-scarponi",
+    "title": "Scegliere e preparare gli scarponi",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/trekking/scegliere-preparare-scarponi.html"
   },
   {
-    "id": "quando-trattare-acqua-quota",
-    "title": "Quando trattare davvero l'acqua raccolta in quota",
-    "category": "Acqua",
-    "file": "content/acqua/quando-trattare-acqua-quota.html"
+    "id": "uso-bastoncini-trekking",
+    "title": "Uso corretto dei bastoncini da trekking",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/trekking/uso-bastoncini-trekking.html"
+  },
+  {
+    "id": "coltelli-attrezzi-in-zaino",
+    "title": "Coltelli e attrezzi in zaino",
+    "group": "Attrezzatura",
+    "category": "Trekking",
+    "file": "content/informazioni-utili/coltelli-attrezzi-in-zaino.html"
   },
   {
     "id": "tipi-fornelli-confronto",
     "title": "Fornelli da trekking: gas, multifuel o alcool",
-    "category": "Cibo e fornelli",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
     "file": "content/cibo-fornelli/tipi-fornelli-confronto.html"
   },
   {
     "id": "fornelli-gas-basse-temperature",
     "title": "Fornelli a gas a basse temperature: come gestirli",
-    "category": "Cibo e fornelli",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
     "file": "content/cibo-fornelli/fornelli-gas-basse-temperature.html"
   },
   {
     "id": "liofilizzato-vs-autoprodotto",
     "title": "Cibo liofilizzato vs disidratato autoprodotto",
-    "category": "Cibo e fornelli",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
     "file": "content/cibo-fornelli/liofilizzato-vs-autoprodotto.html"
   },
   {
     "id": "gestione-rifiuti-alimentari",
     "title": "Gestione dei rifiuti alimentari in bivacco",
-    "category": "Cibo e fornelli",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
     "file": "content/cibo-fornelli/gestione-rifiuti-alimentari.html"
   },
   {
-    "id": "kit-primo-soccorso-minimo",
-    "title": "Kit di primo soccorso minimo per trekking/bivacco",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/kit-primo-soccorso-minimo.html"
+    "id": "quanta-acqua-portare",
+    "title": "Quanta acqua portare in trekking/bivacco",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
+    "file": "content/acqua/quanta-acqua-portare.html"
   },
   {
-    "id": "plb-localizzatori-satellitari",
-    "title": "PLB e localizzatori satellitari: quando portarli",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/plb-localizzatori-satellitari.html"
+    "id": "metodi-trattamento-acqua",
+    "title": "Metodi di trattamento dell'acqua in montagna: confronto",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
+    "file": "content/acqua/metodi-trattamento-acqua.html"
   },
   {
-    "id": "numeri-emergenza-italia-svizzera",
-    "title": "Numeri di emergenza in montagna: Italia e Svizzera",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/numeri-emergenza-italia-svizzera.html"
-  },
-  {
-    "id": "autosoccorso-base",
-    "title": "Autosoccorso base per infortuni lievi",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/autosoccorso-base.html"
-  },
-  {
-    "id": "segnali-allarme-internazionali",
-    "title": "Segnali di allarme internazionali in montagna",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/segnali-allarme-internazionali.html"
-  },
-  {
-    "id": "riconoscere-ipotermia",
-    "title": "Riconoscere e trattare l'ipotermia sul campo",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/riconoscere-ipotermia.html"
-  },
-  {
-    "id": "colpo-di-calore-disidratazione",
-    "title": "Riconoscere colpo di calore e disidratazione in quota",
-    "category": "Sicurezza e primo soccorso",
-    "file": "content/sicurezza/colpo-di-calore-disidratazione.html"
-  },
-  {
-    "id": "comportamento-vipere",
-    "title": "Incontro con vipere: comportamento e primo soccorso",
-    "category": "Fauna",
-    "file": "content/fauna/comportamento-vipere.html"
-  },
-  {
-    "id": "comportamento-cinghiali",
-    "title": "Incontro con cinghiali: come comportarsi",
-    "category": "Fauna",
-    "file": "content/fauna/comportamento-cinghiali.html"
-  },
-  {
-    "id": "zone-presenza-lupo",
-    "title": "Zone con presenza di lupo: precauzioni per il bivacco",
-    "category": "Fauna",
-    "file": "content/fauna/zone-presenza-lupo.html"
-  },
-  {
-    "id": "cani-pastore-maremmani",
-    "title": "Cani da guardiania (maremmano-abruzzesi): come comportarsi",
-    "category": "Fauna",
-    "file": "content/fauna/cani-pastore-maremmani.html"
-  },
-  {
-    "id": "gestione-cibo-rifiuti-fauna",
-    "title": "Gestire cibo e rifiuti in bivacco per non attirare fauna",
-    "category": "Fauna",
-    "file": "content/fauna/gestione-cibo-rifiuti-fauna.html"
-  },
-  {
-    "id": "zecche",
-    "title": "Zecche: rischio, prevenzione, rimozione",
-    "category": "Fauna",
-    "file": "content/fauna/zecche.html"
-  },
-  {
-    "id": "orso-bruno-trentino",
-    "title": "Orso bruno in Trentino",
-    "category": "Fauna",
-    "file": "content/fauna/orso-bruno-trentino.html"
-  },
-  {
-    "id": "vespe-calabroni-api",
-    "title": "Vespe, calabroni e api",
-    "category": "Fauna",
-    "file": "content/fauna/vespe-calabroni-api.html"
-  },
-  {
-    "id": "bovini-pascolo-mucche-vitelli",
-    "title": "Bovini al pascolo e mucche con vitelli",
-    "category": "Fauna",
-    "file": "content/fauna/bovini-pascolo-mucche-vitelli.html"
-  },
-  {
-    "id": "roditori-volpi-in-bivacco",
-    "title": "Roditori e volpi in bivacco",
-    "category": "Fauna",
-    "file": "content/fauna/roditori-volpi-in-bivacco.html"
-  },
-  {
-    "id": "raccolta-funghi-lombardia-svizzera",
-    "title": "Raccolta di funghi in Lombardia e nei cantoni svizzeri",
-    "category": "Flora",
-    "file": "content/flora/raccolta-funghi-lombardia-svizzera.html"
-  },
-  {
-    "id": "piante-velenose-urticanti-alpi",
-    "title": "Piante velenose e urticanti comuni sulle Alpi",
-    "category": "Flora",
-    "file": "content/flora/piante-velenose-urticanti-alpi.html"
-  },
-  {
-    "id": "bacche-piante-commestibili",
-    "title": "Bacche e piante commestibili",
-    "category": "Flora",
-    "file": "content/flora/bacche-piante-commestibili.html"
-  },
-  {
-    "id": "specie-protette-divieto-raccolta",
-    "title": "Specie protette e divieto di raccolta",
-    "category": "Flora",
-    "file": "content/flora/specie-protette-divieto-raccolta.html"
-  },
-  {
-    "id": "prenotazione-rifugio-cai",
-    "title": "Prenotare un rifugio CAI in Italia",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/prenotazione-rifugio-cai.html"
-  },
-  {
-    "id": "prenotazione-rifugio-sac",
-    "title": "Prenotare un rifugio (capanna) SAC in Svizzera",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/prenotazione-rifugio-sac.html"
-  },
-  {
-    "id": "differenze-servizi-cai-sac",
-    "title": "Rifugi CAI vs capanne SAC: le differenze principali",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/differenze-servizi-cai-sac.html"
-  },
-  {
-    "id": "cose-un-bivacco-fisso",
-    "title": "Cos'è un bivacco fisso",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/cose-un-bivacco-fisso.html"
-  },
-  {
-    "id": "etichetta-regole-bivacco-fisso",
-    "title": "Etichetta e regole d'uso di un bivacco fisso",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/etichetta-regole-bivacco-fisso.html"
-  },
-  {
-    "id": "cosa-trovi-bivacco-fisso",
-    "title": "Cosa trovi e cosa NON trovi in un bivacco fisso",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/cosa-trovi-bivacco-fisso.html"
-  },
-  {
-    "id": "dormire-bivacco-fisso-sicurezza",
-    "title": "Dormire in un bivacco fisso in sicurezza",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/dormire-bivacco-fisso-sicurezza.html"
-  },
-  {
-    "id": "trovare-bivacchi-lombardia-trentino",
-    "title": "Trovare i bivacchi fissi in Lombardia e Trentino",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/trovare-bivacchi-lombardia-trentino.html"
-  },
-  {
-    "id": "capanne-non-custodite-svizzera",
-    "title": "Capanne non custodite e locali invernali in Svizzera",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/capanne-non-custodite-svizzera.html"
-  },
-  {
-    "id": "locale-invernale-rifugio-custodito",
-    "title": "Locale invernale di un rifugio custodito",
-    "category": "Rifugi e punti di appoggio",
-    "file": "content/rifugi/locale-invernale-rifugio-custodito.html"
-  },
-  {
-    "id": "cose-una-via-ferrata",
-    "title": "Cos'è una via ferrata",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/cose-una-via-ferrata.html"
-  },
-  {
-    "id": "kit-da-ferrata-obbligatorio",
-    "title": "Kit da ferrata obbligatorio",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/kit-da-ferrata-obbligatorio.html"
-  },
-  {
-    "id": "scadenza-controllo-kit-ferrata",
-    "title": "Scadenza e controllo del kit da ferrata",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/scadenza-controllo-kit-ferrata.html"
-  },
-  {
-    "id": "scale-difficolta-ferrate",
-    "title": "Scale di difficoltà delle ferrate",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/scale-difficolta-ferrate.html"
-  },
-  {
-    "id": "progressione-corretta-ferrata",
-    "title": "Progressione corretta su ferrata",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/progressione-corretta-ferrata.html"
-  },
-  {
-    "id": "errori-rischi-tipici-ferrata",
-    "title": "Errori e rischi tipici in ferrata",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/errori-rischi-tipici-ferrata.html"
-  },
-  {
-    "id": "ferrata-bambini-principianti",
-    "title": "Ferrata con bambini o principianti",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/ferrata-bambini-principianti.html"
-  },
-  {
-    "id": "meteo-stagione-ferrate",
-    "title": "Meteo e stagione per le ferrate",
-    "category": "Vie ferrate",
-    "file": "content/vie-ferrate/meteo-stagione-ferrate.html"
-  },
-  {
-    "id": "ciaspole",
-    "title": "Ciaspole",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/ciaspole.html"
-  },
-  {
-    "id": "attrezzatura-base-ciaspole",
-    "title": "Attrezzatura base per un'escursione con le ciaspole",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/attrezzatura-base-ciaspole.html"
-  },
-  {
-    "id": "kit-autosoccorso-valanga-artva-pala-sonda",
-    "title": "Kit autosoccorso in valanga (ARTVA, pala, sonda)",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/kit-autosoccorso-valanga-artva-pala-sonda.html"
-  },
-  {
-    "id": "artva-check-gruppo-trasmissione-ricerca",
-    "title": "ARTVA: check di gruppo, trasmissione/ricerca, batterie e interferenze",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/artva-check-gruppo-trasmissione-ricerca.html"
+    "id": "quando-trattare-acqua-quota",
+    "title": "Quando trattare davvero l'acqua raccolta in quota",
+    "group": "Attrezzatura",
+    "category": "Cucina e acqua",
+    "file": "content/acqua/quando-trattare-acqua-quota.html"
   },
   {
     "id": "scala-difficolta-sentieri-italia",
     "title": "Scala di difficoltà dei sentieri (T, E, EE, EEA)",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/scala-difficolta-sentieri-italia.html"
   },
   {
     "id": "scala-sac-svizzera-t1-t6",
     "title": "Scala SAC svizzera (T1–T6) e segnavia CH",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/scala-sac-svizzera-t1-t6.html"
   },
   {
     "id": "segnaletica-sentieri-cai",
     "title": "Segnaletica dei sentieri CAI",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/segnaletica-sentieri-cai.html"
   },
   {
     "id": "calcolo-tempi-percorrenza",
     "title": "Calcolare i tempi di percorrenza",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/calcolo-tempi-percorrenza.html"
   },
   {
     "id": "ritmo-pause-lunghi-dislivelli",
     "title": "Gestire il ritmo e le pause su lunghi dislivelli",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/ritmo-pause-lunghi-dislivelli.html"
   },
   {
-    "id": "uso-bastoncini-trekking",
-    "title": "Uso corretto dei bastoncini da trekking",
-    "category": "Trekking",
-    "file": "content/trekking/uso-bastoncini-trekking.html"
-  },
-  {
-    "id": "scegliere-preparare-scarponi",
-    "title": "Scegliere e preparare gli scarponi",
-    "category": "Trekking",
-    "file": "content/trekking/scegliere-preparare-scarponi.html"
-  },
-  {
-    "id": "cura-piedi-trekking",
-    "title": "Cura dei piedi in trekking",
-    "category": "Trekking",
-    "file": "content/trekking/cura-piedi-trekking.html"
-  },
-  {
     "id": "ghiaione-sfasciumi-sentieri-esposti",
     "title": "Camminare su ghiaione, sfasciumi e sentieri esposti",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/ghiaione-sfasciumi-sentieri-esposti.html"
   },
   {
     "id": "attraversare-nevai-residui-estivi",
     "title": "Attraversare nevai residui estivi",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/attraversare-nevai-residui-estivi.html"
   },
   {
     "id": "guadare-torrente-sicurezza",
     "title": "Guadare un torrente in sicurezza",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/guadare-torrente-sicurezza.html"
   },
   {
     "id": "discesa-sicurezza",
     "title": "Discesa in sicurezza",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/discesa-sicurezza.html"
   },
   {
     "id": "trekking-con-il-cane",
     "title": "Trekking con il cane in montagna",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/trekking-con-il-cane.html"
   },
   {
     "id": "trekking-con-bambini",
     "title": "Trekking con bambini",
+    "group": "Tecnica sul terreno",
     "category": "Trekking",
     "file": "content/trekking/trekking-con-bambini.html"
   },
   {
-    "id": "pianificare-uscita-giornata",
-    "title": "Pianificare un'uscita in giornata",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/pianificare-uscita-giornata.html"
+    "id": "cose-una-via-ferrata",
+    "title": "Cos'è una via ferrata",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/cose-una-via-ferrata.html"
   },
   {
-    "id": "trekking-piu-giorni-bivacco",
-    "title": "Pianificare un trekking di più giorni con bivacco",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/trekking-piu-giorni-bivacco.html"
+    "id": "kit-da-ferrata-obbligatorio",
+    "title": "Kit da ferrata obbligatorio",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/kit-da-ferrata-obbligatorio.html"
   },
   {
-    "id": "piano-b-criteri-rinuncia",
-    "title": "Piano B e criteri di rinuncia",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/piano-b-criteri-rinuncia.html"
+    "id": "scadenza-controllo-kit-ferrata",
+    "title": "Scadenza e controllo del kit da ferrata",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/scadenza-controllo-kit-ferrata.html"
   },
   {
-    "id": "lasciare-detto-dove-si-va",
-    "title": "Lasciare detto dove si va",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/lasciare-detto-dove-si-va.html"
+    "id": "scale-difficolta-ferrate",
+    "title": "Scale di difficoltà delle ferrate",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/scale-difficolta-ferrate.html"
   },
   {
-    "id": "ore-luce-alba-tramonto",
-    "title": "Ore di luce, alba e tramonto in montagna",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/ore-luce-alba-tramonto.html"
+    "id": "progressione-corretta-ferrata",
+    "title": "Progressione corretta su ferrata",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/progressione-corretta-ferrata.html"
   },
   {
-    "id": "peso-zaino",
-    "title": "Peso dello zaino",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/peso-zaino.html"
+    "id": "errori-rischi-tipici-ferrata",
+    "title": "Errori e rischi tipici in ferrata",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/errori-rischi-tipici-ferrata.html"
   },
   {
-    "id": "mezzi-pubblici-sentieri-lombardia-ticino-grigioni",
-    "title": "Raggiungere i sentieri con i mezzi pubblici",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/mezzi-pubblici-sentieri-lombardia-ticino-grigioni.html"
+    "id": "ferrata-bambini-principianti",
+    "title": "Ferrata con bambini o principianti",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/ferrata-bambini-principianti.html"
   },
   {
-    "id": "preparazione-fisica-trekking-bivacco",
-    "title": "Preparazione fisica minima per trekking con bivacco",
-    "category": "Pianificazione",
-    "file": "content/pianificazione/preparazione-fisica-trekking-bivacco.html"
+    "id": "meteo-stagione-ferrate",
+    "title": "Meteo e stagione per le ferrate",
+    "group": "Tecnica sul terreno",
+    "category": "Vie ferrate",
+    "file": "content/vie-ferrate/meteo-stagione-ferrate.html"
   },
   {
-    "id": "bivacco-forzato-emergenza",
-    "title": "Bivacco forzato d'emergenza",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/bivacco-forzato-emergenza.html"
+    "id": "bollettino-nivometeorologico",
+    "title": "Bollettino nivometeorologico: cos'è e quando serve",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/meteo/bollettino-nivometeorologico.html"
   },
   {
-    "id": "riparo-fortuna-telo-tarp",
-    "title": "Riparo di fortuna con telo/tarp/telo termico",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/riparo-fortuna-telo-tarp.html"
+    "id": "scala-europea-pericolo-valanghe",
+    "title": "Scala europea del pericolo valanghe (1-5)",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/scala-europea-pericolo-valanghe.html"
   },
   {
-    "id": "telo-termico-metallina",
-    "title": "Telo termico (metallina)",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/telo-termico-metallina.html"
+    "id": "problemi-valanghivi-tipici",
+    "title": "Problemi valanghivi tipici",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/problemi-valanghivi-tipici.html"
   },
   {
-    "id": "cosa-fare-se-ci-si-perde",
-    "title": "Cosa fare se ci si perde",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/cosa-fare-se-ci-si-perde.html"
+    "id": "pendenza-terreno-30-gradi",
+    "title": "Pendenza e terreno: la soglia dei 30°",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/pendenza-terreno-30-gradi.html"
   },
   {
-    "id": "accendere-fuoco-montagna",
-    "title": "Accendere un fuoco in montagna",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/accendere-fuoco-montagna.html"
+    "id": "bollettini-valanghe-alpi-centrali",
+    "title": "Bollettini valanghe di riferimento per le Alpi centrali",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/bollettini-valanghe-alpi-centrali.html"
   },
   {
-    "id": "nodi-essenziali-bivacco-trekking",
-    "title": "Nodi essenziali per bivacco e trekking",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/nodi-essenziali-bivacco-trekking.html"
+    "id": "scegliere-itinerario-invernale-basso-rischio",
+    "title": "Scegliere un itinerario invernale a basso rischio",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/scegliere-itinerario-invernale-basso-rischio.html"
   },
   {
-    "id": "farsi-trovare-dal-soccorso",
-    "title": "Farsi trovare dal soccorso",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/farsi-trovare-dal-soccorso.html"
+    "id": "kit-autosoccorso-valanga-artva-pala-sonda",
+    "title": "Kit autosoccorso in valanga (ARTVA, pala, sonda)",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/kit-autosoccorso-valanga-artva-pala-sonda.html"
   },
   {
-    "id": "notte-imprevista-freddo",
-    "title": "Sopravvivere a una notte imprevista al freddo",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/notte-imprevista-freddo.html"
+    "id": "artva-check-gruppo-trasmissione-ricerca",
+    "title": "ARTVA: check di gruppo, trasmissione/ricerca, batterie e interferenze",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/artva-check-gruppo-trasmissione-ricerca.html"
   },
   {
-    "id": "panico-stanchezza-gruppo",
-    "title": "Gestire il panico e la stanchezza estrema in gruppo",
-    "category": "Sopravvivenza",
-    "file": "content/sopravvivenza/panico-stanchezza-gruppo.html"
+    "id": "autosoccorso-valanga-primi-15-minuti",
+    "title": "Autosoccorso in valanga: i primi 15 minuti",
+    "group": "Tecnica sul terreno",
+    "category": "Neve e valanghe",
+    "file": "content/escursionismo-invernale/autosoccorso-valanga-primi-15-minuti.html"
+  },
+  {
+    "id": "ciaspole",
+    "title": "Ciaspole",
+    "group": "Tecnica sul terreno",
+    "category": "Inverno",
+    "file": "content/escursionismo-invernale/ciaspole.html"
+  },
+  {
+    "id": "attrezzatura-base-ciaspole",
+    "title": "Attrezzatura base per un'escursione con le ciaspole",
+    "group": "Tecnica sul terreno",
+    "category": "Inverno",
+    "file": "content/escursionismo-invernale/attrezzatura-base-ciaspole.html"
+  },
+  {
+    "id": "freddo-buio-escursione-invernale",
+    "title": "Freddo e buio in escursione invernale",
+    "group": "Tecnica sul terreno",
+    "category": "Inverno",
+    "file": "content/escursionismo-invernale/freddo-buio-escursione-invernale.html"
+  },
+  {
+    "id": "bivacco-invernale-attrezzatura",
+    "title": "Bivacco invernale: cosa cambia rispetto all'estate",
+    "group": "Tecnica sul terreno",
+    "category": "Inverno",
+    "file": "content/escursionismo-invernale/bivacco-invernale-attrezzatura.html"
+  },
+  {
+    "id": "bivacco-su-neve",
+    "title": "Bivacco su neve",
+    "group": "Tecnica sul terreno",
+    "category": "Inverno",
+    "file": "content/tenda/bivacco-su-neve.html"
+  },
+  {
+    "id": "simbologia-carte-igm-swisstopo",
+    "title": "Carte IGM vs Swisstopo: differenze di simbologia",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/simbologia-carte-igm-swisstopo.html"
+  },
+  {
+    "id": "uso-bussola-carta",
+    "title": "Bussola e carta: il metodo base per orientarsi",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/uso-bussola-carta.html"
+  },
+  {
+    "id": "app-offline-navigazione",
+    "title": "App offline per navigazione escursionistica: confronto",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/app-offline-navigazione.html"
+  },
+  {
+    "id": "fonti-tracce-gpx",
+    "title": "Fonti affidabili di tracce GPX: Lombardia/Ticino/Grigioni",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/fonti-tracce-gpx.html"
+  },
+  {
+    "id": "backup-carta-cartacea",
+    "title": "Perché portare sempre una carta cartacea di backup",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/backup-carta-cartacea.html"
+  },
+  {
+    "id": "altimetro-barometrico",
+    "title": "Altimetro barometrico",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/altimetro-barometrico.html"
+  },
+  {
+    "id": "orientarsi-nebbia-buio",
+    "title": "Orientarsi in nebbia o al buio",
+    "group": "Tecnica sul terreno",
+    "category": "Orientamento",
+    "file": "content/orientamento/orientarsi-nebbia-buio.html"
+  },
+  {
+    "id": "leggere-bollettino-montano",
+    "title": "Come leggere un bollettino meteo montano",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/leggere-bollettino-montano.html"
+  },
+  {
+    "id": "fonti-meteo-affidabili",
+    "title": "Fonti meteo affidabili per zona alpina Lombardia/Svizzera",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/fonti-meteo-affidabili.html"
+  },
+  {
+    "id": "segnali-temporale-imminente",
+    "title": "Segnali di temporale imminente: cosa osservare",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/segnali-temporale-imminente.html"
+  },
+  {
+    "id": "comportamento-fulmini",
+    "title": "Fulmini in montagna: come comportarsi",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/comportamento-fulmini.html"
+  },
+  {
+    "id": "gradiente-termico-quota",
+    "title": "Gradiente termico: stimare la temperatura in quota",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/gradiente-termico-quota.html"
+  },
+  {
+    "id": "vento-in-cresta",
+    "title": "Vento in cresta: stimarlo e gestirlo",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/vento-in-cresta.html"
+  },
+  {
+    "id": "inversione-termica-nebbia-di-valle",
+    "title": "Inversione termica e nebbia di valle",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/inversione-termica-nebbia-di-valle.html"
+  },
+  {
+    "id": "finestra-meteo-modelli-tendenze",
+    "title": "Finestra meteo: modelli e tendenze a 2-5 giorni",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/finestra-meteo-modelli-tendenze.html"
+  },
+  {
+    "id": "neve-fuori-stagione-gelo-notturno",
+    "title": "Neve fuori stagione e gelo notturno",
+    "group": "Meteo e natura",
+    "category": "Meteo",
+    "file": "content/meteo/neve-fuori-stagione-gelo-notturno.html"
+  },
+  {
+    "id": "comportamento-vipere",
+    "title": "Incontro con vipere: comportamento e primo soccorso",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/comportamento-vipere.html"
+  },
+  {
+    "id": "comportamento-cinghiali",
+    "title": "Incontro con cinghiali: come comportarsi",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/comportamento-cinghiali.html"
+  },
+  {
+    "id": "zone-presenza-lupo",
+    "title": "Zone con presenza di lupo: precauzioni per il bivacco",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/zone-presenza-lupo.html"
+  },
+  {
+    "id": "cani-pastore-maremmani",
+    "title": "Cani da guardiania (maremmano-abruzzesi): come comportarsi",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/cani-pastore-maremmani.html"
+  },
+  {
+    "id": "gestione-cibo-rifiuti-fauna",
+    "title": "Gestire cibo e rifiuti in bivacco per non attirare fauna",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/gestione-cibo-rifiuti-fauna.html"
+  },
+  {
+    "id": "zecche",
+    "title": "Zecche: rischio, prevenzione, rimozione",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/zecche.html"
+  },
+  {
+    "id": "orso-bruno-trentino",
+    "title": "Orso bruno in Trentino",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/orso-bruno-trentino.html"
+  },
+  {
+    "id": "vespe-calabroni-api",
+    "title": "Vespe, calabroni e api",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/vespe-calabroni-api.html"
+  },
+  {
+    "id": "bovini-pascolo-mucche-vitelli",
+    "title": "Bovini al pascolo e mucche con vitelli",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/bovini-pascolo-mucche-vitelli.html"
+  },
+  {
+    "id": "roditori-volpi-in-bivacco",
+    "title": "Roditori e volpi in bivacco",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/fauna/roditori-volpi-in-bivacco.html"
+  },
+  {
+    "id": "piante-velenose-urticanti-alpi",
+    "title": "Piante velenose e urticanti comuni sulle Alpi",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/flora/piante-velenose-urticanti-alpi.html"
+  },
+  {
+    "id": "bacche-piante-commestibili",
+    "title": "Bacche e piante commestibili",
+    "group": "Meteo e natura",
+    "category": "Fauna e flora",
+    "file": "content/flora/bacche-piante-commestibili.html"
   },
   {
     "id": "mal-acuto-di-montagna-ams",
     "title": "Mal acuto di montagna (AMS)",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/mal-acuto-di-montagna-ams.html"
   },
   {
     "id": "hape-hace-edema-alta-quota",
     "title": "Edema polmonare e cerebrale d'alta quota (HAPE/HACE)",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/hape-hace-edema-alta-quota.html"
   },
   {
     "id": "acclimatazione-alta-quota",
     "title": "Acclimatazione in alta quota",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/acclimatazione-alta-quota.html"
   },
   {
     "id": "sole-in-quota",
     "title": "Sole in quota",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/sole-in-quota.html"
   },
   {
     "id": "alimentazione-idratazione-quota",
     "title": "Alimentazione e idratazione in quota",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/alimentazione-idratazione-quota.html"
   },
   {
     "id": "congelamento",
     "title": "Congelamenti e principio di congelamento",
-    "category": "Quota e salute",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
     "file": "content/quota-salute/congelamento.html"
+  },
+  {
+    "id": "riconoscere-ipotermia",
+    "title": "Riconoscere e trattare l'ipotermia sul campo",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/sicurezza/riconoscere-ipotermia.html"
+  },
+  {
+    "id": "colpo-di-calore-disidratazione",
+    "title": "Riconoscere colpo di calore e disidratazione in quota",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/sicurezza/colpo-di-calore-disidratazione.html"
+  },
+  {
+    "id": "kit-primo-soccorso-minimo",
+    "title": "Kit di primo soccorso minimo per trekking/bivacco",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/sicurezza/kit-primo-soccorso-minimo.html"
+  },
+  {
+    "id": "autosoccorso-base",
+    "title": "Autosoccorso base per infortuni lievi",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/sicurezza/autosoccorso-base.html"
+  },
+  {
+    "id": "monossido-carbonio-tenda-bivacchi",
+    "title": "Monossido di carbonio in tenda e bivacchi chiusi",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/tenda/monossido-carbonio-tenda-bivacchi.html"
+  },
+  {
+    "id": "cura-piedi-trekking",
+    "title": "Cura dei piedi in trekking",
+    "group": "Salute e sicurezza",
+    "category": "Salute in montagna",
+    "file": "content/trekking/cura-piedi-trekking.html"
   },
   {
     "id": "lavarsi-in-bivacco-senza-inquinare",
     "title": "Lavarsi in bivacco senza inquinare",
+    "group": "Salute e sicurezza",
     "category": "Igiene",
     "file": "content/igiene/lavarsi-in-bivacco-senza-inquinare.html"
   },
   {
     "id": "igiene-mani-gastroenterite",
     "title": "Igiene delle mani e prevenzione di gastroenteriti",
+    "group": "Salute e sicurezza",
     "category": "Igiene",
     "file": "content/igiene/igiene-mani-gastroenterite.html"
   },
   {
     "id": "ciclo-mestruale-trekking-bivacco",
     "title": "Ciclo mestruale in trekking e bivacco",
+    "group": "Salute e sicurezza",
     "category": "Igiene",
     "file": "content/igiene/ciclo-mestruale-trekking-bivacco.html"
   },
   {
     "id": "lavare-asciugare-vestiti-trekking",
     "title": "Lavare e asciugare i vestiti durante un trekking",
+    "group": "Salute e sicurezza",
     "category": "Igiene",
     "file": "content/igiene/lavare-asciugare-vestiti-trekking.html"
   },
   {
-    "id": "campeggio-organizzato-italia-svizzera",
-    "title": "Campeggio organizzato in Italia e Svizzera",
-    "category": "Camping",
-    "file": "content/camping/campeggio-organizzato-italia-svizzera.html"
+    "id": "numeri-emergenza-italia-svizzera",
+    "title": "Numeri di emergenza in montagna: Italia e Svizzera",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/sicurezza/numeri-emergenza-italia-svizzera.html"
   },
   {
-    "id": "scegliere-una-piazzola",
-    "title": "Scegliere una piazzola",
-    "category": "Camping",
-    "file": "content/camping/scegliere-una-piazzola.html"
+    "id": "plb-localizzatori-satellitari",
+    "title": "PLB e localizzatori satellitari: quando portarli",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/sicurezza/plb-localizzatori-satellitari.html"
   },
   {
-    "id": "etichetta-campeggio",
-    "title": "Etichetta del campeggio",
-    "category": "Camping",
-    "file": "content/camping/etichetta-campeggio.html"
+    "id": "segnali-allarme-internazionali",
+    "title": "Segnali di allarme internazionali in montagna",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/sicurezza/segnali-allarme-internazionali.html"
   },
   {
-    "id": "elettricita-in-campeggio",
-    "title": "Elettricità in campeggio",
-    "category": "Camping",
-    "file": "content/camping/elettricita-in-campeggio.html"
+    "id": "dare-posizione-al-soccorso",
+    "title": "Dare la propria posizione al soccorso",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/orientamento/dare-posizione-al-soccorso.html"
   },
   {
-    "id": "tessere-sconti-tcs-acsi-camping-key",
-    "title": "Tessere e sconti (TCS, ACSI, Camping Key Europe)",
-    "category": "Camping",
-    "file": "content/camping/tessere-sconti-tcs-acsi-camping-key.html"
+    "id": "farsi-trovare-dal-soccorso",
+    "title": "Farsi trovare dal soccorso",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/sopravvivenza/farsi-trovare-dal-soccorso.html"
   },
   {
-    "id": "aree-di-sosta-camper",
-    "title": "Aree di sosta camper e \"camper stop\"",
-    "category": "Camping",
-    "file": "content/camping/aree-di-sosta-camper.html"
-  },
-  {
-    "id": "campeggio-in-svizzera-specificita",
-    "title": "Campeggio in Svizzera: specificità",
-    "category": "Camping",
-    "file": "content/camping/campeggio-in-svizzera-specificita.html"
-  },
-  {
-    "id": "attrezzatura-campeggio-auto-vs-trekking",
-    "title": "Attrezzatura da campeggio \"base auto\" vs trekking",
-    "category": "Camping",
-    "file": "content/camping/attrezzatura-campeggio-auto-vs-trekking.html"
+    "id": "telefono-in-montagna",
+    "title": "Telefono in montagna",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
+    "file": "content/informazioni-utili/telefono-in-montagna.html"
   },
   {
     "id": "chi-paga-il-soccorso",
     "title": "Chi paga il soccorso in montagna",
-    "category": "Informazioni utili",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
     "file": "content/informazioni-utili/chi-paga-il-soccorso.html"
   },
   {
     "id": "assicurazioni-soccorso-alpino",
     "title": "Assicurazioni per il soccorso alpino",
-    "category": "Informazioni utili",
+    "group": "Salute e sicurezza",
+    "category": "Emergenze e soccorso",
     "file": "content/informazioni-utili/assicurazioni-soccorso-alpino.html"
+  },
+  {
+    "id": "bivacco-forzato-emergenza",
+    "title": "Bivacco forzato d'emergenza",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/bivacco-forzato-emergenza.html"
+  },
+  {
+    "id": "riparo-fortuna-telo-tarp",
+    "title": "Riparo di fortuna con telo/tarp/telo termico",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/riparo-fortuna-telo-tarp.html"
+  },
+  {
+    "id": "telo-termico-metallina",
+    "title": "Telo termico (metallina)",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/telo-termico-metallina.html"
+  },
+  {
+    "id": "cosa-fare-se-ci-si-perde",
+    "title": "Cosa fare se ci si perde",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/cosa-fare-se-ci-si-perde.html"
+  },
+  {
+    "id": "accendere-fuoco-montagna",
+    "title": "Accendere un fuoco in montagna",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/accendere-fuoco-montagna.html"
+  },
+  {
+    "id": "nodi-essenziali-bivacco-trekking",
+    "title": "Nodi essenziali per bivacco e trekking",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/nodi-essenziali-bivacco-trekking.html"
+  },
+  {
+    "id": "notte-imprevista-freddo",
+    "title": "Sopravvivere a una notte imprevista al freddo",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/notte-imprevista-freddo.html"
+  },
+  {
+    "id": "panico-stanchezza-gruppo",
+    "title": "Gestire il panico e la stanchezza estrema in gruppo",
+    "group": "Salute e sicurezza",
+    "category": "Sopravvivenza",
+    "file": "content/sopravvivenza/panico-stanchezza-gruppo.html"
+  },
+  {
+    "id": "pianificare-uscita-giornata",
+    "title": "Pianificare un'uscita in giornata",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/pianificare-uscita-giornata.html"
+  },
+  {
+    "id": "trekking-piu-giorni-bivacco",
+    "title": "Pianificare un trekking di più giorni con bivacco",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/trekking-piu-giorni-bivacco.html"
+  },
+  {
+    "id": "piano-b-criteri-rinuncia",
+    "title": "Piano B e criteri di rinuncia",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/piano-b-criteri-rinuncia.html"
+  },
+  {
+    "id": "lasciare-detto-dove-si-va",
+    "title": "Lasciare detto dove si va",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/lasciare-detto-dove-si-va.html"
+  },
+  {
+    "id": "ore-luce-alba-tramonto",
+    "title": "Ore di luce, alba e tramonto in montagna",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/ore-luce-alba-tramonto.html"
+  },
+  {
+    "id": "preparazione-fisica-trekking-bivacco",
+    "title": "Preparazione fisica minima per trekking con bivacco",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/preparazione-fisica-trekking-bivacco.html"
+  },
+  {
+    "id": "mezzi-pubblici-sentieri-lombardia-ticino-grigioni",
+    "title": "Raggiungere i sentieri con i mezzi pubblici",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
+    "file": "content/pianificazione/mezzi-pubblici-sentieri-lombardia-ticino-grigioni.html"
   },
   {
     "id": "diventare-socio-cai-sac",
     "title": "Diventare socio CAI o SAC",
-    "category": "Informazioni utili",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
     "file": "content/informazioni-utili/diventare-socio-cai-sac.html"
-  },
-  {
-    "id": "telefono-in-montagna",
-    "title": "Telefono in montagna",
-    "category": "Informazioni utili",
-    "file": "content/informazioni-utili/telefono-in-montagna.html"
-  },
-  {
-    "id": "confine-italia-svizzera-a-piedi",
-    "title": "Attraversare il confine Italia–Svizzera a piedi",
-    "category": "Informazioni utili",
-    "file": "content/informazioni-utili/confine-italia-svizzera-a-piedi.html"
-  },
-  {
-    "id": "coltelli-attrezzi-in-zaino",
-    "title": "Coltelli e attrezzi in zaino",
-    "category": "Informazioni utili",
-    "file": "content/informazioni-utili/coltelli-attrezzi-in-zaino.html"
   },
   {
     "id": "glossario-termini-montagna-svizzeri",
     "title": "Glossario termini di montagna IT/DE/FR (carte svizzere)",
-    "category": "Informazioni utili",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
     "file": "content/informazioni-utili/glossario-termini-montagna-svizzeri.html"
   },
   {
     "id": "responsabilita-gruppo-informale",
     "title": "Assicurazione e responsabilità in gruppo informale",
-    "category": "Informazioni utili",
+    "group": "Pianificazione e logistica",
+    "category": "Prima di partire",
     "file": "content/informazioni-utili/responsabilita-gruppo-informale.html"
   },
   {
-    "id": "drone-in-montagna",
-    "title": "Drone in montagna",
-    "category": "Informazioni utili",
-    "file": "content/informazioni-utili/drone-in-montagna.html"
+    "id": "prenotazione-rifugio-cai",
+    "title": "Prenotare un rifugio CAI in Italia",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/prenotazione-rifugio-cai.html"
   },
   {
-    "id": "autosoccorso-valanga-primi-15-minuti",
-    "title": "Autosoccorso in valanga: i primi 15 minuti",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/autosoccorso-valanga-primi-15-minuti.html"
+    "id": "prenotazione-rifugio-sac",
+    "title": "Prenotare un rifugio (capanna) SAC in Svizzera",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/prenotazione-rifugio-sac.html"
   },
   {
-    "id": "scala-europea-pericolo-valanghe",
-    "title": "Scala europea del pericolo valanghe (1-5)",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/scala-europea-pericolo-valanghe.html"
+    "id": "differenze-servizi-cai-sac",
+    "title": "Rifugi CAI vs capanne SAC: le differenze principali",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/differenze-servizi-cai-sac.html"
   },
   {
-    "id": "problemi-valanghivi-tipici",
-    "title": "Problemi valanghivi tipici",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/problemi-valanghivi-tipici.html"
+    "id": "cose-un-bivacco-fisso",
+    "title": "Cos'è un bivacco fisso",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/cose-un-bivacco-fisso.html"
   },
   {
-    "id": "pendenza-terreno-30-gradi",
-    "title": "Pendenza e terreno: la soglia dei 30°",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/pendenza-terreno-30-gradi.html"
+    "id": "etichetta-regole-bivacco-fisso",
+    "title": "Etichetta e regole d'uso di un bivacco fisso",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/etichetta-regole-bivacco-fisso.html"
   },
   {
-    "id": "scegliere-itinerario-invernale-basso-rischio",
-    "title": "Scegliere un itinerario invernale a basso rischio",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/scegliere-itinerario-invernale-basso-rischio.html"
+    "id": "cosa-trovi-bivacco-fisso",
+    "title": "Cosa trovi e cosa NON trovi in un bivacco fisso",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/cosa-trovi-bivacco-fisso.html"
   },
   {
-    "id": "freddo-buio-escursione-invernale",
-    "title": "Freddo e buio in escursione invernale",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/freddo-buio-escursione-invernale.html"
+    "id": "dormire-bivacco-fisso-sicurezza",
+    "title": "Dormire in un bivacco fisso in sicurezza",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/dormire-bivacco-fisso-sicurezza.html"
   },
   {
-    "id": "bollettini-valanghe-alpi-centrali",
-    "title": "Bollettini valanghe di riferimento per le Alpi centrali",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/bollettini-valanghe-alpi-centrali.html"
+    "id": "trovare-bivacchi-lombardia-trentino",
+    "title": "Trovare i bivacchi fissi in Lombardia e Trentino",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/trovare-bivacchi-lombardia-trentino.html"
   },
   {
-    "id": "bivacco-invernale-attrezzatura",
-    "title": "Bivacco invernale: cosa cambia rispetto all'estate",
-    "category": "Escursionismo invernale",
-    "file": "content/escursionismo-invernale/bivacco-invernale-attrezzatura.html"
+    "id": "capanne-non-custodite-svizzera",
+    "title": "Capanne non custodite e locali invernali in Svizzera",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/capanne-non-custodite-svizzera.html"
+  },
+  {
+    "id": "locale-invernale-rifugio-custodito",
+    "title": "Locale invernale di un rifugio custodito",
+    "group": "Pianificazione e logistica",
+    "category": "Rifugi e bivacchi fissi",
+    "file": "content/rifugi/locale-invernale-rifugio-custodito.html"
+  },
+  {
+    "id": "campeggio-organizzato-italia-svizzera",
+    "title": "Campeggio organizzato in Italia e Svizzera",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/campeggio-organizzato-italia-svizzera.html"
+  },
+  {
+    "id": "scegliere-una-piazzola",
+    "title": "Scegliere una piazzola",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/scegliere-una-piazzola.html"
+  },
+  {
+    "id": "etichetta-campeggio",
+    "title": "Etichetta del campeggio",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/etichetta-campeggio.html"
+  },
+  {
+    "id": "elettricita-in-campeggio",
+    "title": "Elettricità in campeggio",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/elettricita-in-campeggio.html"
+  },
+  {
+    "id": "tessere-sconti-tcs-acsi-camping-key",
+    "title": "Tessere e sconti (TCS, ACSI, Camping Key Europe)",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/tessere-sconti-tcs-acsi-camping-key.html"
+  },
+  {
+    "id": "aree-di-sosta-camper",
+    "title": "Aree di sosta camper e \"camper stop\"",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/aree-di-sosta-camper.html"
+  },
+  {
+    "id": "campeggio-in-svizzera-specificita",
+    "title": "Campeggio in Svizzera: specificità",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/campeggio-in-svizzera-specificita.html"
+  },
+  {
+    "id": "attrezzatura-campeggio-auto-vs-trekking",
+    "title": "Attrezzatura da campeggio \"base auto\" vs trekking",
+    "group": "Pianificazione e logistica",
+    "category": "Campeggio e camper",
+    "file": "content/camping/attrezzatura-campeggio-auto-vs-trekking.html"
   }
 ]
