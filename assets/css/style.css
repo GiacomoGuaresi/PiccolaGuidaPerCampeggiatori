@@ -891,6 +891,16 @@ button:disabled {
     print-color-adjust: exact;
   }
 
+  /* html e body sono alti 100% per la UI a tutto schermo: in stampa quella
+     altezza fissa fa troncare il documento alla prima pagina. In stampa il
+     flusso deve essere libero di crescere quanto serve. */
+  html,
+  body {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
   #app {
     display: none;
   }
@@ -901,6 +911,7 @@ button:disabled {
 
   #print-area {
     display: block;
+    overflow: visible;
   }
 
   #print-area .a5-page {

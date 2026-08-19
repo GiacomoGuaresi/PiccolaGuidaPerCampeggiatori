@@ -676,6 +676,21 @@ async function printBook() {
     if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
   }
 
+  // Una scheda che non si carica sparirebbe dal libro senza avvisare: meglio
+  // fermarsi che stampare un raccoglitore a cui mancano dei fogli.
+  const failedIds = entries
+    .filter((entry) => htmlById[entry.id] === null)
+    .map((entry) => entry.id);
+  if (coverHtml === null || failedIds.length > 0) {
+    const missing = coverHtml === null ? ["copertina", ...failedIds] : failedIds;
+    alert(
+      `Stampa annullata: ${missing.length} schede su ${entries.length + 1} non si sono caricate.\n\n` +
+        `${missing.join(", ")}\n\n` +
+        "Ricarica la pagina (forzando l'aggiornamento della cache) e riprova."
+    );
+    return;
+  }
+
   renderPrintPages(pages);
   window.print();
 
