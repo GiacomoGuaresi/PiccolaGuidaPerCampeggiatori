@@ -90,6 +90,7 @@ async function init() {
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
   els.btnZoomReset.addEventListener("click", () => setZoom(1));
   setZoom(loadZoom());
+  initTouchGestures();
 
   els.sidebarToggle.addEventListener("click", toggleSidebar);
   els.sidebarBackdrop.addEventListener("click", closeSidebar);
@@ -540,13 +541,174 @@ function defaultZoomForViewport() {
   return Math.min(1, Math.max(ZOOM_MIN, available / a5WidthPx));
 }
 
-function setZoom(value) {
+// Durante il pinch setZoom viene chiamata a ogni frame: in quel caso si salta
+// il salvataggio (persist = false) e si scrive su localStorage solo a gesto finito.
+function setZoom(value, persist = true) {
   state.zoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, value));
   els.a5Single.style.zoom = state.zoom;
   els.btnZoomReset.textContent = `${Math.round(state.zoom * 100)}%`;
   els.btnZoomOut.disabled = state.zoom <= ZOOM_MIN;
   els.btnZoomIn.disabled = state.zoom >= ZOOM_MAX;
-  localStorage.setItem(ZOOM_KEY, state.zoom);
+  if (persist) localStorage.setItem(ZOOM_KEY, state.zoom);
+}
+
+/* ---------------------------------- Gesture touch ---------------------------------- */
+// Sulla scheda: pinch con due dita per lo zoom, swipe orizzontale con un dito
+// per passare alla scheda precedente/successiva. Lo scorrimento verticale resta
+// nativo (CSS: touch-action: pan-y sulla preview).
+
+const SWIPE_MIN_DISTANCE = 60; // px percorsi in orizzontale perche' conti come swipe
+const SWIPE_MAX_ANGLE_RATIO = 0.6; // |dy| / |dx| massimo: sopra questo e' uno scroll
+const SWIPE_MAX_DURATION = 800; // ms
+const PINCH_MIN_DISTANCE = 20; // px fra le due dita: sotto e' rumore
+
+const activePointers = new Map();
+let pinchState = null;
+let swipeState = null;
+
+function initTouchGestures() {
+  if (!window.PointerEvent) return;
+  const target = els.content;
+
+  target.addEventListener("pointerdown", onGesturePointerDown);
+  target.addEventListener("pointermove", onGesturePointerMove, { passive: false });
+  target.addEventListener("pointerup", onGesturePointerUp);
+  target.addEventListener("pointercancel", onGesturePointerUp);
+
+  // Safari su iOS pinch-zooma la pagina anche con touch-action: questi eventi
+  // sono l'unico modo per fermarlo.
+  ["gesturestart", "gesturechange", "gestureend"].forEach((type) => {
+    target.addEventListener(type, (e) => e.preventDefault());
+  });
+}
+
+function onGesturePointerDown(e) {
+  if (e.pointerType !== "touch") return;
+  activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+  if (activePointers.size === 2) {
+    swipeState = null;
+    pinchState = { startDistance: pointerDistance(), startZoom: state.zoom };
+  } else if (activePointers.size === 1) {
+    pinchState = null;
+    swipeState = {
+      pointerId: e.pointerId,
+      startX: e.clientX,
+      startY: e.clientY,
+      lastX: e.clientX,
+      startTime: performance.now(),
+      // Se la scheda e' piu' larga dello schermo il trascinamento orizzontale
+      // serve a spostarsi dentro la scheda: si cambia pagina solo partendo dal bordo.
+      atLeftEdge: els.content.scrollLeft <= 1,
+      atRightEdge: els.content.scrollLeft >= els.content.scrollWidth - els.content.clientWidth - 1,
+    };
+  } else {
+    pinchState = null;
+    swipeState = null;
+  }
+}
+
+function onGesturePointerMove(e) {
+  if (e.pointerType !== "touch") return;
+  const pointer = activePointers.get(e.pointerId);
+  if (!pointer) return;
+  pointer.x = e.clientX;
+  pointer.y = e.clientY;
+
+  if (pinchState && activePointers.size === 2) {
+    e.preventDefault();
+    const distance = pointerDistance();
+    if (pinchState.startDistance < PINCH_MIN_DISTANCE) return;
+    zoomKeepingCenter(pinchState.startZoom * (distance / pinchState.startDistance));
+    return;
+  }
+
+  if (swipeState && e.pointerId === swipeState.pointerId) {
+    const dx = e.clientX - swipeState.startX;
+    const dy = e.clientY - swipeState.startY;
+    // Trascinamento orizzontale dentro una scheda piu' larga della finestra.
+    if (Math.abs(dx) > Math.abs(dy) && els.content.scrollWidth > els.content.clientWidth + 1) {
+      e.preventDefault();
+      els.content.scrollLeft -= e.clientX - swipeState.lastX;
+    }
+    swipeState.lastX = e.clientX;
+  }
+}
+
+function onGesturePointerUp(e) {
+  if (e.pointerType !== "touch") return;
+  activePointers.delete(e.pointerId);
+
+  if (pinchState && activePointers.size < 2) {
+    pinchState = null;
+    localStorage.setItem(ZOOM_KEY, state.zoom);
+    return;
+  }
+
+  if (swipeState && e.pointerId === swipeState.pointerId) {
+    const { startX, startY, startTime, atLeftEdge, atRightEdge } = swipeState;
+    swipeState = null;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (performance.now() - startTime > SWIPE_MAX_DURATION) return;
+    if (Math.abs(dx) < SWIPE_MIN_DISTANCE) return;
+    if (Math.abs(dy) > Math.abs(dx) * SWIPE_MAX_ANGLE_RATIO) return;
+
+    // Swipe verso destra = scheda precedente, verso sinistra = successiva.
+    // Se la scheda era scorribile in quella direzione il gesto era una panoramica.
+    if (dx > 0 && !atLeftEdge) return;
+    if (dx < 0 && !atRightEdge) return;
+    stepCard(dx > 0 ? -1 : 1);
+  }
+}
+
+function pointerDistance() {
+  const [a, b] = Array.from(activePointers.values());
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+// Cambiando zoom la scheda cambia dimensione: si tiene fermo il punto centrale
+// invece di far saltare la vista in cima a sinistra.
+function zoomKeepingCenter(nextZoom) {
+  const box = els.content;
+  const centerXRatio = (box.scrollLeft + box.clientWidth / 2) / Math.max(box.scrollWidth, 1);
+  const centerYRatio = (box.scrollTop + box.clientHeight / 2) / Math.max(box.scrollHeight, 1);
+
+  setZoom(nextZoom, false);
+
+  box.scrollLeft = centerXRatio * box.scrollWidth - box.clientWidth / 2;
+  box.scrollTop = centerYRatio * box.scrollHeight - box.clientHeight / 2;
+}
+
+// Le schede nell'ordine in cui compaiono nella sidebar (quindi rispettando la
+// ricerca attiva); la sezione Preferiti e' esclusa per non avere duplicati.
+function visibleCardLinks() {
+  return Array.from(
+    els.sidebarList.querySelectorAll(".group:not(.favorites-group) .card-list a[data-id]")
+  );
+}
+
+function stepCard(delta) {
+  const links = visibleCardLinks();
+  if (links.length < 2) return;
+
+  const currentId = state.current && state.current.id;
+  const index = links.findIndex((a) => a.dataset.id === currentId);
+  const nextIndex = index === -1 ? 0 : (index + delta + links.length) % links.length;
+  const link = links[nextIndex];
+  const entry = state.manifest.find((e) => e.id === link.dataset.id);
+  if (!entry) return;
+
+  // Apre gruppo e categoria che contengono la scheda, cosi' la sidebar resta
+  // allineata a quello che si sta guardando.
+  const category = link.closest("details.category");
+  if (category) category.open = true;
+  const group = link.closest("details.group");
+  if (group) group.open = true;
+
+  selectCard(entry, link);
+  els.content.scrollTo({ top: 0, left: 0 });
 }
 
 async function selectCard(entry, linkEl) {

@@ -154,6 +154,25 @@ Poi apri `http://localhost:8000`.
   passo in più all'inizio, la data dell'ultima stampa: nel PDF finiscono solo
   le schede con tag `agg.` successivo a quella data.
 
+## Gesture su telefono e tablet
+
+Sull'area della scheda (non sulla sidebar):
+
+- **Pinch con due dita**: zoom della scheda, fra 50% e 200%, gli stessi limiti
+  dei pulsanti +/- nella barra in basso. Il livello raggiunto viene salvato in
+  `localStorage` a fine gesto.
+- **Swipe orizzontale con un dito**: scheda precedente (verso destra) o
+  successiva (verso sinistra), nell'ordine in cui compaiono in sidebar e
+  rispettando la ricerca attiva; la sezione Preferiti è esclusa dal ciclo per
+  non passare due volte sulla stessa scheda. Gruppo e categoria della nuova
+  scheda vengono aperti in sidebar.
+- Se lo zoom rende la scheda più larga dello schermo, il trascinamento
+  orizzontale la sposta: il cambio scheda scatta solo partendo dal bordo già
+  raggiunto.
+
+Lo scorrimento verticale resta quello nativo del browser
+(`touch-action: pan-y` su `.content`).
+
 ## Preferiti
 
 Ogni scheda in sidebar ha una stella: vuota = non preferita, piena = preferita.

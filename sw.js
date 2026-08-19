@@ -3,7 +3,7 @@
 // vengono messe in cache la shell e *tutte* le schede elencate in
 // manifest.json (frammenti HTML piccoli, in totale poche centinaia di KB).
 // Bump di CACHE_VERSION a ogni modifica della shell o del service worker.
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const SHELL_CACHE = `guida-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `guida-runtime-${CACHE_VERSION}`;
 
