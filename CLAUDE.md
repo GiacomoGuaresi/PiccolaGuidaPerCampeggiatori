@@ -11,6 +11,7 @@ Quando ti chiedo di creare una "pagina" per il cheatsheet, questo è un sito sta
   - Punti chiave in bullet, pratici e concreti (numeri, soglie, contatti, non teoria generica)
   - Sezione "Attenzione/Errori comuni" se rilevante e se c'è spazio (1-2 righe, non un paragrafo)
   - Sezione "Fonti" (`<p class="sources">`) con 2-4 link essenziali per esteso, non l'elenco completo delle ricerche
+- Dopo aver creato o modificato una scheda esegui `node scripts/check_overflow.mjs` (senza argomenti controlla tutte, con uno o più id solo quelle): `.a5-page` è `overflow: hidden`, il testo che eccede sparisce senza lasciare traccia — di solito proprio le Fonti, che sono in fondo. Se una scheda sfora, accorciala o dividila in due.
 - Stile: telegrafico, orientato all'uso sul campo, niente fuffa.
 - Se trovi informazioni contrastanti tra fonti, segnalalo esplicitamente in una riga breve invece di scegliere arbitrariamente.
 - `content/copertina.html` e `content/guida-al-sito.html` sono schede speciali (categoria "Guida", sempre prime nel manifest così restano in testa nell'export completo): non seguono la struttura standard h2/sintesi/Fonti e usano wrapper dedicati già stilizzati in `style.css` (`.cover`).
