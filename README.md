@@ -91,6 +91,24 @@ Poi apri `http://localhost:8000`.
 - **Tutte le schede**: premi "Esporta tutte le schede (PDF)" nel footer;
   ogni scheda finisce su una pagina separata.
 
+## Preferiti
+
+Ogni scheda in sidebar ha una stella: vuota = non preferita, piena = preferita.
+Le schede con la stella finiscono nella sezione **Preferiti**, in cima al menu
+laterale, e restano lì anche dopo aver chiuso il browser.
+
+L'elenco è salvato in un **cookie** (`preferiti`, un anno di durata, solo id
+delle schede separati da virgola), non in localStorage. I cookie hanno un
+tetto di ~4 KB: superata la soglia il sito avvisa invece di perdere
+silenziosamente dei preferiti.
+
+Nelle finestre "Stampa libro" e "Aggiornamento stampa" c'è la checkbox
+**Stampa solo i preferiti**: quando è attiva la selezione per gruppo/categoria
+viene ignorata (e disattivata a schermo) e si stampano solo le schede con la
+stella — copertina e pagina "Versione stampata" restano automatiche, e in
+quest'ultima l'elenco riporta i titoli delle schede invece delle categorie.
+Anche questa scelta è ricordata in un cookie (`stampaSoloPreferiti`).
+
 ### Modalità A4 (2 schede per foglio)
 
 Nelle finestre "Stampa libro" e "Aggiornamento stampa" c'è la checkbox

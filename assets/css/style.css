@@ -17,6 +17,16 @@
   --color-parchment-dark: #dbcda3;
   --color-paper: #ffffff;
 
+  /* Un colore per ciascun gruppo (la "categoria" in cima alla scheda):
+     toni derivati dalla palette terra/bosco, tutti abbastanza scuri da
+     reggere il testo bianco anche in stampa. */
+  --group-regole: #345238;
+  --group-attrezzatura: #5b4530;
+  --group-tecnica: #6b6858;
+  --group-meteo: #3f6470;
+  --group-salute: #9e4526;
+  --group-pianificazione: #7d6620;
+
   --font-display: "Playpen Sans", "Oswald", "Arial Narrow", "Helvetica Neue", sans-serif;
   --font-mono: "Space Mono", "Courier New", Courier, monospace;
   --font-body: "Playpen Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -302,6 +312,60 @@ button:disabled {
   color: var(--color-forest-dark);
 }
 
+/* Stella dei preferiti: sta nella riga della scheda, a destra del titolo. */
+.sidebar .card-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.sidebar .card-list li a {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar .fav-toggle {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  border-radius: 2px;
+  padding: 0.3em;
+  color: var(--color-stone);
+  line-height: 0;
+}
+
+/* Il symbol della stella non dichiara `fill`: lo eredita da qui, così la
+   stessa icona serve sia come contorno sia come stella piena. */
+.sidebar .fav-toggle .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+}
+
+.sidebar .fav-toggle:hover {
+  background: var(--color-parchment-dark);
+  color: var(--color-clay);
+}
+
+/* Piena = preferita, vuota = no: il riempimento è l'unico segnale che serve. */
+.sidebar .fav-toggle.is-favorite {
+  color: var(--color-clay);
+}
+
+.sidebar .fav-toggle.is-favorite .icon {
+  fill: currentColor;
+}
+
+.sidebar .favorites-group > summary {
+  color: var(--color-clay);
+  border-bottom-color: var(--color-clay);
+}
+
+.sidebar .favorites-empty {
+  margin: 0.6em 0 0;
+  font-size: 0.78rem;
+}
+
 .sidebar .empty-manifest {
   font-size: 0.85rem;
   color: var(--color-forest);
@@ -543,6 +607,34 @@ button:disabled {
   font-size: 7.5pt;
   letter-spacing: 0.03em;
   margin: 0 0.3em 0.3em 0;
+}
+
+/* Colore del gruppo: assegnato via data-group da app.js (decorateTags) sui
+   primi due tag della scheda. Il fallback vale per "Guida" e per gruppi
+   non ancora mappati. */
+.a5-page .tag[data-group] {
+  --group-color: var(--color-forest-dark);
+}
+
+.a5-page .tag[data-group="regole-e-ambiente"] { --group-color: var(--group-regole); }
+.a5-page .tag[data-group="attrezzatura"] { --group-color: var(--group-attrezzatura); }
+.a5-page .tag[data-group="tecnica-sul-terreno"] { --group-color: var(--group-tecnica); }
+.a5-page .tag[data-group="meteo-e-natura"] { --group-color: var(--group-meteo); }
+.a5-page .tag[data-group="salute-e-sicurezza"] { --group-color: var(--group-salute); }
+.a5-page .tag[data-group="pianificazione-e-logistica"] { --group-color: var(--group-pianificazione); }
+
+/* Gruppo: pieno, senza bordo, testo bianco. */
+.a5-page .tag-group {
+  background: var(--group-color);
+  border-color: var(--group-color);
+  color: var(--color-paper);
+}
+
+/* Categoria: solo bordo del colore del gruppo, sfondo trasparente. */
+.a5-page .tag-category {
+  background: transparent;
+  border-color: var(--group-color);
+  color: var(--group-color);
 }
 
 .a5-page .sources {
@@ -816,6 +908,19 @@ button:disabled {
   padding-top: 0.8rem;
   margin-bottom: 0;
   cursor: pointer;
+}
+
+/* L'opzione "solo preferiti" sta sopra al picker: niente riga di separazione
+   in alto, quella la porta il picker stesso. */
+.modal-dialog .print-option-top {
+  border-top: none;
+  padding-top: 0;
+  margin-bottom: 0.9rem;
+}
+
+.topic-picker-list.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .print-option input[type="checkbox"] {

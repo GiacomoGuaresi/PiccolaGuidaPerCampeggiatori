@@ -29,6 +29,7 @@ const state = {
   manifest: [],
   current: null,
   zoom: 1,
+  favorites: new Set(),
 };
 
 const searchIndex = new Map();
@@ -66,12 +67,16 @@ const els = {
   btnSelectNoneTopics: document.getElementById("btn-select-none-topics"),
   btnConfirmPrintBook: document.getElementById("btn-confirm-print-book"),
   a4ModeCheckboxes: Array.from(document.querySelectorAll(".a4-mode-checkbox")),
+  favoritesOnlyBook: document.getElementById("favorites-only-book"),
+  favoritesOnlyUpdate: document.getElementById("favorites-only-update"),
+  favoritesCounts: Array.from(document.querySelectorAll(".favorites-count")),
 };
 
 init();
 
 async function init() {
   state.manifest = await loadManifest();
+  state.favorites = loadFavorites();
   renderSidebar(state.manifest);
   els.btnOpenPrintBook.disabled = state.manifest.length === 0;
 
@@ -85,6 +90,7 @@ async function init() {
   els.btnConfirmPrintBook.addEventListener("click", printBook);
 
   initA4ModeCheckboxes();
+  initFavoritesOnlyCheckboxes();
 
   els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
@@ -201,6 +207,12 @@ function renderSidebar(manifest, query = "") {
   const openCategories = getOpenCategories();
   const groupSections = [];
 
+  const favoritesSection = renderFavoritesSection(filtered, searching, groupSections);
+  if (favoritesSection) {
+    els.sidebarList.appendChild(favoritesSection);
+    groupSections.push(favoritesSection);
+  }
+
   for (const group of sortGroups(Object.keys(byGroup))) {
     const groupSection = document.createElement("details");
     groupSection.className = "group";
@@ -244,18 +256,7 @@ function renderSidebar(manifest, query = "") {
       list.className = "card-list";
 
       for (const entry of byCategory[category]) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = "#";
-        a.textContent = entry.title;
-        a.dataset.id = entry.id;
-        if (state.current && state.current.id === entry.id) a.classList.add("active");
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          selectCard(entry, a);
-        });
-        li.appendChild(a);
-        list.appendChild(li);
+        list.appendChild(createCardListItem(entry));
       }
 
       section.appendChild(list);
@@ -265,6 +266,51 @@ function renderSidebar(manifest, query = "") {
     els.sidebarList.appendChild(groupSection);
     groupSections.push(groupSection);
   }
+}
+
+// La sezione Preferiti sta in cima e si comporta come un gruppo: sotto ricerca
+// mostra solo i preferiti che corrispondono alla query.
+const FAVORITES_GROUP = "Preferiti";
+
+function renderFavoritesSection(filtered, searching, groupSections) {
+  const favorites = filtered.filter((entry) => state.favorites.has(entry.id));
+  if (searching && favorites.length === 0) return null;
+
+  const section = document.createElement("details");
+  section.className = "group favorites-group";
+  section.open = searching ? true : getOpenGroup() === FAVORITES_GROUP;
+  if (!searching) {
+    section.addEventListener("toggle", () => {
+      if (section.open) {
+        groupSections.forEach((s) => {
+          if (s !== section) s.open = false;
+        });
+        setOpenGroup(FAVORITES_GROUP);
+      } else if (getOpenGroup() === FAVORITES_GROUP) {
+        setOpenGroup(null);
+      }
+    });
+  }
+
+  const summary = document.createElement("summary");
+  summary.textContent = `${FAVORITES_GROUP} (${favorites.length})`;
+  section.appendChild(summary);
+
+  if (favorites.length === 0) {
+    const hint = document.createElement("p");
+    hint.className = "empty-manifest favorites-empty";
+    hint.textContent = "Nessun preferito: tocca la stella accanto a una scheda per aggiungerla qui.";
+    section.appendChild(hint);
+    return section;
+  }
+
+  const list = document.createElement("ul");
+  list.className = "card-list";
+  for (const entry of favorites) {
+    list.appendChild(createCardListItem(entry));
+  }
+  section.appendChild(list);
+  return section;
 }
 
 const OPEN_GROUP_KEY = "openGroup";
@@ -350,6 +396,173 @@ function sortTopicKeys(keys) {
   );
 }
 
+/* ---------------------------------- Preferiti (cookie) ---------------------------------- */
+
+// I preferiti vivono in un cookie e non in localStorage: così restano legati
+// al dominio anche quando il sito viene aperto da un'altra pagina dello stesso
+// host (es. un indice statico) e sopravvivono alla pulizia dello storage.
+const FAVORITES_COOKIE = "preferiti";
+const FAVORITES_ONLY_COOKIE = "stampaSoloPreferiti";
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 anno
+// I cookie hanno un tetto di ~4 KB per dominio: sotto questa soglia si sta
+// larghi anche con tutte le schede preferite.
+const COOKIE_MAX_BYTES = 3800;
+
+function readCookie(name) {
+  const prefix = `${name}=`;
+  const found = document.cookie
+    .split("; ")
+    .find((chunk) => chunk.startsWith(prefix));
+  if (!found) return null;
+  try {
+    return decodeURIComponent(found.slice(prefix.length));
+  } catch {
+    return null;
+  }
+}
+
+function writeCookie(name, value) {
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
+}
+
+function loadFavorites() {
+  const raw = readCookie(FAVORITES_COOKIE);
+  if (!raw) return new Set();
+  return new Set(raw.split(",").filter(Boolean));
+}
+
+function saveFavorites(ids) {
+  const value = Array.from(ids).join(",");
+  if (encodeURIComponent(value).length > COOKIE_MAX_BYTES) return false;
+  writeCookie(FAVORITES_COOKIE, value);
+  return true;
+}
+
+function isFavorite(id) {
+  return state.favorites.has(id);
+}
+
+function toggleFavorite(id) {
+  const next = new Set(state.favorites);
+  if (next.has(id)) {
+    next.delete(id);
+  } else {
+    next.add(id);
+  }
+
+  if (!saveFavorites(next)) {
+    alert(
+      "Non ci stanno altri preferiti: il cookie ha raggiunto il limite di spazio del browser.\n\n" +
+        "Togli la stella a qualche scheda prima di aggiungerne altre."
+    );
+    return;
+  }
+
+  state.favorites = next;
+  updateFavoritesCounts();
+  renderSidebar(state.manifest, els.searchInput.value);
+}
+
+// Preferiti nell'ordine del manifest (non nell'ordine in cui sono stati aggiunti).
+function favoriteEntries() {
+  return state.manifest.filter((entry) => state.favorites.has(entry.id));
+}
+
+function printableFavorites() {
+  return favoriteEntries().filter(
+    (entry) => entry.printable !== false && entry.id !== "copertina"
+  );
+}
+
+function updateFavoritesCounts() {
+  const count = printableFavorites().length;
+  els.favoritesCounts.forEach((el) => (el.textContent = String(count)));
+  [els.favoritesOnlyBook, els.favoritesOnlyUpdate].forEach((cb) => {
+    if (!cb) return;
+    if (count === 0) cb.checked = false;
+    cb.disabled = count === 0;
+  });
+}
+
+// [checkbox "solo preferiti", picker delle categorie, bottoni del picker]
+function favoritesOnlyPanels() {
+  return [
+    {
+      checkbox: els.favoritesOnlyBook,
+      list: els.topicPickerList,
+      buttons: [els.btnSelectAllTopics, els.btnSelectNoneTopics],
+    },
+    {
+      checkbox: els.favoritesOnlyUpdate,
+      list: els.updateTopicPickerList,
+      buttons: [els.btnSelectAllUpdateTopics, els.btnSelectNoneUpdateTopics],
+    },
+  ];
+}
+
+function initFavoritesOnlyCheckboxes() {
+  const stored = readCookie(FAVORITES_ONLY_COOKIE) === "1";
+  favoritesOnlyPanels().forEach(({ checkbox }) => {
+    checkbox.checked = stored;
+    checkbox.addEventListener("change", () => {
+      writeCookie(FAVORITES_ONLY_COOKIE, checkbox.checked ? "1" : "0");
+      favoritesOnlyPanels().forEach(({ checkbox: other }) => {
+        if (other !== checkbox && !other.disabled) other.checked = checkbox.checked;
+      });
+      syncFavoritesOnlyState();
+    });
+  });
+  updateFavoritesCounts();
+  syncFavoritesOnlyState();
+}
+
+// Con "solo preferiti" attivo la scelta per categoria non conta più: viene
+// disattivata invece di restare lì a suggerire il contrario.
+function syncFavoritesOnlyState() {
+  favoritesOnlyPanels().forEach(({ checkbox, list, buttons }) => {
+    const off = checkbox.checked;
+    list.classList.toggle("is-disabled", off);
+    list.querySelectorAll('input[type="checkbox"]').forEach((input) => (input.disabled = off));
+    buttons.forEach((btn) => (btn.disabled = off));
+  });
+}
+
+function createFavoriteButton(entry) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "fav-toggle";
+  button.dataset.id = entry.id;
+  const active = isFavorite(entry.id);
+  button.classList.toggle("is-favorite", active);
+  button.setAttribute("aria-pressed", String(active));
+  button.title = active ? "Togli dai preferiti" : "Aggiungi ai preferiti";
+  button.setAttribute("aria-label", `${button.title}: ${entry.title}`);
+  button.innerHTML =
+    '<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-star"></use></svg>';
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleFavorite(entry.id);
+  });
+  return button;
+}
+
+function createCardListItem(entry) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = "#";
+  a.textContent = entry.title;
+  a.dataset.id = entry.id;
+  if (state.current && state.current.id === entry.id) a.classList.add("active");
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    selectCard(entry, a);
+  });
+  li.appendChild(a);
+  li.appendChild(createFavoriteButton(entry));
+  return li;
+}
+
 /* ---------------------------------- Sidebar mobile ---------------------------------- */
 
 const MOBILE_QUERY = window.matchMedia("(max-width: 780px)");
@@ -411,6 +624,7 @@ async function selectCard(entry, linkEl) {
   linkEl.classList.add("active");
 
   els.a5Single.innerHTML = html;
+  decorateTags(els.a5Single);
   extractSources();
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
@@ -418,6 +632,39 @@ async function selectCard(entry, linkEl) {
   els.btnExportSingle.hidden = entry.printable === false;
 
   if (MOBILE_QUERY.matches) closeSidebar();
+}
+
+// I primi due tag di ogni scheda sono gruppo e categoria: li marca cosi' che
+// il CSS possa dare al gruppo lo sfondo pieno del suo colore e alla categoria
+// solo il bordo dello stesso colore. Il terzo tag ("agg. ...") resta neutro.
+function decorateTags(root) {
+  const pages = root.classList && root.classList.contains("a5-page")
+    ? [root]
+    : Array.from(root.querySelectorAll(".a5-page"));
+
+  for (const page of pages) {
+    const tags = page.querySelectorAll(":scope > .tag");
+    if (!tags.length) continue;
+
+    const group = slugifyGroup(tags[0].textContent);
+    tags[0].classList.add("tag-group");
+    tags[0].dataset.group = group;
+
+    if (tags[1]) {
+      tags[1].classList.add("tag-category");
+      tags[1].dataset.group = group;
+    }
+  }
+}
+
+function slugifyGroup(text) {
+  return (text || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function extractSources() {
@@ -520,6 +767,7 @@ function renderPrintPages(pages) {
 
   if (!a4) {
     els.printArea.innerHTML = cards.join("");
+    decorateTags(els.printArea);
     return;
   }
 
@@ -529,6 +777,7 @@ function renderPrintPages(pages) {
     sheets.push(`<div class="a4-sheet">${cards[i]}${cards[i + 1] || blank}</div>`);
   }
   els.printArea.innerHTML = sheets.join("");
+  decorateTags(els.printArea);
 }
 
 /* ---------------------------------- Stampa libro (selezione sezioni) ---------------------------------- */
@@ -548,6 +797,8 @@ function selectableCategories() {
 function openPrintBookModal() {
   const defaultSelected = loadPrintedCategories() || selectableCategories();
   renderCategoryPicker(els.topicPickerList, defaultSelected);
+  updateFavoritesCounts();
+  syncFavoritesOnlyState();
   els.printBookModal.hidden = false;
 }
 
@@ -655,12 +906,22 @@ function sortEntriesForPrint(entries) {
 }
 
 async function printBook() {
-  const selectedCategories = getSelectedCategoriesFrom(els.topicPickerList);
-  if (selectedCategories.length === 0) return;
+  const favoritesOnly = els.favoritesOnlyBook.checked;
+  const selectedCategories = favoritesOnly ? [] : getSelectedCategoriesFrom(els.topicPickerList);
+
+  const entries = favoritesOnly
+    ? printableFavorites()
+    : (() => {
+        const selectedSet = new Set(selectedCategories);
+        return selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
+      })();
+
+  if (entries.length === 0) {
+    if (favoritesOnly) alert("Nessuna scheda tra i preferiti: aggiungine con la stella nel menu.");
+    return;
+  }
 
   const today = new Date().toISOString().slice(0, 10);
-  const selectedSet = new Set(selectedCategories);
-  const entries = selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
 
   const [coverHtml, ...fragments] = await Promise.all([
     fetchFragment("content/copertina.html"),
@@ -671,7 +932,11 @@ async function printBook() {
 
   const pages = [];
   if (coverHtml !== null) pages.push(coverHtml);
-  pages.push(buildVersionPage(today, sortTopicKeys(selectedCategories)));
+  pages.push(
+    favoritesOnly
+      ? buildVersionPage(today, entries.map((entry) => entry.title), { favoritesOnly: true })
+      : buildVersionPage(today, sortTopicKeys(selectedCategories))
+  );
   for (const entry of sortEntriesForPrint(entries)) {
     if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
   }
@@ -717,10 +982,17 @@ function persistCategorySelection(container) {
   savePrintedCategories(getSelectedCategoriesFrom(container));
 }
 
-function buildVersionPage(today, topicKeys, note) {
-  const categoryList = topicKeys
-    .map((category) => `<li>${escapeHtml(category)}</li>`)
-    .join("");
+// `items` sono le categorie stampate, oppure i titoli delle schede quando la
+// stampa è limitata ai preferiti.
+function buildVersionPage(today, items, { note, favoritesOnly } = {}) {
+  const itemList = items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const heading = favoritesOnly
+    ? `Schede preferite stampate il ${today}`
+    : `Argomenti stampati il ${today}`;
+
+  const selectionStep = favoritesOnly
+    ? "<li>Spunta <strong>Stampa solo i preferiti</strong>, come per questa stampa</li>"
+    : "<li>Conferma i gruppi e le categorie da controllare (precompilati come sopra)</li>";
 
   return `
     <h2>Versione stampata</h2>
@@ -731,14 +1003,14 @@ function buildVersionPage(today, topicKeys, note) {
 
     ${note ? `<p>${note}</p>` : ""}
 
-    <h3>Argomenti stampati il ${today}</h3>
-    <ul>${categoryList}</ul>
+    <h3>${heading}</h3>
+    <ul>${itemList}</ul>
 
     <h3>Come aggiornare in futuro</h3>
     <ul>
       <li>Sul sito apri "Aggiornamento stampa"</li>
       <li>Inserisci la data <strong>${today}</strong> (quella di questo foglio)</li>
-      <li>Conferma i gruppi e le categorie da controllare (precompilati come sopra)</li>
+      ${selectionStep}
       <li>Se ci sono schede nuove/modificate si apre subito la stampa: sostituiscile nel raccoglitore</li>
       <li>Sostituisci questo foglio con quello nuovo, con la data aggiornata</li>
     </ul>
@@ -754,6 +1026,8 @@ function openUpdateModal() {
   els.lastPrintedDate.value = localStorage.getItem(LAST_PRINTED_DATE_KEY) || "";
   const defaultSelected = loadPrintedCategories() || selectableCategories();
   renderCategoryPicker(els.updateTopicPickerList, defaultSelected);
+  updateFavoritesCounts();
+  syncFavoritesOnlyState();
   els.updateModal.hidden = false;
 }
 
@@ -767,13 +1041,22 @@ async function checkAndPrintUpdate() {
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, refDate);
 
-  const selectedCategories = getSelectedCategoriesFrom(els.updateTopicPickerList);
-  if (selectedCategories.length === 0) return;
+  const favoritesOnly = els.favoritesOnlyUpdate.checked;
+  const selectedCategories = favoritesOnly ? [] : getSelectedCategoriesFrom(els.updateTopicPickerList);
+  if (!favoritesOnly && selectedCategories.length === 0) return;
 
   els.btnCheckUpdates.disabled = true;
   try {
     const selectedSet = new Set(selectedCategories);
-    const entries = selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
+    const entries = favoritesOnly
+      ? printableFavorites()
+      : selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
+
+    if (entries.length === 0) {
+      if (favoritesOnly) alert("Nessuna scheda tra i preferiti: aggiungine con la stella nel menu.");
+      return;
+    }
+
     const fragments = await Promise.all(entries.map((entry) => fetchFragment(entry.file)));
 
     const changed = [];
@@ -788,23 +1071,28 @@ async function checkAndPrintUpdate() {
     });
 
     if (changed.length === 0) {
-      alert(`Nessuna scheda nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`);
+      const scope = favoritesOnly ? " fra i preferiti" : "";
+      alert(`Nessuna scheda${scope} nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`);
       return;
     }
 
-    await printUpdate(refDate, changed, sortTopicKeys(selectedCategories));
+    const items = favoritesOnly
+      ? entries.map((entry) => entry.title)
+      : sortTopicKeys(selectedCategories);
+    await printUpdate(refDate, changed, items, favoritesOnly);
     closeUpdateModal();
   } finally {
     els.btnCheckUpdates.disabled = false;
   }
 }
 
-async function printUpdate(refDate, changed, categories) {
+async function printUpdate(refDate, changed, items, favoritesOnly) {
   const today = new Date().toISOString().slice(0, 10);
-  const note = `Aggiornamento rispetto alla versione stampata il <strong>${refDate}</strong>: ${changed.length} scheda/e nuova/e o modificata/e incluse in questo pacchetto.`;
+  const scope = favoritesOnly ? " fra le schede preferite" : "";
+  const note = `Aggiornamento${scope} rispetto alla versione stampata il <strong>${refDate}</strong>: ${changed.length} scheda/e nuova/e o modificata/e incluse in questo pacchetto.`;
 
   const coverHtml = await fetchFragment("content/copertina.html");
-  const summaryHtml = buildVersionPage(today, categories, note);
+  const summaryHtml = buildVersionPage(today, items, { note, favoritesOnly });
 
   const htmlById = Object.fromEntries(changed.map((c) => [c.entry.id, c.html]));
 

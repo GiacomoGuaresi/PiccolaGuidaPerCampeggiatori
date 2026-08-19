@@ -31,6 +31,10 @@
     <path d="M4 7h16M4 12h16M4 17h16" />
   </symbol>
 
+  <symbol id="i-star" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5l2.6 5.3 5.9.9-4.25 4.15 1 5.85L12 16.95 6.75 19.7l1-5.85L3.5 9.7l5.9-.9Z" />
+  </symbol>
+
   <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
     <path d="M6 6l12 12M18 6L6 18" />
   </symbol>
