@@ -85,11 +85,15 @@ Poi apri `http://localhost:8000`.
 
 ## Esportare in PDF
 
-- **Scheda singola**: apri la scheda, premi "Esporta questa scheda
-  (PDF)", poi nella finestra di stampa del browser scegli "Salva come
-  PDF".
-- **Tutte le schede**: premi "Esporta tutte le schede (PDF)" nel footer;
-  ogni scheda finisce su una pagina separata.
+- **Scheda singola**: apri la scheda, premi "Stampa pagina", poi nella
+  finestra di stampa del browser scegli "Salva come PDF".
+- **Libro**: premi "Stampa libro" nel footer. Si apre un wizard in quattro
+  passi — contenuto (capitoli o preferiti), capitoli da includere, formato
+  (A5 o A4 con 2 schede per foglio), riepilogo con "Esporta PDF". Copertina e
+  pagina "Versione stampata" sono aggiunte automaticamente.
+- **Aggiornamento**: premi "Aggiornamento stampa". È lo stesso wizard con un
+  passo in più all'inizio, la data dell'ultima stampa: nel PDF finiscono solo
+  le schede con tag `agg.` successivo a quella data.
 
 ## Preferiti
 
@@ -102,17 +106,18 @@ delle schede separati da virgola), non in localStorage. I cookie hanno un
 tetto di ~4 KB: superata la soglia il sito avvisa invece di perdere
 silenziosamente dei preferiti.
 
-Nelle finestre "Stampa libro" e "Aggiornamento stampa" c'è la checkbox
-**Stampa solo i preferiti**: quando è attiva la selezione per gruppo/categoria
-viene ignorata (e disattivata a schermo) e si stampano solo le schede con la
-stella — copertina e pagina "Versione stampata" restano automatiche, e in
-quest'ultima l'elenco riporta i titoli delle schede invece delle categorie.
-Anche questa scelta è ricordata in un cookie (`stampaSoloPreferiti`).
+Nel wizard di stampa, al passo **Contenuto**, si sceglie fra **Capitoli** e
+**Preferiti**: con "Preferiti" il passo di selezione dei capitoli non compare
+proprio e si stampano solo le schede con la stella — copertina e pagina
+"Versione stampata" restano automatiche, e in quest'ultima l'elenco riporta i
+titoli delle schede invece delle categorie. Senza nessun preferito l'opzione è
+disattivata. Anche questa scelta è ricordata in un cookie
+(`stampaSoloPreferiti`).
 
 ### Modalità A4 (2 schede per foglio)
 
-Nelle finestre "Stampa libro" e "Aggiornamento stampa" c'è la checkbox
-**Modalità A4 (2 schede per foglio)**: impagina due schede A5 affiancate su
+Al passo **Formato** del wizard si sceglie fra A5 (una scheda per pagina) e
+**A4 (2 schede per foglio)**: quest'ultima impagina due schede A5 affiancate su
 un foglio A4 orizzontale (297 × 210 mm), con una linea grigia tratteggiata
 al centro come guida di taglio. Se le schede sono in numero dispari,
 l'ultima metà foglio resta bianca. La scelta viene ricordata (localStorage)

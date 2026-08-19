@@ -52,23 +52,26 @@ const els = {
   btnExportSingle: document.getElementById("btn-export-single"),
   printArea: document.getElementById("print-area"),
   btnOpenUpdate: document.getElementById("btn-open-update"),
-  updateModal: document.getElementById("update-modal"),
-  btnCloseUpdate: document.getElementById("btn-close-update"),
-  lastPrintedDate: document.getElementById("last-printed-date"),
-  btnCheckUpdates: document.getElementById("btn-check-updates"),
-  updateTopicPickerList: document.getElementById("update-topic-picker-list"),
-  btnSelectAllUpdateTopics: document.getElementById("btn-select-all-update-topics"),
-  btnSelectNoneUpdateTopics: document.getElementById("btn-select-none-update-topics"),
   btnOpenPrintBook: document.getElementById("btn-open-print-book"),
-  printBookModal: document.getElementById("print-book-modal"),
-  btnClosePrintBook: document.getElementById("btn-close-print-book"),
+  wizardModal: document.getElementById("wizard-modal"),
+  wizardTitle: document.getElementById("wizard-title"),
+  wizardHint: document.getElementById("wizard-hint"),
+  wizardStepsNav: document.getElementById("wizard-steps"),
+  wizardSteps: Array.from(document.querySelectorAll(".wizard-step")),
+  wizardSummary: document.getElementById("wizard-summary"),
+  wizardWarning: document.getElementById("wizard-warning"),
+  wizardProgress: document.getElementById("wizard-progress"),
+  btnWizardClose: document.getElementById("btn-wizard-close"),
+  btnWizardBack: document.getElementById("btn-wizard-back"),
+  btnWizardNext: document.getElementById("btn-wizard-next"),
+  btnWizardExport: document.getElementById("btn-wizard-export"),
+  lastPrintedDate: document.getElementById("last-printed-date"),
+  scopeRadios: Array.from(document.querySelectorAll('input[name="wizard-scope"]')),
+  scopeFavoritesRadio: document.getElementById("wizard-scope-favorites"),
+  formatRadios: Array.from(document.querySelectorAll('input[name="wizard-format"]')),
   topicPickerList: document.getElementById("topic-picker-list"),
   btnSelectAllTopics: document.getElementById("btn-select-all-topics"),
   btnSelectNoneTopics: document.getElementById("btn-select-none-topics"),
-  btnConfirmPrintBook: document.getElementById("btn-confirm-print-book"),
-  a4ModeCheckboxes: Array.from(document.querySelectorAll(".a4-mode-checkbox")),
-  favoritesOnlyBook: document.getElementById("favorites-only-book"),
-  favoritesOnlyUpdate: document.getElementById("favorites-only-update"),
   favoritesCounts: Array.from(document.querySelectorAll(".favorites-count")),
 };
 
@@ -81,16 +84,7 @@ async function init() {
   els.btnOpenPrintBook.disabled = state.manifest.length === 0;
 
   els.btnExportSingle.addEventListener("click", exportCurrentCard);
-  els.btnOpenPrintBook.addEventListener("click", openPrintBookModal);
-  els.btnClosePrintBook.addEventListener("click", closePrintBookModal);
-  els.printBookModal.querySelector(".modal-backdrop").addEventListener("click", closePrintBookModal);
-  els.btnSelectAllTopics.addEventListener("click", () => setAllCheckboxesIn(els.topicPickerList, true));
-  els.btnSelectNoneTopics.addEventListener("click", () => setAllCheckboxesIn(els.topicPickerList, false));
-  els.topicPickerList.addEventListener("change", () => persistCategorySelection(els.topicPickerList));
-  els.btnConfirmPrintBook.addEventListener("click", printBook);
-
-  initA4ModeCheckboxes();
-  initFavoritesOnlyCheckboxes();
+  initWizard();
 
   els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
@@ -102,20 +96,6 @@ async function init() {
   MOBILE_QUERY.addEventListener("change", (e) => {
     if (!e.matches) closeSidebar();
   });
-
-  els.btnOpenUpdate.addEventListener("click", openUpdateModal);
-  els.btnCloseUpdate.addEventListener("click", closeUpdateModal);
-  els.updateModal.querySelector(".modal-backdrop").addEventListener("click", closeUpdateModal);
-  els.btnSelectAllUpdateTopics.addEventListener("click", () =>
-    setAllCheckboxesIn(els.updateTopicPickerList, true)
-  );
-  els.btnSelectNoneUpdateTopics.addEventListener("click", () =>
-    setAllCheckboxesIn(els.updateTopicPickerList, false)
-  );
-  els.updateTopicPickerList.addEventListener("change", () =>
-    persistCategorySelection(els.updateTopicPickerList)
-  );
-  els.btnCheckUpdates.addEventListener("click", checkAndPrintUpdate);
 
   els.searchInput.addEventListener("input", () => {
     renderSidebar(state.manifest, els.searchInput.value);
@@ -477,54 +457,11 @@ function printableFavorites() {
 function updateFavoritesCounts() {
   const count = printableFavorites().length;
   els.favoritesCounts.forEach((el) => (el.textContent = String(count)));
-  [els.favoritesOnlyBook, els.favoritesOnlyUpdate].forEach((cb) => {
-    if (!cb) return;
-    if (count === 0) cb.checked = false;
-    cb.disabled = count === 0;
-  });
-}
-
-// [checkbox "solo preferiti", picker delle categorie, bottoni del picker]
-function favoritesOnlyPanels() {
-  return [
-    {
-      checkbox: els.favoritesOnlyBook,
-      list: els.topicPickerList,
-      buttons: [els.btnSelectAllTopics, els.btnSelectNoneTopics],
-    },
-    {
-      checkbox: els.favoritesOnlyUpdate,
-      list: els.updateTopicPickerList,
-      buttons: [els.btnSelectAllUpdateTopics, els.btnSelectNoneUpdateTopics],
-    },
-  ];
-}
-
-function initFavoritesOnlyCheckboxes() {
-  const stored = readCookie(FAVORITES_ONLY_COOKIE) === "1";
-  favoritesOnlyPanels().forEach(({ checkbox }) => {
-    checkbox.checked = stored;
-    checkbox.addEventListener("change", () => {
-      writeCookie(FAVORITES_ONLY_COOKIE, checkbox.checked ? "1" : "0");
-      favoritesOnlyPanels().forEach(({ checkbox: other }) => {
-        if (other !== checkbox && !other.disabled) other.checked = checkbox.checked;
-      });
-      syncFavoritesOnlyState();
-    });
-  });
-  updateFavoritesCounts();
-  syncFavoritesOnlyState();
-}
-
-// Con "solo preferiti" attivo la scelta per categoria non conta più: viene
-// disattivata invece di restare lì a suggerire il contrario.
-function syncFavoritesOnlyState() {
-  favoritesOnlyPanels().forEach(({ checkbox, list, buttons }) => {
-    const off = checkbox.checked;
-    list.classList.toggle("is-disabled", off);
-    list.querySelectorAll('input[type="checkbox"]').forEach((input) => (input.disabled = off));
-    buttons.forEach((btn) => (btn.disabled = off));
-  });
+  // Senza preferiti quel ramo del wizard non porta da nessuna parte.
+  els.scopeFavoritesRadio.disabled = count === 0;
+  if (count === 0 && els.scopeFavoritesRadio.checked) {
+    els.scopeRadios.find((r) => r.value === "topics").checked = true;
+  }
 }
 
 function createFavoriteButton(entry) {
@@ -732,14 +669,8 @@ function isA4Mode() {
   return localStorage.getItem(A4_MODE_KEY) === "1";
 }
 
-function initA4ModeCheckboxes() {
-  els.a4ModeCheckboxes.forEach((cb) => {
-    cb.checked = isA4Mode();
-    cb.addEventListener("change", () => {
-      localStorage.setItem(A4_MODE_KEY, cb.checked ? "1" : "0");
-      els.a4ModeCheckboxes.forEach((other) => (other.checked = cb.checked));
-    });
-  });
+function setA4Mode(a4) {
+  localStorage.setItem(A4_MODE_KEY, a4 ? "1" : "0");
 }
 
 // @page non può essere condizionato da una classe: la regola viene riscritta
@@ -780,6 +711,214 @@ function renderPrintPages(pages) {
   decorateTags(els.printArea);
 }
 
+/* ---------------------------------- Wizard di stampa ---------------------------------- */
+
+// Stampa libro e aggiornamento sono lo stesso wizard: cambiano solo il primo
+// passo (la data, che serve solo all'aggiornamento) e cosa succede alla fine.
+const WIZARD_FLOWS = {
+  book: {
+    title: "Stampa libro",
+    hint: "Prepara il PDF del raccoglitore: copertina e pagina \"Versione stampata\" incluse.",
+    exportLabel: "Esporta PDF",
+    run: printBook,
+  },
+  update: {
+    title: "Aggiornamento stampa",
+    hint: "Prepara il PDF delle sole schede cambiate dopo la data dell'ultima stampa.",
+    exportLabel: "Verifica ed esporta PDF",
+    run: checkAndPrintUpdate,
+  },
+};
+
+const WIZARD_STEP_LABELS = {
+  date: "Data",
+  scope: "Contenuto",
+  topics: "Capitoli",
+  format: "Formato",
+  done: "Fine",
+};
+
+const wizard = { mode: "book", index: 0 };
+
+function initWizard() {
+  els.btnOpenPrintBook.addEventListener("click", () => openWizard("book"));
+  els.btnOpenUpdate.addEventListener("click", () => openWizard("update"));
+  els.btnWizardClose.addEventListener("click", closeWizard);
+  els.wizardModal.querySelector(".modal-backdrop").addEventListener("click", closeWizard);
+  els.btnWizardBack.addEventListener("click", () => goToStep(wizard.index - 1));
+  els.btnWizardNext.addEventListener("click", () => goToStep(wizard.index + 1));
+  els.btnWizardExport.addEventListener("click", runWizardExport);
+
+  els.btnSelectAllTopics.addEventListener("click", () => {
+    setAllCheckboxesIn(els.topicPickerList, true);
+    refreshWizard();
+  });
+  els.btnSelectNoneTopics.addEventListener("click", () => {
+    setAllCheckboxesIn(els.topicPickerList, false);
+    refreshWizard();
+  });
+  els.topicPickerList.addEventListener("change", () => {
+    persistCategorySelection(els.topicPickerList);
+    refreshWizard();
+  });
+
+  els.lastPrintedDate.addEventListener("input", refreshWizard);
+  els.scopeRadios.forEach((radio) =>
+    radio.addEventListener("change", () => {
+      writeCookie(FAVORITES_ONLY_COOKIE, isFavoritesScope() ? "1" : "0");
+      refreshWizard();
+    })
+  );
+  els.formatRadios.forEach((radio) =>
+    radio.addEventListener("change", () => {
+      setA4Mode(radio.value === "a4" && radio.checked);
+      refreshWizard();
+    })
+  );
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !els.wizardModal.hidden) closeWizard();
+  });
+
+  updateFavoritesCounts();
+}
+
+// Il passo "capitoli" esiste solo se si stampa per capitoli: l'elenco dei passi
+// va ricalcolato ogni volta, non fissato all'apertura.
+function wizardStepIds() {
+  const ids = [];
+  if (wizard.mode === "update") ids.push("date");
+  ids.push("scope");
+  if (!isFavoritesScope()) ids.push("topics");
+  ids.push("format", "done");
+  return ids;
+}
+
+function isFavoritesScope() {
+  return els.scopeFavoritesRadio.checked && !els.scopeFavoritesRadio.disabled;
+}
+
+function wizardConfig() {
+  const favoritesOnly = isFavoritesScope();
+  return {
+    favoritesOnly,
+    categories: favoritesOnly ? [] : getSelectedCategoriesFrom(els.topicPickerList),
+    refDate: els.lastPrintedDate.value,
+  };
+}
+
+function openWizard(mode) {
+  wizard.mode = mode;
+  wizard.index = 0;
+
+  els.lastPrintedDate.value = localStorage.getItem(LAST_PRINTED_DATE_KEY) || "";
+  renderCategoryPicker(els.topicPickerList, loadPrintedCategories() || selectableCategories());
+  els.formatRadios.forEach((radio) => (radio.checked = radio.value === (isA4Mode() ? "a4" : "a5")));
+  const favoritesScope = readCookie(FAVORITES_ONLY_COOKIE) === "1";
+  els.scopeRadios.forEach(
+    (radio) => (radio.checked = radio.value === (favoritesScope ? "favorites" : "topics"))
+  );
+  // Va dopo: se i preferiti sono spariti disattiva quel ramo e riporta su "capitoli".
+  updateFavoritesCounts();
+
+  const flow = WIZARD_FLOWS[mode];
+  els.wizardTitle.textContent = flow.title;
+  els.wizardHint.textContent = flow.hint;
+  els.btnWizardExport.textContent = flow.exportLabel;
+
+  els.wizardModal.hidden = false;
+  refreshWizard();
+}
+
+function closeWizard() {
+  els.wizardModal.hidden = true;
+}
+
+function goToStep(index) {
+  const steps = wizardStepIds();
+  wizard.index = Math.min(steps.length - 1, Math.max(0, index));
+  refreshWizard();
+}
+
+function refreshWizard() {
+  const steps = wizardStepIds();
+  wizard.index = Math.min(wizard.index, steps.length - 1);
+  const currentId = steps[wizard.index];
+  const isLast = wizard.index === steps.length - 1;
+
+  els.wizardSteps.forEach((section) => {
+    section.hidden = section.dataset.step !== currentId;
+  });
+
+  renderWizardStepsNav(steps, currentId);
+  els.wizardProgress.textContent = `Passo ${wizard.index + 1} di ${steps.length}`;
+  els.btnWizardBack.disabled = wizard.index === 0;
+  els.btnWizardNext.hidden = isLast;
+  els.btnWizardNext.disabled = !isStepComplete(currentId);
+
+  if (isLast) renderWizardSummary();
+}
+
+function renderWizardStepsNav(steps, currentId) {
+  els.wizardStepsNav.innerHTML = "";
+  steps.forEach((id, i) => {
+    const li = document.createElement("li");
+    li.className = "wizard-steps-item";
+    li.classList.toggle("is-current", id === currentId);
+    li.classList.toggle("is-done", i < wizard.index);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = `${i + 1}. ${WIZARD_STEP_LABELS[id]}`;
+    // Indietro si torna liberamente, avanti solo passando dai passi.
+    button.disabled = i > wizard.index;
+    button.addEventListener("click", () => goToStep(i));
+
+    li.appendChild(button);
+    els.wizardStepsNav.appendChild(li);
+  });
+}
+
+function isStepComplete(stepId) {
+  if (stepId === "date") return els.lastPrintedDate.value !== "";
+  if (stepId === "topics") return getSelectedCategoriesFrom(els.topicPickerList).length > 0;
+  return true;
+}
+
+function renderWizardSummary() {
+  const { favoritesOnly, categories, refDate } = wizardConfig();
+  const entries = entriesForSelection({ favoritesOnly, categories });
+
+  const rows = [];
+  if (wizard.mode === "update") rows.push(["Ultima stampa", refDate || "—"]);
+  rows.push(["Contenuto", favoritesOnly ? "Solo i preferiti" : `${categories.length} categorie`]);
+  rows.push(["Schede", String(entries.length)]);
+  rows.push(["Formato", isA4Mode() ? "A4, 2 schede per foglio" : "A5, una scheda per pagina"]);
+
+  els.wizardSummary.innerHTML = "";
+  for (const [label, value] of rows) {
+    const li = document.createElement("li");
+    li.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+    els.wizardSummary.appendChild(li);
+  }
+
+  const problem = entries.length === 0 ? "Nessuna scheda da stampare con queste scelte." : "";
+  els.wizardWarning.textContent = problem;
+  els.wizardWarning.hidden = problem === "";
+  els.btnWizardExport.disabled = entries.length === 0;
+}
+
+async function runWizardExport() {
+  const config = wizardConfig();
+  els.btnWizardExport.disabled = true;
+  try {
+    const printed = await WIZARD_FLOWS[wizard.mode].run(config);
+    if (printed) closeWizard();
+  } finally {
+    els.btnWizardExport.disabled = false;
+  }
+}
+
 /* ---------------------------------- Stampa libro (selezione sezioni) ---------------------------------- */
 
 // v2: le selezioni salvate con i vecchi nomi di categoria non sono più valide.
@@ -792,18 +931,6 @@ function selectableTopics() {
 // Chiavi "Gruppo > Categoria" selezionabili, nell'ordine di stampa.
 function selectableCategories() {
   return sortTopicKeys(Array.from(new Set(selectableTopics().map(entryTopicKey))));
-}
-
-function openPrintBookModal() {
-  const defaultSelected = loadPrintedCategories() || selectableCategories();
-  renderCategoryPicker(els.topicPickerList, defaultSelected);
-  updateFavoritesCounts();
-  syncFavoritesOnlyState();
-  els.printBookModal.hidden = false;
-}
-
-function closePrintBookModal() {
-  els.printBookModal.hidden = true;
 }
 
 function renderCategoryPicker(container, defaultSelectedCategories) {
@@ -905,20 +1032,26 @@ function sortEntriesForPrint(entries) {
   );
 }
 
-async function printBook() {
-  const favoritesOnly = els.favoritesOnlyBook.checked;
-  const selectedCategories = favoritesOnly ? [] : getSelectedCategoriesFrom(els.topicPickerList);
+// Le schede scelte nel wizard: i preferiti stampabili, oppure tutte quelle
+// delle categorie selezionate.
+function entriesForSelection({ favoritesOnly, categories }) {
+  if (favoritesOnly) return printableFavorites();
+  const selectedSet = new Set(categories);
+  return selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
+}
 
-  const entries = favoritesOnly
-    ? printableFavorites()
-    : (() => {
-        const selectedSet = new Set(selectedCategories);
-        return selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
-      })();
+// `true` se la stampa è partita, `false` se è stata annullata (niente schede o
+// frammenti che non si caricano): il wizard si chiude solo nel primo caso.
+async function printBook({ favoritesOnly, categories }) {
+  const entries = entriesForSelection({ favoritesOnly, categories });
 
   if (entries.length === 0) {
-    if (favoritesOnly) alert("Nessuna scheda tra i preferiti: aggiungine con la stella nel menu.");
-    return;
+    alert(
+      favoritesOnly
+        ? "Nessuna scheda tra i preferiti: aggiungine con la stella nel menu."
+        : "Nessuna scheda nelle categorie selezionate."
+    );
+    return false;
   }
 
   const today = new Date().toISOString().slice(0, 10);
@@ -929,17 +1062,6 @@ async function printBook() {
   ]);
 
   const htmlById = Object.fromEntries(entries.map((entry, i) => [entry.id, fragments[i]]));
-
-  const pages = [];
-  if (coverHtml !== null) pages.push(coverHtml);
-  pages.push(
-    favoritesOnly
-      ? buildVersionPage(today, entries.map((entry) => entry.title), { favoritesOnly: true })
-      : buildVersionPage(today, sortTopicKeys(selectedCategories))
-  );
-  for (const entry of sortEntriesForPrint(entries)) {
-    if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
-  }
 
   // Una scheda che non si carica sparirebbe dal libro senza avvisare: meglio
   // fermarsi che stampare un raccoglitore a cui mancano dei fogli.
@@ -953,15 +1075,24 @@ async function printBook() {
         `${missing.join(", ")}\n\n` +
         "Ricarica la pagina (forzando l'aggiornamento della cache) e riprova."
     );
-    return;
+    return false;
+  }
+
+  const pages = [coverHtml];
+  pages.push(
+    favoritesOnly
+      ? buildVersionPage(today, entries.map((entry) => entry.title), { favoritesOnly: true })
+      : buildVersionPage(today, sortTopicKeys(categories))
+  );
+  for (const entry of sortEntriesForPrint(entries)) {
+    pages.push(htmlById[entry.id]);
   }
 
   renderPrintPages(pages);
   window.print();
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
-  els.lastPrintedDate.value = today;
-  closePrintBookModal();
+  return true;
 }
 
 function loadPrintedCategories() {
@@ -991,8 +1122,8 @@ function buildVersionPage(today, items, { note, favoritesOnly } = {}) {
     : `Argomenti stampati il ${today}`;
 
   const selectionStep = favoritesOnly
-    ? "<li>Spunta <strong>Stampa solo i preferiti</strong>, come per questa stampa</li>"
-    : "<li>Conferma i gruppi e le categorie da controllare (precompilati come sopra)</li>";
+    ? "<li>Al passo <strong>Contenuto</strong> scegli <strong>Preferiti</strong>, come per questa stampa</li>"
+    : "<li>Al passo <strong>Contenuto</strong> scegli <strong>Capitoli</strong> e conferma quelli qui sopra (gia' precompilati)</li>";
 
   return `
     <h2>Versione stampata</h2>
@@ -1008,10 +1139,10 @@ function buildVersionPage(today, items, { note, favoritesOnly } = {}) {
 
     <h3>Come aggiornare in futuro</h3>
     <ul>
-      <li>Sul sito apri "Aggiornamento stampa"</li>
+      <li>Sul sito apri "Aggiornamento stampa" e segui il wizard</li>
       <li>Inserisci la data <strong>${today}</strong> (quella di questo foglio)</li>
       ${selectionStep}
-      <li>Se ci sono schede nuove/modificate si apre subito la stampa: sostituiscile nel raccoglitore</li>
+      <li>Scegli il formato, poi <strong>Esporta PDF</strong>: se ci sono schede nuove/modificate parte la stampa, sostituiscile nel raccoglitore</li>
       <li>Sostituisci questo foglio con quello nuovo, con la data aggiornata</li>
     </ul>
   `;
@@ -1022,68 +1153,44 @@ function buildVersionPage(today, items, { note, favoritesOnly } = {}) {
 const LAST_PRINTED_DATE_KEY = "lastPrintedDate";
 const UPDATE_DATE_TAG_RE = /agg\.\s*(\d{4}-\d{2}-\d{2})/;
 
-function openUpdateModal() {
-  els.lastPrintedDate.value = localStorage.getItem(LAST_PRINTED_DATE_KEY) || "";
-  const defaultSelected = loadPrintedCategories() || selectableCategories();
-  renderCategoryPicker(els.updateTopicPickerList, defaultSelected);
-  updateFavoritesCounts();
-  syncFavoritesOnlyState();
-  els.updateModal.hidden = false;
-}
-
-function closeUpdateModal() {
-  els.updateModal.hidden = true;
-}
-
-async function checkAndPrintUpdate() {
-  const refDate = els.lastPrintedDate.value;
-  if (!refDate) return;
-
+// Come printBook: `true` solo se si è arrivati alla stampa.
+async function checkAndPrintUpdate({ refDate, favoritesOnly, categories }) {
   localStorage.setItem(LAST_PRINTED_DATE_KEY, refDate);
 
-  const favoritesOnly = els.favoritesOnlyUpdate.checked;
-  const selectedCategories = favoritesOnly ? [] : getSelectedCategoriesFrom(els.updateTopicPickerList);
-  if (!favoritesOnly && selectedCategories.length === 0) return;
-
-  els.btnCheckUpdates.disabled = true;
-  try {
-    const selectedSet = new Set(selectedCategories);
-    const entries = favoritesOnly
-      ? printableFavorites()
-      : selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
-
-    if (entries.length === 0) {
-      if (favoritesOnly) alert("Nessuna scheda tra i preferiti: aggiungine con la stella nel menu.");
-      return;
-    }
-
-    const fragments = await Promise.all(entries.map((entry) => fetchFragment(entry.file)));
-
-    const changed = [];
-    entries.forEach((entry, i) => {
-      const html = fragments[i];
-      if (html === null) return;
-      const match = html.match(UPDATE_DATE_TAG_RE);
-      if (!match) return;
-      if (match[1] > refDate) {
-        changed.push({ entry, date: match[1], html });
-      }
-    });
-
-    if (changed.length === 0) {
-      const scope = favoritesOnly ? " fra i preferiti" : "";
-      alert(`Nessuna scheda${scope} nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`);
-      return;
-    }
-
-    const items = favoritesOnly
-      ? entries.map((entry) => entry.title)
-      : sortTopicKeys(selectedCategories);
-    await printUpdate(refDate, changed, items, favoritesOnly);
-    closeUpdateModal();
-  } finally {
-    els.btnCheckUpdates.disabled = false;
+  const entries = entriesForSelection({ favoritesOnly, categories });
+  if (entries.length === 0) {
+    alert(
+      favoritesOnly
+        ? "Nessuna scheda tra i preferiti: aggiungine con la stella nel menu."
+        : "Nessuna scheda nelle categorie selezionate."
+    );
+    return false;
   }
+
+  const fragments = await Promise.all(entries.map((entry) => fetchFragment(entry.file)));
+
+  const changed = [];
+  entries.forEach((entry, i) => {
+    const html = fragments[i];
+    if (html === null) return;
+    const match = html.match(UPDATE_DATE_TAG_RE);
+    if (!match) return;
+    if (match[1] > refDate) {
+      changed.push({ entry, date: match[1], html });
+    }
+  });
+
+  if (changed.length === 0) {
+    const scope = favoritesOnly ? " fra i preferiti" : "";
+    alert(`Nessuna scheda${scope} nuova o aggiornata dopo il ${refDate}: sei già alla versione più recente.`);
+    return false;
+  }
+
+  const items = favoritesOnly
+    ? entries.map((entry) => entry.title)
+    : sortTopicKeys(categories);
+  await printUpdate(refDate, changed, items, favoritesOnly);
+  return true;
 }
 
 async function printUpdate(refDate, changed, items, favoritesOnly) {
@@ -1107,7 +1214,6 @@ async function printUpdate(refDate, changed, items, favoritesOnly) {
   window.print();
 
   localStorage.setItem(LAST_PRINTED_DATE_KEY, today);
-  els.lastPrintedDate.value = today;
 }
 
 function escapeHtml(str) {

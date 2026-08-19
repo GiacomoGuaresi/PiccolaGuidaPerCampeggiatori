@@ -73,78 +73,84 @@
     </footer>
   </div>
 
-  <div id="update-modal" class="modal" hidden>
+  <div id="wizard-modal" class="modal" hidden>
     <div class="modal-backdrop"></div>
-    <div class="modal-dialog">
-      <button id="btn-close-update" class="modal-close" aria-label="Chiudi"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-close"></use></svg></button>
-      <h2>Aggiornamento stampa</h2>
-      <p class="modal-hint">
-        Scegli la data dell'ultima stampa e i gruppi e le categorie da controllare.
-      </p>
-      <label for="last-printed-date">Ultima versione stampata</label>
-      <input type="date" id="last-printed-date" />
+    <div class="modal-dialog wizard-dialog" role="dialog" aria-modal="true" aria-labelledby="wizard-title">
+      <button id="btn-wizard-close" class="modal-close" aria-label="Chiudi"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-close"></use></svg></button>
+      <h2 id="wizard-title">Stampa libro</h2>
+      <p id="wizard-hint" class="modal-hint"></p>
 
-      <label class="print-option print-option-top">
-        <input type="checkbox" id="favorites-only-update" class="favorites-only-checkbox" />
-        <span>
-          Stampa solo i preferiti
-          <small>Ignora la selezione qui sotto e stampa solo le schede con la stella (<span class="favorites-count">0</span>).</small>
-        </span>
-      </label>
+      <ol id="wizard-steps" class="wizard-steps" aria-label="Passi"></ol>
 
-      <div class="topic-picker-actions">
-        <button id="btn-select-all-update-topics" class="secondary" type="button">Seleziona tutto</button>
-        <button id="btn-select-none-update-topics" class="secondary" type="button">Deseleziona tutto</button>
+      <div class="wizard-body">
+        <section class="wizard-step" data-step="date" hidden>
+          <h3 class="wizard-step-title">Data dell'ultima stampa</h3>
+          <p class="wizard-step-hint">Vengono cercate solo le schede con tag "agg." successivo a questa data.</p>
+          <label for="last-printed-date">Ultima versione stampata</label>
+          <input type="date" id="last-printed-date" />
+        </section>
+
+        <section class="wizard-step" data-step="scope" hidden>
+          <h3 class="wizard-step-title">Cosa stampare</h3>
+          <p class="wizard-step-hint">Scegli se partire dai preferiti o selezionare i capitoli.</p>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-scope" value="topics" checked />
+            <span>
+              Capitoli
+              <small>Scegli al passo successivo i gruppi e le categorie da includere.</small>
+            </span>
+          </label>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-scope" value="favorites" id="wizard-scope-favorites" />
+            <span>
+              Preferiti
+              <small>Solo le schede con la stella (<span class="favorites-count">0</span>).</small>
+            </span>
+          </label>
+        </section>
+
+        <section class="wizard-step" data-step="topics" hidden>
+          <h3 class="wizard-step-title">Capitoli da stampare</h3>
+          <p class="wizard-step-hint">La copertina e la pagina "Versione stampata" vengono aggiunte automaticamente.</p>
+          <div class="topic-picker-actions">
+            <button id="btn-select-all-topics" class="secondary" type="button">Seleziona tutto</button>
+            <button id="btn-select-none-topics" class="secondary" type="button">Deseleziona tutto</button>
+          </div>
+          <div id="topic-picker-list" class="topic-picker-list"></div>
+        </section>
+
+        <section class="wizard-step" data-step="format" hidden>
+          <h3 class="wizard-step-title">Formato di stampa</h3>
+          <p class="wizard-step-hint">Come vengono impaginate le schede nel PDF.</p>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-format" value="a5" checked />
+            <span>
+              A5 (una scheda per pagina)
+              <small>Pagina 148&times;210 mm, pronta da rilegare senza tagli.</small>
+            </span>
+          </label>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-format" value="a4" />
+            <span>
+              A4 (2 schede per foglio)
+              <small>Due A5 affiancate su A4 orizzontale, con linea tratteggiata di taglio.</small>
+            </span>
+          </label>
+        </section>
+
+        <section class="wizard-step" data-step="done" hidden>
+          <h3 class="wizard-step-title">Fine</h3>
+          <ul id="wizard-summary" class="wizard-summary"></ul>
+          <p id="wizard-warning" class="wizard-warning" hidden></p>
+          <button id="btn-wizard-export" type="button">Esporta PDF</button>
+        </section>
       </div>
 
-      <div id="update-topic-picker-list" class="topic-picker-list"></div>
-
-      <label class="print-option">
-        <input type="checkbox" id="a4-mode-update" class="a4-mode-checkbox" />
-        <span>
-          Modalità A4 (2 schede per foglio)
-          <small>Due A5 affiancate su A4 orizzontale, con linea tratteggiata di taglio.</small>
-        </span>
-      </label>
-
-      <button id="btn-check-updates">Verifica e stampa aggiornamento</button>
-    </div>
-  </div>
-
-  <div id="print-book-modal" class="modal" hidden>
-    <div class="modal-backdrop"></div>
-    <div class="modal-dialog">
-      <button id="btn-close-print-book" class="modal-close" aria-label="Chiudi"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-close"></use></svg></button>
-      <h2>Stampa libro</h2>
-      <p class="modal-hint">
-        Scegli quali gruppi e categorie includere nella stampa. La copertina e la
-        pagina "Versione stampata" vengono aggiunte automaticamente.
-      </p>
-
-      <label class="print-option print-option-top">
-        <input type="checkbox" id="favorites-only-book" class="favorites-only-checkbox" />
-        <span>
-          Stampa solo i preferiti
-          <small>Ignora la selezione qui sotto e stampa solo le schede con la stella (<span class="favorites-count">0</span>).</small>
-        </span>
-      </label>
-
-      <div class="topic-picker-actions">
-        <button id="btn-select-all-topics" class="secondary" type="button">Seleziona tutto</button>
-        <button id="btn-select-none-topics" class="secondary" type="button">Deseleziona tutto</button>
+      <div class="wizard-nav">
+        <button id="btn-wizard-back" class="secondary" type="button">Indietro</button>
+        <span id="wizard-progress" class="wizard-progress"></span>
+        <button id="btn-wizard-next" type="button">Avanti</button>
       </div>
-
-      <div id="topic-picker-list" class="topic-picker-list"></div>
-
-      <label class="print-option">
-        <input type="checkbox" id="a4-mode-book" class="a4-mode-checkbox" />
-        <span>
-          Modalità A4 (2 schede per foglio)
-          <small>Due A5 affiancate su A4 orizzontale, con linea tratteggiata di taglio.</small>
-        </span>
-      </label>
-
-      <button id="btn-confirm-print-book">Stampa libro</button>
     </div>
   </div>
 
