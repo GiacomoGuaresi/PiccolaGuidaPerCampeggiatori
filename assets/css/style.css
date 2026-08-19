@@ -204,10 +204,28 @@ button:disabled {
   padding: 1rem;
 }
 
-.sidebar .category {
+.sidebar .group {
   margin-bottom: 1rem;
 }
 
+.sidebar .group > summary {
+  font-size: 0.82rem;
+  color: var(--color-forest-dark);
+  font-weight: 700;
+}
+
+/* Secondo livello: rientrato e più leggero del gruppo che lo contiene. */
+.sidebar .group .category {
+  margin: 0.6rem 0 0 0.55rem;
+}
+
+.sidebar .group .category > summary {
+  font-size: 0.72rem;
+  font-weight: 400;
+  border-bottom-style: dotted;
+}
+
+.sidebar .group > summary,
 .sidebar .category summary {
   display: flex;
   align-items: center;
@@ -223,17 +241,20 @@ button:disabled {
   list-style: none;
 }
 
+.sidebar .group > summary::-webkit-details-marker,
 .sidebar .category summary::-webkit-details-marker {
   display: none;
 }
 
+.sidebar .group > summary::after,
 .sidebar .category summary::after {
   content: "\25BE";
   color: var(--color-bark);
   transition: transform 0.15s ease;
 }
 
-.sidebar .category:not([open]) summary::after {
+.sidebar .group:not([open]) > summary::after,
+.sidebar .category:not([open]) > summary::after {
   transform: rotate(-90deg);
 }
 
@@ -759,6 +780,19 @@ button:disabled {
 
 .topic-picker-item input[type="checkbox"] {
   flex-shrink: 0;
+}
+
+.modal-dialog .topic-picker-group {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-moss);
+  margin-top: 0.5rem;
+}
+
+.modal-dialog .topic-picker-category {
+  padding-left: 1.4rem;
 }
 
 .modal-dialog .print-option {

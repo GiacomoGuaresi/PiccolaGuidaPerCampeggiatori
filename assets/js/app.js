@@ -1,6 +1,29 @@
-// Ordine preferito delle categorie in sidebar; le categorie non elencate
-// qui vengono aggiunte in coda in ordine alfabetico.
-const CATEGORY_ORDER = ["Guida", "Montagna", "Trekking", "Vie ferrate", "Escursionismo invernale", "Pianificazione", "Sopravvivenza", "Quota e salute", "Igiene", "Camping", "Informazioni utili", "Fauna", "Flora", "Meteo", "Altro"];
+// Ordine preferito dei gruppi e, dentro ognuno, delle categorie. Gruppi e
+// categorie non elencati qui vengono aggiunti in coda in ordine alfabetico.
+const GROUP_ORDER = ["Guida", "Regole e ambiente", "Attrezzatura", "Tecnica sul terreno", "Meteo e natura", "Salute e sicurezza", "Pianificazione e logistica", "Altro"];
+
+const CATEGORY_ORDER = {
+  "Guida": ["Guida"],
+  "Regole e ambiente": ["Normativa bivacco", "Etica e ambiente"],
+  "Attrezzatura": ["Tenda e riparo", "Sacco a pelo e riposo", "Trekking", "Cucina e acqua"],
+  "Tecnica sul terreno": ["Trekking", "Vie ferrate", "Neve e valanghe", "Inverno", "Orientamento"],
+  "Meteo e natura": ["Meteo", "Fauna e flora"],
+  "Salute e sicurezza": ["Salute in montagna", "Igiene", "Emergenze e soccorso", "Sopravvivenza"],
+  "Pianificazione e logistica": ["Prima di partire", "Rifugi e bivacchi fissi", "Campeggio e camper"],
+};
+
+// Lo stesso nome di categoria esiste sotto gruppi diversi (Attrezzatura >
+// Trekking e Tecnica sul terreno > Trekking): ovunque serva identificare una
+// categoria si usa la chiave composta "Gruppo > Categoria".
+const TOPIC_SEP = " > ";
+
+function topicKeyOf(group, category) {
+  return `${group || "Altro"}${TOPIC_SEP}${category || "Altro"}`;
+}
+
+function entryTopicKey(entry) {
+  return topicKeyOf(entry.group, entry.category);
+}
 
 const state = {
   manifest: [],
@@ -105,7 +128,7 @@ async function buildSearchIndex(manifest) {
       const html = await fetchFragment(entry.file);
       if (html === null) return;
       const text = htmlToText(html);
-      searchIndex.set(entry.id, normalizeSearchText(`${entry.title} ${entry.category} ${text}`));
+      searchIndex.set(entry.id, normalizeSearchText(`${entry.title} ${entry.group} ${entry.category} ${text}`));
     })
   );
 }
@@ -128,7 +151,7 @@ function filterManifest(manifest, query) {
   if (!q) return manifest;
   return manifest.filter((entry) => {
     const indexed = searchIndex.get(entry.id);
-    const text = indexed || normalizeSearchText(`${entry.title} ${entry.category}`);
+    const text = indexed || normalizeSearchText(`${entry.title} ${entry.group} ${entry.category}`);
     return text.includes(q);
   });
 }
@@ -173,86 +196,158 @@ function renderSidebar(manifest, query = "") {
     return;
   }
 
-  const byCategory = groupByCategory(filtered);
-  const openCategory = getOpenCategory();
-  const sections = [];
+  const byGroup = groupByGroup(filtered);
+  const openGroup = getOpenGroup();
+  const openCategories = getOpenCategories();
+  const groupSections = [];
 
-  for (const category of sortCategories(Object.keys(byCategory))) {
-    const section = document.createElement("details");
-    section.className = "category";
-    section.open = searching ? true : category === openCategory;
+  for (const group of sortGroups(Object.keys(byGroup))) {
+    const groupSection = document.createElement("details");
+    groupSection.className = "group";
+    groupSection.open = searching ? true : group === openGroup;
     if (!searching) {
-      section.addEventListener("toggle", () => {
-        if (section.open) {
-          sections.forEach((s) => {
-            if (s !== section) s.open = false;
+      groupSection.addEventListener("toggle", () => {
+        if (groupSection.open) {
+          groupSections.forEach((s) => {
+            if (s !== groupSection) s.open = false;
           });
-          setOpenCategory(category);
-        } else if (getOpenCategory() === category) {
-          setOpenCategory(null);
+          setOpenGroup(group);
+        } else if (getOpenGroup() === group) {
+          setOpenGroup(null);
         }
       });
     }
 
-    const summary = document.createElement("summary");
-    summary.textContent = category;
-    section.appendChild(summary);
+    const groupSummary = document.createElement("summary");
+    groupSummary.textContent = group;
+    groupSection.appendChild(groupSummary);
 
-    const list = document.createElement("ul");
-    list.className = "card-list";
+    const byCategory = byGroup[group];
 
-    for (const entry of byCategory[category]) {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = "#";
-      a.textContent = entry.title;
-      a.dataset.id = entry.id;
-      if (state.current && state.current.id === entry.id) a.classList.add("active");
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        selectCard(entry, a);
-      });
-      li.appendChild(a);
-      list.appendChild(li);
+    // Dentro un gruppo le categorie sono indipendenti: aprirne una non chiude
+    // le altre (l'accordion "una alla volta" vale solo fra i gruppi).
+    for (const category of sortCategories(group, Object.keys(byCategory))) {
+      const section = document.createElement("details");
+      section.className = "category";
+      section.open = searching ? true : (openCategories[group] || []).includes(category);
+      if (!searching) {
+        section.addEventListener("toggle", () => {
+          setCategoryOpen(group, category, section.open);
+        });
+      }
+
+      const summary = document.createElement("summary");
+      summary.textContent = category;
+      section.appendChild(summary);
+
+      const list = document.createElement("ul");
+      list.className = "card-list";
+
+      for (const entry of byCategory[category]) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#";
+        a.textContent = entry.title;
+        a.dataset.id = entry.id;
+        if (state.current && state.current.id === entry.id) a.classList.add("active");
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          selectCard(entry, a);
+        });
+        li.appendChild(a);
+        list.appendChild(li);
+      }
+
+      section.appendChild(list);
+      groupSection.appendChild(section);
     }
 
-    section.appendChild(list);
-    els.sidebarList.appendChild(section);
-    sections.push(section);
+    els.sidebarList.appendChild(groupSection);
+    groupSections.push(groupSection);
   }
 }
 
-const OPEN_CATEGORY_KEY = "openCategory";
+const OPEN_GROUP_KEY = "openGroup";
+const OPEN_CATEGORIES_KEY = "openCategoryByGroup";
 
-function getOpenCategory() {
-  return localStorage.getItem(OPEN_CATEGORY_KEY);
+function getOpenGroup() {
+  return localStorage.getItem(OPEN_GROUP_KEY);
 }
 
-function setOpenCategory(category) {
-  if (category) {
-    localStorage.setItem(OPEN_CATEGORY_KEY, category);
+function setOpenGroup(group) {
+  if (group) {
+    localStorage.setItem(OPEN_GROUP_KEY, group);
   } else {
-    localStorage.removeItem(OPEN_CATEGORY_KEY);
+    localStorage.removeItem(OPEN_GROUP_KEY);
   }
 }
 
-function groupByCategory(manifest) {
+// { gruppo: [categorie aperte] }
+function getOpenCategories() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(OPEN_CATEGORIES_KEY));
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function setCategoryOpen(group, category, open) {
+  const all = getOpenCategories();
+  const current = new Set(all[group] || []);
+  if (open) {
+    current.add(category);
+  } else {
+    current.delete(category);
+  }
+  if (current.size === 0) {
+    delete all[group];
+  } else {
+    all[group] = Array.from(current);
+  }
+  localStorage.setItem(OPEN_CATEGORIES_KEY, JSON.stringify(all));
+}
+
+// { gruppo: { categoria: [entry] } }, ognuno nell'ordine del manifest.
+function groupByGroup(manifest) {
   return manifest.reduce((acc, entry) => {
+    const group = entry.group || "Altro";
     const category = entry.category || "Altro";
-    (acc[category] = acc[category] || []).push(entry);
+    const categories = (acc[group] = acc[group] || {});
+    (categories[category] = categories[category] || []).push(entry);
     return acc;
   }, {});
 }
 
-function sortCategories(categories) {
-  return categories.sort((a, b) => {
-    const ia = CATEGORY_ORDER.indexOf(a);
-    const ib = CATEGORY_ORDER.indexOf(b);
+function sortByPreferredOrder(values, preferred) {
+  return values.slice().sort((a, b) => {
+    const ia = preferred.indexOf(a);
+    const ib = preferred.indexOf(b);
     if (ia === -1 && ib === -1) return a.localeCompare(b);
     if (ia === -1) return 1;
     if (ib === -1) return -1;
     return ia - ib;
   });
+}
+
+function sortGroups(groups) {
+  return sortByPreferredOrder(groups, GROUP_ORDER);
+}
+
+function sortCategories(group, categories) {
+  return sortByPreferredOrder(categories, CATEGORY_ORDER[group] || []);
+}
+
+// Ordina chiavi "Gruppo > Categoria" per gruppo e poi per categoria.
+function sortTopicKeys(keys) {
+  const byGroup = {};
+  for (const key of keys) {
+    const [group, category] = key.split(TOPIC_SEP);
+    (byGroup[group] = byGroup[group] || []).push(category);
+  }
+  return sortGroups(Object.keys(byGroup)).flatMap((group) =>
+    sortCategories(group, byGroup[group]).map((category) => topicKeyOf(group, category))
+  );
 }
 
 /* ---------------------------------- Sidebar mobile ---------------------------------- */
@@ -438,14 +533,16 @@ function renderPrintPages(pages) {
 
 /* ---------------------------------- Stampa libro (selezione sezioni) ---------------------------------- */
 
-const PRINTED_CATEGORIES_KEY = "lastPrintedCategories";
+// v2: le selezioni salvate con i vecchi nomi di categoria non sono più valide.
+const PRINTED_CATEGORIES_KEY = "lastPrintedCategories.v2";
 
 function selectableTopics() {
-  return state.manifest.filter((entry) => entry.category !== "Guida" && entry.printable !== false);
+  return state.manifest.filter((entry) => entry.group !== "Guida" && entry.printable !== false);
 }
 
+// Chiavi "Gruppo > Categoria" selezionabili, nell'ordine di stampa.
 function selectableCategories() {
-  return sortCategories(Object.keys(groupByCategory(selectableTopics())));
+  return sortTopicKeys(Array.from(new Set(selectableTopics().map(entryTopicKey))));
 }
 
 function openPrintBookModal() {
@@ -461,38 +558,100 @@ function closePrintBookModal() {
 function renderCategoryPicker(container, defaultSelectedCategories) {
   container.innerHTML = "";
 
-  const categories = selectableCategories();
-  const byCategory = groupByCategory(selectableTopics());
+  const byGroup = groupByGroup(selectableTopics());
   const defaultSelected = new Set(defaultSelectedCategories);
 
-  for (const category of categories) {
-    const label = document.createElement("label");
-    label.className = "topic-picker-item";
+  for (const group of sortGroups(Object.keys(byGroup))) {
+    const byCategory = byGroup[group];
+    const categories = sortCategories(group, Object.keys(byCategory));
+    const groupCount = categories.reduce((n, c) => n + byCategory[c].length, 0);
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = category;
-    checkbox.checked = defaultSelected.has(category);
+    const groupLabel = document.createElement("label");
+    groupLabel.className = "topic-picker-item topic-picker-group";
 
-    label.appendChild(checkbox);
-    label.appendChild(
-      document.createTextNode(`${category} (${byCategory[category].length})`)
-    );
-    container.appendChild(label);
+    const groupCheckbox = document.createElement("input");
+    groupCheckbox.type = "checkbox";
+    groupCheckbox.dataset.group = group;
+    groupCheckbox.addEventListener("change", () => {
+      container
+        .querySelectorAll(`input[data-topic][data-group="${cssEscape(group)}"]`)
+        .forEach((cb) => (cb.checked = groupCheckbox.checked));
+      groupCheckbox.indeterminate = false;
+    });
+
+    groupLabel.appendChild(groupCheckbox);
+    groupLabel.appendChild(document.createTextNode(`${group} (${groupCount})`));
+    container.appendChild(groupLabel);
+
+    for (const category of categories) {
+      const label = document.createElement("label");
+      label.className = "topic-picker-item topic-picker-category";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = topicKeyOf(group, category);
+      checkbox.dataset.topic = "1";
+      checkbox.dataset.group = group;
+      checkbox.checked = defaultSelected.has(checkbox.value);
+      checkbox.addEventListener("change", () => syncGroupCheckbox(container, group));
+
+      label.appendChild(checkbox);
+      label.appendChild(
+        document.createTextNode(`${category} (${byCategory[category].length})`)
+      );
+      container.appendChild(label);
+    }
+
+    syncGroupCheckbox(container, group);
   }
+}
+
+// Il checkbox di gruppo riflette i figli: pieno, vuoto o indeterminato.
+function syncGroupCheckbox(container, group) {
+  const selector = `[data-group="${cssEscape(group)}"]`;
+  const groupCheckbox = container.querySelector(`input:not([data-topic])${selector}`);
+  if (!groupCheckbox) return;
+  const children = Array.from(container.querySelectorAll(`input[data-topic]${selector}`));
+  const checked = children.filter((cb) => cb.checked).length;
+  groupCheckbox.checked = checked === children.length;
+  groupCheckbox.indeterminate = checked > 0 && checked < children.length;
+}
+
+function syncAllGroupCheckboxes(container) {
+  container
+    .querySelectorAll("input:not([data-topic])[data-group]")
+    .forEach((cb) => syncGroupCheckbox(container, cb.dataset.group));
+}
+
+function cssEscape(value) {
+  return window.CSS && CSS.escape ? CSS.escape(value) : value.replace(/"/g, '\\"');
 }
 
 function setAllCheckboxesIn(container, checked) {
   container
     .querySelectorAll('input[type="checkbox"]')
-    .forEach((cb) => (cb.checked = checked));
+    .forEach((cb) => {
+      cb.checked = checked;
+      cb.indeterminate = false;
+    });
   persistCategorySelection(container);
 }
 
+// Solo i checkbox di categoria: quello di gruppo è un comando, non una scelta.
 function getSelectedCategoriesFrom(container) {
   return Array.from(
-    container.querySelectorAll('input[type="checkbox"]:checked')
+    container.querySelectorAll('input[data-topic]:checked')
   ).map((cb) => cb.value);
+}
+
+// Ordine di stampa: gruppo, categoria, e dentro la categoria l'ordine del manifest.
+function sortEntriesForPrint(entries) {
+  const byGroup = groupByGroup(entries);
+  return sortGroups(Object.keys(byGroup)).flatMap((group) =>
+    sortCategories(group, Object.keys(byGroup[group])).flatMap(
+      (category) => byGroup[group][category]
+    )
+  );
 }
 
 async function printBook() {
@@ -501,7 +660,7 @@ async function printBook() {
 
   const today = new Date().toISOString().slice(0, 10);
   const selectedSet = new Set(selectedCategories);
-  const entries = state.manifest.filter((entry) => selectedSet.has(entry.category));
+  const entries = selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
 
   const [coverHtml, ...fragments] = await Promise.all([
     fetchFragment("content/copertina.html"),
@@ -509,15 +668,12 @@ async function printBook() {
   ]);
 
   const htmlById = Object.fromEntries(entries.map((entry, i) => [entry.id, fragments[i]]));
-  const byCategory = groupByCategory(entries);
 
   const pages = [];
   if (coverHtml !== null) pages.push(coverHtml);
-  pages.push(buildVersionPage(today, sortCategories(selectedCategories)));
-  for (const category of sortCategories(Object.keys(byCategory))) {
-    for (const entry of byCategory[category]) {
-      if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
-    }
+  pages.push(buildVersionPage(today, sortTopicKeys(selectedCategories)));
+  for (const entry of sortEntriesForPrint(entries)) {
+    if (htmlById[entry.id] !== null) pages.push(htmlById[entry.id]);
   }
 
   renderPrintPages(pages);
@@ -542,11 +698,12 @@ function savePrintedCategories(categories) {
 }
 
 function persistCategorySelection(container) {
+  syncAllGroupCheckboxes(container);
   savePrintedCategories(getSelectedCategoriesFrom(container));
 }
 
-function buildVersionPage(today, categories, note) {
-  const categoryList = categories
+function buildVersionPage(today, topicKeys, note) {
+  const categoryList = topicKeys
     .map((category) => `<li>${escapeHtml(category)}</li>`)
     .join("");
 
@@ -567,7 +724,7 @@ function buildVersionPage(today, categories, note) {
     <ul>
       <li>Sul sito apri "Aggiornamento stampa"</li>
       <li>Inserisci la data <strong>${today}</strong> (quella di questo foglio)</li>
-      <li>Conferma le sezioni da controllare (precompilate come sopra)</li>
+      <li>Conferma i gruppi e le categorie da controllare (precompilati come sopra)</li>
       <li>Se ci sono schede nuove/modificate si apre subito la stampa: sostituiscile nel raccoglitore</li>
       <li>Sostituisci questo foglio con quello nuovo, con la data aggiornata</li>
     </ul>
@@ -602,7 +759,7 @@ async function checkAndPrintUpdate() {
   els.btnCheckUpdates.disabled = true;
   try {
     const selectedSet = new Set(selectedCategories);
-    const entries = selectableTopics().filter((entry) => selectedSet.has(entry.category));
+    const entries = selectableTopics().filter((entry) => selectedSet.has(entryTopicKey(entry)));
     const fragments = await Promise.all(entries.map((entry) => fetchFragment(entry.file)));
 
     const changed = [];
@@ -621,7 +778,7 @@ async function checkAndPrintUpdate() {
       return;
     }
 
-    await printUpdate(refDate, changed, sortCategories(selectedCategories));
+    await printUpdate(refDate, changed, sortTopicKeys(selectedCategories));
     closeUpdateModal();
   } finally {
     els.btnCheckUpdates.disabled = false;
@@ -636,15 +793,12 @@ async function printUpdate(refDate, changed, categories) {
   const summaryHtml = buildVersionPage(today, categories, note);
 
   const htmlById = Object.fromEntries(changed.map((c) => [c.entry.id, c.html]));
-  const byCategory = groupByCategory(changed.map((c) => c.entry));
 
   const pages = [];
   if (coverHtml !== null) pages.push(coverHtml);
   pages.push(summaryHtml);
-  for (const category of sortCategories(Object.keys(byCategory))) {
-    for (const entry of byCategory[category]) {
-      pages.push(htmlById[entry.id]);
-    }
+  for (const entry of sortEntriesForPrint(changed.map((c) => c.entry))) {
+    pages.push(htmlById[entry.id]);
   }
 
   renderPrintPages(pages);
