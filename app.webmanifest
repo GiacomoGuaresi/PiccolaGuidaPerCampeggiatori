@@ -1,0 +1,20 @@
+{
+  "name": "Piccola Guida per Campeggiatori",
+  "short_name": "Guida Campeggio",
+  "description": "Cheatsheet tascabili su montagna, trekking e vita all'aperto, consultabili anche offline.",
+  "lang": "it",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ece3cf",
+  "theme_color": "#1c2614",
+  "categories": ["education", "travel", "utilities"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

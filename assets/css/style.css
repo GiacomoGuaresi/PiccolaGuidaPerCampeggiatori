@@ -760,6 +760,26 @@ button:disabled {
   gap: 0.45em;
 }
 
+/* i bottoni di stampa sono flex: senza questa regola l'attributo hidden
+   (usato dal bottone "Installa app") non nasconderebbe niente. */
+.print-btn[hidden] {
+  display: none;
+}
+
+/* ---------------------------------- Istruzioni di installazione (PWA) ---------------------------------- */
+
+.install-steps {
+  margin: 0.6rem 0 0.4rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.45rem;
+  line-height: 1.45;
+}
+
+.install-steps .icon {
+  vertical-align: -0.15em;
+}
+
 /* ---------------------------------- Modal / wizard di stampa ---------------------------------- */
 
 .modal[hidden] {

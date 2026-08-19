@@ -14,9 +14,14 @@ GitHub Pages.
 
 ```
 index.html              shell dell'app (sidebar + area scheda)
+app.webmanifest         manifest PWA (nome, icone, colori dell'app installata)
+sw.js                   service worker: cache della shell e di tutte le schede
 manifest.json           elenco delle schede pubblicate
 assets/css/style.css    palette e layout, incluse le regole di stampa A5
 assets/js/app.js        carica il manifest, mostra le schede, gestisce l'export
+assets/js/pwa.js        registra il service worker e il bottone "Installa app"
+assets/icons/           favicon PNG e icone dell'app installata
+scripts/generate_icons.sh  rigenera icone e favicon da assets/favicon.svg
 assets/img/icons.svg    sprite SVG delle icone dell'interfaccia (niente emoji)
 content/                un file .html per ogni scheda (solo frammento, no <html>/<body>)
 content/_template.html  traccia di partenza per una nuova scheda (non va in manifest.json)
@@ -42,6 +47,60 @@ più piccola come pittogramma di specifica. Per aggiungerne una
 nuova basta un altro `<symbol id="i-...">` nello sprite. Niente emoji
 nell'interfaccia: non sono stampabili in modo prevedibile e cambiano
 aspetto da sistema a sistema.
+
+## Installare l'app (PWA)
+
+Il sito è una **PWA**: si può installare sul telefono (o sul desktop) e usare
+come una normale app, a schermo intero e **senza rete** — utile visto che le
+schede servono proprio dove il segnale non c'è.
+
+- **Android / Chrome / Edge**: compare il bottone **"Installa app"** nel footer
+  (evento `beforeinstallprompt`); in alternativa menu del browser →
+  "Installa app".
+- **iPhone / iPad**: Safari non espone quell'evento, quindi il bottone apre le
+  istruzioni manuali — **Condividi** → **Aggiungi a schermata Home**. Da Chrome
+  o Firefox su iOS la voce non esiste.
+
+Alla prima visita `sw.js` mette in cache la shell (HTML/CSS/JS, icone, font) e
+**tutte le schede elencate in `manifest.json`**: dopo quella visita la guida
+funziona completamente offline. Le schede vengono servite dalla cache e
+aggiornate in sottofondo (*stale-while-revalidate*), la navigazione prova
+prima la rete e ricade sulla copia locale.
+
+Attenzione a due cose:
+
+- il service worker richiede **HTTPS** (GitHub Pages va bene) oppure
+  `localhost`: da `file://` non si registra;
+- dopo aver modificato la shell (`index.html`, CSS, JS) o il service worker
+  stesso, va alzata `CACHE_VERSION` in `sw.js`, altrimenti i browser già
+  installati continuano a servire la versione vecchia dalla cache.
+
+### Icone e favicon
+
+Tutte le icone derivano da un unico sorgente, `assets/favicon.svg`. Per
+rigenerarle (serve ImageMagick, `brew install imagemagick`):
+
+```bash
+./scripts/generate_icons.sh
+```
+
+| File                               | Uso                                       |
+|------------------------------------|-------------------------------------------|
+| `assets/favicon.svg`               | favicon principale (browser moderni)      |
+| `assets/favicon.ico`               | fallback 16/32/48 px                      |
+| `assets/icons/favicon-16.png`      | tab del browser                           |
+| `assets/icons/favicon-32.png`      | tab su schermi hidpi                      |
+| `assets/icons/apple-touch-icon.png`| 180 px, schermata Home iOS                |
+| `assets/icons/icon-192.png`        | icona PWA                                 |
+| `assets/icons/icon-512.png`        | icona PWA / splash screen                 |
+| `assets/icons/icon-maskable-512.png`| icona adattiva Android                   |
+
+Due dettagli non ovvi, gestiti dallo script: la variante *maskable* ha il
+logo rimpicciolito al 72% su fondo pieno senza angoli arrotondati (Android
+ritaglia l'icona a cerchio o squircle, il resto finisce fuori dalla safe
+zone), e nelle misure piccole (16/32/48 px) viene tolto il filo di cresta
+chiaro, che a quelle dimensioni diventa solo sporco. L'icona Apple è
+appiattita su pergamena perché iOS non gestisce la trasparenza.
 
 ## Aggiungere una nuova scheda
 

@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Piccola Guida per Campeggiatori</title>
+  <meta name="description" content="Cheatsheet tascabili su montagna, trekking e vita all'aperto, consultabili anche offline." />
+  <meta name="theme-color" content="#1c2614" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
+  <link rel="icon" sizes="any" href="assets/favicon.ico" />
+  <link rel="manifest" href="app.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Guida Campeggio" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -67,6 +78,7 @@
         <button id="btn-export-single" class="print-btn" title="Stampa pagina" aria-label="Stampa pagina"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-page"></use></svg></span><span class="btn-label">Stampa pagina</span></button>
       </div>
       <div class="footer-actions">
+        <button id="btn-install-app" class="secondary print-btn" type="button" title="Installa app" aria-label="Installa app" hidden><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-install"></use></svg></span><span class="btn-label">Installa app</span></button>
         <button id="btn-open-update" class="secondary print-btn" title="Aggiornamento stampa" aria-label="Aggiornamento stampa"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-refresh"></use></svg></span><span class="btn-label">Aggiornamento stampa</span></button>
         <button id="btn-open-print-book" class="secondary print-btn" title="Stampa libro" aria-label="Stampa libro"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-book"></use></svg></span><span class="btn-label">Stampa libro</span></button>
       </div>
@@ -154,8 +166,35 @@
     </div>
   </div>
 
+  <div id="install-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="install-title">
+      <button id="btn-install-close" class="modal-close" aria-label="Chiudi"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-close"></use></svg></button>
+      <h2 id="install-title">Installa l'app</h2>
+      <p class="modal-hint">Installata, la guida si apre a schermo intero dalla schermata Home e le schede restano consultabili anche senza rete.</p>
+
+      <div id="install-ios" hidden>
+        <ol class="install-steps">
+          <li>In Safari tocca <strong>Condividi</strong> <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-share"></use></svg> nella barra in basso.</li>
+          <li>Scorri e scegli <strong>Aggiungi a schermata Home</strong>.</li>
+          <li>Conferma con <strong>Aggiungi</strong>.</li>
+        </ol>
+        <p class="modal-hint">Su iPhone e iPad funziona solo da Safari: da Chrome o Firefox la voce non compare.</p>
+      </div>
+
+      <div id="install-generic" hidden>
+        <ol class="install-steps">
+          <li>Apri il menu del browser (i tre puntini).</li>
+          <li>Scegli <strong>Installa app</strong> o <strong>Aggiungi a schermata Home</strong>.</li>
+          <li>Conferma.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
   <div id="print-area"></div>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/pwa.js"></script>
 </body>
 </html>
