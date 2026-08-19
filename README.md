@@ -17,9 +17,31 @@ index.html              shell dell'app (sidebar + area scheda)
 manifest.json           elenco delle schede pubblicate
 assets/css/style.css    palette e layout, incluse le regole di stampa A5
 assets/js/app.js        carica il manifest, mostra le schede, gestisce l'export
+assets/img/icons.svg    sprite SVG delle icone dell'interfaccia (niente emoji)
 content/                un file .html per ogni scheda (solo frammento, no <html>/<body>)
 content/_template.html  traccia di partenza per una nuova scheda (non va in manifest.json)
 ```
+
+## Icone
+
+Le icone dell'interfaccia stanno tutte in `assets/img/icons.svg`, uno
+sprite di `<symbol>` a tratto 24×24 che ereditano il colore da
+`currentColor`. Per usarne una:
+
+```html
+<svg class="icon" aria-hidden="true" focusable="false">
+  <use href="assets/img/icons.svg#i-print"></use>
+</svg>
+```
+
+La classe `.icon` (in `style.css`) dimensiona l'icona in `em`, quindi
+segue il font-size del bottone che la contiene. I bottoni di stampa
+usano una coppia di icone (stampante + foglio / frecce di aggiornamento
+/ libro): la seconda va marcata `class="icon icon-sub"`, che la rende
+più piccola come pittogramma di specifica. Per aggiungerne una
+nuova basta un altro `<symbol id="i-...">` nello sprite. Niente emoji
+nell'interfaccia: non sono stampabili in modo prevedibile e cambiano
+aspetto da sistema a sistema.
 
 ## Aggiungere una nuova scheda
 
