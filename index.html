@@ -75,12 +75,11 @@
           <button id="btn-zoom-reset" class="secondary zoom-level" type="button" aria-label="Reimposta zoom">100%</button>
           <button id="btn-zoom-in" class="secondary zoom-btn" type="button" aria-label="Aumenta zoom">&plus;</button>
         </div>
-        <button id="btn-export-single" class="print-btn" title="Stampa pagina" aria-label="Stampa pagina"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-page"></use></svg></span><span class="btn-label">Stampa pagina</span></button>
+        <button id="btn-toggle-favorite" class="secondary print-btn fav-btn" type="button" aria-pressed="false" title="Aggiungi ai preferiti" aria-label="Aggiungi ai preferiti"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-star"></use></svg></span><span class="btn-label">Preferito</span></button>
       </div>
       <div class="footer-actions">
         <button id="btn-install-app" class="secondary print-btn" type="button" title="Installa app" aria-label="Installa app" hidden><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-install"></use></svg></span><span class="btn-label">Installa app</span></button>
-        <button id="btn-open-update" class="secondary print-btn" title="Aggiornamento stampa" aria-label="Aggiornamento stampa"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-refresh"></use></svg></span><span class="btn-label">Aggiornamento stampa</span></button>
-        <button id="btn-open-print-book" class="secondary print-btn" title="Stampa libro" aria-label="Stampa libro"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg><svg class="icon icon-sub" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-book"></use></svg></span><span class="btn-label">Stampa libro</span></button>
+        <button id="btn-open-print" class="print-btn" title="Stampa" aria-label="Stampa"><span class="btn-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-print"></use></svg></span><span class="btn-label">Stampa</span></button>
       </div>
     </footer>
   </div>
@@ -89,12 +88,38 @@
     <div class="modal-backdrop"></div>
     <div class="modal-dialog wizard-dialog" role="dialog" aria-modal="true" aria-labelledby="wizard-title">
       <button id="btn-wizard-close" class="modal-close" aria-label="Chiudi"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/img/icons.svg#i-close"></use></svg></button>
-      <h2 id="wizard-title">Stampa libro</h2>
+      <h2 id="wizard-title">Stampa</h2>
       <p id="wizard-hint" class="modal-hint"></p>
 
       <ol id="wizard-steps" class="wizard-steps" aria-label="Passi"></ol>
 
       <div class="wizard-body">
+        <section class="wizard-step" data-step="mode" hidden>
+          <h3 class="wizard-step-title">Cosa vuoi stampare</h3>
+          <p class="wizard-step-hint">Scegli il tipo di stampa: i passi successivi cambiano di conseguenza.</p>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-mode" value="page" id="wizard-mode-page" />
+            <span>
+              Pagina corrente
+              <small id="wizard-mode-page-hint">Stampa solo la scheda aperta.</small>
+            </span>
+          </label>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-mode" value="book" checked />
+            <span>
+              Libro completo
+              <small>Il raccoglitore: copertina, schede scelte e pagina "Versione stampata".</small>
+            </span>
+          </label>
+          <label class="wizard-choice">
+            <input type="radio" name="wizard-mode" value="update" />
+            <span>
+              Aggiornamento stampa
+              <small>Solo le schede cambiate dopo la data dell'ultima stampa.</small>
+            </span>
+          </label>
+        </section>
+
         <section class="wizard-step" data-step="date" hidden>
           <h3 class="wizard-step-title">Data dell'ultima stampa</h3>
           <p class="wizard-step-hint">Vengono cercate solo le schede con tag "agg." successivo a questa data.</p>

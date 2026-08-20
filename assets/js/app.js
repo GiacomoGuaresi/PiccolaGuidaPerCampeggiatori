@@ -49,10 +49,9 @@ const els = {
   btnZoomOut: document.getElementById("btn-zoom-out"),
   btnZoomIn: document.getElementById("btn-zoom-in"),
   btnZoomReset: document.getElementById("btn-zoom-reset"),
-  btnExportSingle: document.getElementById("btn-export-single"),
+  btnToggleFavorite: document.getElementById("btn-toggle-favorite"),
   printArea: document.getElementById("print-area"),
-  btnOpenUpdate: document.getElementById("btn-open-update"),
-  btnOpenPrintBook: document.getElementById("btn-open-print-book"),
+  btnOpenPrint: document.getElementById("btn-open-print"),
   wizardModal: document.getElementById("wizard-modal"),
   wizardTitle: document.getElementById("wizard-title"),
   wizardHint: document.getElementById("wizard-hint"),
@@ -66,6 +65,9 @@ const els = {
   btnWizardNext: document.getElementById("btn-wizard-next"),
   btnWizardExport: document.getElementById("btn-wizard-export"),
   lastPrintedDate: document.getElementById("last-printed-date"),
+  modeRadios: Array.from(document.querySelectorAll('input[name="wizard-mode"]')),
+  modePageRadio: document.getElementById("wizard-mode-page"),
+  modePageHint: document.getElementById("wizard-mode-page-hint"),
   scopeRadios: Array.from(document.querySelectorAll('input[name="wizard-scope"]')),
   scopeFavoritesRadio: document.getElementById("wizard-scope-favorites"),
   formatRadios: Array.from(document.querySelectorAll('input[name="wizard-format"]')),
@@ -81,14 +83,19 @@ async function init() {
   state.manifest = await loadManifest();
   state.favorites = loadFavorites();
   renderSidebar(state.manifest);
-  els.btnOpenPrintBook.disabled = state.manifest.length === 0;
+  els.btnOpenPrint.disabled = state.manifest.length === 0;
 
-  els.btnExportSingle.addEventListener("click", exportCurrentCard);
   initWizard();
 
   els.btnZoomOut.addEventListener("click", () => setZoom(state.zoom - ZOOM_STEP));
   els.btnZoomIn.addEventListener("click", () => setZoom(state.zoom + ZOOM_STEP));
-  els.btnZoomReset.addEventListener("click", () => setZoom(1));
+  // Su telefono il 100% non ci sta comunque: il tasto adatta la scheda allo schermo.
+  els.btnZoomReset.addEventListener("click", () =>
+    setZoom(MOBILE_QUERY.matches ? fitZoomForViewport() : 1)
+  );
+  els.btnToggleFavorite.addEventListener("click", () => {
+    if (state.current) toggleFavorite(state.current.id);
+  });
   setZoom(loadZoom());
   initTouchGestures();
 
@@ -96,7 +103,9 @@ async function init() {
   els.sidebarBackdrop.addEventListener("click", closeSidebar);
   MOBILE_QUERY.addEventListener("change", (e) => {
     if (!e.matches) closeSidebar();
+    syncZoomResetLabel();
   });
+  syncZoomResetLabel();
 
   els.searchInput.addEventListener("input", () => {
     renderSidebar(state.manifest, els.searchInput.value);
@@ -441,6 +450,7 @@ function toggleFavorite(id) {
 
   state.favorites = next;
   updateFavoritesCounts();
+  syncFavoriteButton();
   renderSidebar(state.manifest, els.searchInput.value);
 }
 
@@ -463,6 +473,22 @@ function updateFavoritesCounts() {
   if (count === 0 && els.scopeFavoritesRadio.checked) {
     els.scopeRadios.find((r) => r.value === "topics").checked = true;
   }
+}
+
+// Sulla sidebar la stella c'è già; a schermo stretto la sidebar è chiusa,
+// quindi il preferito della scheda aperta si gestisce dalla barra in basso.
+function syncFavoriteButton() {
+  const button = els.btnToggleFavorite;
+  button.hidden = !state.current;
+  if (!state.current) return;
+
+  const active = isFavorite(state.current.id);
+  button.classList.toggle("is-favorite", active);
+  button.setAttribute("aria-pressed", String(active));
+  const label = active ? "Togli dai preferiti" : "Aggiungi ai preferiti";
+  button.title = label;
+  button.setAttribute("aria-label", `${label}: ${state.current.title}`);
+  button.querySelector(".btn-label").textContent = active ? "Nei preferiti" : "Preferito";
 }
 
 function createFavoriteButton(entry) {
@@ -531,14 +557,44 @@ function loadZoom() {
   return Number.isFinite(stored) ? stored : defaultZoomForViewport();
 }
 
-function defaultZoomForViewport() {
-  const MM_TO_PX = 96 / 25.4;
-  const a5WidthPx = 148 * MM_TO_PX;
+const MM_TO_PX = 96 / 25.4;
+
+// Spazio utile dell'area di lettura e ingombro reale della scheda a zoom 1
+// (bordi e padding inclusi: la misura si ricava dalla scheda a schermo,
+// dividendo per lo zoom applicato, e ripiega sulle misure A5 se non c'è).
+function previewFitRatios() {
   const style = getComputedStyle(els.content);
-  const padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
-  const available = els.content.clientWidth - padding;
-  if (available <= 0) return 1;
-  return Math.min(1, Math.max(ZOOM_MIN, available / a5WidthPx));
+  const availableW =
+    els.content.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+  const availableH =
+    els.content.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+
+  const rect = els.a5Single.getBoundingClientRect();
+  const pageW = rect.width > 0 ? rect.width / state.zoom : 148 * MM_TO_PX;
+  const pageH = rect.height > 0 ? rect.height / state.zoom : 210 * MM_TO_PX;
+
+  return { width: availableW / pageW, height: availableH / pageH };
+}
+
+// La scheda intera dentro lo schermo: comanda il lato più stretto.
+function fitZoomForViewport() {
+  const { width, height } = previewFitRatios();
+  if (!(width > 0) || !(height > 0)) return 1;
+  return Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.min(width, height)));
+}
+
+// All'avvio si parte dalla larghezza (in verticale si scorre), senza mai
+// ingrandire oltre il 100%.
+function defaultZoomForViewport() {
+  const { width } = previewFitRatios();
+  if (!(width > 0)) return 1;
+  return Math.min(1, Math.max(ZOOM_MIN, width));
+}
+
+function syncZoomResetLabel() {
+  const label = MOBILE_QUERY.matches ? "Adatta la scheda allo schermo" : "Reimposta zoom";
+  els.btnZoomReset.setAttribute("aria-label", label);
+  els.btnZoomReset.title = label;
 }
 
 // Durante il pinch setZoom viene chiamata a ogni frame: in quel caso si salta
@@ -728,7 +784,7 @@ async function selectCard(entry, linkEl) {
   els.emptyState.hidden = true;
   els.cardPreview.hidden = false;
   els.cardToolbar.hidden = false;
-  els.btnExportSingle.hidden = entry.printable === false;
+  syncFavoriteButton();
 
   if (MOBILE_QUERY.matches) closeSidebar();
 }
@@ -816,10 +872,12 @@ async function fetchFragment(path) {
   }
 }
 
-function exportCurrentCard() {
-  if (!state.current) return;
+// Come printBook: `true` solo se si è arrivati alla stampa.
+function printCurrentCard() {
+  if (!state.current) return false;
   renderPrintPages([els.a5Single.innerHTML]);
   window.print();
+  return true;
 }
 
 /* ---------------------------------- Modalità A4 (2 schede per foglio) ---------------------------------- */
@@ -875,17 +933,20 @@ function renderPrintPages(pages) {
 
 /* ---------------------------------- Wizard di stampa ---------------------------------- */
 
-// Stampa libro e aggiornamento sono lo stesso wizard: cambiano solo il primo
-// passo (la data, che serve solo all'aggiornamento) e cosa succede alla fine.
+// Stampa pagina, libro e aggiornamento sono lo stesso wizard: si sceglie il tipo
+// al primo passo e cambiano i passi successivi e cosa succede alla fine.
 const WIZARD_FLOWS = {
+  page: {
+    hint: "Stampa la scheda aperta nel visualizzatore.",
+    exportLabel: "Stampa pagina",
+    run: printCurrentCard,
+  },
   book: {
-    title: "Stampa libro",
     hint: "Prepara il PDF del raccoglitore: copertina e pagina \"Versione stampata\" incluse.",
     exportLabel: "Esporta PDF",
     run: printBook,
   },
   update: {
-    title: "Aggiornamento stampa",
     hint: "Prepara il PDF delle sole schede cambiate dopo la data dell'ultima stampa.",
     exportLabel: "Verifica ed esporta PDF",
     run: checkAndPrintUpdate,
@@ -893,6 +954,7 @@ const WIZARD_FLOWS = {
 };
 
 const WIZARD_STEP_LABELS = {
+  mode: "Stampa",
   date: "Data",
   scope: "Contenuto",
   topics: "Capitoli",
@@ -900,11 +962,10 @@ const WIZARD_STEP_LABELS = {
   done: "Fine",
 };
 
-const wizard = { mode: "book", index: 0 };
+const wizard = { index: 0 };
 
 function initWizard() {
-  els.btnOpenPrintBook.addEventListener("click", () => openWizard("book"));
-  els.btnOpenUpdate.addEventListener("click", () => openWizard("update"));
+  els.btnOpenPrint.addEventListener("click", openWizard);
   els.btnWizardClose.addEventListener("click", closeWizard);
   els.wizardModal.querySelector(".modal-backdrop").addEventListener("click", closeWizard);
   els.btnWizardBack.addEventListener("click", () => goToStep(wizard.index - 1));
@@ -925,6 +986,7 @@ function initWizard() {
   });
 
   els.lastPrintedDate.addEventListener("input", refreshWizard);
+  els.modeRadios.forEach((radio) => radio.addEventListener("change", refreshWizard));
   els.scopeRadios.forEach((radio) =>
     radio.addEventListener("change", () => {
       writeCookie(FAVORITES_ONLY_COOKIE, isFavoritesScope() ? "1" : "0");
@@ -945,11 +1007,18 @@ function initWizard() {
   updateFavoritesCounts();
 }
 
-// Il passo "capitoli" esiste solo se si stampa per capitoli: l'elenco dei passi
-// va ricalcolato ogni volta, non fissato all'apertura.
+function wizardMode() {
+  const checked = els.modeRadios.find((radio) => radio.checked && !radio.disabled);
+  return checked ? checked.value : "book";
+}
+
+// I passi dipendono dalle scelte fatte (tipo di stampa, preferiti o capitoli):
+// l'elenco va ricalcolato ogni volta, non fissato all'apertura.
 function wizardStepIds() {
-  const ids = [];
-  if (wizard.mode === "update") ids.push("date");
+  const mode = wizardMode();
+  const ids = ["mode"];
+  if (mode === "page") return [...ids, "format", "done"];
+  if (mode === "update") ids.push("date");
   ids.push("scope");
   if (!isFavoritesScope()) ids.push("topics");
   ids.push("format", "done");
@@ -969,8 +1038,20 @@ function wizardConfig() {
   };
 }
 
-function openWizard(mode) {
-  wizard.mode = mode;
+// "Pagina corrente" ha senso solo con una scheda aperta e stampabile: senza,
+// quel ramo va disattivato e la scelta riportata sul libro.
+function updateModeAvailability() {
+  const printable = Boolean(state.current) && state.current.printable !== false;
+  els.modePageRadio.disabled = !printable;
+  els.modePageHint.textContent = printable
+    ? `Stampa solo la scheda aperta: ${state.current.title}.`
+    : "Nessuna scheda aperta: selezionane una dal menu.";
+  if (!printable && els.modePageRadio.checked) {
+    els.modeRadios.find((r) => r.value === "book").checked = true;
+  }
+}
+
+function openWizard() {
   wizard.index = 0;
 
   els.lastPrintedDate.value = localStorage.getItem(LAST_PRINTED_DATE_KEY) || "";
@@ -982,11 +1063,7 @@ function openWizard(mode) {
   );
   // Va dopo: se i preferiti sono spariti disattiva quel ramo e riporta su "capitoli".
   updateFavoritesCounts();
-
-  const flow = WIZARD_FLOWS[mode];
-  els.wizardTitle.textContent = flow.title;
-  els.wizardHint.textContent = flow.hint;
-  els.btnWizardExport.textContent = flow.exportLabel;
+  updateModeAvailability();
 
   els.wizardModal.hidden = false;
   refreshWizard();
@@ -1007,6 +1084,10 @@ function refreshWizard() {
   wizard.index = Math.min(wizard.index, steps.length - 1);
   const currentId = steps[wizard.index];
   const isLast = wizard.index === steps.length - 1;
+
+  const flow = WIZARD_FLOWS[wizardMode()];
+  els.wizardHint.textContent = flow.hint;
+  els.btnWizardExport.textContent = flow.exportLabel;
 
   els.wizardSteps.forEach((section) => {
     section.hidden = section.dataset.step !== currentId;
@@ -1048,14 +1129,23 @@ function isStepComplete(stepId) {
 }
 
 function renderWizardSummary() {
-  const { favoritesOnly, categories, refDate } = wizardConfig();
-  const entries = entriesForSelection({ favoritesOnly, categories });
-
+  const mode = wizardMode();
+  const format = isA4Mode() ? "A4, 2 schede per foglio" : "A5, una scheda per pagina";
   const rows = [];
-  if (wizard.mode === "update") rows.push(["Ultima stampa", refDate || "—"]);
-  rows.push(["Contenuto", favoritesOnly ? "Solo i preferiti" : `${categories.length} categorie`]);
-  rows.push(["Schede", String(entries.length)]);
-  rows.push(["Formato", isA4Mode() ? "A4, 2 schede per foglio" : "A5, una scheda per pagina"]);
+  let count;
+
+  if (mode === "page") {
+    count = state.current ? 1 : 0;
+    rows.push(["Contenuto", state.current ? state.current.title : "—"]);
+    rows.push(["Formato", format]);
+  } else {
+    const { favoritesOnly, categories, refDate } = wizardConfig();
+    count = entriesForSelection({ favoritesOnly, categories }).length;
+    if (mode === "update") rows.push(["Ultima stampa", refDate || "—"]);
+    rows.push(["Contenuto", favoritesOnly ? "Solo i preferiti" : `${categories.length} categorie`]);
+    rows.push(["Schede", String(count)]);
+    rows.push(["Formato", format]);
+  }
 
   els.wizardSummary.innerHTML = "";
   for (const [label, value] of rows) {
@@ -1064,17 +1154,17 @@ function renderWizardSummary() {
     els.wizardSummary.appendChild(li);
   }
 
-  const problem = entries.length === 0 ? "Nessuna scheda da stampare con queste scelte." : "";
+  const problem = count === 0 ? "Nessuna scheda da stampare con queste scelte." : "";
   els.wizardWarning.textContent = problem;
   els.wizardWarning.hidden = problem === "";
-  els.btnWizardExport.disabled = entries.length === 0;
+  els.btnWizardExport.disabled = count === 0;
 }
 
 async function runWizardExport() {
   const config = wizardConfig();
   els.btnWizardExport.disabled = true;
   try {
-    const printed = await WIZARD_FLOWS[wizard.mode].run(config);
+    const printed = await WIZARD_FLOWS[wizardMode()].run(config);
     if (printed) closeWizard();
   } finally {
     els.btnWizardExport.disabled = false;
@@ -1301,7 +1391,7 @@ function buildVersionPage(today, items, { note, favoritesOnly } = {}) {
 
     <h3>Come aggiornare in futuro</h3>
     <ul>
-      <li>Sul sito apri "Aggiornamento stampa" e segui il wizard</li>
+      <li>Sul sito premi "Stampa" e scegli "Aggiornamento stampa"</li>
       <li>Inserisci la data <strong>${today}</strong> (quella di questo foglio)</li>
       ${selectionStep}
       <li>Scegli il formato, poi <strong>Esporta PDF</strong>: se ci sono schede nuove/modificate parte la stampa, sostituiscile nel raccoglitore</li>

@@ -144,15 +144,20 @@ Poi apri `http://localhost:8000`.
 
 ## Esportare in PDF
 
-- **Scheda singola**: apri la scheda, premi "Stampa pagina", poi nella
-  finestra di stampa del browser scegli "Salva come PDF".
-- **Libro**: premi "Stampa libro" nel footer. Si apre un wizard in quattro
-  passi — contenuto (capitoli o preferiti), capitoli da includere, formato
-  (A5 o A4 con 2 schede per foglio), riepilogo con "Esporta PDF". Copertina e
-  pagina "Versione stampata" sono aggiunte automaticamente.
-- **Aggiornamento**: premi "Aggiornamento stampa". È lo stesso wizard con un
-  passo in più all'inizio, la data dell'ultima stampa: nel PDF finiscono solo
-  le schede con tag `agg.` successivo a quella data.
+Tutto passa dall'unico pulsante "Stampa" nel footer: si apre un wizard il cui
+primo passo è il tipo di stampa.
+
+- **Pagina corrente**: stampa solo la scheda aperta (il ramo è disattivato se
+  non c'è nessuna scheda a schermo). Passi: tipo, formato, riepilogo.
+- **Libro completo**: contenuto (capitoli o preferiti), capitoli da includere,
+  formato (A5 o A4 con 2 schede per foglio), riepilogo con "Esporta PDF".
+  Copertina e pagina "Versione stampata" sono aggiunte automaticamente.
+- **Aggiornamento stampa**: come il libro, con un passo in più subito dopo il
+  tipo, la data dell'ultima stampa: nel PDF finiscono solo le schede con tag
+  `agg.` successivo a quella data.
+
+Nella finestra di stampa del browser scegli "Salva come PDF" per ottenere il
+file invece della stampa su carta.
 
 ## Gesture su telefono e tablet
 
@@ -161,6 +166,10 @@ Sull'area della scheda (non sulla sidebar):
 - **Pinch con due dita**: zoom della scheda, fra 50% e 200%, gli stessi limiti
   dei pulsanti +/- nella barra in basso. Il livello raggiunto viene salvato in
   `localStorage` a fine gesto.
+- Il tasto con la percentuale, in mezzo ai +/-, sotto i 780px **adatta la
+  scheda allo schermo** (il lato più stretto fra larghezza e altezza dell'area
+  di lettura) invece di riportare al 100%, che su telefono non ci starebbe
+  comunque. Da 780px in su resta un reset al 100%.
 - **Swipe orizzontale con un dito**: scheda precedente (verso destra) o
   successiva (verso sinistra), nell'ordine in cui compaiono in sidebar e
   rispettando la ricerca attiva; la sezione Preferiti è esclusa dal ciclo per
@@ -176,6 +185,9 @@ Lo scorrimento verticale resta quello nativo del browser
 ## Preferiti
 
 Ogni scheda in sidebar ha una stella: vuota = non preferita, piena = preferita.
+La stessa stella è nella barra in basso, accanto ai controlli di zoom, e agisce
+sulla scheda aperta: serve su telefono, dove la sidebar è chiusa mentre si
+legge.
 Le schede con la stella finiscono nella sezione **Preferiti**, in cima al menu
 laterale, e restano lì anche dopo aver chiuso il browser.
 

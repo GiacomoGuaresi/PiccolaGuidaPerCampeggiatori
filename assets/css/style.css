@@ -769,6 +769,34 @@ button:disabled {
   display: none;
 }
 
+/* Il preferito della scheda aperta serve solo dove la sidebar sta chiusa: su
+   schermo largo la stella di ogni scheda è già nell'elenco, qui è un doppione.
+   Viene riacceso nel blocco @media (max-width: 780px). */
+.fav-btn {
+  display: none;
+}
+
+.fav-btn .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.15rem;
+}
+
+/* Il symbol della stella non dichiara `fill`: contorno da vuoto, pieno quando
+   la scheda è fra i preferiti. */
+.fav-btn .icon {
+  fill: none;
+}
+
+.fav-btn.is-favorite {
+  color: var(--color-clay);
+  border-color: var(--color-clay);
+}
+
+.fav-btn.is-favorite .icon {
+  fill: currentColor;
+}
+
 /* ---------------------------------- Istruzioni di installazione (PWA) ---------------------------------- */
 
 .install-steps {
@@ -1134,6 +1162,11 @@ button:disabled {
 
   .print-btn .btn-label {
     display: none;
+  }
+
+  /* `hidden` (nessuna scheda aperta) resta più forte di questa regola. */
+  .fav-btn:not([hidden]) {
+    display: inline-flex;
   }
 
   .modal-dialog {
